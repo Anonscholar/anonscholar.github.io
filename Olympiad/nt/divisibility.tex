@@ -1,0 +1,306 @@
+\chapter{Divisibility}
+
+\section{Basic Properties}
+
+\begin{definition}
+	[Division]
+	The operation division is defined as:
+	\begin{enumerate}
+		\item An integer \(y\) is said to be a multiple of \(x\) if \[y\in \{kx : k\in \ZZ \} \]
+		\item If \(y\) is a multiple of \(x\) then, \(y\) is \textit{divisible} by \(x\) and \(x\) divides \(y\) which is written as: \[x \mid y.\]
+	\end{enumerate}
+\end{definition}
+
+\begin{proposition}
+	Let \(x\), \(y\), \(z\) \(\in\) \(\ZZ\)
+	\begin{enumerate}
+		\item \(\forall x \ne 0\), \(x \mid x\) and \(x \mid 0\).
+		\item \(1 \mid x\).
+		\item \(x\mid y\) and \(y \mid z \implies \) \(x \mid z\).
+		\item \(x \mid y \iff \dfrac{y}{x} \in \ZZ\)
+	\end{enumerate}
+	
+	
+\end{proposition}
+
+Most of the proofs here are trivial, but let us show that using the last proposition we can prove the third one.
+
+\begin{proof}
+	\( x \mid y \iff \dfrac{y}{x} \in \ZZ \) and \(  y \mid z \iff \dfrac{z}{y} \in \ZZ \). But \( \dfrac{z}{x}= \dfrac{y}{x}\cdot\dfrac{z}{y} \in \ZZ \iff x\mid z\).
+\end{proof}
+
+
+We may note that because of the definition of division, we get the following theorem:
+
+\begin{theorem}
+	If \(x \mid y\), then either \(\abs{y} \ge \abs{x} \) or \(y=0\).
+\end{theorem}
+
+The \(0\) case is extremely important and often hard to see. Remember to look out for this case.
+
+\begin{proof}
+	\(\abs{y}=\abs{k\cdot x}= \abs{k}\cdot \abs{x}\). But, \( \abs{k}\cdot \abs{x} \ge \abs{x} \iff \abs{y} \ge \abs{x}\). Note here that \(k\) is not taken to be \(0\) since, \(y=k\cdot x=0\cdot x=0\). But this case is already mentioned.
+\end{proof}
+
+
+
+The following is not of a severe importance in the view that it is hard to see or prove. But it allows us to quickly formalise our solutions and is thus useful for proofs.
+
+\begin{lemma}
+	\label{lem: unimp}
+	If \(x \mid a\), then \(x \mid ac+b \iff x\mid b\).
+\end{lemma}
+
+\begin{proof}
+	The proof is trivial as, \(x \mid a \iff a = kx : k \in \ZZ\).
+	\par 
+	\textbf{Direction 1}
+	Note, \(x \mid ac+b \iff ac+b=nx : n \in \ZZ\), hence, \(b=nx-ac=nx-kcx=(n-kc)x \iff x \mid b\).
+	\par
+	\textbf{Direction 2}
+	And, \(x\mid b \iff b=mx : m \in \ZZ \), hence, \(ac+b=kcx+mx=(kc+m)x \iff x \mid ac+b \).
+\end{proof}
+
+Finally, we may conclude this section of properties by stating all the previous properties and some more. 
+\begin{theorem}
+	Let \(x\), \(y\), \(z\) \(\in\) \(\ZZ\)
+	\begin{enumerate}
+		\item \(\forall x \ne 0\), \(x \mid x\) and \(x \mid 0\).
+		\item \(1 \mid x\).
+		\item \(x\mid y\) and \(y \mid z \implies \) \(x \mid z\).
+		\item \(x \mid y \iff \dfrac{y}{x} \in \ZZ\).
+		\item \(\forall z \ne 0\), \(x \mid y \iff xz \mid yz\). 
+		\item \(x\mid a\), \(x\mid b \implies x\mid an+bm\).
+		\item \(x\mid y\), \(y\mid x \iff y=\pm x\).
+		\item \(x \mid y \implies x \mid yz\).
+		
+	\end{enumerate}
+	
+\end{theorem}
+
+\begin{example}
+	Show that if \(n \in \ZZ, n > 1\), then \(n \nmid 2n^2 + 3n + 1\).
+	\begin{proof}
+		Here we can see the use of \Cref{lem: unimp}. Suppose \(n \mid 2n^2+3n+2\), then \(n \mid 2n^2 + 3n\), and \(n \mid 2n^2 + 3n + 1 \iff n \mid 1\). But, \( n \mid 1 \implies \abs{1} \ge \abs{n} \iff 1 \ge n\) which contradicts our earlier statement that \(n > 1\). Hence, \(n \nmid 2n^2+3n+1\).
+	\end{proof}
+	
+	
+\end{example}
+
+\begin{remark}
+	\( \abs{1} \ge \abs{n} \iff 1 \ge n\) because \(n>1>0\).
+\end{remark}
+
+
+\begin{example}
+	Show that for any two natural numbers, \(a\), \(b : a > b\), \(a \nmid 2a+b\).
+	
+	\begin{proof}
+		Again, we can use \Cref{lem: unimp}. Suppose \(a \mid 2a+b\), then \(a \mid 2a\) and \(a \mid 2a + b \iff a \mid b\). But, \(a \mid b \implies \abs{b} \ge \abs{a} \) and \(a, b \in \NN \implies b \ge a \). This contradicts our the fact \(a > b\). Hence \(a \nmid 2a+b\).
+	\end{proof}
+\end{example}
+
+\section{Euclid's Division Lemma}
+
+Euclid's division lemma is something we will make much use of, especially later. For now the unproven statement shall suffice.
+
+\begin{theorem}
+	\label{thm: euclid}
+	For any integers \(a\), \(b\), we can find \textit{unique} integers \(q, r\), such that: \[b=aq + r, \quad 0 \le r <a. \]
+	Here, \(r\) is called the remainder, and \(q\) is called the quotient.
+\end{theorem}
+
+\section{Primes}
+
+\index{Primes}
+
+\begin{definition}
+	[Primes]
+	Any \(x \in \NN\) is called a prime, if and only if it has exactly \(2\) \textit{divisors}.
+\end{definition}
+
+Primes are a very interesting subset of naturals. There properties will be explored later. For now, we use primes to define one of the most important theorem in all of number theory.
+
+\subsection{Fundamental Theorem of Arithmetic}
+
+\begin{theorem}
+	[Fundamental Theorem of Arithmetic]
+	\label{thm: fta}
+	Any natural number can be \textit{uniquely} expressed as a product of primes upto order.
+\end{theorem}
+
+By uniquely, we mean there is \textit{at most} and \textit{at least} one way to express any natural as a product of primes. The order in which the product is expressed is irrelevant because of the commutativity of multiplication. \par 
+We can further extend this theorem to include all integers by using some claims.
+
+\subsection{Integers as Multisets}
+
+\begin{claim}
+	Any non-zero \(x \in \ZZ\) can be expressed a multiset of primes(and \(-1\)). If the number is positive, then we can simply use \Cref{thm: fta} and included all the prime factors in its multiset. If the number is negative, then we express it as the multiset of its absolute value and include \(-1\) in the multiset.
+\end{claim}
+
+\begin{remark}
+	A \textit{multiset} is a set where repeating elements are counted seperately. Each element has a \textit{mulitplicity} which indicates the number of times that element appears in the multiset.
+\end{remark}
+
+We could, for example, express \(20\) as \(\{2, 2, 5\}\), and \(-20\) as \(\{-1, 2, 2, 5\}\).
+\\
+This allows us to restate \Cref{thm: fta}.
+
+\begin{theorem}
+	[Fundamental theorem of Arithmetic in multisets]
+	Any natural number can expressed as a multiset of primes.
+\end{theorem}
+
+\begin{remark}
+	This multiset, is, by definition \textit{unique}.
+\end{remark}
+
+It also allows us to restate divisibility for positive integers.
+
+\begin{theorem}
+	[Divisibility in multisets]
+	\(\forall a, b \in \NN\), \[a \mid b \iff A \subseteq B \]
+\end{theorem}
+
+\begin{remark}
+	Henceforth, all variables are integers unless explicitly mentioned.
+\end{remark}
+
+\section{GCD and LCM}
+
+\subsection{GCD}
+
+\begin{definition}
+	\( \gcd(a,b)\) is the multiset of all \textit{common} prime factors of \(a\) and \(b\).
+\end{definition}
+
+This gives us the following properties of \(\gcd\).
+
+\begin{proposition}
+	\hfill
+	\begin{itemize}
+		\item \(\gcd(a,b)\) is the greatest integer which divides both \(a\) and \(b\). In particular, \(\gcd(a,b) \le a, b\).
+		\item \(c \mid a\), \(c \mid b \iff c \mid \gcd(a,b)\).
+	\end{itemize}
+\end{proposition}
+
+We can, in fact, show that the two definition of gcd are equivalent. 
+
+\begin{proof}
+	Let \( \SC = \{p : p \mid a, b \) and \(p \) is a prime\( \} \). Suppose that \(\gcd(a,b) \ne \SC \). Then \( \gcd(a,b) > \SC \). 
+	\\
+	\par
+	Note that \( \gcd(a,b)\) must contain an element \(x \notin \SC \) where \(x\) is prime.(Since it is an element in the multiset of \(\gcd(a,b)\)). 
+	\par
+	But, \(x \in \gcd(a,b) \iff x \mid \gcd(a,b)\), and \(x \mid \gcd(a,b) \), \(\gcd(a,b) \mid a, b \implies x \mid a,b\). \(x\) is prime, and \(x \mid a,b\ \implies x \in \SC\). This contradicts our earlier deduction that \(x \notin \SC\). By \textit{reductio ad absurdum}, we have \(\gcd(a,b) = \SC \).
+\end{proof}
+
+\begin{claim}
+	
+	Let \(a = p_{1} ^{\alpha_1} p_{2} ^{\alpha_2} \ldots p_{n}^{\alpha_n}\), \(b = p_{1} ^{\beta_1} p_{2} ^{\beta_2} \ldots p_{n}^{\beta_n}\). Then, \[\gcd(a,b)= p_{1} ^{\min(\beta_1, \alpha_1)} p_{2} ^{\min(\beta_2, \alpha_2)} \ldots p_{n}^{\min(\beta_n, \alpha_n)} \]
+	Where, \(\alpha_i, \beta_i \in \NN_0 \).
+	
+\end{claim}
+
+This is simply a consequence of the definition of \(\gcd\).
+
+\begin{definition}
+	[GCD]
+	We may now state that the following are equivalent.
+	\begin{itemize}
+		\ii \( \gcd(a,b) = A \cap B  \)		
+		\ii \(\gcd(a,b)\) is the greatest integer which divides both \(a\) and \(b\). In particular, \(\gcd(a,b) \le a, b\).
+		\ii Let \(a = p_{1} ^{\alpha_1} p_{2} ^{\alpha_2} \ldots p_{n}^{\alpha_n}\), \(b = p_{1} ^{\beta_1} p_{2} ^{\beta_2} \ldots p_{n}^{\beta_n}\). Then, \[\gcd(a,b)= p_{1} ^{\min(\beta_1, \alpha_1)} p_{2} ^{\min(\beta_2, \alpha_2)} \ldots p_{n}^{\min(\beta_n, \alpha_n)} \]
+		Where, \(\alpha_i, \beta_i \in \NN_0 \).
+	\end{itemize}
+	
+\end{definition}
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[funcgraph]
+			\addplot [red, domain=-180:180, samples=100]{sin(x)};
+		\end{axis}
+	\end{tikzpicture}
+	\label{sin}
+	\caption{\(\sin(x)\)}
+\end{figure}
+
+
+\subsection{LCM}
+
+\begin{definition}
+	[LCM]
+	The following three definitions are equivalent.
+	\begin{itemize}
+		\ii \(\lcm(a,b) = A \cup B\)
+		\ii \(\lcm(a,b)\) is the least number divisible by both \(a\) and \(b\). Particularly, \(\lcm(a,b) \ge a,b\).
+		\ii Let \(a = p_{1} ^{\alpha_1} p_{2} ^{\alpha_2} \ldots p_{n}^{\alpha_n}\), \(b = p_{1} ^{\beta_1} p_{2} ^{\beta_2} \ldots p_{n}^{\beta_n}\). Then, \[\lcm(a,b)= p_{1} ^{\max(\beta_1, \alpha_1)} p_{2} ^{\max(\beta_2, \alpha_2)} \ldots p_{n}^{\max(\beta_n, \alpha_n)} \]
+	\end{itemize}
+	
+	
+\end{definition}
+
+
+From the definitions of \(\gcd\) and \(\lcm\) we obtain the following very important theorem.
+
+\begin{theorem}
+	\[\lcm(a,b)\cdot \gcd(a,b) = a\cdot b \]
+\end{theorem}
+
+\begin{proof}
+	
+	
+	\begin{align*}
+		\gcd(a,b) \cdot \lcm(a,b) &= p_{1}^{\min(\alpha_1,\beta_1) + max(\alpha_1,\beta_1)} \ldots p_{n}^{(\max(\alpha_n, \beta_n) + \min(\alpha_n, \beta_n))}\\
+		&= p_{1}^{\alpha_1 + \beta_1} \ldots p_2^{\alpha_n + \beta_n}\\
+		&= a\cdot b
+	\end{align*}	
+	
+	
+\end{proof}
+
+
+
+\section{Co-prime}
+
+\begin{definition}
+	Two numbers, \(a, b\) are called co-prime if \(\gcd(a,b)=1\).
+\end{definition}
+
+\begin{definition}
+	A number \(x\) is pairwise co-prime to \(n\) other numbers \(p_{1}, p_{2} \ldots p_{n}\), if \( \gcd(x, p_1) = \gcd(x, p_2) \ldots = \gcd(x, p_n) =1 \).
+\end{definition}
+
+\section{Infinitude of Primes}
+
+
+
+\begin{theorem}
+	[Euclid]
+	There are infinitely many primes.
+\end{theorem}
+
+\begin{proof}
+	Let there be finitely many primes, \(\manys{p}{n}\). Define \( N \) as \( \many{p}{n} + 1 \).
+	\par
+	Note that \(N\) is pairwise co-prime to all, \(\many{p}{n}\) because if \(p_i \in \manys{p}{n} \mid N \) and \(p_i \mid \many{p}{n} \iff p_i \mid 1\). But, \( p_i \in \NN \implies p_i = 1 \) which is absurd.
+	\\
+	\par Since \(N \in \NN\), \(N\) must have a prime factor, \(p\) because of \Cref{thm: fta}. And \(p \notin \manys{p}{n}\) because \(N \) is pairwise co-prime to all primes in \(\manys{p}{n}\). This contradicts our assumption that \(\manys{p}{n}\) was the set of all primes, proving that there are infintely many primes.
+	
+
+
+\end{proof}
+
+
+\begin{tikzpicture}
+	\tkzDefPoints{0/0/A,2/5/B,3/2/C}
+	\tkzDrawPolygon(A,B,C)
+\end{tikzpicture}
+
+\todo{Add motivation for stuff}
+
+
+
+

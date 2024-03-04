@@ -1,0 +1,182 @@
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+\usetikzlibrary{shadows}
+% https://tex.stackexchange.com/a/292090/76888
+% https://github.com/marcodaniel/mdframed/issues/12
+\xpatchcmd{\endmdframed}
+{\aftergroup\endmdf@trivlist\color@endgroup}
+{\endmdf@trivlist\color@endgroup\@doendpe}
+{}{}
+
+\mdfdefinestyle{mdbluebox}{%
+	roundcorner=0pt,
+	linewidth=1pt,
+	skipabove=12pt,
+	innerbottommargin=9pt,
+	skipbelow=2pt,
+	linecolor=TealBlue!35,
+	nobreak=true,
+	backgroundcolor=TealBlue!5,
+}
+\declaretheoremstyle[
+headfont=\rmfamily\bfseries\color{TealBlue},
+mdframed={style=mdbluebox},
+headpunct={\\[3pt]},
+postheadspace={0pt}
+]{thmbluebox}
+
+\mdfdefinestyle{mdredbox}{%
+	linewidth=0.5pt,
+	skipabove=12pt,
+	frametitleaboveskip=5pt,
+	frametitlebelowskip=0pt,
+	skipbelow=2pt,
+	frametitlefont=\bfseries,
+	innertopmargin=4pt,
+	innerbottommargin=8pt,
+	nobreak=true,
+	backgroundcolor=Salmon!5,
+	linecolor=Salmon!35,
+}
+\declaretheoremstyle[
+headfont=\bfseries\color{RawSienna},
+mdframed={style=mdredbox},
+headpunct={\\[3pt]},
+postheadspace={0pt},
+]{thmredbox}
+
+\mdfdefinestyle{mdgreenbox}{%
+	skipabove=8pt,
+	skipbelow=0pt,
+	linewidth=2pt,
+	rightline=false,
+	leftline=true,
+	topline=false,
+	bottomline=false,
+	linecolor=ForestGreen!40,
+	backgroundcolor=ForestGreen!4,
+}
+\declaretheoremstyle[
+headfont=\bfseries\rmfamily\color{ForestGreen},
+bodyfont=\normalfont,
+spaceabove=2pt,
+spacebelow=1pt,
+mdframed={style=mdgreenbox},
+headpunct={ --- },
+]{thmgreenbox}
+
+\mdfdefinestyle{mdblackbox}{%
+	skipabove=8pt,
+	linewidth=3pt,
+	rightline=false,
+	leftline=true,
+	topline=false,
+	bottomline=false,
+	linecolor=black,
+	backgroundcolor=RedViolet!5!gray!5,
+}
+\declaretheoremstyle[
+headfont=\bfseries,
+bodyfont=\normalfont\small,
+spaceabove=0pt,
+spacebelow=0pt,
+mdframed={style=mdblackbox}
+]{thmblackbox}
+
+\mdfdefinestyle{mdpurplebox}{%
+	roundcorner=0pt,
+	linewidth=1pt,
+	skipabove=12pt,
+	skipbelow=12pt,
+	innertopmargin=9pt,
+	innerbottommargin=9pt,
+	linecolor=Orchid!35,
+	nobreak=true,
+	backgroundcolor=Orchid!5,
+	frametitleaboveskip=8pt,
+	frametitlebelowskip=8pt,
+	frametitlebackgroundcolor=Violet!50!black,
+	frametitlefont=\bfseries\sffamily\color{white},
+	frametitlerule=true,
+}
+\declaretheoremstyle[
+headfont=\rmfamily\bfseries\color{Orchid},
+mdframed={style=mdpurplebox},
+headpunct={\\[3pt]},
+postheadspace={0pt}
+]{thmpurplebox}
+\newcommand{\listhack}{$\empty$\vspace{-2em}}
+
+\theoremstyle{definition}
+\declaretheorem[style=thmbluebox,name=Theorem,numberwithin=section]{theorem}
+
+\declaretheorem[style=thmbluebox,name=Theorem,numbered=no]{theorem*}
+\declaretheorem[style=thmbluebox,name=Lemma,numbered=no]{lemma*}
+\declaretheorem[style=thmbluebox,name=Lemma,sibling=theorem]{lemma}
+
+
+\declaretheorem[style=thmgreenbox,name=Proposition,numbered=no]{proposition*}
+\declaretheorem[style=thmgreenbox,name=Corollary,numbered=no]{corollary*}
+\declaretheorem[style=thmgreenbox,name=Assumption,numbered=no]{assume*}
+\declaretheorem[style=thmgreenbox,name=Proposition,sibling=theorem]{proposition}
+\declaretheorem[style=thmgreenbox,name=Corollary,sibling=theorem]{corollary}
+\declaretheorem[style=thmgreenbox,name=Assumption,sibling=theorem]{assume}
+\declaretheorem[style=thmgreenbox,name=Algorithm,sibling=theorem]{algorithm}
+\declaretheorem[style=thmgreenbox,name=Algorithm,numbered=no]{algorithm*}
+\declaretheorem[style=thmgreenbox,name=Claim,sibling=theorem]{claim}
+\declaretheorem[style=thmgreenbox,name=Claim,numbered=no]{claim*}
+
+\declaretheorem[style=thmredbox,name=Example,sibling=theorem]{example}
+\declaretheorem[style=thmredbox,name=Example,numbered=no]{example*}
+
+
+% Remark-style theorems
+\declaretheorem[style=thmblackbox,name=Remark,sibling=theorem]{remark}
+\declaretheorem[style=thmblackbox,name=Remark,numbered=no]{remark*}
+
+
+
+\declaretheoremstyle[
+headfont=\color{blue!40!black}\normalfont\bfseries,
+spaceabove=8pt,
+spacebelow=8pt,
+bodyfont=\normalfont
+]{basehead}
+
+\declaretheoremstyle[spaceabove=6pt,spacebelow=6pt]{basehead}
+
+
+\declaretheorem[style=basehead,name=Answer,sibling=theorem]{answer}
+\declaretheorem[style=basehead,name=Answer,numbered=no]{answer*}
+
+\declaretheorem[style=thmpurplebox,name=Conjecture,sibling=theorem]{conjecture}
+\declaretheorem[style=thmpurplebox,name=Conjecture,numbered=no]{conjecture*}
+\declaretheorem[style=thmpurplebox,name=Definition,sibling=theorem]{definition}
+\declaretheorem[style=thmpurplebox,name=Definition,numbered=no]{definition*}
+
+\declaretheorem[style=basehead,name=Exercise,sibling=theorem]{exercise}
+\declaretheorem[style=basehead,name=Exercise,numbered=no]{exercise*}
+\declaretheorem[style=basehead,name=Fact,sibling=theorem]{fact}
+\declaretheorem[style=basehead,name=Fact,numbered=no]{fact*}
+\declaretheorem[style=basehead,name=Problem,sibling=theorem]{problem}
+\declaretheorem[style=basehead,name=Problem,numbered=no]{problem*}
+\declaretheorem[style=basehead,name=Question,sibling=theorem]{ques}
+\declaretheorem[style=basehead,name=Question,numbered=no]{ques*}
+
+\Crefname{answer}{Answer}{Answers}
+\Crefname{assume}{Assumption}{Assumptions}
+\Crefname{claim}{Claim}{Claims}
+\Crefname{conjecture}{Conjecture}{Conjectures}
+\Crefname{exercise}{Exercise}{Exercises}
+\Crefname{fact}{Fact}{Facts}
+\Crefname{problem}{Problem}{Problems}
+\Crefname{ques}{Question}{Questions}
+
+\newcommand{\motiv}[1]{
+	\emph{{\color{red} Motivation:} #1} \par\medskip
+}
+\newenvironment{moral}{%
+	\begin{mdframed}[linecolor=green!70!black]%
+		\bfseries\color{green!50!black}}%
+	{\end{mdframed}}

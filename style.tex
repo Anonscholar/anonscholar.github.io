@@ -1,0 +1,151 @@
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+
+\usepackage[dvipsnames]{xcolor}
+\definecolor{Darkgreen}{rgb}{0,0.4,0}
+
+\usepackage[explicit]{titlesec}
+
+\setcounter{tocdepth}{1}
+
+\RedeclareSectionCommands{section}
+\RedeclareSectionCommands{subsection}
+
+\usepackage{etoolbox}
+\usepackage[colorlinks,linktoc=page]{hyperref}
+\hypersetup{
+linkcolor=ForestGreen
+}
+
+\usepackage{titletoc}
+
+\titlecontents{chapter}[0pt]
+{\vskip15pt\llap{\makebox[3em]{\oldstylenums{\thecontentspage\hfill\thecontentslabel}}\hskip1em}
+	\small\scshape\vskip-\baselineskip}{}{}{}
+\titlecontents*{section}[20pt]
+{\upshape}{}{}
+{, \oldstylenums{\thecontentspage}}[][\ \textbullet\ ][]
+
+\usepackage{amsmath, amsthm, thmtools}
+
+
+\setkomafont{disposition}{\bfseries\rmfamily}
+\usepackage[object=vectorian]{pgfornament}
+\usepackage{titling}
+\usepackage{xparse}
+\usepackage{lipsum}
+
+\usepackage{eso-pic}
+\newcommand\AtPageUpperRight[1]{\AtPageUpperLeft{%
+		\put(\LenToUnit{\paperwidth},\LenToUnit{0\paperheight}){#1}%
+}}%
+\newcommand\AtPageLowerRight[1]{\AtPageLowerLeft{%
+		\put(\LenToUnit{\paperwidth},\LenToUnit{0\paperheight}){#1}%
+}}%
+
+\AddToShipoutPictureBG{%
+	\AtPageUpperLeft{\put(0,-25){\pgfornament[width=1.75cm]{61}}}
+	\AtPageUpperRight{\put(-50,-25){\pgfornament[width=1.75cm,symmetry=v]{61}}}
+	\AtPageLowerLeft{\put(0,25){\pgfornament[width=1.75cm,symmetry=h]{61}}}
+	\AtPageLowerRight{\put(-50,25){\pgfornament[width=1.75cm,symmetry=c]{61}}}
+}
+
+\titleformat{\part}[display]
+{\Huge\filcenter}
+{\partname \, {\bfseries \color{purple}\thepart}}
+{2em}
+{\pgfornament{87}%
+	\vspace{2em}%
+	\begin{center}
+		{\em#1}
+	\end{center}
+}
+
+
+
+
+\renewcommand*{\sectionformat}%
+{\color{purple}\rmfamily\S\thesection\enskip}
+\renewcommand*{\subsectionformat}%
+{\color{purple}\rmfamily\S\thesubsection\enskip}
+\renewcommand*{\subsubsectionformat}%
+{\color{purple}\S\thesubsubsection\enskip}
+\addtokomafont{paragraph}{\color{orange!35!black}\P\ }
+\KOMAoptions{numbers=noenddot}
+%\usetocstyle{KOMAlike}
+
+
+\titleformat{\chapter}[display]
+{\bfseries\Large}
+{\filleft\MakeUppercase{\chaptertitlename} \Huge{\color{purple}\thechapter}}
+{8pt}
+{
+	\pgfornament{89}%
+	\vspace{2ex}%
+	\begin{center}
+		\pgfornament[scale=0.4]{79}\huge\bfseries\filcenter \enspace  #1 \enspace \pgfornament[scale=0.4]{78}
+	\end{center}
+}
+
+\newcommand{\descrip}[1]{\def \thedescrip{#1}}
+
+
+\NewDocumentCommand{\fncytitle}{s}{
+	\begin{titlepage}
+		\topskip0pt
+		\vspace*{10em}
+		\begin{center}
+			{\pgfornament[scale=0.35, ydelta=-7pt, symmetry=v]{11} \em \Huge  \thetitle \ \pgfornament[scale=0.35, ydelta=-7pt]{11}}
+			{\par \vspace*{1em}\hspace{20em} \thedescrip  \large }
+		\end{center}
+		\vspace{14em}
+		{ \bfseries \Large \theauthor \hfill \thedate}
+	\end{titlepage}
+}
+
+
+
+\usepackage[
+automark,
+autooneside=false,
+headsepline
+]{scrlayer-scrpage}
+\clearpairofpagestyles
+\ihead{\em \bfseries\theauthor}
+\ohead{\ifstr{\leftmark}{\rightbotmark}{}{\rightbotmark}}
+\cfoot{\pagemark}
+
+
+
+\usepackage[nameinlink]{cleveref}
+\usepackage{todonotes}
+\usepackage{tikz}
+  \usetikzlibrary{arrows.meta,}
+\usepackage{pgfplots}
+\pgfplotsset{width=7cm,compat=1.18}
+\pgfplotsset{
+	funcgraphbare/.style={
+		axis x line=center,
+		axis y line=center,
+		ticks=none,
+	},
+	funcgraph/.style={
+		funcgraphbare,
+		xlabel={\(x\)},
+		ylabel={\(y\)},
+	},
+}
+
+
+\usepackage{physics}
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{cancel}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{extarrows}
+\usepackage{booktabs}
+\usepackage{tkz-euclide}
