@@ -1,0 +1,13 @@
+*.aux
+*.toc
+*.png
+*.log
+*.synctex.gz
+*.dvi
+*.maf
+*.mtc
+*.mtc0
+*.out
+*.out.ps
+*.raw3
+*.tex.recover
