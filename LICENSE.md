@@ -1,4 +1,5 @@
 For the theorems and macros file, much has been borrowed from Evan's [evan.sty](https://github.com/vEnhance/dotfiles/blob/main/texmf/tex/latex/evan/evan.sty).
+His license:
 
 Boost Software License - Version 1.0 - August 17th, 2003
 
