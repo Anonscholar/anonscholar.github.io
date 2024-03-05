@@ -16,8 +16,8 @@
 \providecommand{\half}{\frac{1}{2}}
 \newcommand{\catname}{\mathsf}
 \newcommand{\hrulebar}{
-	\par\hspace{\fill}\rule{0.95\linewidth}{.7pt}\hspace{\fill}
-	\par\nointerlineskip \vspace{\baselineskip}
+    \par\hspace{\fill}\rule{0.95\linewidth}{.7pt}\hspace{\fill}
+    \par\nointerlineskip \vspace{\baselineskip}
 }
 \providecommand{\arc}[1]{\wideparen{#1}}
 
@@ -63,6 +63,7 @@
 \newcommand{\ray}[1]{\overrightarrow{#1}}
 \newcommand{\seg}[1]{\overline{#1}}
 
+
 %From M275 "Topology" at SJSU
 \DeclareMathOperator{\id}{id}
 \newcommand{\taking}[1]{\xrightarrow{#1}}
@@ -80,8 +81,8 @@
 
 % From Math 55 and Math 145 at Harvard
 \newenvironment{subproof}[1][Proof]{%
-	\begin{proof}[#1] \renewcommand{\qedsymbol}{$\blacksquare$}}%
-	{\end{proof}}
+    \begin{proof}[#1] \renewcommand{\qedsymbol}{$\blacksquare$}}%
+    {\end{proof}}
 
 \newcommand{\liff}{\leftrightarrow}
 \newcommand{\lthen}{\rightarrow}
@@ -140,15 +141,8 @@
 \newcommand{\kq}{\mathfrak q}
 
 
-%figures
+%aliases
+\newcommand{\source}[1]{\emph{#1}}
+\newcommand{\para}[1]{#1 \par}
+\newcommand{\parbreak}{\medskip}
 
-
-\usepackage{import}
-\usepackage{xifthen}
-\usepackage{pdfpages}
-\usepackage{transparent}
-
-\newcommand{\incfig}[1]{%
-	\def\svgwidth{\columnwidth}
-	\import{../figures/}{#1.pdf}
-}
