@@ -1,5 +1,6 @@
-\usepackage[a4paper, portrait, margin=1in]{geometry}
-
+\usepackage[top=1in,bottom=1in,left=2cm,right=2cm,portrait]{geometry}
+\usepackage[texindy]{imakeidx}
+\makeindex[intoc]
 \usepackage[dvipsnames]{xcolor}
 \definecolor{Darkgreen}{rgb}{0,0.4,0}
 
@@ -11,19 +12,25 @@
 \RedeclareSectionCommands{subsection}
 
 \usepackage{etoolbox}
-\usepackage[colorlinks,linktoc=page]{hyperref}
+\usepackage[linktoc=page]{hyperref}
 \hypersetup{
-linkcolor=ForestGreen
+colorlinks=true,
+linkcolor=ForestGreen,
+citecolor=RawSienna
 }
 
+
 \usepackage{titletoc}
+
+
 %Magic Mountain style toc
 \titlecontents{chapter}[0pt]
-{\vskip15pt\llap{\makebox[3em]{\oldstylenums{\thecontentspage\hfill\thecontentslabel}}\hskip1em}
-    \small\scshape\vskip-\baselineskip}{}{}{}
+{\vskip15pt\llap{\makebox[3em]{{\thecontentspage\hfill\thecontentslabel}}\hskip1em}
+    \small\bfseries\vskip-\baselineskip}{}{}{}
 \titlecontents*{section}[20pt]
 {\upshape}{}{}
-{, \oldstylenums{\thecontentspage}}[][\ \textbullet\ ][]
+{\, \oldstylenums{\thecontentspage}}[][\ \textbullet\ ][]
+
 
 \usepackage{amsmath, amsthm, thmtools}
 
@@ -64,9 +71,7 @@ linkcolor=ForestGreen
 }
 
 
-
 %section formatting
-
 \renewcommand*{\sectionformat}%
 {\color{ForestGreen}\rmfamily\S\thesection\enskip}
 \renewcommand*{\subsectionformat}%
@@ -85,10 +90,10 @@ linkcolor=ForestGreen
 {\filleft\MakeUppercase{\chaptertitlename} \Huge{\color{ForestGreen}\thechapter}}
 {8pt}
 {
-    \pgfornament{89}%
+    \hspace{1.5em}\pgfornament{89}%
     \vspace{2ex}%
     \begin{center}
-        \pgfornament[scale=0.4]{79}\huge\bfseries\filcenter \enspace  #1 \enspace \pgfornament[scale=0.4]{78}
+     \pgfornament[scale=0.4]{79}\huge\bfseries\filcenter \enspace  #1 \enspace \pgfornament[scale=0.4]{78}
     \end{center}
 }
 
@@ -128,11 +133,13 @@ autooneside=false,
 headsepline
 ]{scrlayer-scrpage}
 \clearpairofpagestyles
-\ihead{\pagemark}
-\ohead{\ifstr{\leftmark}{\rightbotmark}{}{\rightbotmark}}
+\lehead{\pagemark}
+\rohead{\pagemark}
+\rehead{\em \theauthor}
+\lohead{\ifstr{\leftmark}{\rightbotmark}{}{\rightbotmark}}
 
 
-
+%some graph stuff
 \usepackage[nameinlink]{cleveref}
 \usepackage{todonotes}
 \usepackage{tikz}
@@ -155,17 +162,9 @@ headsepline
 
 \usepackage{physics}
 \usepackage{mathdots}
-\usepackage{yhmath}
-\usepackage{cancel}
-\usepackage{siunitx}
-\usepackage{array}
-\usepackage{multirow}
-\usepackage{gensymb}
-\usepackage{tabularx}
-\usepackage{extarrows}
-\usepackage{booktabs}
 \usepackage{tkz-euclide}
 \usepackage{babel}
+
 
 \makeatletter
 \newenvironment{chapquote}[2][8em]
@@ -176,3 +175,5 @@ headsepline
   {\par \normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
 \makeatother
 
+
+\let\cleardoublepage=\clearpage

@@ -1,26 +1,25 @@
-\documentclass[oneside, a4paper, 10pt]{scrbook}
+\documentclass[twoside, a4paper, 10pt, bibliography=totoc, index=totoc, listof=totoc, openany]{scrbook}
 
 
 \include{../style.tex}
 \include{../theorems.tex}
 \include{../macros.tex}
 
+
 \begin{document}
+%https://tex.stackexchange.com/questions/249475/index-hyperlink-not-pointing-to-correct-page
+\pagenumbering{roman}
     \descrip{a journey into olympiad mathematics}
     \author{Adyansh Mishra}
     \date{\today}
     \title{An Olympiad Notebook}
     \fncytitle
-    
-\tableofcontents
-    
 
-    
-    
+    \tableofcontents
+     
     \frontmatter
     \include{intro}
-    
-    
+
     \mainmatter 
     \part{Number Theory}
     \include{nt/divisibility}
@@ -34,4 +33,19 @@
     \section{The theory}
     Yeah so?
     
+    \backmatter
+    \printindex
+    \begin{thebibliography}{5}
+
+        \bibitem{egmo}
+          Evan Chen,
+          \textit{Euclidean Geometry in Mathematical Olympiads},
+          MAA Press,
+          2016.
+        \bibitem{mont}
+            Aditya Khurmi,
+            \emph{Modern Olympiad Number Theory},
+            2020
+    \end{thebibliography}
+
 \end{document}

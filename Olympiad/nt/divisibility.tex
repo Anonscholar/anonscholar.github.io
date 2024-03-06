@@ -2,49 +2,64 @@
 \label{nt: div}
 
 
-{\begin{chapquote}{Euclid of \source{Alexandaria}}
-``Give him threepence, since he must gain out of what he learns''
-\end{chapquote}}
+\begin{chapquote}{Euclid of \source{Alexandaria}}
+``Give him threepence, since he must make gain out of what he learns''
+\end{chapquote}
 
-\motiv{The easier it is, the grander its uses are.}
+\motiv{Divisibility forms the basis of all of Number Theory.}
 
 \section{Basic Properties}
+
+\para{
+    The idea of divisibility is something most people are familiar with. Yet, it is a notion so useful, that we may
+    yet again acquaint ourselves with it and its properties.
+    This time, however, we are going to approach it with formality and use its property in a general, and abstract manner.
+    For this, let us first define division for the integers.
+}
+
+\index{division}
 
 \begin{definition}
     [Division]
     The operation division is defined as:
     \begin{enumerate}
         \item An integer \(y\) is said to be a multiple of \(x\) if \[y\in \{kx : k\in \ZZ \} \]
-        \item If \(y\) is a multiple of \(x\) then, \(y\) is \textit{divisible} by \(x\) and \(x\) divides \(y\) which is written as: \[x \mid y.\]
+        \item If \(y\) is a multiple of \(x\) then, \(y\) is \emph{divisible} by 
+        \(x\) and \(x\) divides \(y\) which is written as: \[x \mid y.\]
     \end{enumerate}
 \end{definition}
 
-\begin{proposition}
-    Let \(x\), \(y\), \(z\) \(\in\) \(\ZZ\)
+\para{
+    Immediately, we can put forth some \emph{propositions} from these definitions. They may not be obvious from first glance
+    but they are indeed very easy to get an intuitive grasp on after we have seen them.
+}
+
+\begin{plainprop*}
+    For \(x\), \(y\), \(z\) \(\in\) \(\ZZ\)
     \begin{enumerate}
         \item \(\forall x \ne 0\), \(x \mid x\) and \(x \mid 0\).
         \item \(1 \mid x\).
         \item \(x\mid y\) and \(y \mid z \implies \) \(x \mid z\).
         \item \(x \mid y \iff \dfrac{y}{x} \in \ZZ\)
-    \end{enumerate}
-    
-    
-\end{proposition}
+    \end{enumerate}        
+\end{plainprop*}
 
-\para{Most of the proofs here are trivial, but let us show that using the last proposition we can prove the third one.}
+\para{Most of the proofs here are trivial, but let us show that
+using the last proposition we can prove the third one.}
 
 \begin{proof}
     \( x \mid y \iff \dfrac{y}{x} \in \ZZ \) and \(  y \mid z \iff \dfrac{z}{y} \in \ZZ \). But \( \dfrac{z}{x}= \dfrac{y}{x}\cdot\dfrac{z}{y} \in \ZZ \iff x\mid z\).
 \end{proof}
 
 
-We may note that because of the definition of division, we get the following theorem:
+\para{We may note that because of the definition of division, we get the following theorem:}
 
 \begin{theorem}
     If \(x \mid y\), then either \(\abs{y} \ge \abs{x} \) or \(y=0\).
 \end{theorem}
 
-The \(0\) case is extremely important and often hard to see. Remember to look out for this case.
+\para{The \(0\) case is extremely important and often hard to see. 
+Remember to look out for this case.}
 
 \begin{proof}
     \(\abs{y}=\abs{k\cdot x}= \abs{k}\cdot \abs{x}\). But, \( \abs{k}\cdot \abs{x} \ge \abs{x} \iff \abs{y} \ge \abs{x}\). Note here that \(k\) is not taken to be \(0\) since, \(y=k\cdot x=0\cdot x=0\). But this case is already mentioned.
@@ -52,7 +67,8 @@ The \(0\) case is extremely important and often hard to see. Remember to look ou
 
 
 
-\para{The following is not of a severe importance in the view that it is hard to see or prove. But it allows us to quickly formalise our solutions and is thus useful for proofs.}
+\para{The following is not of a severe importance in the view that it is hard to see or prove. 
+But it allows us to quickly formalise our solutions and is thus useful for proofs.}
 
 \begin{lemma}
     \label{lem: unimp}
@@ -289,7 +305,7 @@ From the definitions of \(\gcd\) and \(\lcm\) we obtain the following very impor
 
 \end{proof}
 
-\todo{Add motivation for stuff}
+\todo[inline]{Add motivation for stuff}
 
 
 
