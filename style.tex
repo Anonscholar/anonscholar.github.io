@@ -1,8 +1,24 @@
-\usepackage[top=1in,bottom=1in,left=2cm,right=3.5cm,marginparwidth=75pt]{geometry}
+\usepackage[top=1in,bottom=1in,left=2cm,right=4cm,marginparwidth=75pt]{geometry}
 \usepackage[texindy]{imakeidx}
 \makeindex[intoc]
 \usepackage[dvipsnames]{xcolor}
 \definecolor{Darkgreen}{rgb}{0,0.4,0}
+
+
+
+%header, footers
+\usepackage[
+automark,
+autooneside=false,
+headsepline
+]{scrlayer-scrpage}
+\clearpairofpagestyles
+\lehead{\pagemark}
+\rohead{\pagemark}
+\rehead{\em \theauthor}
+\lohead{\ifstr{\leftmark}{\rightbotmark}{}{\rightbotmark}}
+
+
 
 \usepackage[explicit]{titlesec}
 
@@ -125,17 +141,6 @@ citecolor=RawSienna
 %bold pages
 \addtokomafont{pagenumber}{\bfseries}
 
-%header, footers
-\usepackage[
-automark,
-autooneside=false,
-headsepline
-]{scrlayer-scrpage}
-\clearpairofpagestyles
-\lehead{\pagemark}
-\rohead{\pagemark}
-\rehead{\em \theauthor}
-\lohead{\ifstr{\leftmark}{\rightbotmark}{}{\rightbotmark}}
 
 
 %some graph stuff
@@ -163,7 +168,8 @@ headsepline
 \usepackage{mathdots}
 \usepackage{tkz-euclide}
 \usepackage{babel}
-
+\usepackage{float}
+\usepackage{caption}
 
 \makeatletter
 \newenvironment{chapquote}[2][8em]
