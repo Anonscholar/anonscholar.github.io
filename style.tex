@@ -170,15 +170,8 @@ citecolor=RawSienna
 \usepackage{babel}
 \usepackage{float}
 \usepackage{caption}
+\usepackage{paralist}
 
-\makeatletter
-\newenvironment{chapquote}[2][8em]
-  {\setlength{\@tempdima}{#1}%
-   \def\chapquote@author{#2}%
-   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
-   \itshape}
-  {\par \normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
-\makeatother
 
 \usepackage{epigraph}
 
