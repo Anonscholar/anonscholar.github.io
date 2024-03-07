@@ -11,8 +11,8 @@ an indepth discussion of sets is beyond these notes, and their axiomation is com
 shall not let this affect us and discuss a less rigorous formalisation of sets. 
 Namely, \emph{Naive Set Theory}.}
 
-\marginpar{\raggedright Do not let these definitions fool you! We have not and will not define what we mean
-by collections or elements. That is what makes this theory \emph{naive}.}
+\marginpar{\raggedright These definitions are superficious We have not and will not define what
+we mean by collection or elements. That is what makes this theory \emph{naive}.}
 
 \begin{definition}
     A set is any collection of elements.\\
@@ -31,6 +31,9 @@ elements all flowers. We denoted this by saying that \(S\) is the set of all \(x
 Here, \( P(x)\) represents the condition. We use the different symbols depending on the context,
 mostly for ensuring that the statements are clear.
 }
+
+\marginpar{\raggedright Do not be overwhelmed by terms like ``set builder notation''. They're only formal
+names and not something to remember.}
 
 \begin{remark}
     Notice the equality symbol between \(S\) and \( \{x : P(x)\} \). Generally, we denote sets
@@ -54,9 +57,24 @@ mostly for ensuring that the statements are clear.
     \end{enumerate}
 \end{example}
 
-\marginpar{The symbol \(\in\) for \(x \in S\) is used to show that \(x\) is an element
-of \(S\).}
+\marginpar{The symbol \(\in\) in \(x \in S\) is used to show that \(x\) is an element
+of \(S\). It may be read as `in'.}
 
 \begin{example}
     The cartesian plane is also a set. It defined as \[\{(x,y) \mid x, y \in \RR\}\]
 \end{example}
+
+\para{The next section is skippable, and I advise you to skip it if you're reviewing or are not interested
+in extra stuff at all.}
+
+\subsection{Why Naive?}
+
+\para{One interesting formulation possible in naive set-theory is the ``Russel's Paradox''. 
+It goes as follows.
+Let \(S\) be a set \(\{x \mid x \notin S\}\). Basically, \(S\) is the set of all elements
+not in \(S\). This leads to a paradox because for \(x\) to be in \(S\), it has to follow
+the condition that it is not in \(S\)! And any element not in \(S\) must be in \(S\).}
+\para{There is no particular solution to this using naive set-theory. This is one of the reasons
+why this discussion of sets is so naive.}
+
+\section{Subsets and E`quality}
