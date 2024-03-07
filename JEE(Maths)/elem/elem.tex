@@ -1,0 +1,62 @@
+\chapter{Sets and Manipulations}
+\epigraph{``You don't have to be great to start, but you have to start
+to be great.''}{\auth{Zig Ziglar}}
+
+\section{Naive Set Theory}
+
+\motiv{There is little Mathematics that does not use the language of sets.}
+
+\para{Sets are perhaps the most important structures in all of Mathematics. Although
+an indepth discussion of sets is beyond these notes, and their axiomation is complicated, we 
+shall not let this affect us and discuss a less rigorous formalisation of sets. 
+Namely, \emph{Naive Set Theory}.}
+
+\marginpar{\raggedright Do not let these definitions fool you! We have not and will not define what we mean
+by collections or elements. That is what makes this theory \emph{naive}.}
+
+\begin{definition}
+    A set is any collection of elements.\\
+    It is denoted as \(\{a,b,c\}\) where \(a,b, c\) are elements of the set.
+\end{definition}
+
+\para{Well, what do we mean by any collection? To give a few examples, the set of flowers
+would be \{roses, lilies, sunflowers, \ldots\} The trailing \ldots are used to show
+that the elements continue on \emph{ad infinitum}. Hence, any collection of objects is a set.}
+
+\para{Often, instead of manually writing out \{roses, lilies, sunflowers, \ldots\}, we will
+use a condition that each element in the set follows. Here, the condition is that all
+elements all flowers. We denoted this by saying that \(S\) is the set of all \(x\) such that 
+\(x\) is a flower. We represent this in what is called \emph{Set-Builder} notation. Thus,
+\[S = \{x : P(x)\} \quad \text{or} \quad S = \{x \mid P(x)\}\] 
+Here, \( P(x)\) represents the condition. We use the different symbols depending on the context,
+mostly for ensuring that the statements are clear.
+}
+
+\begin{remark}
+    Notice the equality symbol between \(S\) and \( \{x : P(x)\} \). Generally, we denote sets
+    as capital latin letters \(A, B, C, \ldots\), and their elements by little latin
+    letters \(a, b, c, \ldots\).
+\end{remark}
+
+\begin{example}
+    The sets of all Natural numbers is denoted by \(\NN\). Generally, it is either used to 
+    represent \( \{0, 1, 2, \ldots\} \) or \( \{1, 2, 3, \ldots\} \). It matters little.
+    We will let \(\NN = \{1, 2, 3, \ldots\}\) and \(\NNO = \{0, 1, 2, \ldots\}\) in this text 
+\end{example}
+
+\begin{example}
+    The other common sets are similarly denoted by \emph{blackboard bold} letters as well.
+    \begin{enumerate}
+        \ii \(\ZZ\) is the set of all integers.
+        \ii \(\QQ\) is the set of all rationals.
+        \ii \(\RR\) is the set of all reals.
+        \ii \(\CC\) is set of all complex numbers.
+    \end{enumerate}
+\end{example}
+
+\marginpar{The symbol \(\in\) for \(x \in S\) is used to show that \(x\) is an element
+of \(S\).}
+
+\begin{example}
+    The cartesian plane is also a set. It defined as \[\{(x,y) \mid x, y \in \RR\}\]
+\end{example}
