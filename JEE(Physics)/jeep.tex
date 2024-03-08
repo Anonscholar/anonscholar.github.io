@@ -9,7 +9,7 @@
 \begin{document}
 %https://tex.stackexchange.com/questions/249475/index-hyperlink-not-pointing-to-correct-page
 \pagenumbering{roman}
-    \descrip{Part 1: on Mathematics}
+    \descrip{Part 2: on Physics}
     \author{Adyansh Mishra}
     \date{\today}
     \title{A JEE Notebook}
@@ -21,15 +21,11 @@
     \input{intro.tex}
     
     \mainmatter
-    \setcounter{chapter}{-1}
-    \input{elem/elem.tex}
+    \setcounter{chapter}{-2}
+    \input{elem/math.tex}
+    \input{elem/ud.tex}
 
-    \newgeometry{right=1.5cm}
-    \part{Calculus}
-    \restoregeometry
-    \input{calc/func.tex}
-
-    \part{Appendices}
-    \appendix
-    \input{app/logic.tex}
+    \part{Mechanics}
+    \input{mech/kin.tex}
+  
 \end{document}
