@@ -1,1 +1,55 @@
 \chapter{Functions and Relations}
+\section{Relation}
+
+\marginpar{}
+
+\marginpar{Cartesian Product \Cref{sec: ctp}}
+
+\para{A relation between two sets \(A\), \(B\) is the subset of their \emph{cartesian
+product} \(A \times B\).}
+\para{Since, a cartesian product between \(A\) and \(B\) is also a set of the ordered pairs, so
+is a relation \(R\),\[
+    R \subseteq \{(a,b) \mid a \in A, b \in B\}
+\]}
+\para{There need not be any specific relation between the two elements. But often, it is useful
+to talk about relations which employ a specific relationship between the two elements.
+Hence, we can think of a relation as somehow connecting the two elements.}
+\para{A relation on a set \(A\) is simply the subset of \(A \times A\).}
+
+\begin{example}
+    Consider sets \(A = \{2, 4, 6, 8, \dots\}\) and \(B = \{1,3,5,7,9,\dots\}\). Let \(R\) be
+    the relation such that, \[R = \{(a,b) \mid a,b \text{ are divisible by 3 and}, a \in A, b \in B\}\]
+    This relation is simply the set of all multiples of \(3\).
+\end{example}
+
+\begin{example}
+    \label{ex: reltri}
+    Let \(A = \{1,2,8\}\), \(B = \{3,5,6\}\). Let \(R\) be the relation, \[
+        R = \{(a,b) \mid a > b, a \in A, b \in B\}
+    \]
+    Then \(R\) contains the ordered pairs \((8,3)\), \((8,5)\) and \((8,6)\)
+\end{example}
+
+\para{We show that \((a,b) \in R\) by saying \(a R b\).}
+
+\begin{figure}[H]
+    \centering
+    \incfig{relation}
+    \caption{Pictorial representation of \Cref{ex: reltri}}
+\end{figure}
+
+\subsection{Domain}
+
+\para{The domain of a relation \(R \subseteq A \times B\) is the set of all first elements of 
+the ordered pairs of the relation, that are in set \(A\). \[D_R = \{a \mid (a,b) \in R\}\]}
+
+\subsection{Range and Co-domain}
+
+\paragraph{Range}
+
+\para{Range of \(R\) is the set of all second elements of the ordered pairs in the relation, that
+are in set \(B\). \[Range_R = \{b \mid (a,b) \in R\}\]}
+
+\paragraph{Co-domain}
+
+\para{Co-domain of \(R \subseteq A \times B\) is the set \(B\) itself.} 

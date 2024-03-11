@@ -190,7 +190,7 @@ citecolor=RawSienna
 
 \newcommand{\incfig}[1]{%
     \def\svgwidth{\columnwidth}
-    \scalebox{.3}{\import{./figures/}{#1.pdf_tex}}
+    \scalebox{.3}{\import{../figures/}{#1.pdf_tex}}
 }
 
 \usepackage{epigraph}
@@ -216,4 +216,8 @@ citecolor=RawSienna
 }
 \makeatother
 
+\usepackage{cleveref}
 
+\crefformat{section}{\S#2#1#3} % see manual of cleveref, section 8.2.1
+\crefformat{subsection}{\S#2#1#3}
+\crefformat{subsubsection}{\S#2#1#3}
