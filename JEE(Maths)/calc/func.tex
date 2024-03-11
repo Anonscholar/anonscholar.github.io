@@ -45,11 +45,107 @@ the ordered pairs of the relation, that are in set \(A\). \[D_R = \{a \mid (a,b)
 
 \subsection{Range and Co-domain}
 
-\paragraph{Range}
+\subsubsection{Range}
 
 \para{Range of \(R\) is the set of all second elements of the ordered pairs in the relation, that
 are in set \(B\). \[Range_R = \{b \mid (a,b) \in R\}\]}
 
-\paragraph{Co-domain}
+\subsubsection{Co-domain}
+
+\marginpar{\raggedleft You may note that \(Range_R \subset Co-domain_R\)}
 
 \para{Co-domain of \(R \subseteq A \times B\) is the set \(B\) itself.} 
+
+\section{Types Of Relations}
+
+\para{Although it might seem like discussing the type of relations would be as trivial as sets,
+there are actually a couple really important type of relations. I'll mention the ones
+we really need to know about.}
+
+\subsection{Trivial Types}
+
+\para{Mainly, these are trivial in the way that they're of very low importance to us. The ones
+that are useful later, have been especially marked.}
+
+\subsubsection{Empty Relation}
+
+\para{The relation \(R\) is an empty relation if it does not contain any elements.
+\(R = \varnothing \subset A \times B\).}
+
+\subsubsection{Universal Relation}
+
+\para{Yes, it is the relation that contains all the elements. A universal relation \(R\) on \(A\)
+is \(R = A \times A\).}
+
+\subsubsection{Inverse Relation}
+\index{Inverse Relation}
+
+\para{Let \(R\) be the relation from \(A\) to \(B\). Then \(R\inv\) is the relation from \(B\)
+to A such that, \[R\inv = \left\{ (b,a) \mid (a,b) \in R \right\}\]
+Therefore, we may have \((a,b) \in R \iff (b,a) \in R\inv\).}
+
+\subsubsection{Identity Relation}
+\index{Identity Relation}
+
+\para{The identity relation \(I_A\) on \(A\) is defined as
+\[
+    I_A = \left\{(a,a) \mid a \in A\right\}
+\]}
+
+\subsection{Equivalence Relation}
+
+\subsubsection{Reflexive relation}
+
+\marginpar{\raggedright All identity relations are reflexive relations but all reflexive relations are
+not identity relations. See \Cref{ex: identity}.}
+
+\para{A relation \(R\) is a reflexive relation on \(A\), if for every \(a \in A\),
+\((a,a) \in R\).}
+
+\index{Reflexive Relation}
+
+\begin{example}
+    \label{ex: identity}
+    The relation \(I_A = \left\{(1,1), (2,2), (3,3)\right\}\) is an identity relation on the set
+    \(A = \left\{1,2,3\right\}\). \\
+    However, the relation \(R = \left\{(1,1), (2,3)(3,2), (2,2), (3,3)\right\}\)
+    is not an identity relation on \(A\), but rather a reflexive relation. But \(I_A \subset R\).\par
+    Here, \(R\) is a reflexive relation but not an identity relation.
+\end{example}
+
+\subsubsection{Symmetric Relation}
+\index{Symmetric Relation}
+
+\para{A relation \(R\) on \(A\) is symmetric if \((a,b) \in R \iff (b,a) \in R\).}
+
+\begin{example}
+    Let \(R\) be the relation on \(\RR\) such that \[
+        R = \left\{(x,y) \mid x + y = 5\right\}
+    \]
+    This relation is symmetric, because suppose any two reals \(x\) and \(y \in R\). Then,
+    \(x + y = 5\). But since addition is commutative, \(x + y = y + x = 5\). 
+    Thus, \((x,y) \in R \iff (y,x) \in R\).
+\end{example}
+
+\subsubsection{Transitive Relation}
+\index{Transitive Relation}
+
+\para{A relation \(R\) on \(A\) is transitive if \((a,b) \in R\) and \((b,c) \in R \implies (a,c) \in R\). }
+
+\begin{example}
+    The relation \(<\) is a transitive relation on \(\RR\). For instance, if \(a < b\), \(b < c\),
+    then \(a < c\).
+\end{example}
+
+\subsubsection{Equivalence Relation}
+
+\para{An equivalence relation on \(A\) is a relation that is transitive, reflexive, and symmetric.}
+
+\marginpar{\raggedright If you haven't already noticed, I have deliberately chosen examples that
+are non conventional. I have done it in order to showcase that relations can be anything!}
+
+\begin{example}
+    The relation \(=\) is an equivalence relation on \(\RR\). It is symmetric as \(a = b \iff b = a\). 
+    It is reflexive as \(a = a\). It is transitive as \(a = b, b = c \implies a = c\).
+\end{example}
+

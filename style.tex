@@ -1,4 +1,6 @@
-\usepackage[top=1in,bottom=1in,left=2cm,right=4cm,marginparwidth=75pt]{geometry}
+\usepackage{amsmath, amsthm, amssymb}
+
+\usepackage[top=1in,bottom=1in,left=2cm,right=4cm,marginparwidth=85pt]{geometry}
 \usepackage[texindy]{imakeidx}
 \makeindex[intoc]
 \usepackage[dvipsnames]{xcolor}
@@ -54,8 +56,6 @@ citecolor=RawSienna
 {\upshape}{}{}
 {\, {\bfseries\thecontentspage}}[][\ \textbullet\ ][]
 
-
-\usepackage{amsmath, amsthm, thmtools}
 
 
 \setkomafont{disposition}{\bfseries\rmfamily}
@@ -188,6 +188,7 @@ citecolor=RawSienna
 \usepackage{pdfpages}
 \usepackage{subcaption}
 
+
 \newcommand{\incfig}[1]{%
     \def\svgwidth{\columnwidth}
     \scalebox{.3}{\import{../figures/}{#1.pdf_tex}}
@@ -221,3 +222,4 @@ citecolor=RawSienna
 \crefformat{section}{\S#2#1#3} % see manual of cleveref, section 8.2.1
 \crefformat{subsection}{\S#2#1#3}
 \crefformat{subsubsection}{\S#2#1#3}
+

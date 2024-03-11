@@ -94,11 +94,13 @@ And, if \(x^2 \ge a^2\), then \(x \in (-\infty,-a] \cup [a, \infty]\)}
     \centering
     \begin{tikzpicture}[scale=0.86]
         \begin{axis}[funcgraph]
+            \draw [red] (axis cs:-5,-1000)--(axis cs:-5,25);
+            \draw [red] (axis cs:4,-1000)--(axis cs:4,16);
             \addplot[color=black,domain=-6:-5]{x^2};
             \addplot[color=red,domain=-5:4]{x^2};
             \addplot[color=black,domain=4:6]{x^2};
         \end{axis}
     \end{tikzpicture}
-    \caption{\(x^2\) in red for \(-5 \le x \le 4\)}
+    \caption{ {\color{red}\(x^2\)} for \(-5 \le x \le 4\)}
 \end{figure}
 
