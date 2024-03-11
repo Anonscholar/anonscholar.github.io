@@ -142,10 +142,66 @@ not identity relations. See \Cref{ex: identity}.}
 \para{An equivalence relation on \(A\) is a relation that is transitive, reflexive, and symmetric.}
 
 \marginpar{\raggedright If you haven't already noticed, I have deliberately chosen examples that
-are non conventional. I have done it in order to showcase that relations can be anything!}
+are non-conventional. I have done it in order to showcase that relations can be anything!}
 
 \begin{example}
     The relation \(=\) is an equivalence relation on \(\RR\). It is symmetric as \(a = b \iff b = a\). 
     It is reflexive as \(a = a\). It is transitive as \(a = b, b = c \implies a = c\).
 \end{example}
+
+\section{Functions}
+
+\para{Functions are a special type of relation. They're, for most cases, much more useful
+than relations for us.}
+
+\index{Function}
+
+\begin{definition}
+    \label{def: function}
+    A function from \(A\) to \(B\) is a set of ordered pairs, \[
+        f = \left\{(a,b) \mid a \in A, b \in B, \text{ for every } a \in A, \text{ there
+        exist one and only one } b \in B \right\}
+    \]
+\end{definition}
+
+\index{Pre-image}
+\index{Image}
+
+\para{A little more informally, functions are a mapping from set \(A\) to \(B\). We represent
+this by saying \(f \colon A \rightarrow B\). When we map \(a \in A\) to \(b \in B\),
+we say that \(b\) is the `image' of \(a\) under \(f\) and \(b\) is called the `preimage' of 
+\(a\) under \(f\). We may represent that \(f\) maps \(a\) to \(b\) as \(a \mapsto b\).}
+
+
+\begin{figure}[H]
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \incfig{func}
+        \caption{A function from \(A\) to \(B\).}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \incfig{func2}
+        \caption{Also a function, note that \(h\) doesn't have a pre-image.}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \incfig{notfunc}
+        \caption{Not a function, \(d\) has no image.}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \incfig{notfunc2}
+        \caption{Also not a function because \(d\) has two images.}
+    \end{subfigure}
+    \caption{Some examples of functions and not functions.}
+\end{figure}
+
+\subsection{Domain and Range}
+
+\subsubsection{Domain}
+
+\para{From the little use of `every' in \Cref{def: function}, you may realise that every element
+of \(A\) has an image, i.e. every element in \(A\) is included in the ordered pairs of a function
+\(f\). Thus, the domain of a function is the whole set \(A\).}
 
