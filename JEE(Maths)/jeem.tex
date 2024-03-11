@@ -21,15 +21,19 @@
     \input{intro.tex}
     
     \mainmatter
-    \setcounter{chapter}{-1}
+    
+    \part{Algebra}
+    \input{alg/sets.tex}
     \input{elem/elem.tex}
 
-    \newgeometry{right=1.5cm}
+
     \part{Calculus}
-    \restoregeometry
     \input{calc/func.tex}
 
+    \newgeometry{right=1.5cm}
     \part{Appendices}
+    \restoregeometry
+
     \appendix
     \input{app/logic.tex}
 \end{document}

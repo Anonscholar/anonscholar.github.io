@@ -26,6 +26,10 @@ headsepline
 
 \RedeclareSectionCommands{section}
 \RedeclareSectionCommands{subsection}
+\RedeclareSectionCommands{subsubsection}
+\RedeclareSectionCommands{paragraph}
+
+
 
 \usepackage{etoolbox}
 \usepackage[linktoc=page]{hyperref}
@@ -150,7 +154,7 @@ citecolor=RawSienna
 \usepackage[nameinlink]{cleveref}
 \usepackage{todonotes}
 \usepackage{tikz}
-  \usetikzlibrary{arrows.meta,}
+  \usetikzlibrary{arrows.meta,backgrounds}
 \usepackage{pgfplots}
 \pgfplotsset{width=7cm,compat=1.18}
 \pgfplotsset{
@@ -174,7 +178,20 @@ citecolor=RawSienna
 \usepackage{float}
 \usepackage{caption}
 \usepackage{paralist}
+\usepackage{graphicx}
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{framed}
+\usepackage{siunitx}
+\usepackage{pdfpages}
+\usepackage{subcaption}
 
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \scalebox{.3}{\import{./figures/}{#1.pdf_tex}}
+}
 
 \usepackage{epigraph}
 
@@ -188,3 +205,15 @@ citecolor=RawSienna
 \usepackage{ellipsis}
 
 \let\cleardoublepage=\clearpage
+\usepackage{collectbox}
+
+\makeatletter
+\newcommand{\mybox}{%
+    \collectbox{%
+        \setlength{\fboxsep}{1pt}%
+        \fbox{\BOXCONTENT}%
+    }%
+}
+\makeatother
+
+

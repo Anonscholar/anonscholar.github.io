@@ -1,0 +1,26 @@
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-18.4,-7.06) rectangle (18.4,7.06);
+\fill[line width=2pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (-6.74,-1.48) -- (-3.9,3.94) -- (1.84,-2.7) -- cycle;
+\draw [line width=2pt,color=zzttqq] (-6.74,-1.48)-- (-3.9,3.94);
+\draw [line width=2pt,color=zzttqq] (-3.9,3.94)-- (1.84,-2.7);
+\draw [line width=2pt,color=zzttqq] (1.84,-2.7)-- (-6.74,-1.48);
+\draw [line width=2pt] (-2.2096642678172604,-0.3997700146492588) circle (4.6573424468834785cm);
+\begin{scriptsize}
+\draw [fill=ududff] (-6.74,-1.48) circle (2.5pt);
+\draw[color=ududff] (-6.58,-1.05) node {$A$};
+\draw [fill=ududff] (-3.9,3.94) circle (2.5pt);
+\draw[color=ududff] (-3.74,4.37) node {$B$};
+\draw [fill=ududff] (1.84,-2.7) circle (2.5pt);
+\draw[color=ududff] (2,-2.27) node {$C$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}

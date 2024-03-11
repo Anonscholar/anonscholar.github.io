@@ -26,6 +26,8 @@
 
 
 \usepackage{amsmath, amssymb}
+\usepackage{xargs}
+
 
 \newcommand{\many}[2]{#1_{1}#1_{2}\ldots#1_{#2}}
 \newcommand{\manys}[2]{\{#1_{1},#1_{2}\ldots,#1_{#2}\}}
@@ -174,3 +176,84 @@
 \newcommand{\para}[1]{#1 \par}
 \newcommand{\parbreak}{\medskip}
 
+%some stuff
+\newcommand{\pointspades}[1]{[{\color{red}#1}\spadesuit]}
+\newcommand{\irrevr}{\marginpar{\large \bfseries Extra}}
+\newcommand{\irrevl}{\reversemarginpar\marginpar{\raggedleft\large\bfseries Extra}\normalmarginpar}
+
+%geo
+\newcommand{\rantri}{\tkzDefPoints{0/1/A,4/3/B,5/1/C}%
+\tkzDrawPolygon(A,B,C)}
+\newcommand{\coor}[2]{\tkzDefPoint(#1){#2}}
+\newcommand{\Triangle}[1]{\tkzDrawPolygon(#1)}
+\newcommand{\polygon}[1]{\tkzDrawPolygon(#1)}
+
+
+
+\newcommand{\Line}[1]{\tkzDrawSegment(#1)}
+
+\newcommand{\equi}[1]{\tkzDefTriangle[equilateral](#1)}
+\newcommand{\twoang}[2]{\tkzDefTriangle[two angles = #1](#2)}
+\newcommand{\isoright}[1]{\tkzDefTriangle[isosceles right](#1)}
+\newcommand{\getp}[1]{\tkzGetPoint{#1}}
+
+\newcommand{\centroid}[2]{\tkzDefTriangleCenter[centroid](#1)
+\tkzGetPoint{G}\tkzDrawPoints(G)\tkzLabelPoints[#2](G)}
+
+\newcommand{\incentre}[2]{\tkzDefCircle[in](#1) \tkzGetPoints{I}{a}
+\tkzDrawPoints(I)\tkzLabelPoints[#2](I)}
+
+\newcommand{\incircle}[1]{\tkzDefCircle[in](#1) \tkzGetPoints{I}{a}
+\tkzDrawCircle(I,a)}
+
+\newcommand{\circumcentre}[2]{\tkzDefCircle[circum](#1) 
+\tkzGetPoint{O}\tkzDrawPoints(I)\tkzLabelPoints[#2](I)}
+
+\newcommand{\circumcircle}[2]{\tkzDefCircle[circum](#1) \tkzGetPoint{O}
+\tkzDrawCircle(O,#2)}
+
+\newcommand{\orthocentre}[2]{\tkzDefTriangleCenter[ortho](#1)
+\tkzGetPoint{H}\tkzDrawPoints(H)\tkzLabelPoints[#2](H)}
+
+\newcommand{\orthopoints}[3]{\tkzDefSpcTriangle[orthic](#1,#2,#3){H_#1,H_#2,H_#3}}
+\newcommand{\ortho}[3]{\tkzDefSpcTriangle[orthic](#1,#2,#3){H_#1,H_#2,H_#3}
+\tkzDrawSegments(#1,H_#1 #2,H_#2 #3,H_#3)
+\tkzMarkRightAngles[fill=gray!20,
+opacity=.5](#1,H_#1,#3 #2,H_#2,#1 #3,H_#3,#1)}
+
+\newcommand{\rightang}[1]{\tkzMarkRightAngles[fill=gray!20,
+opacity=.5](#1)}
+
+\newcommand{\drawsquare}[1]{\tkzDefSquare(#1)
+\tkzDrawPolygon(#1,tkzFirstPointResult,%
+tkzSecondPointResult)}
+
+\newcommand{\angname}[2]{\tkzLabelAngle[pos=1](#2){$#1$}}
+\newcommand{\foot}[3]{\tkzDefLine[perpendicular=through #1,K=-.5](#2,#3)\tkzGetPoint{c}
+\tkzDefPointBy[projection=onto #2--#3](c)\tkzGetPoint{h}}
+
+\newcommand{\project}[3]{\tkzDefPointBy[projection=onto #2](#1) \tkzGetPoint{#3}}
+
+\newcommandx{\empangle}[4][1=0.5,2=black,3=|]{\tkzMarkAngle[size=#1,color=#2,mark=#3](#4)}
+\newcommandx{\vertice}[2][1=left]{\tkzDrawPoints(#2)\tkzLabelPoints[#1](#2)}
+
+\newcommandx{\fillangle}[3][1=orange]{\tkzDrawSector[R with nodes,fill=#1!20](#2,0.25)(#3)}
+
+\newcommand*\len[1]{\overline{#1}}
+
+%framed
+\mdfdefinestyle{MyFrame}{%
+    linecolor=black,
+    outerlinewidth=0.05pt,
+    %roundcorner=20pt,
+    %backgroundcolor=gray!50!white}
+        }
+
+\newcommand\header[1]{
+  \newlength{\headerwidth}
+  \setlength{\headerwidth}{\widthof{#1}}
+  \addtolength{\headerwidth}{8pt}
+  \begin{mdframed}[style=MyFrame,userdefinedwidth=\headerwidth]
+    #1
+  \end{mdframed}
+}

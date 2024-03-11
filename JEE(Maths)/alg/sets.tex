@@ -1,0 +1,162 @@
+\chapter{Sets}
+\epigraph{``You don't have to be great to start, but you have to start
+to be great.''}{\auth{Zig Ziglar}}
+
+\section{Naive Set Theory}
+
+\motiv{There is little Mathematics that does not use the language of sets.}
+
+\para{Sets are perhaps the most important structures in all of Mathematics. Although
+an indepth discussion of sets is beyond these notes, and their axiomation is complicated, we 
+shall not let this affect us and discuss a less rigorous formalisation of sets. 
+Namely, \emph{Naive Set Theory}.}
+
+\marginpar{\raggedright These definitions are superficious We have not and will not define what
+we mean by collection or elements. That is what makes this theory \emph{naive}.}
+
+\begin{definition}
+    A set is any collection of elements.\\
+    It is denoted as \(\{a,b,c\}\) where \(a,b, c\) are elements of the set.
+    This representation of sets is called \emph{Roster form}.
+\end{definition}
+
+\para{Well, what do we mean by any collection? To give a few examples, the set of flowers
+would be \{roses, lilies, sunflowers, \ldots\} The trailing \ldots are used to show
+that the elements continue on \emph{ad infinitum}. Hence, any collection of objects is a set.}
+
+\para{Often, instead of manually writing out \{roses, lilies, sunflowers, \ldots\}, we will
+use a condition that each element in the set follows. Here, the condition is that all
+elements all flowers. We denoted this by saying that \(S\) is the set of all \(x\) such that 
+\(x\) is a flower. We represent this in what is called \emph{Set-Builder} notation. Thus,
+\[S = \{x : P(x)\} \quad \text{or} \quad S = \{x \mid P(x)\}\] 
+Here, \( P(x)\) represents the condition. We use the different symbols depending on the context,
+mostly for ensuring that the statements are clear.
+}
+
+\marginpar{\raggedright Do not be overwhelmed by terms like ``set-builder''. They're only formal
+names and not something to remember.}
+
+\begin{remark}
+    Notice the equality symbol between \(S\) and \( \{x : P(x)\} \). Generally, we denote sets
+    as capital latin letters \(A, B, C, \ldots\), and their elements by little latin
+    letters \(a, b, c, \ldots\).
+\end{remark}
+
+\begin{example}
+    The sets of all Natural numbers is denoted by \(\NN\). Generally, it is either used to 
+    represent \( \{0, 1, 2, \ldots\} \) or \( \{1, 2, 3, \ldots\} \). It matters little.
+    We will let \(\NN = \{1, 2, 3, \ldots\}\) and \(\NNO = \{0, 1, 2, \ldots\}\) in this text 
+\end{example}
+
+\begin{example}
+    The other common sets are similarly denoted by \emph{blackboard bold} letters as well.
+    \begin{enumerate}
+        \ii \(\ZZ\) is the set of all integers.
+        \ii \(\QQ\) is the set of all rationals.
+        \ii \(\RR\) is the set of all reals.
+        \ii \(\CC\) is set of all complex numbers.
+    \end{enumerate}
+\end{example}
+
+\marginpar{The symbol \(\in\) in \(x \in S\) is used to show that \(x\) is an element
+of \(S\). It may be read as `belongs to'.}
+
+\begin{example}
+    The cartesian plane is also a set. It defined as \[\{(x,y) \mid x, y \in \RR\}\]
+\end{example}
+
+\subsection{Why Naive?}
+
+\marginpar{\raggedleft \large \bfseries Extra}
+
+\para{One interesting formulation possible in naive set-theory is the ``Russel's Paradox''. 
+It goes as follows.
+Let \(S\) be a set \(\{x \mid x \notin S\}\). Basically, \(S\) is the set of all elements
+not in \(S\). This leads to a paradox because for \(x\) to be in \(S\), it has to follow
+the condition that it is not in \(S\)! And any element not in \(S\) must be in \(S\).}
+\para{There is no particular solution to this using naive set-theory. This is one of the reasons
+why this discussion of sets is so naive.}
+
+\subsection{Types of Sets}
+
+\para{Although this division of sets is superfluous at best, we will still categorise them for 
+a reference.}
+
+\marginpar{\raggedleft The set \{\varnothing\} \,is not a null set! In-fact it is the set that contains
+the empty or null set.}
+
+\begin{itemize}
+    \ii \textbf{Finite Set} : \para{A set having a finite number of elements is called a finite set.}
+    \ii \textbf{Infinite Set} : \para{A set which has infinite elements is called an infinite set.}
+    \ii \textbf{Null Set} : \para{A set which has no elements is called a null set. It is 
+    represented as \{\} or \(\varnothing\).}
+    \ii \textbf{Singleton Set} : \para{A set containing a single element is called a singleton set.}    
+\end{itemize}
+
+\section{Equality and Subsets}
+
+\subsection{Sets of Sets}
+\para{Remember that we referred to sets as a collection of \emph{any} objects? That might lead
+to the question that can we also make sets of sets? In-fact, that is exactly right, we can!
+A set of sets maybe represented as \(\{\{a,b,c\}, \{d,e,f\}, \{g, h, i\}\}\). All of the
+elements of this set are themselves sets. One thing to note here is that we cannot form a set 
+of all sets, and we will see why in a moment.}
+
+\subsection{Subsets}
+\para{Consider the sets \(\NN\) and \(\ZZ\). You might see that all the elements of \(\NN\) are also 
+present in \(\ZZ\). If we were to describe it, we could say that \(\NN\) is contained in \(\ZZ\).
+Such a relation between sets is expressed by saying \(\NN\) is a subset of \(\ZZ\).}
+
+\begin{definition}
+    A set \(A\) is a subset of \(B\) if all elements of \(A\) are also elements of \(B\).\\
+    This is represented as \[A \subseteq B\]
+\end{definition}
+
+\begin{example}
+    \(\NN \subseteq \ZZ \subseteq \QQ \subseteq \RR \subseteq \CC.\)
+\end{example}
+
+\begin{example}
+    Let \(A = \{x \mid x \text{ is prime and } x \text{ is odd}\}\), and \(B = \{x \mid x \text{
+        is prime}\}\), then \(A \subseteq B\). 
+\end{example}
+
+\para{One thing to note here is that for \(A\) to be a subset of \(B\), it does not need to 
+have less elements than \(B\). Infact, \(A\) is a subset of \(A\) itself because all elements of 
+\(A\) are in \(A\).}
+\para{To show that each element of \(A\) is contained in \(B\) but all elements of \(B\) are not
+contained in \(A\), we say that \(A\) is a proper subset of \(B\).}
+
+\marginpar{\raggedright Note that \(A\) is not a proper subset of \(A\).}
+
+\begin{definition}
+    \(A\) is a proper subset of \(B\) if all elements of \(A\) are in \(B\) but all elements of
+    \(B\) are not in \(A\).\\
+    We represent this as \[A \subsetneq B\]
+\end{definition}
+
+\subsection{Superset}
+\para{If \(A\) is a subset of \(B\), then \(B\) is a superset of \(A\). It is represented as\[
+    B \supseteq A\]
+    This is another way of saying the same thing. The definition of proper superset is also
+    the same.}
+
+
+\subsection{Equality}
+
+\para{We may say that two sets are equal if they have the same elements.
+However, there is one thing to consider. When discussing about sets, we do not care how many
+times an element appears. The sets \(\{1, 1, 1, 1, \ldots\}\) is the same as \(\{1\}\).
+Therefore, we always ignore the repeating terms. Thus, two sets are equal if they have the same 
+number of elements, \textbf{regardless of the frequency they appear in.} The same thing applies
+for subsets and supersets, \textbf{the frequency of elements does not matter.}}
+
+\para{We can phrase the equality of sets in another manner, in terms of subsets.}
+
+\marginpar{\raggedright Refer to \Cref{app: logic} for \(\iff\)}
+
+\begin{definition}
+    [Equality in sets]
+    Two sets \(A\) and \(B\) are equal if and only if \(A \subseteq B\) and \(B \subseteq A\).\\
+    Therefore, \[A = B \iff A \subseteq B \text{ and } B \subseteq A\]
+\end{definition}
