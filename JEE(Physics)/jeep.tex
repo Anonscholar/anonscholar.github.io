@@ -1,4 +1,4 @@
-\documentclass[twoside, a4paper, 10pt, bibliography=totoc, index=totoc, listof=totoc]{scrbook}
+\documentclass[twoside, a4paper, 10pt]{memoir}
 
 
 \input{../style.tex}
@@ -9,17 +9,20 @@
 \begin{document}
 %https://tex.stackexchange.com/questions/249475/index-hyperlink-not-pointing-to-correct-page
 \pagenumbering{roman}
-\SetupExSheets[points]{name=\null,format=\pointspades}
+
     \descrip{Part 2: on Physics}
     \author{Adyansh Mishra}
     \date{\today}
     \title{A JEE Notebook}
-    \fncytitle
-
-    \tableofcontents
-     
+    
     \frontmatter
+    \fncytitle    
+    \newgeometry{right=1.5cm,left=1.5cm}
+    \tableofcontents
+    \listoffigures
+    \restoregeometry
     \input{intro.tex}
+    
     
     \mainmatter
     \setcounter{chapter}{-2}

@@ -1,4 +1,4 @@
-\documentclass[twoside, a4paper, 10pt, bibliography=totoc, index=totoc, listof=totoc]{scrbook}
+\documentclass[twoside, a4paper, 10pt]{memoir}
 
 
 \input{../style.tex}
@@ -8,20 +8,28 @@
 
 \begin{document}
 %https://tex.stackexchange.com/questions/249475/index-hyperlink-not-pointing-to-correct-page
-\pagenumbering{roman}
+
     \descrip{a journey into olympiad mathematics}
     \author{Adyansh Mishra}
     \date{\today}
     \title{An Olympiad Notebook}
-    \fncytitle
   
-    \tableofcontents
-     
+    \pagestyle{empty}
     \frontmatter
-    \input{intro}
+    \fncytitle    
+    \newgeometry{right=1.5cm,left=1.5cm}
+    \tableofcontents
+    \newpage
+    \listoffigures
+    \restoregeometry
+    \pagestyle{mystyle}
+    \input{intro.tex}
+    
+
 
     \mainmatter 
     \part{Number Theory}
+    \parttoc
     \input{nt/divisibility}
     
 

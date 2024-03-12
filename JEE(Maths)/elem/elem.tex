@@ -1,7 +1,7 @@
 \chapter{Elementary Prereqs}
 \section{Intervals}
 
-\marginpar{\raggedleft The notation \(][\) is French, and is less commonly used in India, USA, etc.}
+\marginpar{\raggedleft The notation \(\left]\right[\) is French, and is less commonly used in India, USA, etc.}
 
 \begin{definition}
     For \(a, b, x \in \RR \) and \(a < b\),
@@ -37,6 +37,7 @@
 \para{We can make all kind of closed-open (\(a \le x < b\)) or open-closed (\(a < x \le b\))
 intervals, but there is no point in giving them a name.}
 
+\newpage
 \section{Inequalities}
 
 \para{Real numbers and all its subsets have a common property. They're ordered under the
@@ -76,21 +77,20 @@ for equations. Now, let us propose the following properties of inequalities.}
 \(x^2\) follow? Consider \( a \le x \le b\). You might expect that for \(a \le x \le b\),
 \(a^2 \le x \le b^2\). But that is simply incorrect! What we instead get is that \(x^2\) lies
 between \(0\) and \(\max(a^2,b^2)\). Here, max represents that \(x^2\) lies between \(0\) and
-whichever of the \(a^2\), \(b^2\) is greater.}
-\para{In-fact, if \(a \le x \le b \iff a^2 \le x^2 \le b^2 \), then \(a\), \(b\) and hence \(x\)
-must be \(\ge 0\)!}
-\parbreak
-\para{Also, if \(x^2 \le a^2\), then \(x \in [-a,a]\)\\
-And, if \(x^2 \ge a^2\), then \(x \in (-\infty,-a] \cup [a, \infty]\)}
+whichever of the \(a^2\), \(b^2\) is greater.
+In-fact, if \(a \le x \le b \iff a^2 \le x^2 \le b^2 \), then \(a\), \(b\) and hence \(x\)
+must be \(\ge 0\).}
 
+\begin{proposition}
+    If \(x^2 \le a^2\), then \(x \in [-a,a]\).\\
+    And, if \(x^2 \ge a^2\), then \(x \in (-\infty,-a] \cup [a, \infty]\).   
+\end{proposition}
 
 
 \begin{example}
     For \(-5 \le x \le 4\), we have \( 0 \le x^2 \le \max(-5^2, 4^2)\). Therefore, \(0 \le 
     x^2 \le 25\).
-\end{example}
-
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \begin{tikzpicture}[scale=0.86]
         \begin{axis}[funcgraph]
@@ -103,4 +103,4 @@ And, if \(x^2 \ge a^2\), then \(x \in (-\infty,-a] \cup [a, \infty]\)}
     \end{tikzpicture}
     \caption{ {\color{red}\(x^2\)} for \(-5 \le x \le 4\)}
 \end{figure}
-
+\end{example}

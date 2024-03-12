@@ -1,130 +1,104 @@
 \usepackage{amsmath, amsthm, amssymb}
 
-\usepackage[top=1in,bottom=1in,left=2cm,right=4cm,marginparwidth=85pt]{geometry}
+\usepackage[right=3.5cm,left=1.5cm,bottom=1in,top=1in,portrait,marginparwidth=78pt]{geometry}
 \usepackage[texindy]{imakeidx}
 \makeindex[intoc]
 \usepackage[dvipsnames]{xcolor}
-\definecolor{Darkgreen}{rgb}{0,0.4,0}
 
-
-
-%header, footers
-\usepackage[
-automark,
-autooneside=false,
-headsepline
-]{scrlayer-scrpage}
-\clearpairofpagestyles
-\lehead{\pagemark}
-\rohead{\pagemark}
-\rehead{\em \theauthor}
-\lohead{\ifstr{\leftmark}{\rightbotmark}{}{\rightbotmark}}
-
-
-
-\usepackage[explicit]{titlesec}
-
-\setcounter{tocdepth}{1}
-
-\RedeclareSectionCommands{section}
-\RedeclareSectionCommands{subsection}
-\RedeclareSectionCommands{subsubsection}
-\RedeclareSectionCommands{paragraph}
-
-
-
+\usepackage[]{minitoc}
+\doparttoc[n]
+\noptcrule
+\renewcommand\beforeparttoc{{\bfseries \Large Part \thepart: Contents}\vspace{1em}\hrule}
 \usepackage{etoolbox}
+
+%Chapter Style
+\usepackage{calc,color}
+\newif\ifNoChapNumber
+\newcommand\Vlines{%
+\def\VL{\rule[-1cm]{1pt}{2.5cm}\hspace{1mm}\relax}
+\VL\VL\VL\VL\VL\VL\VL}
+\makeatletter
+\setlength\midchapskip{0pt}
+\makechapterstyle{VZ43}{
+\renewcommand\chapternamenum{}
+\renewcommand\printchaptername{}
+\renewcommand\printchapternum{}
+\renewcommand\chapnumfont{\Huge\bfseries\centering}
+\renewcommand\chaptitlefont{\Huge\bfseries\raggedright}
+\renewcommand\printchaptertitle[1]{%
+\Vlines\hspace*{-2em}%
+\begin{tabular}{@{}p{1cm} p{\textwidth-3cm}}%
+\ifNoChapNumber\relax\else%
+\colorbox{black}{\color{white}%
+\makebox[.8cm]{\chapnumfont\strut \thechapter}}
+\fi
+& \chaptitlefont ##1
+\end{tabular}
+\NoChapNumberfalse
+}
+\renewcommand\printchapternonum{\NoChapNumbertrue}
+}
+\makeatother
+\chapterstyle{ger}
+% ===== FRONT MATTER CHAPTER STYLE
+\makechapterstyle{frontmatter}{% Front matter chapter style
+  \chapterstyle{ger}% Or whatever you consider to be default
+}
+% ===== MAIN MATTER CHAPTER STYLE
+\makechapterstyle{mainmatter}{% Main matter chapter style
+  \chapterstyle{VZ43}% Or whatever you consider to be default
+}
+% ===== BACK MATTER CHAPTER STYLE
+\makechapterstyle{backmatter}{% Back matter chapter style
+  \chapterstyle{frontmatter}% Backmatter chapterstyle is similar to frontmatter
+}
+
+
+\let\oldfrontmatter\frontmatter
+\renewcommand{\frontmatter}{\chapterstyle{frontmatter}\oldfrontmatter}
+\let\oldmainmatter\mainmatter
+\renewcommand{\mainmatter}{\chapterstyle{mainmatter}\oldmainmatter}
+\let\oldbackmatter\backmatter
+\renewcommand{\backmatter}{\chapterstyle{backmatter}\oldbackmatter}
+
 \usepackage[linktoc=page]{hyperref}
 \hypersetup{
 colorlinks=true,
 linkcolor=ForestGreen,
-citecolor=RawSienna
+citecolor=RawSienna,
 }
 
-
-\usepackage{titletoc}
-
-
-%Motion Mountain style toc
-\titlecontents{part}[20pt]
-{\vskip15pt\llap{\makebox[3em]{{\bfseries\thecontentspage\hfill{\thecontentslabel}}}\hskip1em}
-    \large\bfseries\vskip-\baselineskip\hspace{9em}\partname\, : \,}{}{}{}
-\titlecontents{chapter}[0pt]
-{\vskip15pt\llap{\makebox[3em]{{\bfseries\thecontentspage\hfill\thecontentslabel}}\hskip1em}
-    \small\bfseries\vskip-\baselineskip}{}{}{}
-\titlecontents*{section}[20pt]
-{\upshape}{}{}
-{\, {\bfseries\thecontentspage}}[][\ \textbullet\ ][]
-
-
-
-\setkomafont{disposition}{\bfseries\rmfamily}
 \usepackage[object=vectorian]{pgfornament}
-\usepackage{titling}
 \usepackage{xparse}
 \usepackage{lipsum}
 
-%page borders
-\usepackage{eso-pic}
-\newcommand\AtPageUpperRight[1]{\AtPageUpperLeft{%
-        \put(\LenToUnit{\paperwidth},\LenToUnit{0\paperheight}){#1}%
-}}%
-\newcommand\AtPageLowerRight[1]{\AtPageLowerLeft{%
-        \put(\LenToUnit{\paperwidth},\LenToUnit{0\paperheight}){#1}%
-}}%
+\usepackage{titling}
 
-\AddToShipoutPictureBG{%
-    \AtPageUpperLeft{\put(0,-25){\pgfornament[width=1.75cm]{61}}}
-    \AtPageUpperRight{\put(-50,-25){\pgfornament[width=1.75cm,symmetry=v]{61}}}
-    \AtPageLowerLeft{\put(0,25){\pgfornament[width=1.75cm,symmetry=h]{61}}}
-    \AtPageLowerRight{\put(-50,25){\pgfornament[width=1.75cm,symmetry=c]{61}}}
-}
+\nouppercaseheads
+\makepagestyle{mystyle}
+\makeevenhead{mystyle}{\bfseries\thepage}{}{\theauthor}
+\makeoddhead{mystyle}{\S\rightmark}{}{\bfseries\thepage}
+\makeevenfoot{mystyle}{}{}{}
+\makeoddfoot{mystyle}{}{}{}
+\makepsmarks{mystyle}{%
+  \createmark{chapter}{left}{nonumber}{}{}}
+\makeheadrule{mystyle}{\textwidth}{\normalrulethickness}
+\pagestyle{mystyle}
 
-%part formatting
-\titleformat{\part}[display]
-{\Huge\filcenter}
-{ \hspace*{1.5cm} \partname \, {\bfseries \color{purple}\thepart}}
-{2em}
-{\hspace{1.5cm}\pgfornament{87}%
-    \vspace{2em}%
-    \begin{center}
-        \hspace{1.5cm}{\em#1}
-    \end{center}
-}
+\copypagestyle{chapter}{plain}
+\makeoddfoot{chapter}{}{}{\rule[0cm]{0.8cm}{0.12cm}\\\thepage}
 
-
-%section formatting
-\renewcommand*{\sectionformat}%
-{\color{purple}\S\thesection\enskip}
-\renewcommand*{\subsectionformat}%
-{\color{purple}\S\thesubsection\enskip}
-\renewcommand*{\subsubsectionformat}%
-{\color{purple}\S\thesubsubsection\enskip}
-\addtokomafont{paragraph}{\color{orange!35!black}\P\ }
-\KOMAoptions{numbers=noenddot}
-
-
-
+\copypagestyle{part}{plain}
+\makeoddfoot{part}{}{}{\rule[0cm]{0.8cm}{0.12cm}\\\thepage}
 
 %chapter formatting
-\titleformat{\chapter}[display]
-{\bfseries\Large}
-{\filleft\MakeUppercase{\chaptertitlename} \Huge{\color{purple}\thechapter}}
-{8pt}
-{
-    \pgfornament{89}%
-    \vspace{2ex}%
-    \begin{center}
-     \pgfornament[scale=0.4]{79}\LARGE\bfseries\filcenter \enspace  #1 \enspace \pgfornament[scale=0.4]{78}
-    \end{center}
-}
 
 %for description(subtitle)
 \newcommand{\descrip}[1]{\def \thedescrip{#1}}
 
-%Fancy titlepage
+
 \NewDocumentCommand{\fncytitle}{s}{
-    \begin{titlepage}
+    \begin{titlingpage}
         \topskip0pt
         \vspace*{10em}
         \begin{center}
@@ -141,13 +115,20 @@ citecolor=RawSienna
         { 
         \begin{center}  
             \hspace{1.5cm}{\bfseries \Large \thedate}    
-        \end{center}`'
+        \end{center}
         }
-    \end{titlepage}
+    \end{titlingpage}
 }
-%bold pages
-\addtokomafont{pagenumber}{\bfseries}
 
+\setsecnumformat{\csname gablin#1\endcsname\quad}
+\newcommand{\gablinsection}{{\color{purple}\S\thesection}}
+\newcommand{\gablinsubsection}{{\color{purple}\S\thesubsection}}
+\setsecnumdepth{subsection}
+
+\renewcommand*{\thepart}{\color{purple}\arabic{part}}
+\renewcommand*{\parttitlefont}{\color{black}\sffamily\HUGE}
+\renewcommand*{\partnamefont}{\normalfont\Huge\scshape\MakeLowercase}
+\renewcommand*{\partnumfont}{\color{black}\normalfont\scshape\MakeLowercase}
 
 
 %some graph stuff
@@ -203,9 +184,7 @@ citecolor=RawSienna
 \makeatother
 
 \usepackage{lettrine}
-\usepackage{ellipsis}
 
-\let\cleardoublepage=\clearpage
 \usepackage{collectbox}
 
 \makeatletter

@@ -1,5 +1,6 @@
-\documentclass[twoside, a4paper, 10pt, bibliography=totoc, index=totoc, listof=totoc]{scrbook}
+\documentclass[twoside,a4paper,10pt]{memoir}
 
+    
 \input{../style.tex}
 \input{../theorems.tex}
 \input{../macros.tex}
@@ -8,31 +9,37 @@
 \begin{document}
 %https://tex.stackexchange.com/questions/249475/index-hyperlink-not-pointing-to-correct-page
 \pagenumbering{roman}
-    \descrip{Part 1: on Mathematics}
+    \descrip{Part I: On Mathematics}
     \author{Adyansh Mishra}
     \date{\today}
     \title{A JEE Notebook}
-    \fncytitle
 
+    \pagestyle{empty}
+\frontmatter
+    
+    \fncytitle    
+    \newgeometry{right=1.5cm,left=1.5cm}
     \tableofcontents
-     
-    \frontmatter
+    \newpage
+    \listoffigures
+    \restoregeometry
+    \pagestyle{mystyle}
     \input{intro.tex}
     
     \mainmatter
-    
     \part{Algebra}
+    \parttoc
     \input{alg/sets.tex}
     \input{elem/elem.tex}
 
-
+    \newgeometry{right=1.5cm,left=1.5cm}
     \part{Calculus}
+    \restoregeometry
     \input{calc/func.tex}
 
-    \newgeometry{right=1.5cm}
+    \newgeometry{right=1.5cm,left=1.5cm}
     \part{Appendices}
     \restoregeometry
-
     \appendix
     \input{app/logic.tex}
 
