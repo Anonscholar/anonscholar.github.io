@@ -143,7 +143,7 @@ not identity relations. See \Cref{ex: identity}.}
 are non-conventional. I have done it in order to showcase that relations can be anything!}
 
 \begin{example}
-    The relation \(=\) is an equivalence relation on \(\RR\). It is symmetric as \(a = b \iff b = a\). 
+    The relation `\(=\)' is an equivalence relation on \(\RR\). It is symmetric as \(a = b \iff b = a\). 
     It is reflexive as \(a = a\). It is transitive as \(a = b, b = c \implies a = c\).
 \end{example}
 
@@ -168,8 +168,8 @@ than relations for us.}
 \para{A little more informally, functions are a mapping from set \(A\) to \(B\). We represent
 this by saying \(f \colon A \rightarrow B\). When we map \(a \in A\) to \(b \in B\),
 we say that \(b\) is the `image' of \(a\) under \(f\) and \(b\) is called the `preimage' of 
-\(a\) under \(f\). We may represent that \(f\) maps \(a\) to \(b\) as \(a \mapsto b\).}
-
+\(a\) under \(f\). We may represent that \(f\) maps \(a\) to \(b\) as \(a \mapsto b\).
+Alternatively, and more commonly, \(f(a) = b\).}
 
 \begin{figure}[H]
     \begin{subfigure}{.5\textwidth}
@@ -201,5 +201,98 @@ we say that \(b\) is the `image' of \(a\) under \(f\) and \(b\) is called the `p
 
 \para{From the little use of `every' in \Cref{def: function}, you may realise that every element
 of \(A\) has an image, i.e. every element in \(A\) is included in the ordered pairs of a function
-\(f\). Thus, the domain of a function is the whole set \(A\).}
+\(f\). Thus, the domain of a function \(f : A \rightarrow B\) is the whole set \(A\).}
+
+\subsubsection{Range and Co-domain}
+
+\para{For a function \(f : A \rightarrow B\), the co-domain is the set \(B\). The Range
+for \(f\) is the \emph{set of all images of pre-images.}}
+
+\begin{example}
+    For \(f\) from \(\RR-\left\{0\right\}\) to \(\RR\) such that \(f(x)=\dfrac{1}{x}\). The Range
+    is \(\RR-\left\{0\right\}\), as is the domain. The Co-domain is \(\RR\).
+\end{example}
+
+\subsection{Informal Definition}
+
+\index{Dependent Variable}
+\index{Independent Variable}
+\para{A function can also be thought of a machine that takes in an independent variable and churns
+out a dependent variable. This is a very vague abuse of already known ideas to somehow understand
+the abstractness of the idea of a function.}
+
+\begin{figure}[H]
+    \centering
+    \scalebox{0.6}{\incfig{depindep}}
+    \caption{Dependent and Independent variables}
+\end{figure}
+
+\subsection{Implicit and Explicit}
+
+\subsubsection{Explicit Function}
+\para{When we can clearly write out the dependent variable in terms of the independent variable,
+the function is called Implicit.}
+
+\begin{example}
+    \(f(x) = y = x^3\) is an explicit function since it can be written with only the help of \(x\).
+\end{example}
+
+\subsubsection{Implicit Function}
+\para{These are the functions in which the dependent variable cannot be written only in the terms
+of the independent variable.}
+
+\begin{example}
+    \(x^3y^2 + x - y + xy =0\) is an Implicit function. It may be represented as \(R(x,y) = 0\).
+\end{example}
+
+\subsection{Digression}
+\irrevl
+
+\para{The functions we have considered till now are only real valued, and we have confined ourselves
+to a single-variable being independent. Really, the title of this part is wrong and should be more
+accurately Single-Variable Calculus.}
+\para{The notions of implicit and explicit are quite annoying too,
+which are better dealt with in Multi-Variable Calculus. We will not release ourselves of this confinement
+for the rest of the part as it is irrelevant for JEE. But beware, you will know only a half of 
+only Calculus even after JEE, let alone anything in Mathematics.}
+
+\subsection{Bounded Functions}
+
+\index{bounded function}
+\index{unbounded function}
+
+\para{A function is bounded if it is bounded from both above and below. A real-valued function, \(f : A \rightarrow B\) is bounded
+from above if for each \(a \in A\), \(f(a) \le M\). It is bounded from below if for each \(a \in A\),
+\(f(a) \ge N\).}
+\para{Thus, a bounded function \(f\) lies in the interval \(\left[M,N\right]\). It may also lie on
+any interval of the same kind, i.e \((M,N)\), \(\left[M,N\right)\), or \(\left(M,N\right]\).}
+
+\begin{example}
+    [Bounded Functions]
+    Some examples of bounded functions are:
+    \begin{enumerate}
+        \ii \(\sin(x), \cos(x) \in \left[-1,1\right]\)
+        \ii \(\dfrac{1}{x^2} \in \left(0,1\right]\)
+    \end{enumerate}
+\end{example}
+
+\begin{example}
+    [Unbounded functions]
+    Some examples of unbounded functions are:
+    \begin{enumerate}
+        \ii \(\csc(x), \sec(x) \in \left(-\infty, -1\right] \cup \left[1, \infty\right)\)
+        \ii \(\tan(x), \cot(x) \in \left(-\infty, \infty\right)\)            
+    \end{enumerate}
+\end{example}
+
+\section{The ``...'' function}
+\irrevl
+\para{From this point we make many mentions of the ``sine'' function, the ``cosine'' function,
+and so on. However, there is no ``sine'' function. People generally call the function \(f\),
+such that \(f(x) = \sin(x)\) as the sine function. What they really mean is the function that maps
+\(x\) to \(\sin(x)\). However, because of lack of notation and convenience, we refer to it 
+as the ``sine'' function which is just an abuse of notation. This is just some nitpicking.}
+
+\section{Vertical Line Test}
+
 
