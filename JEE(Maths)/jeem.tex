@@ -19,8 +19,15 @@
     
     \fncytitle    
     \newgeometry{right=1.5cm,left=1.5cm}
+    \renewcommand*{\contentsname}{Short contents}
+    \setcounter{tocdepth}{0}% chapters and above
     \tableofcontents
-    \newpage
+    \clearpage
+    \renewcommand*{\contentsname}{Contents}
+    \setcounter{tocdepth}{1}% subsections and above
+    \tableofcontents
+    
+    \clearpage
     \listoffigures
     \restoregeometry
     \pagestyle{mystyle}
