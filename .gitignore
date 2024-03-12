@@ -3,7 +3,10 @@
 **/*.ind
 **/*.out
 **/*.pdf
+**/*.ptc2
+**/*.ptc3
 **/*.out.ps
+**/*.lof
 **/*.dvi
 **/*.ps
 **/*.raw3.gnuplot
