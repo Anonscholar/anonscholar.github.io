@@ -293,6 +293,57 @@ such that \(f(x) = \sin(x)\) as the sine function. What they really mean is the 
 \(x\) to \(\sin(x)\). However, because of lack of notation and convenience, we refer to it 
 as the ``sine'' function which is just an abuse of notation. This is just some nitpicking.}
 
-\section{Vertical Line Test}
+\section{Graphing the Function}
+
+\para{Consider any function \(f\) that maps from \(x\) to \(y\), where any \(a\) is literally 
+anything. It could be \(x^3\), \(\sin(x)\), or \(e^x\). Basically, \(y = f(x)\). If we map
+\(x\) and \(y\) as co-ordinates on the cartesian plane, we get the graph of the function, \(f\)
+such that \(f(x) = y\).}
+
+\begin{figure}
+    \centering
+        \begin{tikzpicture}
+            \begin{axis}[funcgraph]
+                \addplot[domain=-5:5,samples=100,red]{sin(deg(x))};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Graph of the function ``{\color{red}\(\sin(x)\)}''}
+
+\end{figure}
+
+\subsection{Vertical Line Test}
+
+\index{Vertical Line Test}
+
+\para{When we map \(f\) onto the cartesian plane, because of the very definition of a function,
+there are no two ordered pairs \(x,a\) and \(x,b\) since \(x\) cannot have two images.
+Because of this, if we draw a vertical line at any \(x\) for the function \(f\), it must pass 
+only once (since there is only \(y\) for one \(x\)). We can use this test to determine 
+through the graph of any relation, whether it is a function or not. This is called the vertical line
+test.}
+
+\begin{figure}[H]
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[funcgraph]
+            \draw [blue] (axis cs:3,-10)--(axis cs:3,10);
+            \addplot[domain=-3:3,red,samples=50]({x^2},{x});
+            \end{axis}
+        \end{tikzpicture}
+    \caption{Not a function}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[funcgraph]
+                \addplot[red]{x^2};
+            \draw [blue] (axis cs:3,-1000)--(axis cs:3,1000);
+            \end{axis}
+        \end{tikzpicture}
+        \caption{A function}
+    \end{subfigure}
+    \caption{{\color{blue}Vertical Line test} for {\color{red}functions}}
+\end{figure}
 
 
