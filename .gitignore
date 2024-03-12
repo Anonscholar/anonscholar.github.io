@@ -2,7 +2,7 @@
 **/*.ilg
 **/*.ind
 **/*.out
-
+**/*.pdf
 **/*.out.ps
 **/*.dvi
 **/*.ps
