@@ -26,8 +26,10 @@
 
 
 \usepackage{xargs}
+\usepackage{centernot}
 
-
+\newcommand{\notiff}{%
+  \mathrel{{\ooalign{\hidewidth$\not\phantom{"}$\hidewidth\cr$\iff$}}}}
 \newcommand{\many}[2]{#1_{1}#1_{2}\ldots#1_{#2}}
 \newcommand{\manys}[2]{\{#1_{1},#1_{2}\ldots,#1_{#2}\}}
 \newcommand{\cbrt}[1]{\sqrt[3]{#1}}

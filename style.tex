@@ -98,8 +98,8 @@ citecolor=RawSienna,
 
 \nouppercaseheads
 \makepagestyle{mystyle}
-\makeevenhead{mystyle}{\bfseries\thepage}{}{\theauthor}
-\makeoddhead{mystyle}{\S\rightmark}{}{\bfseries\thepage}
+\makeevenhead{mystyle}{\bfseries\thepage}{}{\textbf{\color{purple}\thechapter}\,: \leftmark}
+\makeoddhead{mystyle}{\textbf{\color{purple}\S}\,\rightmark}{}{\bfseries\thepage}
 \makeevenfoot{mystyle}{}{}{}
 \makeoddfoot{mystyle}{}{}{}
 \makepsmarks{mystyle}{%

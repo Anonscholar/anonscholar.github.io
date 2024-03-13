@@ -316,7 +316,7 @@ such that \(f(x) = y\).}
 \index{Vertical Line Test}
 
 \para{When we map \(f\) onto the cartesian plane, because of the very definition of a function,
-there are no two ordered pairs \(x,a\) and \(x,b\) since \(x\) cannot have two images.
+there are no two ordered pairs \((x,a)\) and \((x,b)\) since \(x\) cannot have two images.
 Because of this, if we draw a vertical line at any \(x\) for the function \(f\), it must pass 
 only once (since there is only \(y\) for one \(x\)). We can use this test to determine 
 through the graph of any relation, whether it is a function or not. This is called the vertical line
@@ -420,3 +420,90 @@ in the caption, where \(D\) is the domain, and \(R\) the range.}
 \caption{Some Elementary Functions}
 \end{figure}
 
+\section{Identical Functions}
+
+\para{Two functions, \(f\), \(g\) are said to be identical if and only if,}
+
+\begin{itemize}
+    \ii Domain of both functions are equal, \(D_f = D_g\).
+    \ii Range of both functions are equal, \(R_f = R_g\).
+    \ii \(\forall x \in D_f\) or \(D_g\), \(f(x) = g(x)\).
+\end{itemize}
+
+\begin{example}
+    \(f(x) = x\) and \(g(x) = \dfrac{1}{1/x}\) are identical for 
+    \(x \in \RR \setminus \left\{0\right\}\).
+\end{example}
+
+\section{Piecewise functions}
+
+\index{Piecewise function}
+
+\para{When a function \(f\) of \(x\) has a different formula for particular intervals of \(x\),
+we call it a piecewise function. We represent it as, \[
+    \begin{cases}
+        F & x \dots \\
+        G & x \dots \\
+        \vdots \\
+        Z & x \dots \\
+    \end{cases}
+\]
+}
+\begin{example}
+    The modulus function, \(y = \abs{x}\) is a piecewise function:
+    \[
+    \begin{cases}
+        x & x > 0\\
+        0 & x = 0\\
+        -x & x < 0\\
+    \end{cases}
+\]
+\end{example}
+
+\section{Algebra of Functions}
+
+\para{Let \(f : A \rightarrow \RR\), \(g : A \rightarrow \RR\) be two functions where 
+\(A \subset \RR\). Then, we have,
+\begin{enumerate}
+    \ii \(f + g : A \rightarrow \RR\), \((f+g)(x) = f(x) + g(x)\), for \(x \in A\).
+    \ii \(f - g : A \rightarrow \RR\), \((f-g)(x) = f(x) - g(x)\), for \(x \in A\).
+    \ii \(f * g : A \rightarrow \RR\), \((f+g)(x) = f(x) * g(x)\), for \(x \in A\).
+    \ii \(\dfrac{f}{g} : A \rightarrow \RR\), \(\dfrac{f}{g}(x) = \dfrac{f(x)}{g(x)}\), for \(x \in A\),
+    given than \(g(x) \ne 0\) for all \(x \in A\).
+\end{enumerate}}
+
+\section{Injective, Surjective and all that}
+
+\index{Injective}
+
+\para{If for all \(x \in A\), for function \(f : A \rightarrow B\), \(x\) has a `distinct' image,
+the function is called one-one or injective. What it means is that any image has only one pre-image
+under \(f\). Therefore, \(f(a) = f(b) \iff a = b\). Since, \(f(a)\) and \(f(b)\) must have only
+one pre-image. Since they're the same, the pre-image must also be the same.}
+
+\index{Many-One Function}
+
+\para{If this is not the case, any image may have more than one pre-image under \(f\),
+the function is not injective and is called many-one. Here, \(f(a) = f(b) \notiff a = b\).}
+
+\begin{figure}[H]
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[funcgraph]
+                \addplot[domain=-10:10,red]{x^2};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{ {\color{red}\(x^2\)}, a many-one function}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[funcgraph]
+                \addplot[domain=-10:10,blue]{x^3};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{{\color{blue}\(x^3\)}, a one-one function}
+    \end{subfigure}
+    \caption{{\color{blue}One-one} and {\color{red}Many-one} functions}
+\end{figure}
