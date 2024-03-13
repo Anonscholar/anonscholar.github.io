@@ -300,7 +300,7 @@ anything. It could be \(x^3\), \(\sin(x)\), or \(e^x\). Basically, \(y = f(x)\).
 \(x\) and \(y\) as co-ordinates on the cartesian plane, we get the graph of the function, \(f\)
 such that \(f(x) = y\).}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
         \begin{tikzpicture}
             \begin{axis}[funcgraph]
@@ -346,4 +346,77 @@ test.}
     \caption{{\color{blue}Vertical Line test} for {\color{red}functions}}
 \end{figure}
 
+\para{Here are the graph of some elementary algebraic functions. Their domain and range are listed
+in the caption, where \(D\) is the domain, and \(R\) the range.}
+\clearpage
+
+\begin{figure}[H]
+    \centering
+    \label{fig: functs}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[funcgraph]
+                \addplot[red,domain=-10:10]{3};
+            \addlegendentry{\(y=c\)}
+            \end{axis}
+        \end{tikzpicture}
+    \caption{Constant function, \(D = \RR\), \(R = \left\{c\right\}\)}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[funcgraph]
+                \addplot[red,domain=-10:10]{x};
+            \addlegendentry{\(y=x\)}
+            \end{axis}
+        \end{tikzpicture}
+    \caption{Identity Function, \(D = \RR\), \(R = \RR\)}
+    \end{subfigure}
+
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[funcgraph]
+                \addplot[red,domain=-10:10]{x^2};
+            \addlegendentry{\(y=x^2\)}
+            \end{axis}
+        \end{tikzpicture}
+    \caption{Square Function, \(D = \RR\), \(R = \RR^+ \cup \left\{0\right\}\)}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[funcgraph]
+                \addplot[red,domain=-2:2]{x^3};
+            \addlegendentry{\(y=x^3\)}
+            \end{axis}
+        \end{tikzpicture}
+    \caption{Cubic Function, \(D = \RR\), \(R = \RR\)}
+    \end{subfigure}
+
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[funcgraph]
+                \addplot[red,domain=0.01:1,samples=100]{1/x};
+                \addplot[red,domain=-1:-0.01,samples=100]{1/x};
+            \addlegendentry{\(y=\frac{1}{x}\)}
+            \end{axis}
+        \end{tikzpicture}
+    \caption{Reciprocal Function, \(D = \RR \setminus \left\{0\right\}\), \(R = \RR \setminus \left\{0\right\}\) } 
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[funcgraph]
+                \addplot[red,domain=-10:-0.01]{-x};
+                \addplot[red,domain=0.01:10]{x};
+            \addlegendentry{\(y=\abs{x}\)}
+            \end{axis}
+        \end{tikzpicture}
+    \caption{Modulus Function, \(D = \RR\), \(R = \RR^+ \cup \left\{0\right\}\)}
+    \end{subfigure}
+\caption{Some Elementary Functions}
+\end{figure}
 

@@ -81,6 +81,7 @@ In-fact, if \(a \le x \le b \iff a^2 \le x^2 \le b^2 \), then \(a\), \(b\) and h
 must be \(\ge 0\).}
 
 \begin{proposition}
+    For \(x, a \in \RR\),\\
     If \(x^2 \le a^2\), then \(x \in [-a,a]\).\\
     And, if \(x^2 \ge a^2\), then \(x \in (-\infty,-a] \cup [a, \infty]\).   
 \end{proposition}
@@ -102,4 +103,42 @@ must be \(\ge 0\).}
     \end{tikzpicture}
     \caption{ {\color{red}\(x^2\)} for \(-5 \le x \le 4\)}
 \end{figure}
+\end{example}
+
+\section{Sign Scheme Method}
+
+\index{Sign Scheme Method}
+
+\para{A way of determining inequalities of the form \(F(x) = (x-a_1)^{k_1}(x-a_2)^{k_2}\dots(x-a_n)^{k_n}\)
+where \(F(x) \le 0\), or \(F(x) \ge 0\) is the \emph{Sign Scheme Method}. Arrange
+\(a_1,a_2,\dots,a_n\) such that \(a_1 \le a_2 \le \dots \le a_{n-1} \le a_n\).
+Now follow the following steps:}
+
+\begin{enumerate}
+    \ii Mark \(a_1,a_2,\dots,a_n\) on the number line, and put the plus sign on the right of the
+    largest of these, \(a_n\). Since when \(x \ge a_n\), \(x \ge a_1, a-2, \dots\). So \(F(x) \ge 0\).
+    \ii Put the plus sign on the interval to left of \(a_n\) if \(k_n\) is even, and the minus 
+    sign if it is odd. Similarly, when passing to the left of \(a_i\), plus sign if \(k_i\)
+    is even, minus otherwise.
+    \ii The union of all intervals with the plus sign is the solution for \(F(x) \ge 0\), and
+    the union of the ones with minus sign, for \(F(x) \le 0\). 
+\end{enumerate}
+
+\begin{example}
+    Consider \(\dfrac{2y-1}{y} \le 0\). First, we change it into the already known form,
+    \begin{align}
+        \dfrac{2y-1}{y} &\le 0\\
+        2\dfrac{(y-1/2)}{y} &\le 0\\
+        \dfrac{y-1/2}{y} &\le 0\\
+        (y-1/2)(y-0)^{-1} &\le 0
+    \end{align}
+    Plotting these we get,
+    \begin{figure}[H]
+        \centering
+        \incfig{signscheme}
+        \caption{Sign Scheme Method in action}
+    \end{figure}
+
+    Since We are concerned with \(\dfrac{2y-1}{y} \le 0\) and can't have \(y=0\),
+    \(y \in \left(0,\dfrac{1}{2}\right]\).
 \end{example}
