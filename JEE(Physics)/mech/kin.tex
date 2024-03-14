@@ -8,10 +8,74 @@ concern ourselves with some definitions.}
 \section{Reference Frame and Point Particle}
 
 \para{Motion of any object is considered to relative to a reference frame. We consider motion of
-any body with respect to any other body or co-ordiante frame.}
+a body with respect to any other body or co-ordinate frame.}
 
 \begin{figure}[ht]
         \centering
         \incfig{3daxes}    
-    \caption{A Reference Frame}
+    \caption{A Reference Frame}\label{fig: 3daxes}
+\end{figure}
+
+\para{We use a reference frame according to our convenience. In general, we use the 3-dimensional cartesian system like the one
+in \Cref{fig: 3daxes}.}
+
+\index{Reference Frame}
+
+\begin{definition}
+    [Reference Frame]
+    A reference frame is a co-ordinate frame relative to which motion of a particle is considered.
+\end{definition}
+
+\para{We always consider the motion of a point particle. Well, why? It is done so to simplify
+the calculation of our system. The motion of a (rigid)body is discussed later.}
+
+\begin{definition}
+    [Point Particle]
+    A particle whose size is negligible in the study of its motion is called a point particle.
+\end{definition}
+
+\section{Position Vector and Displacement}
+
+\subsection{Position Vector}
+\index{Position Vector}
+
+\para{We define the position of a particle relative to a reference frame using a \emph{position 
+vector}. One end of the position vector is the origin of our reference frame. The other is 
+the particle itself. Consider \Cref{fig: position}, the 
+vector \(\vect{r}\) from \(O\) to \(A\). It describes the position of \(A\) relative to the
+co-ordinate frame. Let \(A = (x,y,z)\). Then we denoted \(\vect{r}\) as \(\vect{r}(x,y,z)\).}
+
+\para{The position to any point is written as, \[
+    \vect{r} = (x,y,z) = x\unitv{i} + y\unitv{j} + z\unitv{k}
+\]}
+
+
+\marginpar{\raggedleft Note that the position vector is not a \emph{true} vector. It is tied to particular
+    reference frame.}
+
+\begin{figure}
+    [H]
+    \centering
+    \scalebox{0.6}{\incfig{position}}
+    \caption{A position vector, \(\mathbf{r}\).}
+    \label{fig: position}
+\end{figure}
+
+
+\subsection{Displacement}
+
+\para{Consider the movement of a particle from \(A = (x_1,y_1,z_1)\) to \(B = (x_2,y_2,z_2)\). 
+The \emph{displacement} defines a true vector \(\vect{S} = (x_2-x_1,y_2-y_1,z_2-z_1)\).
+\(\vect{S}\) is called the displacement vector. Note that it contains no information about the
+individual points, but only about the relative position of each. Thus, our choice
+of reference frame, and thus position vector does not matter when we're concerned with displacement
+. In \Cref{fig: displacement}, the vector
+\(\vect{S}_{AB}\) defines a displacement from \(A\) to \(B\).}
+
+\begin{figure}
+    [H]
+    \centering
+    \scalebox{0.8}{\incfig{displacement}}
+    \caption{Displacement from \(A\) to \(B\)}
+    \label{fig: displacement}
 \end{figure}
