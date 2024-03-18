@@ -29,6 +29,7 @@ in \Cref{fig: 3daxes}.}
 \para{We always consider the motion of a point particle. Well, why? It is done so to simplify
 the calculation of our system. The motion of a (rigid)body is discussed later.}
 
+\index{Particle}
 \begin{definition}
     [Point Particle]
     A particle whose size is negligible in the study of its motion is called a point particle.
@@ -38,6 +39,9 @@ the calculation of our system. The motion of a (rigid)body is discussed later.}
 
 \subsection{Position Vector}
 \index{Position Vector}
+
+\marginpar{\raggedleft One thing of importance is that a position vector of a particle is a function
+of time. We generally denote this as \(r(t)\) to show that is a function.}
 
 \para{We define the position of a particle relative to a reference frame using a \emph{position 
 vector}. One end of the position vector is the origin of our reference frame. The other is 
@@ -50,8 +54,6 @@ co-ordinate frame. Let \(A = (x,y,z)\). Then we denoted \(\vect{r}\) as \(\vect{
 \]}
 
 
-\marginpar{\raggedleft Note that the position vector is not a \emph{true} vector. It is tied to particular
-    reference frame.}
 
 \begin{figure}
     [H]
@@ -62,7 +64,11 @@ co-ordinate frame. Let \(A = (x,y,z)\). Then we denoted \(\vect{r}\) as \(\vect{
 \end{figure}
 
 
+\marginpar{\raggedleft Note that the position vector is not a \emph{true} vector. It is tied to particular
+    reference frame.}
+
 \subsection{Displacement}
+\index{Displacement}
 
 \para{Consider the movement of a particle from \(A = (x_1,y_1,z_1)\) to \(B = (x_2,y_2,z_2)\). 
 The \emph{displacement} defines a true vector \(\vect{S} = (x_2-x_1,y_2-y_1,z_2-z_1)\).
@@ -79,3 +85,45 @@ of reference frame, and thus position vector does not matter when we're concerne
     \caption{Displacement from \(A\) to \(B\)}
     \label{fig: displacement}
 \end{figure}
+
+\section{Speed and Velocity}
+
+\index{Speed}
+
+\para{We are already familiar with the notion of speed. In elementary terms, speed is \(\dfrac{distance}{time}\).
+Speed itself is an elementary concept. It tells us nothing about the direction of the object whose speed we are
+talking into consideration. Thus, it is a \emph{scalar} quantity.}
+
+\parbreak
+\marginpar{\raggedright The symbol \(\equiv\) stands for `defined as'.}
+
+\index{Velocity}
+
+\para{The Velocity of a particle, contrastingly, contains information about both the speed and direction of the
+object in consideration. It is a vector defined as,} 
+
+\begin{equation} 
+    \label{eq: velocity}
+    \vect{v} \equiv \ndiv{\vect{r}}
+\end{equation}
+\marginpar{\raggedright The dot over \(r\) in \(\dot{\vect{r}}\) tells us that \(r\) has been differentiated
+with respect to time.}
+
+\para{Sometimes, we do not need to compute the derivative of the position vector, and simply need an average
+estimate, or in the case of uniformly accelerated motion, it is not required that we computer derivatives.
+In such a case we use the concept of \textbf{average velocity}, \[
+    \avg{\vect{v}}_{12} = \frac{\vect{r}_1-\vect{r}_2}{\increment t}  
+\]}
+
+\para{In general velocity is also referred to as `instantaneous velocity'. This is done to remind of the difference
+with average velocity. We will not refer to it that way since by velocity we shall always mean \(\vect{v}\) as defined in
+\eqref{eq: velocity}. The same goes for speed. Speed is defined as \(\ndiv{d}\) where \(d\) is the distance.
+Average speed is defined similar to average velocity.}
+
+\marginpar{\raggedright Magnitude refers to the absolute value of a vector, i.e., its modulus. \(\abs{\vect{a}}\) is the 
+magnitude of \(\vect{a}\) and is often simply denoted \(a\).}
+
+\para{There is an interesting relation between speed and velocity. Consider the distance between \(a\) and \(b\) as 
+\(a \to b\). The path between them approaches a straight line. Thus, the distance and displacement become the same
+in the limiting case. Therefore, the \emph{magnitude} of velocity is the speed at that instant.} 
+

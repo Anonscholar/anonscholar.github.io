@@ -16,20 +16,27 @@
     \title{A JEE Notebook}
     
     \frontmatter
-    \fncytitle    
+    \fncytitle 
     \newgeometry{right=1.5cm,left=1.5cm}
     \tableofcontents
+    \clearpage
     \listoffigures
     \restoregeometry
     \input{intro.tex}
     
     
     \mainmatter
-    \setcounter{chapter}{-2}
+    \setcounter{chapter}{-1}
     \input{elem/math.tex}
     \input{elem/ud.tex}
 
     \part{Mechanics}
+    \parttoc
     \input{mech/kin.tex}
-  
+    
+    \part{Appendices}
+    \appendix
+
+    \backmatter
+    \printindex
 \end{document}

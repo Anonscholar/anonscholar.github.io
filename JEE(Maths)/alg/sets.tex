@@ -162,8 +162,65 @@ for subsets and supersets, \textbf{the frequency of elements does not matter.}}
 \end{definition}
 
 \subsection{Power-set and Cardinality}
+\index{Power set}
 
-\para{meow}
+\para{The powerset of \(A\) is represented as \(P(A)\) or \(2^A\). It is the set of all subsets
+of \(A\). Note that it is the set of all \emph{subsets} and not proper subsets, therefore,
+\(A\) is an element of \(P(A)\). Formally,}
+
+\marginpar{\raggedright Because of the definition of powerset, \(A \subseteq B \iff P(A) \subseteq
+P(B)\).}
+
+\begin{definition}
+    [Power Set]
+    \(P(A)\) is called the powerset of \(A\), and 
+    \[
+        P(A) = \left\{X \mid X \subseteq A\right\}
+    \]
+\end{definition}
+
+\subsubsection{Cardinality} 
+\index{Cardinality}
+
+\para{Vaguely, cardinality is the size of a set. It is the number of elements of a set.
+The cardinality of a set is represented as \(n(A)\).}
+
+\begin{definition}
+    The cardinality of a set \(A\), \(n(A)\) is
+    \[
+        n(A) = \text{ Number of elements in } A
+    \]
+\end{definition}
+
+\subsection{Universal Set}
+\index{Universal Set}
+
+\para{The Universal Set is the set consisting of all elements in consideration.
+All sets which we consider are its subsets. Note that the universal set is arbitrary.
+We can choose any set as the universal set. Generally, using a universal set allows
+us to draw Venn diagrams. I won't discuss venn diagrams here though. Even though they're intuitive,
+there is little use of describing them.\footnote{If you wish to study them, look them up online,
+there is a lot of sources that will adequately satisfy you.}}
+
+\section{Operations on Sets}
+
+\subsection{Union of Sets}
+\index{Union}
+
+\marginpar{\raggedleft`Or' in mathematics refer to something along the lines of one, the other, or both.
+This is in contrast with English, in which it refers to one or the other. The case of both
+is also included by `or' in mathematics.}
+\begin{definition}
+    [Union of Sets]
+    The union of two sets, \(A\), \(B\) is the set of all elements in \(A\) or \(B\).
+    \[
+        A \cup B = \left\{a \mid a \in A \text{ or } a \in B\right\}
+    \]
+\end{definition}
+
+\begin{example}
+    If \(A = \left\{1, 2, 3\right\}\), \(B = \left\{4, 5, 6\right\}\). Then \(A \cup B = \left\{1, 2, 3, 4, 5, 6\right\}\).
+\end{example}
 
 \subsection{Cartesian Product}
 \label{sec: ctp}
