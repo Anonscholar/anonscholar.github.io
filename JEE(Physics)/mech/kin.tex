@@ -40,7 +40,7 @@ the calculation of our system. The motion of a (rigid)body is discussed later.}
 \subsection{Position Vector}
 \index{Position Vector}
 
-\marginpar{\raggedleft One thing of importance is that a position vector of a particle is a function
+\marginpar{\raggedleft One thing of importance is that a position vector of a particle is `generally' a function
 of time. We generally denote this as \(r(t)\) to show that is a function.}
 
 \para{We define the position of a particle relative to a reference frame using a \emph{position 
@@ -86,11 +86,36 @@ of reference frame, and thus position vector does not matter when we're concerne
     \label{fig: displacement}
 \end{figure}
 
+\para{The difference between displacement and distance is that of the path they describe. The distance covered is the length
+of the actual path, while the magnitude of the displacement is simply the length of the vector between the final and initial positions.}
+
+\begin{figure}
+    [H]
+    \centering
+    \incfig{distance}
+    \caption{Distance vs Displacement}
+\end{figure}
+
+\begin{algorithm}
+    Consider the case of displacement and distance of a particle in circular motion with radius \(r\) Let it move from \(A\) to \(B\), inscribing
+    an angle \(\theta\) (in radians) Then, we have,\\
+    ~\\
+    Distance between \(A\), \(B\) = \(r\theta\)\\
+    Displacement between \(A\), \(B\) = \(2r\sin\left(\dfrac{\theta}{2}\right)\)
+\end{algorithm}
+
+\begin{figure}
+    [H]
+    \centering
+    \incfig{distdisp}
+    \caption{}
+\end{figure}
+
 \section{Speed and Velocity}
 
 \index{Speed}
 
-\para{We are already familiar with the notion of speed. In elementary terms, speed is \(\dfrac{distance}{time}\).
+\para{We are already familiar with the notion of speed. In elementary terms, speed is \({distance}/{time}\).
 Speed itself is an elementary concept. It tells us nothing about the direction of the object whose speed we are
 talking into consideration. Thus, it is a \emph{scalar} quantity.}
 
@@ -100,24 +125,43 @@ talking into consideration. Thus, it is a \emph{scalar} quantity.}
 \index{Velocity}
 
 \para{The Velocity of a particle, contrastingly, contains information about both the speed and direction of the
-object in consideration. It is a vector defined as,} 
+object in consideration. It is a vector. Similar to position, it is also generally a function of time \(v(t)\), though it
+may also be dependent on the position \(v(x)\).} 
 
-\begin{equation} 
-    \label{eq: velocity}
-    \vect{v} \equiv \ndiv{\vect{r}}
-\end{equation}
+\begin{definition}
+    [Velocity]
+    \label{def: velocity}
+    Velocity is defined as,
+    \begin{equation}
+        \vect{v} \equiv \ndiv{\vect{r}}    
+    \end{equation}
+\end{definition}
 \marginpar{\raggedright The dot over \(r\) in \(\dot{\vect{r}}\) tells us that \(r\) has been differentiated
 with respect to time.}
 
 \para{Sometimes, we do not need to compute the derivative of the position vector, and simply need an average
 estimate, or in the case of uniformly accelerated motion, it is not required that we computer derivatives.
 In such a case we use the concept of \textbf{average velocity}, \[
-    \avg{\vect{v}}_{12} = \frac{\vect{r}_1-\vect{r}_2}{\increment t}  
+    \avg{\vect{v}}_{12} = \frac{\vect{r}_1-\vect{r}_2}{t_2 - t_1}  
 \]}
+
+\begin{algorithm}
+    Let us consider the cases of average velocity,
+    \begin{enumerate}
+        \ii[\textbf{Case 1}] When there are \(n\) equal time intervals with velocity \(\vect{v}_1\), \(\vect{v}_2\), \ldots \(\vect{v}_n\).
+        Then, \[
+            \avg{\vect{v}} = \frac{\vect{v}_1 + \vect{v}_2 + \dots + \vect{v}_n}{n} 
+        \]
+        \ii[\textbf{Case 2}] When there are \(n\) equal intervals of distance/displacement with velocity \(\vect{v}_1\), \(\vect{v}_2\), \ldots \(\vect{v}_n\).
+        Then, \[
+            \avg{\vect{v}} = \frac{n}{\frac{1}{\vect{v}_1} + \frac{1}{\vect{v}_2} + \dots + \frac{1}{\vect{v}_n}} 
+        \]
+    \end{enumerate}
+\end{algorithm}
 
 \para{In general velocity is also referred to as `instantaneous velocity'. This is done to remind of the difference
 with average velocity. We will not refer to it that way since by velocity we shall always mean \(\vect{v}\) as defined in
-\eqref{eq: velocity}. The same goes for speed. Speed is defined as \(\ndiv{d}\) where \(d\) is the distance.
+\Cref{def: velocity}. The same goes for speed. Speed is defined as \(\ndiv{d}\) where \(d\) is the distance.
 Average speed is defined similar to average velocity.}
 
 \marginpar{\raggedright Magnitude refers to the absolute value of a vector, i.e., its modulus. \(\abs{\vect{a}}\) is the 
@@ -127,3 +171,39 @@ magnitude of \(\vect{a}\) and is often simply denoted \(a\).}
 \(a \to b\). The path between them approaches a straight line. Thus, the distance and displacement become the same
 in the limiting case. Therefore, the \emph{magnitude} of velocity is the speed at that instant.} 
 
+\begin{algorithm}
+    Let us consider some techniques for solving equations of velocity. Consider the case when velocity and time are given
+    and we have to figure out displacement or when displacement and and velocity are given, but time is not. 
+    \begin{enumerate}
+        \ii \(v = c\) : This is a trivial case. Just use equations of uniformly accelerated motion.
+        \ii \(v = f(x)\) : \(\displaystyle \derivative{x}{t} = f(x)\). Then, \(\dfrac{\differential{x}}{f(x)} = \differential{t}\).
+        Now, we simply have, \[
+            \int^{x_2}_{x_1} \frac{\differential{x}}{f(x)} = \int^{t_2}_{t_1} \differential{t}
+        \] to get \(x_1\) and \(x_2\) or \(t_1\) and \(t_2\). We may also set our co-ordinates such that \(x_2 = x\), \(x_1 = 0\) and \(t_2 = t\), \(t_1 = 0\).
+        \ii \(v = f(t)\) : This is also easy, just, \(\displaystyle f(x) = \derivative{x}{t}\), then,
+        \[
+            \int^{t_2}_{t_1} f(t) \differential{t} = \int^{x_2}_{x_1} \differential{x}
+        \] We simply get \(x_1\) and \(x_2\) or \(t_1\) and \(t_2\) by solving the integral.
+    \end{enumerate}
+\end{algorithm}
+
+\section{Acceleration}
+
+\para{If a body does not move with uniform velocity, it accelerates. Acceleration is also a vector.}
+
+\index{Acceleration}
+
+\begin{definition}
+    [Acceleration]
+    \label{def: acceleration}
+    Acceleration is defined as,
+    \begin{equation}
+        \vect{a} \equiv \ndiv{\vect{v}} = \nddiv{\vect{r}}    
+    \end{equation}
+\end{definition}
+
+\para{There is also another way to represent acceleration, as, \[
+    \vect{a} = \vect{v}\derivative{\vect{v}}{x}
+\]
+I must be held accountable here, because I do not, particularly, know the use of this representation, if it is worth
+remembering, or should be discarded.}
