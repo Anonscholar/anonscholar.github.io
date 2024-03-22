@@ -242,8 +242,9 @@ and finally for \(n^{th}\) second just do \(s_n - s_{n-1}\).}
 
         \begin{figure}
             [H]
+            \centering
             \begin{tikzpicture}
-                \begin{axis}[funcgraph]
+                \begin{axis}[funcgraphbare, xmax=5.4, xlabel={$t$}, ylabel={$v$}]
                     \addplot[red,domain=0:3]{3*x} node[left,pos=1/2] {$\alpha$};
                     \addplot[blue,domain=3:4.8]{(-5)*x+24} node[right,pos=1/2] {$\beta$};
                 \end{axis}
