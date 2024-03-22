@@ -207,3 +207,47 @@ in the limiting case. Therefore, the \emph{magnitude} of velocity is the speed a
 \]
 I must be held accountable here, because I do not, particularly, know the use of this representation, if it is worth
 remembering, or should be discarded.}
+
+\section{Uniformly Accelerated Motion}
+
+\para{When the acceleration of a particle, \(a\) is constant, it undergoes uniformly accelerated motion.
+We use special cases of integrals of \(a\) and \(v\) with respect to time and position for deriving
+the equations of importance.}
+
+\begin{theorem}
+    For a particle with initial velocity \(u\) undergoing uniformly accelerated motion of acceleration \(a\),
+    \begin{align}
+        v &= u + at \\
+        v^2 &= u^2 + 2as \\
+        s &= ut + \frac{1}{2} at^2 \\
+        s_{n} &= u + \frac{a}{2}(2n - 1)
+    \end{align}
+\end{theorem}
+
+\para{The derivation of these is quite easy, integrate \(\int a \differential{x}\) for the first, 
+\(\int a \differential{t}\) for the second (both with constant acceleration), substitute from the former into the latter for the third,
+and finally for \(n^{th}\) second just do \(s_n - s_{n-1}\).} 
+
+\para{Now, we will be looking at some fascinating questions that I have encountered.}
+
+\begin{example}
+    Consider a particle moving with acceleration \(\alpha\) initially. After some time, it starts
+    to `de-accelerate' at \(\beta\) acceleration. After time \(t = T\), the particle comes to a stop.
+    Find the displacement covered by particle in time \(T\).
+\begin{soln}
+        It might be tempting to start calculating after setting up time \(t = t\) when acceleration
+        changed from \(\alpha\) to \(\beta\), i.e., the particle moves with acceleration \(\alpha\) till
+        \(t = t\).\\
+        However, let us try to do a cleaner solution. Consider the \(v-t\) graph of the particle,
+
+        \begin{figure}
+            [H]
+            \begin{tikzpicture}
+                \begin{axis}[funcgraph]
+                    \addplot[red,domain=0:3]{3*x} node[left,pos=1/2] {$\alpha$};
+                    \addplot[blue,domain=3:4.8]{(-5)*x+24} node[right,pos=1/2] {$\beta$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{figure}
+\end{soln}
+\end{example}

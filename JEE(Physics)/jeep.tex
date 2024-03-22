@@ -18,6 +18,12 @@
     \frontmatter
     \fncytitle 
     \newgeometry{right=1.5cm,left=1.5cm}
+    \renewcommand*{\contentsname}{Short contents}
+    \setcounter{tocdepth}{0}% chapters and above
+    \tableofcontents
+    \clearpage
+    \renewcommand*{\contentsname}{Contents}
+    \setcounter{tocdepth}{1}% subsections and above
     \tableofcontents
     \clearpage
     \listoffigures
@@ -29,9 +35,10 @@
     \setcounter{chapter}{-1}
     \input{elem/math.tex}
     \input{elem/ud.tex}
-
+    \newgeometry{right=1.5cm,left=1.5cm}
     \part{Mechanics}
     \parttoc
+    \restoregeometry
     \input{mech/kin.tex}
     
     \part{Appendices}

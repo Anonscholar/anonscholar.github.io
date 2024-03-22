@@ -18,8 +18,14 @@
     \frontmatter
     \fncytitle    
     \newgeometry{right=1.5cm,left=1.5cm}
+    \renewcommand*{\contentsname}{Short contents}
+    \setcounter{tocdepth}{0}% chapters and above
     \tableofcontents
-    \newpage
+    \clearpage
+    \renewcommand*{\contentsname}{Contents}
+    \setcounter{tocdepth}{1}% subsections and above
+    \tableofcontents
+    \clearpage
     \listoffigures
     \restoregeometry
     \pagestyle{mystyle}
@@ -28,15 +34,18 @@
 
 
     \mainmatter 
+    \newgeometry{right=1.5cm,left=1.5cm}
     \part{Number Theory}
     \parttoc
+    \restoregeometry
     \input{nt/divisibility}
     
 
     \appendix
-    
+    \newgeometry{right=1.5cm,left=1.5cm}
     \part{Appendices}
-    
+    \parttoc
+    \restoregeometry
     \input{appendices/term}
     
     \backmatter
