@@ -338,3 +338,18 @@ tkzSecondPointResult)}
   \endgroup
 }
 \makeatother
+
+\usepackage{scrextend}
+
+\newcommand{\marginnote}[1]{%
+    \ifthispageodd{%
+        \marginpar{\begin{marginnotebox}\RaggedRight#1\end{marginnotebox}}}{%
+        \marginpar{\begin{marginnotebox}\RaggedRight#1\end{marginnotebox}}}%
+    }
+
+
+\newcommand{\marginref}[1]{%
+    \ifthispageodd{%
+        \marginpar{\begin{marginrefbox}\RaggedRight#1\end{marginrefbox}}}{%
+        \marginpar{\begin{marginrefbox}\RaggedRight#1\end{marginrefbox}}}%
+    }

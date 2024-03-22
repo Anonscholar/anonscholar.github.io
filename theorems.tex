@@ -134,6 +134,43 @@ postheadspace={0pt}
 ]{thmpurplebox}
 \newcommand{\listhack}{$\empty$\vspace{-2em}}
 
+
+\mdfdefinestyle{mdsiennamargin}{%
+    skipabove=8pt,
+    linewidth=2pt,
+    rightline=false,
+    leftline=true,
+    topline=false,
+    bottomline=false,
+    linecolor=RawSienna!40,
+    backgroundcolor=RawSienna!4,
+}
+\declaretheoremstyle[
+headfont=\bfseries\rmfamily\color{purple},
+bodyfont=\normalfont,
+postheadspace={0pt},
+mdframed={style=mdsiennamargin},
+headpunct={ \\[3pt] },
+]{thmmarginbox}
+
+\mdfdefinestyle{mdgreymargin}{%
+    skipabove=8pt,
+    linewidth=2pt,
+    rightline=false,
+    leftline=false,
+    topline=false,
+    bottomline=false,
+    backgroundcolor=gray!25,
+}
+\declaretheoremstyle[
+headfont=\bfseries\rmfamily\color{purple},
+bodyfont=\normalfont,
+postheadspace={0pt},
+mdframed={style=mdgreymargin},
+headpunct={ \\[3pt] },
+]{thmmarginref}
+
+
 \theoremstyle{definition}
 \declaretheorem[style=thmbluebox,name=Theorem,numberwithin=section]{theorem}
 
@@ -163,6 +200,10 @@ postheadspace={0pt}
 \declaretheorem[style=thmblackbox,name=Remark,numbered=no]{remark*}
 \declaretheorem[style=thmblackbox,name=Problem,numbered=no]{problem*}
 \declaretheorem[style=thmblackbox,name=Question,sibling=theorem]{ques}
+
+
+\declaretheorem[style=thmmarginbox,name=\begingroup\color{purple}\blacktriangleright\endgroup,numbered=no]{marginnotebox}
+\declaretheorem[style=thmmarginref,name=\begingroup\color{purple}\blacksquare\endgroup,numbered=no]{marginrefbox}
 
 
 \declaretheoremstyle[

@@ -1,6 +1,9 @@
 \usepackage{amsmath, amsthm, amssymb}
 
-\usepackage[right=3.5cm,left=1.5cm,bottom=1in,top=1in,portrait,marginparwidth=78pt]{geometry}
+\usepackage[right=4.5cm,left=1.5cm,bottom=1in,top=1in,marginparwidth=110pt]{geometry}
+
+
+
 \usepackage[texindy]{imakeidx}
 \makeindex[intoc]
 \usepackage[dvipsnames]{xcolor}
@@ -104,7 +107,10 @@ citecolor=RawSienna,
 \makeoddfoot{mystyle}{}{}{}
 \makepsmarks{mystyle}{%
   \createmark{chapter}{left}{nonumber}{}{}}
-\makeheadrule{mystyle}{\textwidth}{\normalrulethickness}
+  \setlength{\headwidth}{\textwidth}
+\makeheadrule{mystyle}{\headwidth}{\normalrulethickness}
+\nouppercaseheads 
+
 \pagestyle{mystyle}
 
 \copypagestyle{chapter}{plain}
@@ -193,6 +199,7 @@ citecolor=RawSienna,
 \usepackage{ellipsis}
 \usepackage{nameref}
 \usepackage{tzplot}
+\usepackage{ragged2e}
 
 \raggedbottom
 \newcommand{\incfig}[1]{%
