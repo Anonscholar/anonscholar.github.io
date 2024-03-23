@@ -189,8 +189,8 @@
 
 %some stuff
 \newcommand{\pointspades}[1]{[{\color{red}#1}\spadesuit]}
-\newcommand{\irrevr}{\marginpar{\large \bfseries Extra}}
-\newcommand{\irrevl}{\reversemarginpar\marginpar{\raggedleft\large\bfseries Extra}\normalmarginpar}
+
+
 
 %geo
 \newcommand{\rantri}{\tkzDefPoints{0/1/A,4/3/B,5/1/C}%
@@ -339,17 +339,27 @@ tkzSecondPointResult)}
 }
 \makeatother
 
+
+
+
+\newcommand{\irrev}[1]{%
+    \Ifthispageodd{%
+    \reversemarginpar\marginpar{\RaggedLeft\large \bfseries \color{purple}Extra}\normalmarginpar}{%
+    \marginpar{\RaggedRight\large\bfseries \color{purple}Extra}}%
+    }
+
+
 \usepackage{scrextend}
 
 \newcommand{\marginnote}[1]{%
-    \ifthispageodd{%
+    \Ifthispageodd{%
         \marginpar{\begin{marginnotebox}\RaggedRight#1\end{marginnotebox}}}{%
         \marginpar{\begin{marginnotebox}\RaggedRight#1\end{marginnotebox}}}%
     }
 
 
 \newcommand{\marginref}[1]{%
-    \ifthispageodd{%
+    \Ifthispageodd{%
         \marginpar{\begin{marginrefbox}\RaggedRight#1\end{marginrefbox}}}{%
         \marginpar{\begin{marginrefbox}\RaggedRight#1\end{marginrefbox}}}%
     }

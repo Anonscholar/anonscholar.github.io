@@ -5,22 +5,25 @@
 \input{../theorems.tex}
 \input{../macros.tex}
 
+\descrip{Part 2: on Physics}
+\author{Adyansh Mishra}
+\date{\today}
+\title{A JEE Notebook}
 
 \begin{document}
 %https://tex.stackexchange.com/questions/249475/index-hyperlink-not-pointing-to-correct-page
 \pagenumbering{roman}
 
-    \descrip{Part 2: on Physics}
-    \author{Adyansh Mishra}
-    \date{\today}
-    \title{A JEE Notebook}
-    
+
     \frontmatter
-    \fncytitle 
+    \includepdf[scale=1.15]{./cover.pdf}
+    \clearpage\fncytitle
+
     \newgeometry{right=1.5cm,left=1.5cm}
     \renewcommand*{\contentsname}{Short contents}
     \setcounter{tocdepth}{0}% chapters and above
     \tableofcontents
+
     \clearpage
     \renewcommand*{\contentsname}{Contents}
     \setcounter{tocdepth}{1}% subsections and above
@@ -28,17 +31,20 @@
     \clearpage
     \listoffigures
     \restoregeometry
+
     \input{intro.tex}
-    
     
     \mainmatter
     \setcounter{chapter}{-1}
+    
     \input{elem/math.tex}
     \input{elem/ud.tex}
+    
     \newgeometry{right=1.5cm,left=1.5cm}
     \part{Mechanics}
     \parttoc
     \restoregeometry
+    
     \input{mech/kin.tex}
     
     \newgeometry{right=1.5cm,left=1.5cm}

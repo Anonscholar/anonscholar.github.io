@@ -126,26 +126,27 @@ citecolor=RawSienna,
 
 
 \NewDocumentCommand{\fncytitle}{s}{
-    \begin{titlingpage}
+  \newgeometry{left=1.5cm,right=1.5cm}
+    \begin{titlingpage*}
         \topskip0pt
         \vspace*{10em}
         \begin{center}
-            \hspace{1.5cm}{\pgfornament[scale=0.35, ydelta=-7pt, symmetry=v]{11} \em \Huge  \thetitle \ \pgfornament[scale=0.35, ydelta=-7pt]{11}}
+            {\pgfornament[scale=0.35, ydelta=-7pt, symmetry=v]{11} \em \Huge  \thetitle \ \pgfornament[scale=0.35, ydelta=-7pt]{11}}
             {\par \vspace*{1em}\hspace{20em} \emph{\thedescrip}  \large }
         \end{center}
         \vspace{14em}
         { 
         \begin{center}
-           \hspace{1.5cm} {\bfseries \LARGE \theauthor}
+           {\bfseries \LARGE \theauthor}
         \end{center}
         }
         \vspace*{14em}
         { 
         \begin{center}  
-            \hspace{1.5cm}{\bfseries \Large \thedate}    
+            {\bfseries \Large \thedate}    
         \end{center}
         }
-    \end{titlingpage}
+    \end{titlingpage*}
 }
 
 \setsecnumformat{\csname gablin#1\endcsname\quad}

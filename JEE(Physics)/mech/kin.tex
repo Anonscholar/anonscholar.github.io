@@ -235,20 +235,38 @@ and finally for \(n^{th}\) second just do \(s_n - s_{n-1}\).}
     to `de-accelerate' at \(\beta\) acceleration. After time \(t = T\), the particle comes to a stop.
     Find the displacement covered by particle in time \(T\).
 \begin{soln}
-        It might be tempting to start calculating after setting up time \(t = t\) when acceleration
+        It might be tempting to start calculating after setting up time \(t = t_0\) when acceleration
         changed from \(\alpha\) to \(\beta\), i.e., the particle moves with acceleration \(\alpha\) till
-        \(t = t\).\\
+        \(t = t_0\).\\
         However, let us try to do a cleaner solution. Consider the \(v-t\) graph of the particle,
 
         \begin{figure}
             [H]
             \centering
             \begin{tikzpicture}
-                \begin{axis}[funcgraphbare, xmax=5.4, xlabel={$t$}, ylabel={$v$}]
+                \begin{axis}[funcgraphbare, xmax=5.8, ymax=10, xlabel={$t$}, ylabel={$v$}]
                     \addplot[red,domain=0:3]{3*x} node[left,pos=1/2] {$\alpha$};
                     \addplot[blue,domain=3:4.8]{(-5)*x+24} node[right,pos=1/2] {$\beta$};
+                    \draw [black,dashed] (axis cs:3,0)--(axis cs:3,9) node[left,pos=1/25] {$t_0$};
+                    \draw [black] (axis cs:4.8,-1)--(axis cs:4.8,0.5) node[right,pos=1] {$T$};
+                    \draw [black,dashed] (axis cs:0,9)--(axis cs:4.8,9) node[right,pos=1] {$v_{max}$};
                 \end{axis}
             \end{tikzpicture}
         \end{figure}
+        Note that \(\alpha(t_0) = \beta(T-t_0) = v_{max}\). Thus,
+        \begin{align*}
+            \alpha(t_0) &= \beta(T-t_0) \\
+            \alpha(t_0) &= \beta(T) - \beta(t_0) \\
+            alpha(t_0) + \beta(t_0) &= \beta(T) \\
+            t_0 &= \frac{\beta T}{\alpha + \beta} \\
+            v_{max} &= \alpha t_0 \\
+            v_{max} &= \frac{\alpha\beta T}{\alpha + \beta}
+        \end{align*}
+        Now, note that \(\dfrac{1}{2} \times v_{max} \times T\) is the area under the graph.
+        \begin{moral}
+            The area under the \(v-t\) is the total displacement.
+        \end{moral}
+        Thus, displacement, \(s = \dfrac{\alpha\beta T^2}{2(\alpha + \beta)}\).
 \end{soln}
 \end{example}
+
