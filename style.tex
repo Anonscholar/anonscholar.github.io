@@ -88,10 +88,10 @@
 \usepackage[linktoc=page]{hyperref}
 \hypersetup{
 colorlinks=true,
-linkcolor=Red,
-runcolor=Blue,
-citecolor=RawSienna,
+linkcolor=TealBlue!70!black,
+citecolor=TealBlue,
 }
+
 
 \usepackage[object=vectorian]{pgfornament}
 \usepackage{xparse}
@@ -101,8 +101,8 @@ citecolor=RawSienna,
 
 \nouppercaseheads
 \makepagestyle{mystyle}
-\makeevenhead{mystyle}{\bfseries\thepage}{}{\textbf{\color{purple}\thechapter}\,: \leftmark}
-\makeoddhead{mystyle}{\textbf{\color{purple}\S}\,\rightmark}{}{\bfseries\thepage}
+\makeevenhead{mystyle}{\bfseries\thepage}{}{\textbf{\color{TealBlue!70!black}\thechapter}\,: \leftmark}
+\makeoddhead{mystyle}{\textbf{\color{TealBlue!70!black}\S}\,\rightmark}{}{\bfseries\thepage}
 \makeevenfoot{mystyle}{}{}{}
 \makeoddfoot{mystyle}{}{}{}
 \makepsmarks{mystyle}{%
@@ -148,6 +148,8 @@ citecolor=RawSienna,
         }
     \end{titlingpage*}
 }
+
+\colorlet{tealblue}{TealBlue}
 
 \setsecnumformat{\csname gablin#1\endcsname\quad}
 \newcommand{\gablinsection}{{\color{purple}\S\thesection}}

@@ -50,24 +50,29 @@
 using the last proposition we can prove the third one.}
 
 \begin{proof}
-    \( x \mid y \iff \dfrac{y}{x} \in \ZZ \) and \(  y \mid z \iff \dfrac{z}{y} \in \ZZ \). But \( \dfrac{z}{x}= \dfrac{y}{x}\cdot\dfrac{z}{y} \in \ZZ \iff x\mid z\).
+    \( x \mid y \iff \dfrac{y}{x} \in \ZZ \) and \(  y \mid z \iff \dfrac{z}{y} \in \ZZ \). 
+    But \( \dfrac{z}{x}= \dfrac{y}{x}\cdot\dfrac{z}{y} \in \ZZ \iff x\mid z\).
 \end{proof}
 
 
-\para{We may note that because of the definition of division, we get the following theorem:}
+\para{Let \(x \mid y\). Since \(y\) is a multiple of \(x\), it might seem to be the case that
+\(y \ge x\). But is that really true? Well, not really. However, there is something along those lines
+that is.}
 
 \begin{theorem}
     If \(x \mid y\), then either \(\abs{y} \ge \abs{x} \) or \(y=0\).
 \end{theorem}
 
-\para{The \(0\) case is extremely important and often hard to see. 
+\marginnote{The \(0\) case is extremely important and often hard to see. 
 Remember to look out for this case.}
 
 \begin{proof}
-    \(\abs{y}=\abs{k\cdot x}= \abs{k}\cdot \abs{x}\). But, \( \abs{k}\cdot \abs{x} \ge \abs{x} \iff \abs{y} \ge \abs{x}\). Note here that \(k\) is not taken to be \(0\) since, \(y=k\cdot x=0\cdot x=0\). But this case is already mentioned.
+    Since \(x \mid y\), by the definition of division, we must have, \[
+        y = kx : k \in \ZZ
+    \] Since the case of \(0\) has already been established, let us concern ourselves with
+    \(k \in \ZZ \setminus 0\), Thus,\\
+    \(\abs{y}=\abs{k\cdot x}= \abs{k}\cdot \abs{x}\). But \( \abs{k}\cdot \abs{x} \ge \abs{x} \iff \abs{y} \ge \abs{x}\).
 \end{proof}
-
-
 
 \para{The following is not of a severe importance in the view that it is hard to see or prove. 
 But it allows us to quickly formalise our solutions and is thus useful for proofs.}
@@ -87,7 +92,10 @@ But it allows us to quickly formalise our solutions and is thus useful for proof
     And, \(x\mid b \iff b=mx : m \in \ZZ \), hence, \(ac+b=kcx+mx=(kc+m)x \iff x \mid ac+b \).
 \end{proof}
 
-Finally, we may conclude this section of properties by stating all the previous properties and some more. 
+\para{This proof kind of sheds light on how to prove statement of the type \(P \iff Q\), or in words
+\(P\) holds if and only if \(Q\) does. We show that \(P \implies Q\) and \(Q \implies P\). You can verify
+that this is the same \(P \iff Q\). Now, let us end this section with some properties of division and examples.}
+
 \begin{theorem}
     Let \(x\), \(y\), \(z\) \(\in\) \(\ZZ\)
     \begin{enumerate}
@@ -109,8 +117,6 @@ Finally, we may conclude this section of properties by stating all the previous 
     \begin{proof}
         Here we can see the use of \Cref{lem: unimp}. Suppose \(n \mid 2n^2+3n+2\), then \(n \mid 2n^2 + 3n\), and \(n \mid 2n^2 + 3n + 1 \iff n \mid 1\). But, \( n \mid 1 \implies \abs{1} \ge \abs{n} \iff 1 \ge n\) which contradicts our earlier statement that \(n > 1\). Hence, \(n \nmid 2n^2+3n+1\).
     \end{proof}
-    
-    
 \end{example}
 
 \begin{remark}
@@ -120,7 +126,6 @@ Finally, we may conclude this section of properties by stating all the previous 
 
 \begin{example}
     Show that for any two natural numbers, \(a\), \(b : a > b\), \(a \nmid 2a+b\).
-    
     \begin{proof}
         Again, we can use \Cref{lem: unimp}. Suppose \(a \mid 2a+b\), then \(a \mid 2a\) and \(a \mid 2a + b \iff a \mid b\). But, \(a \mid b \implies \abs{b} \ge \abs{a} \) and \(a, b \in \NN \implies b \ge a \). This contradicts our the fact \(a > b\). Hence \(a \nmid 2a+b\).
     \end{proof}
@@ -128,7 +133,10 @@ Finally, we may conclude this section of properties by stating all the previous 
 
 \section{Euclid's Division Lemma}
 
-Euclid's division lemma is something we will make much use of, especially later. For now the unproven statement shall suffice.
+\para{Euclid's division lemma is something we will make much use of, especially later. For now we shall be satisfied with the unproven statement.}
+
+\marginnote{By unique we really mean one and only one in the language of mathematics. This means
+that there has to be at least one and at most one such thing.}
 
 \begin{theorem}
     \label{thm: euclid}
@@ -140,12 +148,16 @@ Euclid's division lemma is something we will make much use of, especially later.
 
 \index{Primes}
 
+\marginnote{Note that there have to be exactly two factors. Therefore, \(1\) which has only one
+factor is not prime.}
+
 \begin{definition}
     [Primes]
     Any \(x \in \NN\) is called a prime, if and only if it has exactly \(2\) \textit{divisors}.
 \end{definition}
 
-Primes are a very interesting subset of naturals. There properties will be explored later. For now, we use primes to define one of the most important theorem in all of number theory.
+\para{Primes are a very interesting subset of naturals. There properties will be explored later. 
+For now, we use primes to define one of the most important theorem in all of number theory.}
 
 \subsection{Fundamental Theorem of Arithmetic}
 
@@ -155,8 +167,8 @@ Primes are a very interesting subset of naturals. There properties will be explo
     Any natural number can be \textit{uniquely} expressed as a product of primes upto order.
 \end{theorem}
 
-By uniquely, we mean there is \textit{at most} and \textit{at least} one way to express any natural as a product of primes. The order in which the product is expressed is irrelevant because of the commutativity of multiplication. \par 
-We can further extend this theorem to include all integers by using some claims.
+\para{The order in which the product is expressed is irrelevant because of the commutativity of multiplication. \par 
+We can further extend this theorem to include all integers by using some claims.}
 
 \subsection{Integers as Multisets}
 
@@ -187,6 +199,9 @@ It also allows us to restate divisibility for positive integers.
     [Divisibility in multisets]
     \(\forall a, b \in \NN\), \[a \mid b \iff A \subseteq B \]
 \end{theorem}
+
+\para{Where \(A\) and \(B\) are multisets of \(a\) and \(b\) respectively. We can't extend this
+to the negative integers because of the rather annoying presence of \(-1\).}
 
 \begin{remark}
     Henceforth, all variables are integers unless explicitly mentioned.
@@ -299,11 +314,13 @@ From the definitions of \(\gcd\) and \(\lcm\) we obtain the following very impor
 \begin{proof}
     Let there be finitely many primes, \(\manys{p}{n}\). Define \( N \) as \( \many{p}{n} + 1 \).
     \par
-    Note that \(N\) is pairwise co-prime to all, \(\many{p}{n}\) because if \(p_i \in \manys{p}{n} \mid N \) and \(p_i \mid \many{p}{n} \iff p_i \mid 1\). But, \( p_i \in \NN \implies p_i = 1 \) which is absurd.
+    Note that \(N\) is pairwise co-prime to all, \(\many{p}{n}\) because if \(p_i \in \manys{p}{n} \mid N \) 
+    and \(p_i \mid \many{p}{n} \iff p_i \mid 1\). But, \( p_i \in \NN \implies p_i = 1 \) which is absurd.
     \\
-    \par Since \(N \in \NN\), \(N\) must have a prime factor, \(p\) because of \Cref{thm: fta}. And \(p \notin \manys{p}{n}\) because \(N \) is pairwise co-prime to all primes in \(\manys{p}{n}\). This contradicts our assumption that \(\manys{p}{n}\) was the set of all primes, proving that there are infintely many primes.
-    
-
+    \par Since \(N \in \NN\), \(N\) must have a prime factor, \(p\) because of \Cref{thm: fta}. 
+    And \(p \notin \manys{p}{n}\) because \(N \) is pairwise co-prime to all primes in \(\manys{p}{n}\). 
+    This contradicts our assumption that \(\manys{p}{n}\) was the set of all primes, 
+    proving that there are infintely many primes.
 
 \end{proof}
 
