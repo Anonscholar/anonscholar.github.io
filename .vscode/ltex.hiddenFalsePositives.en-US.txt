@@ -1,2 +1,0 @@
-{"rule":"PHRASE_REPETITION","sentence":"^\\QNot a function A function\\E$"}
-{"rule":"PHRASE_REPETITION","sentence":"^\\QNot a function A function Vertical Line test for functions\\E$"}
