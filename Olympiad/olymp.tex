@@ -1,22 +1,25 @@
-\documentclass[twoside, a4paper, 10pt]{memoir}
+\documentclass[twoside,a4paper,10pt]{memoir}
 
 
 \input{../style.tex}
 \input{../theorems.tex}
 \input{../macros.tex}
+\usepackage{manfnt}
+
+\descrip{A journey into olympiad mathematics}
+\author{Adyansh Mishra}
+\date{\today}
+\title{An Olympiad Notebook}
 
 
 \begin{document}
 %https://tex.stackexchange.com/questions/249475/index-hyperlink-not-pointing-to-correct-page
+\pagenumbering{roman}
 
-    \descrip{a journey into olympiad mathematics}
-    \author{Adyansh Mishra}
-    \date{\today}
-    \title{An Olympiad Notebook}
-
-    \includepdf[scale=1.15]{cover.pdf}
     \pagestyle{empty}
-    \frontmatter
+    \includepdf[scale=1.15]{cover.pdf}
+
+\frontmatter
     \fncytitle    
     \newgeometry{right=1.5cm,left=1.5cm}
     \renewcommand*{\contentsname}{Short contents}
@@ -26,6 +29,7 @@
     \renewcommand*{\contentsname}{Contents}
     \setcounter{tocdepth}{1}% subsections and above
     \tableofcontents
+    
     \clearpage
     \listoffigures
     \restoregeometry
@@ -40,7 +44,12 @@
     \parttoc
     \restoregeometry
     \input{nt/divisibility}
+  
     
+    \newgeometry{right=1.5cm,left=1.5cm}
+    \part{Combinatorics}
+    \parttoc
+    \restoregeometry
 
     \appendix
     \newgeometry{right=1.5cm,left=1.5cm}
@@ -49,6 +58,8 @@
     \restoregeometry
     \input{appendices/term}
     
+
+
     \backmatter
     \printindex
 

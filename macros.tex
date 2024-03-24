@@ -363,3 +363,30 @@ tkzSecondPointResult)}
         \marginpar{\begin{marginrefbox}\RaggedRight#1\end{marginrefbox}}}{%
         \marginpar{\begin{marginrefbox}\RaggedRight#1\end{marginrefbox}}}%
     }
+
+
+    \usepackage{palatino}
+    \usepackage{enumitem}
+    \usepackage{fontawesome}
+    \usepackage{multicol}
+    
+
+\newcommand{\cautionmark}{\scshape{\color{black}\faWarning}}
+\newlist{Caution}{enumerate}{1}
+\setlist[Caution]{label=\raisebox{-0.5cm}[0pt][0pt]{\cautionmark},leftmargin=1cm}
+
+\newcommand{\alignedmarginpar}[1]{%
+    \Ifthispageodd{%
+        \marginpar{\RaggedRight#1}}{%
+        \marginpar{\RaggedLeft#1}}%
+    }
+
+
+\newcommand{\caution}[1]{  
+  \alignedmarginpar{\bigskip \cautionmark}
+  
+  \begin{mdframed}[linecolor=red!70!black]%
+      \bfseries\color{red!50!black}%
+      #1
+    \end{mdframed}
+}

@@ -1,5 +1,4 @@
 \chapter{Divisibility}
-\label{nt: div}
 
 
 \epigraph{``Give him threepence, since he must make gain out of what he learns''}
@@ -9,12 +8,10 @@
 \motiv{Divisibility forms the basis of all of Number Theory}
 
 
-\para{
-    The idea of divisibility is something most people are familiar with. Yet, it is a notion so useful, that we may
+\para{The idea of divisibility is something most people are familiar with. Yet, it is a notion so useful, that we may
     yet again acquaint ourselves with it and its properties.
     This time, however, we are going to approach it with formality and use its property in a general, and abstract manner.
-    For this, let us first define division for the integers.
-}
+    For this, let us first define division for the integers.}
 
 \index{division}
 
@@ -31,10 +28,8 @@
 \end{definition}
 
 
-\para{
-    Immediately, we can put forth some \emph{propositions} from these definitions. They may not be obvious from first glance
-    but they are indeed very easy to get an intuitive grasp on after we have seen them.
-}
+\para{Immediately, we can put forth some \emph{propositions} from these definitions. They may not be obvious from first glance
+but they are indeed very easy to get an intuitive grasp on after we have seen them.}
 
 \begin{plainprop*}
     For \(x\), \(y\), \(z\) \(\in\) \(\ZZ\)
@@ -324,3 +319,51 @@ From the definitions of \(\gcd\) and \(\lcm\) we obtain the following very impor
 
 \end{proof}
 
+\para{This type of proof is called the method of contradiction. We assume the negation of what we
+want to prove, say to prove \(P\), assume \(\neg P\) and then show that the negation leads to a contradiction. Thus,
+\(\neg P\) cannot hold, and therefore \(P\) must hold. }
+
+\section{Euclid's Division Algorithm}
+
+\para{Euclid's division algorithm is very useful in a lot of cases. It allows to compute 
+\(\gcd(a,b)\) faster, and can be helpful in some proofs as well. The basic idea of it is that
+since we can represent \(a = bq + r\) for any \(a\) and \(b\), We can substitute this as
+\(a\) while computing \(\gcd(a,b)\).}
+
+\begin{theorem}
+    [Euclid's Division Algorithm]
+    For any two integers \(a\), \(b\), such that \(a = bq + r\), where \(0 \le r < a\),
+    \[
+        \gcd(a,b) = \gcd(r,b)
+    \]
+\end{theorem}
+
+\begin{proof}
+    The idea here is to notice that \(\gcd(a,b) \mid a\) and \(\gcd(a,b) \mid b\). Therefore,
+    since \(\gcd(a,b) \mid a\),
+    \[
+        \gcd(a,b) \mid bq + r
+    \]
+    But, \(\gcd (a,b) \mid b\). Citing \Cref{lem: unimp}, we must have \(\gcd(a,b) \mid r\).
+    Now that we have shown \(\gcd(a,b) \mid r, b\), we must also show that it is the greatest number to do
+    so. Let us assume that is not the case, let \(\ell \mid r, b : \ell > \gcd(a,b)\). Which means that
+    \(\ell = \gcd(r,b)\)\par
+    But the thing of note here is that if \(\ell \mid r\) and \(\ell \mid b\). Then \(\ell \mid a\).
+    But that can not happen, since \(\ell\) is greater than \(\gcd(a,b)\) and divides both \(a,b\).
+    Therefore, \(\ell = \gcd (a,b) = \gcd(r,b)\).
+\end{proof}
+
+\para{One thing to note here, is that since \(\gcd(a,b) = \gcd(r,b)\), \(\gcd(a,b) = \gcd(a-bq,r)\).
+\begin{moral}
+    Basically, \(\gcd(a,b) = \gcd(a \pm kb, r)\). 
+\end{moral}
+This statement is equally, if not more important than the formal one.}
+
+\caution{While it is true that \(\gcd(a,b) = \gcd(r,b)\), it is not in any way true that
+\(\lcm(a,b) = \lcm(r,b)\).}
+
+\section{Bezout's Lemma}
+
+\para{We are now nearing the end of this chapter, and bezout's lemma is one of the last
+topics we'll cover. Consider the values of \(ax + by\), for \(a, b, x , y \in \ZZ\).
+}

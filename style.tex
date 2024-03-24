@@ -151,15 +151,6 @@ citecolor=TealBlue,
 
 \colorlet{tealblue}{TealBlue}
 
-\setsecnumformat{\csname gablin#1\endcsname\quad}
-\newcommand{\gablinsection}{{\color{purple}\S\thesection}}
-\newcommand{\gablinsubsection}{{\color{purple}\S\thesubsection}}
-\setsecnumdepth{subsection}
-
-\renewcommand*{\thepart}{\color{purple}\arabic{part}}
-\renewcommand*{\parttitlefont}{\color{black}\sffamily\HUGE}
-\renewcommand*{\partnamefont}{\normalfont\Huge\scshape\MakeLowercase}
-\renewcommand*{\partnumfont}{\color{black}\normalfont\scshape\MakeLowercase}
 
 
 %some graph stuff
@@ -238,3 +229,12 @@ citecolor=TealBlue,
 \crefformat{subsection}{\S#2#1#3}
 \crefformat{subsubsection}{\S#2#1#3}
 
+\setsecnumformat{\csname gablin#1\endcsname\:\:}
+\newcommand{\gablinsection}{{\color{purple}\S\thesection}}
+\newcommand{\gablinsubsection}{{\color{purple}\S\thesubsection}}
+\setsecnumdepth{subsection}
+
+\renewcommand*{\thepart}{\color{purple}\arabic{part}}
+\renewcommand*{\parttitlefont}{\color{black}\sffamily\HUGE}
+\renewcommand*{\partnamefont}{\normalfont\Huge\scshape\MakeLowercase}
+\renewcommand*{\partnumfont}{\color{black}\normalfont\scshape\MakeLowercase}
