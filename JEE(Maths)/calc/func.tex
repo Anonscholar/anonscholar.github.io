@@ -4,12 +4,14 @@
 
 \marginref{\raggedright\Cref{sec: ctp} \nameref{sec: ctp}}
 
+\index{Relation}
 \para{A relation between two sets \(A\), \(B\) is the subset of their \emph{cartesian
 product} \(A \times B\).
 Since, a cartesian product between \(A\) and \(B\) is also a set of the ordered pairs, so
 is a relation \(R\),\[
     R \subseteq \{(a,b) \mid a \in A, b \in B\}
 \]}
+
 \para{There need not be any specific relation between the two elements. But often, it is useful
 to talk about relations which employ a specific relationship between the two elements.
 Hence, we can think of a relation as somehow connecting the two elements.}
@@ -36,19 +38,19 @@ Hence, we can think of a relation as somehow connecting the two elements.}
 \end{figure}
 
 \subsection{Domain}
-
+\index{Relation!domain}
 \para{The domain of a relation \(R \subseteq A \times B\) is the set of all first elements of 
 the ordered pairs of the relation, that are in set \(A\). \[D_R = \{a \mid (a,b) \in R\}\]}
 
 \subsection{Range and Co-domain}
 
 \subsubsection{Range}
-
+\index{Relation!range}
 \para{Range of \(R\) is the set of all second elements of the ordered pairs in the relation, that
 are in set \(B\). \[Range_R = \{b \mid (a,b) \in R\}\]}
 
 \subsubsection{Co-domain}
-
+\index{Relation!co-domain}
 \marginnote{You may note that \(Range_R \subset Co-domain_R\)}
 
 \para{Co-domain of \(R \subseteq A \times B\) is the set \(B\) itself.} 
@@ -75,14 +77,14 @@ that are useful later, have been especially marked.}
 is \(R = A \times A\).}
 
 \subsubsection{Inverse Relation}
-\index{Inverse Relation}
+\index{Relation!Inverse}
 
 \para{Let \(R\) be the relation from \(A\) to \(B\). Then \(R\inv\) is the relation from \(B\)
 to A such that, \[R\inv = \left\{ (b,a) \mid (a,b) \in R \right\}\]
 Therefore, we may have \((a,b) \in R \iff (b,a) \in R\inv\).}
 
 \subsubsection{Identity Relation}
-\index{Identity Relation}
+\index{Relation!Identity}
 
 \para{The identity relation \(I_A\) on \(A\) is defined as
 \[
@@ -99,7 +101,7 @@ not identity relations. See \Cref{ex: identity}.}
 \para{A relation \(R\) is a reflexive relation on \(A\), if for every \(a \in A\),
 \((a,a) \in R\).}
 
-\index{Reflexive Relation}
+\index{Relation!Reflexive}
 
 \begin{example}
     \label{ex: identity}
@@ -111,7 +113,7 @@ not identity relations. See \Cref{ex: identity}.}
 \end{example}
 
 \subsubsection{Symmetric Relation}
-\index{Symmetric Relation}
+\index{Relation!Symmetric}
 
 \para{A relation \(R\) on \(A\) is symmetric if \((a,b) \in R \iff (b,a) \in R\).}
 
@@ -125,7 +127,7 @@ not identity relations. See \Cref{ex: identity}.}
 \end{example}
 
 \subsubsection{Transitive Relation}
-\index{Transitive Relation}
+\index{Relation!Transitive}
 
 \para{A relation \(R\) on \(A\) is transitive if \((a,b) \in R\) and \((b,c) \in R \implies (a,c) \in R\). }
 
@@ -135,6 +137,7 @@ not identity relations. See \Cref{ex: identity}.}
 \end{example}
 
 \subsubsection{Equivalence Relation}
+\index{Relation!Equivalence}
 
 \para{An equivalence relation on \(A\) is a relation that is transitive, reflexive, and symmetric.}
 
@@ -161,8 +164,8 @@ than relations for us.}
     \]
 \end{definition}
 
-\index{Pre-image}
-\index{Image}
+\index{Function!Pre-image}
+\index{Function!Image}
 
 \para{A little more informally, functions are a mapping from set \(A\) to \(B\). We represent
 this by saying \(f \colon A \rightarrow B\). When we map \(a \in A\) to \(b \in B\),
@@ -214,8 +217,8 @@ for \(f\) is the \emph{set of all images of pre-images.}}
 
 \subsection{Informal Definition}
 
-\index{Dependent Variable}
-\index{Independent Variable}
+\index{Variable!Dependent}
+\index{Variable!Independent}
 \para{A function can also be thought of a machine that takes in an independent variable and churns
 out a dependent variable. This is a very vague abuse of already known ideas to somehow understand
 the abstractness of the idea of a function.}
@@ -229,6 +232,7 @@ the abstractness of the idea of a function.}
 \subsection{Implicit and Explicit}
 
 \subsubsection{Explicit Function}
+\index{Function!explicit}
 \para{When we can clearly write out the dependent variable in terms of the independent variable,
 the function is called Implicit.}
 
@@ -237,6 +241,7 @@ the function is called Implicit.}
 \end{example}
 
 \subsubsection{Implicit Function}
+\index{Function!implicit}
 \para{These are the functions in which the dependent variable cannot be written only in the terms
 of the independent variable.}
 
@@ -257,8 +262,8 @@ only Calculus even after JEE, let alone anything in Mathematics.}
 
 \subsection{Bounded Functions}
 
-\index{Bounded function}
-\index{Unbounded function}
+\index{Function!bounded}
+\index{Function!unbounded}
 
 \para{A function is bounded if it is bounded from both above and below. A real-valued function, \(f : A \rightarrow B\) is bounded
 from above if for each \(a \in A\), \(f(a) \le M\). It is bounded from below if for each \(a \in A\),
@@ -294,7 +299,7 @@ as the ``sine'' function which is just an abuse of notation. ``\(\sin(x)\)'' is 
 just a number. This is just some nitpicking.}
 
 \section{Graphing the Function}
-
+\index{Function!graph}
 \para{Consider any function \(f\) that maps from \(x\) to \(y\), where any \(a\) is literally 
 anything. It could be \(x^3\), \(\sin(x)\), or \(e^x\). Basically, \(y = f(x)\). If we map
 \(x\) and \(y\) as co-ordinates on the cartesian plane, we get the graph of the function, \(f\)
@@ -313,7 +318,7 @@ such that \(f(x) = y\).}
 
 \subsection{Vertical Line Test}
 
-\index{Vertical Line Test}
+\index{Function!Vertical Line Test}
 
 \para{When we map \(f\) onto the cartesian plane, because of the very definition of a function,
 there are no two ordered pairs \((x,a)\) and \((x,b)\) since \(x\) cannot have two images.
@@ -325,7 +330,7 @@ test.}
 \begin{figure}[H]
     \begin{subfigure}{0.5\textwidth}
         \centering
-        \begin{tikzpicture}
+        \begin{tikzpicture}[scale=1]
             \begin{axis}[funcgraph]
             \draw [blue] (axis cs:3,-10)--(axis cs:3,10);
             \addplot[domain=-3:3,red,samples=50]({x^2},{x});
@@ -335,7 +340,7 @@ test.}
     \end{subfigure}%
     \begin{subfigure}{.5\textwidth}
         \centering
-        \begin{tikzpicture}
+        \begin{tikzpicture}[scale=1]
             \begin{axis}[funcgraph]
                 \addplot[red]{x^2};
             \draw [blue] (axis cs:3,-1000)--(axis cs:3,1000);
@@ -346,9 +351,8 @@ test.}
     \caption{{\color{blue}Vertical Line test} for {\color{red}functions}}
 \end{figure}
 
-\para{Here are the graph of some elementary algebraic functions. Their domain and range are listed
+\para{Here are the graphs of some elementary algebraic functions. Their domain and range are listed
 in the caption, where \(D\) is the domain, and \(R\) the range.}
-\clearpage
 
 \begin{figure}[H]
     \centering
@@ -357,8 +361,7 @@ in the caption, where \(D\) is the domain, and \(R\) the range.}
         \centering
         \begin{tikzpicture}
             \begin{axis}[funcgraph]
-                \addplot[red,domain=-10:10]{3};
-            \addlegendentry{\(y=c\)}
+                \addplot[red,domain=-10:10]{3} node[above,blue,pos=0.7] {$y=c$};
             \end{axis}
         \end{tikzpicture}
     \caption{Constant function, \(D = \RR\), \(R = \left\{c\right\}\)}
@@ -367,8 +370,7 @@ in the caption, where \(D\) is the domain, and \(R\) the range.}
         \centering
         \begin{tikzpicture}
             \begin{axis}[funcgraph]
-                \addplot[red,domain=-10:10]{x};
-            \addlegendentry{\(y=x\)}
+                \addplot[red,domain=-10:10]{x} node[left,blue,pos=0.7] {$y=x$};
             \end{axis}
         \end{tikzpicture}
     \caption{Identity Function, \(D = \RR\), \(R = \RR\)}
@@ -378,8 +380,7 @@ in the caption, where \(D\) is the domain, and \(R\) the range.}
         \centering
         \begin{tikzpicture}
             \begin{axis}[funcgraph]
-                \addplot[red,domain=-10:10]{x^2};
-            \addlegendentry{\(y=x^2\)}
+                \addplot[red,domain=-10:10]{x^2} node[left,blue,pos=0.7] {$y=x^2$};
             \end{axis}
         \end{tikzpicture}
     \caption{Square Function, \(D = \RR\), \(R = \RR^+ \cup \left\{0\right\}\)}
@@ -388,8 +389,7 @@ in the caption, where \(D\) is the domain, and \(R\) the range.}
         \centering
         \begin{tikzpicture}
             \begin{axis}[funcgraph]
-                \addplot[red,domain=-2:2]{x^3};
-            \addlegendentry{\(y=x^3\)}
+                \addplot[red,domain=-2:2]{x^3} node[left,blue,pos=0.7] {$y=x^3$};
             \end{axis}
         \end{tikzpicture}
     \caption{Cubic Function, \(D = \RR\), \(R = \RR\)}
@@ -399,9 +399,8 @@ in the caption, where \(D\) is the domain, and \(R\) the range.}
         \centering
         \begin{tikzpicture}
             \begin{axis}[funcgraph]
-                \addplot[red,domain=0.01:1,samples=100]{1/x};
+                \addplot[red,domain=0.01:1,samples=100]{1/x}  node[right,blue,pos=0.7] {$y=\dfrac{1}{x}$};
                 \addplot[red,domain=-1:-0.01,samples=100]{1/x};
-            \addlegendentry{\(y=\frac{1}{x}\)}
             \end{axis}
         \end{tikzpicture}
     \caption{Reciprocal Function, \(D = \RR \setminus \left\{0\right\}\), \(R = \RR \setminus \left\{0\right\}\) } 
@@ -411,8 +410,7 @@ in the caption, where \(D\) is the domain, and \(R\) the range.}
         \begin{tikzpicture}
             \begin{axis}[funcgraph]
                 \addplot[red,domain=-10:-0.01]{-x};
-                \addplot[red,domain=0.01:10]{x};
-            \addlegendentry{\(y=\abs{x}\)}
+                \addplot[red,domain=0.01:10]{x} node[right,blue,pos=0.4] {$y=\abs{x}$};
             \end{axis}
         \end{tikzpicture}
     \caption{Modulus Function, \(D = \RR\), \(R = \RR^+ \cup \left\{0\right\}\)}
@@ -437,7 +435,7 @@ in the caption, where \(D\) is the domain, and \(R\) the range.}
 
 \section{Piecewise functions}
 
-\index{Piecewise function}
+\index{Function!Piecewise}
 
 \para{When a function \(f\) of \(x\) has a different formula for particular intervals of \(x\),
 we call it a piecewise function. We represent it as, \[
@@ -474,14 +472,14 @@ we call it a piecewise function. We represent it as, \[
 
 \section{Injective, Surjective and all that}
 
-\index{Injective}
+\index{Function!Injective}
 
 \para{If for all \(x \in A\), for function \(f : A \rightarrow B\), \(x\) has a `distinct' image,
 the function is called one-one or injective. What it means is that any image has only one pre-image
 under \(f\). Therefore, \(f(a) = f(b) \iff a = b\). Since, \(f(a)\) and \(f(b)\) must have only
 one pre-image. Since they're the same, the pre-image must also be the same.}
 
-\index{Many-One Function}
+\index{Function!Many-One}
 
 \para{If this is not the case, any image may have more than one pre-image under \(f\),
 the function is not injective and is called many-one. Here, \(f(a) = f(b) \notiff a = b\).}

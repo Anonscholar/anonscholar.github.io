@@ -270,3 +270,79 @@ and finally for \(n^{th}\) second just do \(s_n - s_{n-1}\).}
 \end{soln}
 \end{example}
 
+\begin{example}
+    A car is at distance \(d\) from a boy. It starts accelerating at \(a\) \si{\metre\per\second\squared}. What is the minimum velocity that the boy should
+    have to catch up with the car.
+    \begin{soln}
+        Consider separation of boy and car, \(s_{c,b}\). Using the equations of motion, 
+        we have \(s_{b} = vt\), \(s_{c} = \dfrac{1}{2}at^2\). Thus, 
+        \begin{equation}
+            \label{eq: vel}
+            s_{c,b} = d + \frac{1}{2}at^2 - vt        
+        \end{equation}
+    
+        The most important thing to note here is that, 
+        \begin{moral}
+            For two objects to meet, the solution for time must be real.
+        \end{moral}
+        Therefore, from the simple equation, \eqref{eq: vel}, we must have, for real solutions,
+        \(b^2 - 4ac\) for the equation \(at^2 + bt + c\). Solving for this by substituting values from
+        \eqref{eq: vel}, we have,
+            \begin{equation}
+                v \ge \sqrt{2ad}
+            \end{equation}
+    \end{soln}
+\end{example}
+
+\begin{remark}
+    One thing of note is that the converse of above is true as well,
+    \begin{moral}
+        For two objects to \emph{not} meet, the solution of time must be imaginary or negative.    
+    \end{moral}
+\end{remark}
+
+\para{One more key note to takeaway is that,}
+
+\begin{moral}
+    At instant of maximum separation, relative velocity of particles is \(0\).
+\end{moral}
+
+\begin{example}
+    A body is dropped at \(t = 0\), after time \(t = t_0\), another body is thrown downwards with
+    velocity \(u\) \si{\meter\per\second}. Assuming first body reaches ground first, plot graph
+    of separation.
+
+    \begin{soln}
+        At instant \(t_0\), displacement of first particle = \(\dfrac{1}{2}gt_{0}^2\). Note that here
+        we set up co-ordinates such that positive \(y\) is downwards from point of drop. The displacement 
+        of first body at \(t = t\) after \(t_0\) but before \framebox{reaching ground} is
+        \begin{equation}
+            s_1 = \frac{1}{2}gt_{0}^2 + \frac{1}{2}g(t-t_0)^2
+        \end{equation}
+        While for second body is,
+        \begin{equation}
+            s_2 = ut + \frac{1}{2}g(t-t_0)^2
+        \end{equation}
+
+        Thus, 
+        \begin{equation}
+            s_{1,2} = \frac{1}{2}g(t_0)^2 + t(gt_0 - u)
+        \end{equation}
+
+        Thus, before reaching ground, \(s-t\) graph is linear. However, after first body reaches ground,
+
+        \begin{equation}
+            s_{1,2} = ut + \frac{1}{2}g(t)^2
+        \end{equation}
+        which is a parabola. Thus, overall graph is,
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}
+                \begin{axis}[funcgraphbare, xlabel={$t$}, ylabel={$s$}]
+                    \addplot[red, domain=0:2] {x+2};
+                    \addplot[red,domain=2:3] {1.5*(-x^2)+5*x};
+                \end{axis}
+            \end{tikzpicture}
+        \end{figure}
+    \end{soln}
+\end{example}
