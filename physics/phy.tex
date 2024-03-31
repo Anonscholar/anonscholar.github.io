@@ -5,10 +5,10 @@
 \input{../theorems.tex}
 \input{../macros.tex}
 
-\descrip{Part 2: on Physics}
+\descrip{On the universal truths}
 \author{Adyansh Mishra}
 \date{\today}
-\title{A JEE Notebook}
+\title{A Foray into Physics}
 
 \begin{document}
 %https://tex.stackexchange.com/questions/249475/index-hyperlink-not-pointing-to-correct-page
@@ -16,8 +16,8 @@
 
 
     \frontmatter
-    \includepdf[scale=1.15]{./cover.pdf}
-    \clearpage\fncytitle
+    \includepdf[scale=1.15]{cover.pdf}
+    \fncytitle
 
     \newgeometry{right=1.5cm,left=1.5cm}
     \renewcommand*{\contentsname}{Short contents}
@@ -26,14 +26,12 @@
 
     \clearpage
     \renewcommand*{\contentsname}{Contents}
-    \setcounter{tocdepth}{1}% subsections and above
+    \setcounter{tocdepth}{1}
     \tableofcontents
+    
     \clearpage
     \listoffigures
-    \restoregeometry
 
-    \input{intro.tex}
-    
     \mainmatter
     \setcounter{chapter}{-1}
     

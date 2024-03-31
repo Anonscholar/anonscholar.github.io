@@ -19,3 +19,61 @@ The equality symbol is not apt here. What should be much better used is the symb
     \(a \equiv b \pmod{n}\) if and only if \(p \mid a - b\). In such a case \(a\) is said to be 
     congruent to \(b\) modulo \(n\).
 \end{definition}
+
+A neat little property of this is that \(a + n \equiv a \pmod{n}\). Also, we may note that
+the values of \(b\) such that \(b \equiv a \pmod{n}\) form an A.P.
+
+\begin{proof}
+    \(b \equiv a \pmod{n} \iff n \mid b - a \iff b - a = nk\) where \(k\) is an integer. Thus,
+    \(b = a + nk\), which is an A.P.
+\end{proof}
+
+\section{Remainder and Modulo}
+
+Consider the set of values for which \(b \equiv 3 \pmod{5}\). They form the set, \(\left\{\dots
+-7, -2, 3, 8, \dots \right\}\). It is difficult to work with such infinite sets which expand
+in both directions, so let us concern ourselves only with non-negative elements, \(\left\{
+3, 8, 13, 18 \dots \right\}\). 
+
+Through this example, we may see a neat pattern,
+
+\begin{lemma}
+    The lowest non-negative value of \(a\) such that \(a \equiv b \pmod{n}\) is the remainder \(r\)
+    such that \(b = nk + r\), \(0 \le r < n\). 
+\end{lemma}
+
+\section{Residue class}
+
+Consider a number \(3\). If we concern ourselves only with the remainder such that \(a \equiv r \pmod{n}\),
+you may note that \(r\) can only have three values here, \(0\), \(1\), and \(2\). Thus, either
+\(a \equiv 0\), \(a \equiv 1\) or \(a \equiv 2 \pmod{n}\). This is always true. These \(3\) sets
+that \(a\) can belong to, are called the \(3\) residue classes modulo \(3\).
+
+In general,
+
+\begin{definition}
+    For any natural number \(n\), \(r\) such that \(0 < r < n\), the \(r^{th}\) residue class is
+    the set of all integers \(a\) such that \(a \equiv r \pmod{n}\). This set is,
+    \[
+        \left\{\dots, r - 2n, r - n, r, r + n, r + 2n, \dots\right\}
+    \]
+\end{definition}
+
+There are exactly \(n\) residue classes modulo \(n\) since \(r\) can take \(n\) values, from \(0\)
+to \(n - 1\).
+
+\section{Arithmetic over modulo}
+
+Consider \(a + b \pmod{n}\) for \(a \equiv r \pmod{n}\) and \(b = m \pmod{n}\). Does \(a + b \equiv r + m
+\pmod{n}\)? Yes. The idea behind the proof is to just have \(a = nk + r\) and \(b = nd + m\). 
+
+\begin{proposition}
+    From the definition and the previous discussion of modular arithmetic, we have,
+    \begin{enumerate}
+        \ii For \(a \equiv r\), \(b \equiv m \pmod{n}\), \(a + b \equiv r + m \pmod{n}\)
+        \ii \(a \equiv r\), \(b \equiv m \pmod{n} \implies\) \(ab \equiv rm \pmod{n}\)
+        \ii For \(a \equiv b \pmod{n}\), \(a + c \equiv b + c \pmod{n}\)
+        \ii For \(a \equiv b \pmod{n}\), \(ac \equiv bc \pmod{n}\)
+        \ii For \(a \equiv b \pmod{n}\), \(a^c \equiv b^c \pmod{n}\)
+    \end{enumerate}
+\end{proposition}

@@ -463,3 +463,20 @@ the time-derivative of the unit vectors. Using the definitions in \eqref{eq: pol
     \derivative{\unitv{r}}{t} &= \ndiv{\theta} \unitv{\theta}\\
     \derivative{\unitv{\theta}}{t} &= -\ndiv{\theta} \unitv{r}
 \end{align}
+
+\noindent Using these results, we get that
+
+\begin{align}
+    \vect{v} &= \ndiv{r} \unitv{r} + r\ndiv{\theta} \unitv{\theta}\\
+    \label{polar: accel}
+    \vect{a} &= (\nddiv{r} - r\ndiv{\theta}^2) \unitv{r} + (r\nddiv{\theta} + 2\ndiv{r}\ndiv{\theta}) \unitv{\theta}
+\end{align}
+
+\noindent The most interesting result are the various terms of acceleration in \eqref{polar: accel}. First let 
+us consider the terms along \(\unitv{r}\). \(\nddiv{r}\) is the \emph{radial} acceleration. It is
+the change is radial speed. The second term \(-r\ndiv{\theta}^2\) is the \emph{centripetal} acceleration.
+It arises from a change in tangential velocity.
+
+Now let us consider the terms along \(\unitv{\theta}\). The \(r\nddiv{\theta}\) term is the tangential
+acceleration resulting from change in tangential speed. The other term \(2\ndiv{r}\ndiv{\theta}\) is the
+\emph{coriolis} acceleration. I shall discuss it when discussing rotating frames.
