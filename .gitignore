@@ -1,4 +1,8 @@
 .vscode/
+**/*.bbl-*
+**/*.bbl
+**/*.bcf
+**/*.bcf-*
 **/*.idx
 **/*.ilg
 **/*.ptc1
