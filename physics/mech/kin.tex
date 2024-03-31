@@ -346,3 +346,120 @@ and finally for \(n^{th}\) second just do \(s_n - s_{n-1}\).}
         \end{figure}
     \end{soln}
 \end{example}
+
+\section{Time derivative of a vector}
+
+\para{The time derivative of \(r\) and \(v\) have already been observed in \Cref{def: velocity} and 
+\Cref{def: acceleration} already. However, let us have a better discussion of what it really entails.}
+
+\todo{Add vectors, atleast elem stuff and rename jee to general or olymp.}
+
+\para{When we write, \[
+    \derivative{\vect{r}}{t}
+\] The derivative differs from the derivative of a scalar. It has both magnitude and direction.
+One way to compute it is to break it down to its components, \[
+    \derivative{\vect{r}}{t} = \derivative{x}{t}  \unitv{i} + \derivative{y}{t}  \unitv{j} + \derivative{z}{t}  \unitv{k}
+\]. But since the components of the vector depend on the reference frame, we may generalise the differentiation of a vector
+in two parts.}
+
+\begin{enumerate}
+        \ii[\textbf{Case I}] \(\displaystyle\derivative{\vect{A}}{t} \perp \vect{A}\)
+        \ii[\textbf{Case II}] \(\displaystyle\derivative{\vect{A}}{t} \parallel \vect{A}\)
+\end{enumerate}
+
+\para{For the first case, let us first consider a geometric argument for \(\increment \vect{A}\)
+which is perpendicular to \(\vect{A}\). For sufficiently small values of \(\increment \vect{A}\),
+the change in magnitude is negligible, we only observe a change in direction. This becomes
+definitive in the limiting case. Consider the following figure,}
+
+\begin{figure}
+    [H]
+    \centering
+    \scalebox{0.7}{\incfig{timedev}}
+\end{figure}
+
+\para{\noindent This allows us to consider a simple geometric argument which gives \(\abs{\increment \vect{A}} = 2A\sin(\theta/2)\)
+where \(\theta\) is the angle between \(\vect{A}_1\) and \(\vect{A}_2\).}
+
+Since we're considering values of small \(\theta\), we may use the small angle approximation,
+\(\sin(\theta) \approx \theta\). Therefore,
+
+\begin{align}
+    \abs{\vect{\increment A}} &\approx 2A \times \frac{\theta}{2}\\ 
+    &\approx A \times \theta
+\end{align}
+
+Which is equivalent to \(A \increment \theta\). In the limit \(\increment \theta \to 0\),
+
+\begin{equation}
+    \diffd{A_{\perp}} = A \diffd{\theta}
+\end{equation}
+
+Which finally gives us,
+\begin{equation}
+    \abs{\derivative{\vect{A}_{\perp}}{t}} = A\derivative{\theta}{t}
+\end{equation}
+
+The second case is easy as it is just 
+\begin{equation}
+    \abs{\derivative{\vect{A}_{\parallel}}{t}} = \derivative{A}{t}
+\end{equation}
+    
+This completes our formulation of the time derivative of any vector, independent of its co-ordinate
+axes.
+
+\section{Motion in Polar Co-ordinates}
+
+The polar co-ordinate axes are the two-dimesional subset of the 3-d cylindrical co-ordinates. 
+Any point in polar co-ordinates is depicted by a system of two unit vectors, \(\unitv{r}\) and
+\(\unitv{\theta}\). However, each of these are \framebox{dependent on the position of the particle} and
+maybe written explicitly as \(\unitv{r}(\theta)\) and \(\unitv{\theta}(\theta)\).  
+
+\begin{figure}
+    [H]
+    \centering
+    \scalebox{0.7}{\incfig{polar}}
+    \caption{Polar axes}
+    \label{fig: polar}
+\end{figure}
+
+Here, \(\unitv{r}\) points in the direction of increasing radius(along the straight lines in \Cref{fig: polar})
+\(\unitv{\theta}\) points in the direction of increasing \(\theta\) (along the tangent to the circles).
+These two unit vectors are \emph{orthogonal} at any point. 
+
+\begin{figure}
+    [H]
+    \centering
+    \incfig{polarunit}
+    \caption{Unit vectors in polar co-ordinates}
+    \label{fig: polarunit}
+\end{figure}
+
+\noindent In \Cref{fig: polarunit} if \(\vect{r}\) makes
+an angle \(\theta\) with the horizontal, then,
+
+\begin{align}
+    \label{eq: polardef}
+    \unitv{r} &= \cos \theta \unitv{i} + \sin \theta \unitv{j}\\
+    \unitv{\theta} &= -\sin \theta \unitv{i} + \cos \theta \unitv{j}
+\end{align}
+
+\section{Kinematics in Polar Co-ordinates}
+
+Now let us formulate kinematics in polar co-ordinates. The position \(\vect{r}\) can be written as
+
+\begin{equation}
+    \vect{r} = r \unitv{r}
+\end{equation}
+
+\noindent Velocity follows normally, 
+\begin{equation}
+    \vect{v} = \ndiv{\vect{r}} = \ndiv{r} \unitv{r} + r\derivative{\unitv{r}}{t} 
+\end{equation}
+or does it? What even is \(\displaystyle\derivative{\unitv{r}}{t}\) ? Well the answer lies in 
+the time-derivative of the unit vectors. Using the definitions in \eqref{eq: polardef}, we get,
+
+\begin{align}
+    \derivative{\unitv{r}}{t} &= \ndiv{\theta} \unitv{\theta}\\
+    \derivative{\unitv{\theta}}{t} &= -\ndiv{\theta} \unitv{r}
+\end{align}

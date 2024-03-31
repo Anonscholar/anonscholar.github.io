@@ -1,0 +1,21 @@
+\chapter{Basics of Modular Arithmetic}
+\label{nt: modbasic}
+\motiv{Modular arithmetic allows us to expand the notion of equality.}
+
+\section{``Modulo''}
+
+It is very hard to and rarely needed to establish equality in number theory. What may do instead
+is the build on the notion of \emph{modular} arithmetic. Consider an analog clock, if it starts
+at any arbritary time, then no matter how many rotations it goes through, whenever it points at 
+\(1\), the time is \(1\) a.m or p.m. Thus even if we start counting hours, we may note that
+\(13 = 1 = 25 = \dots\)                                                                                                                                                                                       
+\parbreak
+
+The equality symbol is not apt here. What should be much better used is the symbol of equivalence,
+``\(\equiv\)''. Thus, what we mean is \(13 \equiv 1 \pmod{n}\). In general,
+
+\begin{definition}
+    [Congruent]
+    \(a \equiv b \pmod{n}\) if and only if \(p \mid a - b\). In such a case \(a\) is said to be 
+    congruent to \(b\) modulo \(n\).
+\end{definition}

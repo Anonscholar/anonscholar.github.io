@@ -1,11 +1,9 @@
 \chapter{Divisibility}
 
-
-\epigraph{``Give him threepence, since he must make gain out of what he learns''}
-{\auth{Euclid} of Alexandaria}
+\motiv{Divisibility forms the basis of all of Number Theory.}
 
 \section{Basic Properties}
-\motiv{Divisibility forms the basis of all of Number Theory}
+
 
 
 \para{The idea of divisibility is something most people are familiar with. Yet, it is a notion so useful, that we may
@@ -365,5 +363,47 @@ This statement is equally, if not more important than the formal one.}
 \section{Bezout's Lemma}
 
 \para{We are now nearing the end of this chapter, and bezout's lemma is one of the last
-topics we'll cover. Consider the values of \(ax + by\), for \(a, b, x , y \in \ZZ\).
-}
+topics we'll cover. Consider the values of \(ax + by\), for \(a, b, x , y \in \ZZ\). For some
+constant \(a\) and \(b\), say \(2\) and \(4\), you may notice that the \(\gcd(a,b)\)
+is the smallest non-negative value of \(ax + by\)!}
+
+\para{Is this always true? In this case, yes. Although I will not go much into the motivation, it
+is an extremely useful tool.}
+
+\begin{theorem}
+    [Bezout's Lemma]
+    \label{theo: bezout}
+    For two integers \(a\) and \(b\), we can always find integers \(x\) and \(y\) such that,
+    \[
+        ax + by = \gcd(a,b)
+    \]
+\end{theorem}
+
+\todo{add proof}
+
+\section{Base systems}
+
+\para{Whenever we write something like \(28\) what we really mean is \(28\) in base \(10\) or
+\(28_{(10)}\). To represent it in an expanded form, we may write something like,}
+
+\[
+    28 = 8\times10^0 + 2\times10^1 
+\]
+
+\para{In general, for a number \(n\) in base \(\ell\), we can write something like,}
+
+\[
+    n = a_0 \times \ell^0 + a_1 \times \ell^1 + \dots \times a_k \times \ell^k
+\]
+
+\para{Where \( 0 \le a_0, a_1, \dots , a_k < \ell \). This representation is unique. If there is another such representation 
+in the same base, it must violate the conditions established. Note that \(a_k \ne 0\), because
+if it is, then we can simply reduce to \(k-1\) and rewrite similarly. Thus \(n \ge \ell^k\).
+But n \(n < \ell^{k+1}\) because otherwise the representation would be not be unique. If \(n\)
+is represent in such a manner, then it is written with digits \((a_k a_{k-1} \dots a_1)_{(\ell)}\).}
+
+\parbreak
+
+\para{Also similarly, you may notice that \(a\ell^k \le n < (a+1)\ell^k\). These help us devise
+an algorithm to represent \(n\) in base \(\ell\).}
+
