@@ -1,24 +1,23 @@
 \documentclass[twoside, a4paper, 10pt]{memoir}
 
-
 \input{../style.tex}
 \input{../theorems.tex}
 \input{../macros.tex}
 
-
-\descrip{On the universal truths}
+\descrip{An advent into higher mathematics}
 \author{Adyansh Mishra}
 \date{\today}
-\title{A Foray into Physics}
+\title{An Undergraduate Notebook}
+\addbibresource{ugreferences.bib}
 
 \begin{document}
 %https://tex.stackexchange.com/questions/249475/index-hyperlink-not-pointing-to-correct-page
 \pagenumbering{roman}
 
 
+    \pagestyle{empty}
     \frontmatter
-    \includepdf[scale=1.15]{cover.pdf}
-    \fncytitle
+    \fncytitling
 
     \newgeometry{right=1.5cm,left=1.5cm}
     \renewcommand*{\contentsname}{Short contents}
@@ -34,26 +33,16 @@
     \listoffigures
 
     \mainmatter
+    \pagestyle{mystyle}
     \setcounter{chapter}{-1}
-    
-    \input{elem/math.tex}
-    \input{elem/ud.tex}
-    
-    \newgeometry{right=1.5cm,left=1.5cm}
-    \part{Mechanics}
-    \parttoc
-    \restoregeometry
-    
-    \input{mech/kin.tex}
-    
-    \newgeometry{right=1.5cm,left=1.5cm}
-    \part{Electricity \& Magnetism}
-    \parttoc
-    \restoregeometry
-    
-    \input{em/elecstatic.tex}
-    
+    \input{preq/proofs.tex}
 
+    \newgeometry{right=1.5cm,left=1.5cm}
+    \part{Analysis}
+    \parttoc
+    \restoregeometry
+    
+    
     \newgeometry{right=1.5cm,left=1.5cm}
     \part{Appendices}
     \parttoc

@@ -1,8 +1,12 @@
-\usepackage{amsmath, amsthm, amssymb}
+\usepackage{amsmath, amsthm, amssymb, lmodern}
+\renewcommand{\sfdefault}{cmbr}
 
 \usepackage[right=4.5cm,left=1.5cm,bottom=1in,top=1in,marginparwidth=4cm]{geometry}
 
+\usepackage[activate={true,nocompatibility},factor=1100,stretch=10,shrink=10]{microtype} % better spacing
+\microtypecontext{spacing=nonfrench}  % silence warning
 
+% silence warning
 
 \usepackage[texindy]{imakeidx}
 \makeindex[intoc]
@@ -14,11 +18,13 @@
 \renewcommand\beforeparttoc{{\bfseries \Large Part \thepart: Contents}\vspace{1em}\hrule}
 \usepackage{etoolbox}
 
+
+
 %Chapter Style
 \usepackage{calc,color}
 \newif\ifNoChapNumber
 \newcommand\Vlines{%
-\def\VL{\rule[-1cm]{1pt}{2.5cm}\hspace{1mm}\relax}
+\def\VL{\rule[-1cm]{1pt}{2.3cm}\hspace{1mm}\relax}
 \VL\VL\VL\VL\VL\VL\VL}
 \makeatletter
 \setlength\midchapskip{0pt}
@@ -98,9 +104,11 @@ citecolor=TealBlue,
 \usepackage{lipsum}
 
 \usepackage{titling}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \nouppercaseheads
 \makepagestyle{mystyle}
+\copypagestyle{mystyle}{companion}
 \makeevenhead{mystyle}{\bfseries\thepage}{}{\textbf{\color{TealBlue!70!black}\thechapter}\,: \leftmark}
 \makeoddhead{mystyle}{\textbf{\color{TealBlue!70!black}\S}\,\rightmark}{}{\bfseries\thepage}
 \makeevenfoot{mystyle}{}{}{}
@@ -108,8 +116,12 @@ citecolor=TealBlue,
 \makepsmarks{mystyle}{%
   \createmark{chapter}{left}{nonumber}{}{}}
   \setlength{\headwidth}{\textwidth}
+  \addtolength{\headwidth}{\marginparsep}
+\addtolength{\headwidth}{\marginparwidth}
+
 \makeheadrule{mystyle}{\headwidth}{\normalrulethickness}
-\nouppercaseheads 
+
+ \nouppercaseheads 
 
 \pagestyle{mystyle}
 
@@ -124,6 +136,29 @@ citecolor=TealBlue,
 %for description(subtitle)
 \newcommand{\descrip}[1]{\def \thedescrip{#1}}
 
+\NewDocumentCommand{\fncytitling}{s}{
+  \newgeometry{left=1.5cm,right=1.5cm}
+    \begin{titlingpage}
+        \topskip0pt
+        \vspace*{10em}
+        \begin{center}
+            {\pgfornament[scale=0.35, ydelta=-7pt, symmetry=v]{11} \em \Huge  \thetitle \ \pgfornament[scale=0.35, ydelta=-7pt]{11}}
+            {\par \vspace*{1em}\hspace{20em} \emph{\thedescrip}  \large }
+        \end{center}
+        \vspace{14em}
+        { 
+        \begin{center}
+           {\bfseries \LARGE \theauthor}
+        \end{center}
+        }
+        \vspace*{14em}
+        { 
+        \begin{center}  
+            {\bfseries \Large \thedate}    
+        \end{center}
+        }
+    \end{titlingpage}
+}
 
 \NewDocumentCommand{\fncytitle}{s}{
   \newgeometry{left=1.5cm,right=1.5cm}
@@ -196,6 +231,9 @@ citecolor=TealBlue,
 \usepackage{ragged2e}
 \usepackage[citestyle=alphabetic]{biblatex}
 
+
+
+
 \raggedbottom
 \newcommand{\incfig}[1]{%
     \def\svgwidth{\columnwidth}
@@ -229,12 +267,27 @@ citecolor=TealBlue,
 \crefformat{subsection}{\S#2#1#3}
 \crefformat{subsubsection}{\S#2#1#3}
 
-\setsecnumformat{\csname gablin#1\endcsname\:\:}
-\newcommand{\gablinsection}{{\color{purple}\S\thesection}}
-\newcommand{\gablinsubsection}{{\color{purple}\S\thesubsection}}
-\setsecnumdepth{subsection}
-
 \renewcommand*{\thepart}{\color{purple}\arabic{part}}
 \renewcommand*{\parttitlefont}{\color{black}\sffamily\HUGE}
 \renewcommand*{\partnamefont}{\normalfont\Huge\scshape\MakeLowercase}
 \renewcommand*{\partnumfont}{\color{black}\normalfont\scshape\MakeLowercase}
+
+
+\setsechook{\hangsecnum}
+
+\makeatletter
+
+\renewcommand{\hangsecnum}{%
+  \def\@seccntformat##1{%
+    \makebox[0pt][r]{%
+      \color{purple} \S%
+      \csname the##1\endcsname
+      \quad
+    }%
+  }%
+}
+
+\setsecnumdepth{subsection}
+
+\setsubsechook{\hangsecnum}
+\setsubsubsechook{\hangsecnum}
