@@ -290,6 +290,7 @@ any interval of the same kind, i.e \((M,N)\), \(\left[M,N\right)\), or \(\left(M
 \end{example}
 
 \section{The ``...'' function}
+\label{sec: pedantic}
 \irrev
 \para{From this point we make many mentions of the ``sine'' function, the ``cosine'' function,
 and so on. However, there is no ``sine'' function. People generally call the function \(f\),
@@ -504,6 +505,54 @@ the function is not injective and is called many-one. Here, \(f(a) = f(b) \notif
         \caption{{\color{blue}\(x^3\)}, a one-one function}
     \end{subfigure}
     \caption{{\color{blue}One-one} and {\color{red}Many-one} functions}
+\end{figure}
+
+
+\todo{Add bijective/surjective}
+
+\section{Exponential/Power Functions}
+
+\index{Function!power}
+\index{Function!exponential}
+
+A function \(f\) such that \(x \xmapsto{f} e^x\) or more compactly \(f(x) = e^x\) is called
+the exponential functional. A pedantic point much in spirit of \cref{sec: pedantic} 
+is that \(f(x)\)
+is not a function, it is a value. We'll henceforth sometimes omit this, but also refrain ourselves
+from going as far as to call ``\(y = f(x)\)'' a function. 
+
+For some reason, JEE seems fond of calling power function \(f\) such that \(f(x) = a^x\) an 
+exponential function. I'll try to avoid collisions of the two different things, but just 
+entertain this weird notion for a moment.
+\parbreak
+
+Whenever we write the function \(a^x\) we assume two implicit conditions, \begin{inparaenum}[1)]
+    \ii that \(a > 0\), \(a\) is non-negative,
+    \ii and that \(a \ne 1\).
+\end{inparaenum}
+
+The reason for adopting such convention is that \(a^x\) has a nice domain. If \(a\) were to
+be negative, defining the domain would be quite annoying. It also helps in ensuring that 
+\(a^x\) is not a constant function, the cases \(a = 0\) and \(a = 1\).
+
+Thus, for the function \(a^x\), \(a \in \left(0,1\right) \union \left(1, \infty\right)\). This
+divides the values of \(a\) into two intervals. In-fact for these intervals, \(a^x\) behaves 
+differently!
+
+\subsection[Case I]{\(\mathbf{0 < a < 1}\)}
+
+The function \(a^x\) is in such case decreasing. A function is decreasing if \(f(x_1) \ge f(x_2)
+\iff x_1 \le x_2\). It is possible to draw the graph of the function by considering
+values of \(x\) for some specific \(a\). But I'll just show the graph. Also, it is decreasing 
+because if \(0 < a < 1\), then it is easy to see that for larger values of \(x\), \(a^x\) decreases.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[funcgraph]
+            \addplot [red, domain=-2:2] {0.4^x} node [right,blue,pos=1/2] {$a^x$};
+        \end{axis}
+    \end{tikzpicture}
 \end{figure}
 
 
