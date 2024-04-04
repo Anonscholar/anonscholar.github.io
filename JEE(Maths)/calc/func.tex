@@ -555,4 +555,73 @@ because if \(0 < a < 1\), then it is easy to see that for larger values of \(x\)
     \end{tikzpicture}
 \end{figure}
 
+ Clearly, for \(0 < a < 1\), \(a^{g(x)} \ge a^{f(x)} \iff g(x) \le f(x)\). The inequality flips. 
+ in some manner. This is simply because of the earlier stated decreasing nature of the function.
+ 
+ Inequalities of such kind are called exponential inequalities. The domain \(D_f = \RR\) and
+ the range is \(R_f = \RR^+ = (0, \infty)\). 
+
+ \subsection[Case II]{\(\mathbf{a > 1}\)}
+
+ Contrastingly to our above function, this function is increasing, for \(x_1 \ge x_2\) it is easy
+ to see that \(a^{x_1} \ge a^{x_2}\). 
+
+ \begin{figure}
+    [H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}
+            [funcgraph]
+            \addplot [red, domain=-2:2] {2.5^x} node [left, blue, pos=1/2] {$a^x$}; 
+        \end{axis}
+    \end{tikzpicture}
+ \end{figure}
+
+ Also, clearly here, \(a^{g(x)} \ge a^{f(x)} \iff g(x) \ge f(x)\). Simply because the function is 
+increasing. The inequality remains the same when comparing exponents. The domain and range
+are the same as above. 
+
+\begin{remark}
+    Note that the usual properties of exponents that we are familiar with, \((a^{b})^{c} = a^{bc}\)
+    and of the same kind only work for \(b, c\) being positive integers. For example, consider
+    \((-8)^{1/3} = (-8)^{2/6} = 64^{1/6} = 2\) but clearly \(-8^{1/4}\) is \(-2\). Beware.
+\end{remark}
+
+\section{The Logarithm function}
+
+The function \(f\) of the form \(f(x) = \log_{a} x\) is a logarithmic function. Much like 
+the exponential function, it is defined for \(a > 0\) and \(a \ne 1\). Unlike the exponential, 
+however, it also has the condition \(x > 0\). In-fact, \(\log_{a} x = y \iff a^y = x\). Clearly,
+from here we have \(x > 0\). We may again divide up it into two intervals.
+
+Briefly, for \(0 < a < 1\), it is a decreasing function. You can check that for 
+some discrete values. For \(a > 1\) it is an increasing function. The domain in
+both cases is \(D_f = (0, \infty)\) and the range is \(R_f = \RR\). 
+
+\begin{figure}
+    [H]
+    \centering 
+    \begin{subfigure}{0.5\textwidth}
+        \begin{tikzpicture}
+            \begin{axis}
+                [funcgraph]
+                \addplot [red, domain = 0.02:2,samples=100] {log10(x)/log10(0.4)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{\(0 < a < 1\)}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+        \begin{tikzpicture}
+            \begin{axis}
+                [funcgraph]
+                \addplot [red, domain = 0.02:2,samples=100] {log10(x)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{\(a > 1\)}
+    \end{subfigure}
+\end{figure}
+
+Anyways, the same thing happens with inequalities as it did with the exponential,
+for \(\log_{a}f(x) \ge \log_{a} g(x)\), if \(0 < a < 1\), \(f(x) \le g(x)\). And if
+\(a > 1\), \(f(x) \ge g(x)\). 
 
