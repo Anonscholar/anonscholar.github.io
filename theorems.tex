@@ -51,7 +51,8 @@
 headfont=\rmfamily\bfseries\color{TealBlue},
 mdframed={style=mdbluebox},
 headpunct={\\[3pt]},
-postheadspace={0pt}
+postheadspace={0pt},
+postheadhook={\textcolor{TealBlue!80}{\rule[.6ex]{\linewidth}{0.4pt}} \\ }, % \\ removed
 ]{thmbluebox}
 
 \mdfdefinestyle{mdredbox}{%
@@ -72,6 +73,7 @@ headfont=\bfseries\color{RawSienna},
 mdframed={style=mdredbox},
 headpunct={\\[3pt]},
 postheadspace={0pt},
+postheadhook={\textcolor{RawSienna!80}{\rule[.6ex]{\linewidth}{0.4pt}} \\ }, % \\ removed
 ]{thmredbox}
 
 \mdfdefinestyle{mdgreenbox}{%
@@ -130,7 +132,8 @@ mdframed={style=mdblackbox}
 headfont=\rmfamily\bfseries\color{Orchid},
 mdframed={style=mdpurplebox},
 headpunct={\\[3pt]},
-postheadspace={0pt}
+postheadspace={0pt},
+postheadhook={\textcolor{Orchid!80}{\rule[.6ex]{\linewidth}{0.4pt}} \\ }, % \\ removed
 ]{thmpurplebox}
 \newcommand{\listhack}{$\empty$\vspace{-2em}}
 

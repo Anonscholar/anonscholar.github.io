@@ -1,0 +1,98 @@
+\chapter{Vector Spaces}
+
+This part of linear algebra is almost entirely based on \cite{axlerlin}.
+
+\section{Lists}
+
+In most of the chapters, I'll adopt the convention that \(\FF\) is a field. Some specific results require \(\FF = \CC\) or \(\FF = \RR\)
+but they'll be explicitly mentioned.
+
+\index{Scalars}
+
+Elements of \(\FF\) are called \emph{scalars}. We call these scalars to form a distinction with vectors, which will be defined soon.
+
+Cartesian products of \(\FF\) with itself \(n\) times are denoted as \(\FF^{n}\). For something like
+\(\FF^3\) this is equivalent to saying,
+
+\[
+    \FF^{3} = \left\{(x, y, z) \mid x, y, z \in \FF\right\}
+\]
+
+It is the set of all ordered triples of the elements of \(\FF\). If we have \(\FF = \RR\),
+for instance, \(\RR^2\) can be though to be a plane while \(\RR^3\) can be thought to be ordinary space.
+
+To generalise these results to \(n\) dimensions, we use the concept of \(n\)-tuples or \emph{lists}.
+
+\index{lists} \index{n-tuples}
+
+\marginnote{We denote lists surrounded by paratheses and their elements separated by commas.}
+
+\begin{definition}[Lists]
+    For a non-negative integer, \(n\), an \(n\)-tuple or a list of length \(n\) is an ordered collection of \(n\) elements.
+    
+    A list \((a_1, a_2, \dots, a_m) = (b_1, b_2, \dots, b_n)\) if and only if \(n = m\) and \(a_1 = b_1, a_2 = b_2, \dots,
+    a_m = b_n\).
+\end{definition}
+
+Thus, two lists are equal iff their length is equal and they have the same elements in the same order.
+A list has a finite number of elements, thus, even though \(a_1, a_2, \dots, a_m\) is a list, \(a_1, a_2, \dots\) is not.
+The list of length \(0\) is denoted by \(()\). 
+
+\begin{example}
+    [Lists vs sets]
+    The lists \((3,5)\) and \((5,3)\) are not equal but \(\left\{3,5\right\} = \left\{5,3\right\}\). 
+    The list \((4,4,4) \ne (4,4) \ne (4)\) but \(\left\{4,4,4\right\} = \left\{4,4\right\} = \left\{4,\right\}\).
+\end{example}
+
+\section{Higher Products}
+
+Generalising the \(n\)th cartesian product of \(\FF\) with itself, 
+\[
+    \FF^n = \underbrace{\FF \times \FF \times \dots \times \FF}_{n\textup{-times}}
+\]
+
+We may say,
+\begin{definition}
+    \(\FF^n\) is the set of all lists of length \(n\) such that the elements of the list are in \(\FF\),
+    \[
+        \FF^n = \left\{(a_1, a_2, \dots, a_n) \mid a_1, a_2, \dots, a_n \in \FF\right\}
+    \]
+\end{definition}
+
+Where \(n \in \ZZO\).
+
+\begin{definition}
+    [Co-ordinate]
+    If \((a_1, a_2, \dots, a_n) \in \FF^n\) and \(1 \le i \le n\), \(x_i\) is called the \(i\)th co-ordinate of
+    \((a_1, a_2, \dots, a_n)\).  
+\end{definition}
+
+While \(\RR^2\) can be visualised as a plane, and \(\RR^3\) as space, it is not possible to visualise them
+for \(n \ge 4\). Similarly, \(\CC^1\) can be thought of as a plane, but cannot be visualised for \(n \ge 2\).
+
+However, we can perform algebraic operations on the lists of some arbitrary length \(n\) which may even be 
+very great. 
+
+\begin{definition}
+    [Addition in \(\FF^n\)]
+    Addition in \(\FF^n\) is defined as,
+    \[
+        \listvec{x}{n} + \listvec{y}{n} = \listvec{x + y}{n}
+    \]
+\end{definition}
+
+To avoid the cumbersome notation of writing out \(\listvec{x}{n}\) we will adopt the notation that \(x = \listvec{x}{n}\).
+
+\begin{proposition}
+    \(x + y = y + x\)
+\end{proposition}
+
+\begin{proof}
+    \(x = \listvec{x}{n}\), \(y = \listvec{y}{n}\). Thus,
+    \begin{align*}
+        x + y &= \listvec{x}{n} + \listvec{y}{n}\\
+        &= \listvec{x + y}{n}\\
+        &= \listvec{y + x}{n}\\
+        &= y + x
+    \end{align*}
+\end{proof}

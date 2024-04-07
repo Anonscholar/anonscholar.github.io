@@ -31,6 +31,7 @@
     
     \clearpage
     \listoffigures
+    \clearpage
 
     \mainmatter
     \pagestyle{mystyle}
@@ -43,7 +44,11 @@
     \restoregeometry
     \input{calc/realnum.tex}
 
-    
+    \newgeometry{right=1.5cm,left=1.5cm}
+    \part{Linear Algebra}
+    \parttoc
+    \restoregeometry
+    \input{linalg/vectorspace.tex}
     
     \newgeometry{right=1.5cm,left=1.5cm}
     \part{Appendices}

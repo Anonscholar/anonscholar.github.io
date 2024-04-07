@@ -467,11 +467,11 @@ the time-derivative of the unit vectors. Using the definitions in \eqref{eq: pol
 
 \noindent Using these results, we get that
 
-\begin{align}
-    \vect{v} &= \ndiv{r} \unitv{r} + r\ndiv{\theta} \unitv{\theta}\\
+\begin{empheq}[box=\widefbox]{align}    
+    \vect{v} & = \ndiv{r} \unitv{r} + r\ndiv{\theta} \unitv{\theta}\\
     \label{polar: accel}
-    \vect{a} &= (\nddiv{r} - r\ndiv{\theta}^2) \unitv{r} + (r\nddiv{\theta} + 2\ndiv{r}\ndiv{\theta}) \unitv{\theta}
-\end{align}
+    \vect{a} & = (\nddiv{r} - r\ndiv{\theta}^2) \unitv{r} + (r\nddiv{\theta} + 2\ndiv{r}\ndiv{\theta}) \unitv{\theta}
+\end{empheq}
 
 \noindent The most interesting result are the various terms of acceleration in \eqref{polar: accel}. First let 
 us consider the terms along \(\unitv{r}\). \(\nddiv{r}\) is the \emph{radial} acceleration. It is
@@ -482,3 +482,80 @@ Now let us consider the terms along \(\unitv{\theta}\). The \(r\nddiv{\theta}\) 
 acceleration resulting from change in tangential speed. The other term \(2\ndiv{r}\ndiv{\theta}\) is the
 \emph{coriolis} acceleration. I shall discuss it when discussing rotating frames.
 
+\section{Free Fall}
+
+When an object is dropped downwards freely, it undergoes \emph{free fall}. We ignore
+air resistance, until we're told not to and in general also talk about cases of the
+object being thrown instead of dropped. An object dropped from any height undergoes
+accelerations \(\vect{a}\) where \(\norm{\vect{a}} = g\). The direction and sign of acceleration
+is entirely dependent on us.
+
+In general, it is a good idea to setup our axes such that the direction above ground is positive
+and towards the ground is negative. The acceleration during free fall is always towards
+the ground. Therefore, for these cases \(\vect{a} = -g \unitv{j}\). 
+
+Some important points of note are that ``\(g\)'' does not become positive or negative or whatever,
+this is a common misconception. Instead, we just decide where exactly the positive direction is
+and setup \(g\) according to that.
+\parbreak
+When a ball is thrown with some velocity \(u\) say in the positive directions
+(change it into \(-u\) if in the negative direction), then we have,
+
+\begin{algorithm}
+    The following are special cases of equations of motion.
+    \begin{enumerate}
+        \ii \(v = u - gt\)
+        \ii \(v^2 = u^2 -2gh\)
+        \ii \(h = ut - \dfrac{1}{2}gt^2\)
+    \end{enumerate} 
+\end{algorithm}
+
+The case when a ball is thrown upwards is exactly symmetrical to this one, but there
+the ball goes up, reachs \(v = 0\) and then goes down. Also note that all of these equations are vector
+equations.
+
+\begin{example}
+    Two balls are thrown in intervals of \(2\) seconds with velocity \(u\) each. Find the
+    time when they collide.
+
+    \begin{soln}
+        Note that when they collide, their displacement from ground must be the same! Setting 
+        the origin at ground, and direction of away from ground as positive, we have,
+        
+        For the first ball, \(h_{1} = ut - \dfrac{1}{2}gt^2\). Since the second ball
+        is thrown \(2\) seconds later, \(h_{2} = u(t-2) - \dfrac{1}{2}g(t-2)^2\). Now, we just have
+        \(h_{1} = h_{2}\) and the calculation is trivial.
+    \end{soln}
+\end{example}
+
+The thing to note in this example is that you do not need to setup two cases, one in which
+\(g\) is negative and one in which \(g\) is positive since it is in the direction of velocity. 
+Just note that these equations are vectorial and we are done.
+
+Some quick formulas to remember because they help a lot,
+
+\begin{algorithm}
+    For an object dropped from height \(h\),
+    \begin{enumerate}
+        \ii Time to reach ground, \(t = \sqrt{\dfrac{2h}{g}}\).
+        \ii Velocity when it reaches ground \(v = \sqrt{2gh}\).
+    \end{enumerate}
+\end{algorithm}
+
+Deriving them is easy, and they can be generalised as when it travels height \(h\) between
+the point of drop to anywhere, instead of ground. Clearly, both still follow there.
+
+Also, always remember,
+
+\begin{moral}
+    When an object is thrown/dropped from another object traveling with some velocity and
+    acceleration, it inherits its velocity but not its acceleration.
+\end{moral}
+
+\todo{add screw/lift example}
+
+\section{Graphs in Motion}
+
+In the graphs we are going to discuss, acceleration will either be \(0\) or constant.
+These graphs help to quickly solve problems, especially related to total distance and 
+displacement. 
