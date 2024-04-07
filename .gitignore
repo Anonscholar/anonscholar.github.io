@@ -1,4 +1,5 @@
 .vscode/
+**/*.loe
 **/*.bbl-*
 **/*.bbl
 **/*.bcf
