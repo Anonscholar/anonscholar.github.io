@@ -625,3 +625,87 @@ Anyways, the same thing happens with inequalities as it did with the exponential
 for \(\log_{a}f(x) \ge \log_{a} g(x)\), if \(0 < a < 1\), \(f(x) \le g(x)\). And if
 \(a > 1\), \(f(x) \ge g(x)\). 
 
+Also, 
+\[
+    \begin{cases}
+        log_{a} x \ge 0 \iff x \ge 1 \mid a > 1 \\
+        log_{a} x \ge 0 \iff 0< x \le 1 \mid 0 < a < 1 \\
+    \end{cases}
+\]
+
+\begin{proposition}
+    Some properties of logarithm for \(a \in \RR_{>0} \setminus \left\{1\right\}. \) and
+    \(m, n \in \RR\).  
+    \begin{enumerate}
+        \ii \(\log_{c}(ab) = \log_{c}\abs{a} + \log_{c}\abs{b}\)
+        \ii \(\log_{c}\dfrac{a}{b} = \log_{c}\abs{a} - \log_{c}\abs{b}\)
+        \ii \(\log_{c}{a^b} = b\log_{c}{a}\)
+        \ii \(\log_{c^b}{a} = \dfrac{1}{b}\log_{c}{a}\)
+        \ii \(\log_{c}p = \dfrac{1}{\log{p}c}\)
+        \ii \(a^{\log_{c}b} = b^{\log_{c}a}\)
+    \end{enumerate}
+\end{proposition}
+
+\section{Some other functions}
+
+\subsection{Greatest Integer Function}
+
+The greatest integer function or the floor function, \(\floor{\bullet} : \RR \to \ZZ\) is defined
+as,
+\index{Function!Greatest Integer Function}
+\begin{definition}
+    [Floor]
+    \[
+        \floor{x} = a \mid a \le x < a + 1, a \in \ZZ
+    \]
+\end{definition}
+
+The symbol for floor/GIF is for some reason, mostly \([\bullet]\) in JEE. In any case, they
+generally mention the symbol in the question.
+
+Therefore, for \(x \in [a,a+1)\), where \(a \in \ZZ\), \(\floor{x} = a\). Using this
+definition, and setting up values of \(a\), we have the following graph,
+
+\begin{figure}
+    [H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}
+            [ axis lines=middle,
+            grid=major,
+            xmin=-5,
+            xmax=5,
+            ymin=-4,
+            ymax=5,
+            xlabel=$x$,
+            ylabel=$y$,
+            xtick={-4,-3,...,4},
+            ytick={-3,-2,-1,...,4},
+            legend style={
+            at={(rel axis cs:0,1)},
+            anchor=north west,draw=none,inner sep=0pt,fill=gray!10}]
+            \addplot[red, domain=-3:-2]{-3};
+            \addplot[red, domain=-2:-1]{-2};
+            \addplot[red, domain=-1:0]{-1};
+            \addplot[red, domain=0:1]{0};
+            \addplot[red, domain=1:2]{1};
+            \addplot[red, domain=2:3]{2};
+            \addplot[red, domain=3:4]{3};
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+The end points of each \emph{step} are open. 
+
+Some properties of floor are,
+
+\begin{proposition}
+    For \(x \in \RR\) and \(n, a, b \in \ZZ\),
+    \begin{enumerate}
+        \ii \(\floor{x} + \floor{-x} = 0 \mid x \in \ZZ\)
+        \ii \(\floor{x} + \floor{-x} = -1 \mid x \notin \ZZ\)
+        \ii \(a \le \floor{x} \le b \iff a \le x < b + 1\)
+        \ii \(x \ge n \iff x \ge n + 1\) 
+    \end{enumerate}
+\end{proposition}
+
