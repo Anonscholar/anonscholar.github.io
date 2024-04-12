@@ -49,10 +49,11 @@ the ordered pairs of the relation, that are in set \(A\). \[D_R = \{a \mid (a,b)
 \para{Range of \(R\) is the set of all second elements of the ordered pairs in the relation, that
 are in set \(B\). \[Range_R = \{b \mid (a,b) \in R\}\]}
 
-\subsubsection{Co-domain}
-\index{Relation!co-domain}
+
 \marginnote{You may note that \(Range_R \subset Co-domain_R\)}
 
+\subsubsection{Co-domain}
+\index{Relation!co-domain}
 \para{Co-domain of \(R \subseteq A \times B\) is the set \(B\) itself.} 
 
 \section{Types Of Relations}
@@ -466,49 +467,10 @@ we call it a piecewise function. We represent it as, \[
 \begin{enumerate}
     \ii \(f + g : A \rightarrow \RR\), \((f + g)(x) = f(x) + g(x)\), for \(x \in A\).
     \ii \(f - g : A \rightarrow \RR\), \((f - g)(x) = f(x) - g(x)\), for \(x \in A\).
-    \ii \(f * g : A \rightarrow \RR\), \((f * g)(x) = f(x) * g(x)\), for \(x \in A\).
+    \ii \(f \cdot g : A \rightarrow \RR\), \((f \cdot g)(x) = f(x) \cdot g(x)\), for \(x \in A\).
     \ii \(\dfrac{f}{g} : A \rightarrow \RR\), \(\dfrac{f}{g}(x) = \dfrac{f(x)}{g(x)}\), for \(x \in A\),
     given than \(g(x) \ne 0\) for all \(x \in A\).
 \end{enumerate}}
-
-\section{Injective, Surjective and all that}
-
-\index{Function!Injective}
-
-\para{If for all \(x \in A\), for function \(f : A \rightarrow B\), \(x\) has a `distinct' image,
-the function is called one-one or injective. What it means is that any image has only one pre-image
-under \(f\). Therefore, \(f(a) = f(b) \iff a = b\). Since, \(f(a)\) and \(f(b)\) must have only
-one pre-image. Since they're the same, the pre-image must also be the same.}
-
-\index{Function!Many-One}
-
-\para{If this is not the case, any image may have more than one pre-image under \(f\),
-the function is not injective and is called many-one. Here, \(f(a) = f(b) \notiff a = b\).}
-
-\begin{figure}[H]
-    \begin{subfigure}{.5\textwidth}
-        \centering
-        \begin{tikzpicture}
-            \begin{axis}[funcgraph]
-                \addplot[domain=-10:10,red]{x^2};
-            \end{axis}
-        \end{tikzpicture}
-        \caption{ {\color{red}\(x^2\)}, a many-one function}
-    \end{subfigure}%
-    \begin{subfigure}{.5\textwidth}
-        \centering
-        \begin{tikzpicture}
-            \begin{axis}[funcgraph]
-                \addplot[domain=-10:10,blue]{x^3};
-            \end{axis}
-        \end{tikzpicture}
-        \caption{{\color{blue}\(x^3\)}, a one-one function}
-    \end{subfigure}
-    \caption{{\color{blue}One-one} and {\color{red}Many-one} functions}
-\end{figure}
-
-
-\todo{Add bijective/surjective}
 
 \section{Exponential/Power Functions}
 
@@ -705,7 +667,152 @@ Some properties of floor are,
         \ii \(\floor{x} + \floor{-x} = 0 \mid x \in \ZZ\)
         \ii \(\floor{x} + \floor{-x} = -1 \mid x \notin \ZZ\)
         \ii \(a \le \floor{x} \le b \iff a \le x < b + 1\)
-        \ii \(x \ge n \iff x \ge n + 1\) 
+        \ii \(\floor{x} > n \iff x \ge n + 1\) 
     \end{enumerate}
 \end{proposition}
 
+\section{Injective, Surjective and all that}
+
+\subsection{Injective}
+
+\index{Function!Injective}
+
+\para{If for all \(x \in A\), for function \(f : A \rightarrow B\), \(x\) has a `distinct' image,
+the function is called one-one or injective. What it means is that any image has only one pre-image
+under \(f\). Therefore, \(f(a) = f(b) \iff a = b\). Since, \(f(a)\) and \(f(b)\) must have only
+one pre-image. Since they're the same, the pre-image must also be the same.}
+
+\index{Function!Many-One}
+
+\para{If this is not the case, any image may have more than one pre-image under \(f\),
+the function is not injective and is called many-one. Here, \(f(a) = f(b) \notiff a = b\).}
+
+\begin{figure}[H]
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[funcgraph]
+                \addplot[domain=-10:10,red]{x^2};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{ {\color{red}\(x^2\)}, a many-one function}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[funcgraph]
+                \addplot[domain=-10:10,blue]{x^3};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{{\color{blue}\(x^3\)}, a one-one function}
+    \end{subfigure}
+    \caption{{\color{blue}One-one} and {\color{red}Many-one} functions}
+\end{figure}
+
+To determine whether a function is one-one or many-one, we may either draw the 
+graph of the function, and check if it is one-one by drawing a horizontal line,
+if it cuts it at more than one place, then the function is clearly many-one.
+
+The other method is to check whether \(f(x_1) = f(x_2) \iff x_1 = x_2 \) but is usually
+difficult.
+The last method uses differentiation and should be skipped for now,
+for a continuous function, \(\forall x\), \(f^\prime(x)\) must have the same sign, i.e,
+it must be either \(\ge 0\) or \(\le 0\). The solutions of \(f^{\prime} (x) = 0\) must
+not form an interval. Do not use for functions not continuous over \(\RR\). 
+
+\begin{remark}
+    If a function \(f : A \to B\) is injective, then \(n(A) \le n(B)\). Thus,
+    \(B\) is \emph{at least} as large as \(A\).
+\end{remark}
+
+\subsection{Surjective}
+
+\index{Function!Surjective}
+\index{Function!Into}
+
+Let \(f\) be a function, \(f : A \to B\). If the range of \(f\) is equal to \(B\),
+the co-domain, then \(f\) is surjective. The basic idea is that,
+
+\[
+    \forall y \in B, \exists x \in A \mid f(x) = y
+\]
+
+So, each \(y \in B\) has a pre-image. Functions that are surjective are also called
+\emph{onto}. The functions that are not surjective are \emph{into}.
+
+To determine if a function is surjective, we may use two methods. One is
+to figure out the range, if it is the same as the co-domain then it is surjective. 
+The other method is to show that \(f(g(y) = y)\). If now we show
+that \(g(y)\) is defined for all \(y \in B\) and \(g(y) \in A\). Then, \(f\) is
+surjective.
+
+\begin{remark}
+    If \(f : A \to B\) is surjective, then \(n(A) \ge n(B)\). The size of \(B\)
+    is at most equal to \(A\).
+\end{remark}
+
+\subsection{Bijection}
+
+If a function is both injective and surjective, then it is bijective.
+Formally, \(\forall y \in B\) there is \emph{exactly} one \(x \in A\) such that
+\(f(x) = y\). 
+
+From the earlier remarks, you may have noted an interesting thing. \(f\) being
+a bijection implies that \(n(A) \ge n(B)\) and \(n(B) \ge n(A) \iff n(A) = n(B)\).
+Thus, two sets are equal if and only if there exists a bijection between them.
+
+\section{Infinite sets and their sizes}
+
+\irrev
+
+Two sets, \(A\) and \(B\) are equal if and only if there exists 
+some \(f : A \to B\) such that \(f\) is a bijective. This allows us to extend the definition
+of equality to infinite sets.
+
+Consider the sets \(\ZZ\) and \(\NN\). Let \(f : \NN \to \ZZ\) such that 
+\(f(x) = x\) if \(x\) is odd and \(-x\) if \(x\) is even. Such a \(f\) is a bijection!
+
+Thus the cardinalities of these two sets are equals. There are as many integers as there are
+naturals. And infact, there are as many rationals as there are naturals as well.  
+These sets are \emph{countably} infinite. Contrastingly, the set of reals is larger
+than the set of naturals and it is uncountably infinite. \(n(\NN) = n(\ZZ) = n(\QQ) < n(\RR)\).
+
+In general, if for an infinite set \(A\), \(n(A) = n(\NN)\), \(A\) is countably infinite
+and uncountably infinite if \(n(A) \ge n(\RR)\). 
+
+\section{Even-Odd}
+
+\subsection{Even Functions}
+
+If \(\forall x \in D_f, f(-x) = f(x)\) then \(f(x)\) is said to be an even function. 
+Clearly, all such functions is many-one. Clearly, \((x,y) \in f \iff (-x,y) \in f\).
+
+\begin{example}
+    [Even fucntions]
+    \(\abs{x}\), \(x^2\), \(\cos(x)\) are even functions.
+    \begin{figure}[H]
+        \begin{subfigure}{.3\textwidth}
+        \begin{tikzpicture}[scale=0.7]
+            \begin{axis}[funcgraph]
+                \addplot[red, domain=-pi:pi]{cos(deg(x))};
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}%
+    \begin{subfigure}{.3\textwidth}
+        \begin{tikzpicture}[scale=0.7]
+            \begin{axis}[funcgraph]
+                \addplot[red, domain=-2:2]{x^2};
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}%
+    \begin{subfigure}{.3\textwidth}
+        \begin{tikzpicture}[scale=0.7]
+            \begin{axis}[funcgraph]
+                \addplot[red, domain=0:2]{x};
+                \addplot[red, domain=-2:0]{-x};
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}%
+    \caption{Even Functions}
+    \end{figure}
+\end{example}

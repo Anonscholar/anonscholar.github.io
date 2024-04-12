@@ -348,6 +348,30 @@ and finally for \(n^{th}\) second just do \(s_n - s_{n-1}\).}
     \end{soln}
 \end{example}
 
+\begin{example}
+    Find the total displacement if the \(v-t\) graph is as follows,
+    \begin{figure}
+        [H]
+        \centering
+        \begin{tikzpicture}
+            \begin{scope}[xshift=10cm]
+                % Axes
+                \draw (0,0) node[below left] {$O$}
+                    (0,0) -- (7,0) node[below] {$t$}
+                    (0,-0.5) -- (0,3.5) node[left] {$v$};
+                
+                \draw (6.4,0) arc[start angle=0, end angle=180, radius=3.2];
+            \end{scope}
+        \end{tikzpicture}
+    \end{figure}
+    The idea behind this is simple, the graph here is \textbf{not} a semicircle. It is an
+    ellipse, because of dimensional limitations! The equations of circle, \(v^2 + t^2 = r^2\)
+    doesn't work because we cannot add two dimensionally different quantities.
+
+    Therefore, the graph is an ellipse, and we conclude by computing the area of the ellipse. I haven't
+    given the data, since I wanted to mention the idea.
+\end{example}
+
 \section{Time derivative of a vector}
 
 \para{The time derivative of \(r\) and \(v\) have already been observed in \Cref{def: velocity} and 
@@ -559,3 +583,136 @@ Also, always remember,
 In the graphs we are going to discuss, acceleration will either be \(0\) or constant.
 These graphs help to quickly solve problems, especially related to total distance and 
 displacement. 
+
+Let us consider the direction away from origin positive, and towards origin negative.
+Then, consider constant acceleration, \(a = c\). We have the following displacement time
+graphs,
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}
+            [funcgraphbare, xlabel=$t$, ylabel=$s$]
+            \addplot[red, domain=0:16]{x^2};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{For \(c > 0\). }
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}
+            [funcgraphbare, xlabel=$t$, ylabel=$s$]
+            \addplot[red, domain=0:16]{-x^2 + 256};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{For \(c < 0\)}
+    \end{subfigure}%
+\end{figure}
+
+\section{Relative Motion}
+
+There is a very neat technique to solve questions of kinematics, it is to switch our 
+reference frames. Let the base reference frame be that of earth, then,
+
+\begin{figure}
+    [H]
+    \centering
+    \incfig{reference}
+\end{figure}
+
+If \(\vect{r}_1\) evolves with time, \(r_1(t)\). And so does \(r_2(t)\). Then,
+
+\begin{align*}
+    \vect{r}_1 &= \vect{r}_{1,2} + \vect{r}_2 \\
+    \ndiv{\vect{r}_1} &= \ndiv{\vect{r}_{1,2}} + \ndiv{\vect{r_2}} \\
+    \vect{v}_1 &= \vect{v}_{1,2} + \vect{v}_{2}\\
+    \vect{v}_{1,2} &= \vect{v}_1 - \vect{v}_{2}
+\end{align*}
+
+Obviously if the vectors face the same direction in the same plane, then, the components subtract. If they face
+opposite direction, then the components add. 
+
+\(\vect{v}_{1,2}\) is called the velocity of \(\mathit{1}\) w.r.t \(\mathit{2}\). When doing
+problems, try to setup a reference frame such that velocity of any single object vanishes.
+This allows for a very neat simplification of problems. 
+
+\subsection{River Flow Cases}
+
+Consider the first case, where the velocity of the man jumping into the river, \(\vect{V}\) is
+perpendicular to the velocity of the river, \(\vect{U}_f\). We have,
+
+\begin{figure}
+    [H]
+    \centering
+    \scalebox{1.6}{\incfig{river1}}
+\end{figure}
+
+We can easily see that,
+
+\[
+    t = \frac{d}{V}
+\]
+
+Also, 
+
+\[
+    t = \frac{x}{U_f}
+\]
+
+where \(x\) is the drift of the man. Thus,
+
+\begin{equation}
+    x = U_f\frac{d}{V}
+\end{equation}
+
+Consider the second case now, a man jumping into the river downstream with angle \(\theta\).
+
+\begin{figure}[H]
+    \centering
+    \scalebox{1.6}{\incfig{river2}}
+\end{figure}
+
+Then, 
+\[
+    t = \frac{d}{V\cos\theta}
+\]
+
+And, 
+\[
+    x = (U_f - V\sin\theta)t 
+\]
+
+Therefore, we have,
+
+\begin{equation}
+    x = (U_f - V\sin\theta) \frac{d}{V\cos\theta}
+\end{equation}
+
+Finally, consider when he swims upstream with angle \(\theta\), 
+
+
+\begin{figure}[H]
+    \centering
+    \scalebox{1.6}{\incfig{river3}}
+\end{figure}
+
+Then, 
+\[
+    t = \frac{d}{V\cos(\theta)}
+\]
+
+And, 
+\[
+    x = (U_f + V\sin\theta)t 
+\]
+
+Therefore, we have,
+
+\begin{equation}
+    x = (U_f + V\sin\theta) \frac{d}{V\cos\theta}
+\end{equation}
+
+

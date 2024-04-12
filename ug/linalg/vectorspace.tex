@@ -51,6 +51,13 @@ Generalising the \(n\)th cartesian product of \(\FF\) with itself,
     \FF^n = \underbrace{\FF \times \FF \times \dots \times \FF}_{n\textup{-times}}
 \]
 
+\begin{example}
+    [Lists vs sets]
+    The lists \((3,5)\) and \((5,3)\) are not equal but \(\left\{3,5\right\} = \left\{5,3\right\}\). 
+    The list \((4,4,4) \ne (4,4) \ne (4)\) but \(\left\{4,4,4\right\} = \left\{4,4\right\} = \left\{4,\right\}\).
+\end{example}
+
+
 We may say,
 \begin{definition}
     \(\FF^n\) is the set of all lists of length \(n\) such that the elements of the list are in \(\FF\),
@@ -75,9 +82,10 @@ very great.
 
 \begin{definition}
     [Addition in \(\FF^n\)]
+    \label{def: addition in fn}
     Addition in \(\FF^n\) is defined as,
     \[
-        \listvec{x}{n} + \listvec{y}{n} = \listvec{x + y}{n}
+        \listvec{x}{n} + \listvec{y}{n} = (x_1 + y_1, x_2 + y_2, \dots, x_n + y_n)
     \]
 \end{definition}
 
@@ -91,8 +99,73 @@ To avoid the cumbersome notation of writing out \(\listvec{x}{n}\) we will adopt
     \(x = \listvec{x}{n}\), \(y = \listvec{y}{n}\). Thus,
     \begin{align*}
         x + y &= \listvec{x}{n} + \listvec{y}{n}\\
-        &= \listvec{x + y}{n}\\
-        &= \listvec{y + x}{n}\\
+        &= (x_1 + y_1, x_2 + y_2, \dots, x_n + y_n)\\
+        &= (y_1 + x_1, y_2 + x_2, \dots, x_n + y_n)\\
         &= y + x
     \end{align*}
 \end{proof}
+
+The proof is based on the commutativity of reals and \Cref{def: addition in fn}. 
+The elements of \(\FF^2\), \(x, y\) can be thought of as points or vectors. Disregarding
+the axes, vectors may independently be thought as some objects.
+
+We define two more things in \(\FF^n\),
+
+\begin{definition}
+    [Additive Inverse in \(\FF^n\)]
+    The additive inverse of \(x \in \FF^n\) is \(-x \in \FF^n\) where, 
+    \[
+        x + (-x) = 0
+    \]
+    And if \(x = \listvec{x}{n}\), 
+    \[
+        -x = \listvec{-x}{n}
+    \]
+\end{definition}
+
+The additive inverse of \(x\) in \(\RR^2\) is the vector of equal length but opposite direction.
+
+The final operation is \emph{scalar multiplication}
+
+\index{Scalar multiplication}
+
+\begin{definition}
+    [Scalar multiplication]
+    For a scalar \(\lambda\), and \(x \in \RR^n\), their product is defined as
+    \[
+        \lambda \listvec{x}{n} = \listvec{\lambda x}{n}
+    \]
+\end{definition}
+
+\section{Vector Space}
+
+The definition of a vector space comes off from the properties we have kind of discussed
+above for \(\RR^n\). Defining our operations for any vector space,
+
+\begin{definition}
+    [Operators on a vector space]
+    \emph{Addition} on \(V\) is a function \(+ : V^2 \to V\) where \(v + w \in V\) for 
+    any \(v, w \in V\).
+
+    \noindent\emph{Scalar multiplication} on \(V\) is a function \(\times : V \times R \to V\) where \(\lambda \times v \in V\) for 
+    any \(v \in V\) and \(\lambda \in \RR\). This is simply written as \(\lambda v\).
+\end{definition}
+
+Now, let us formally define \(V\). 
+
+\begin{definition}
+    [Vector Space]
+    A set \(V\) along with the operations of addition and scalar multiplication is a vector
+    space if the following properties hold for \(u, v, w \in V\) and \(a, b \in \RR\).
+
+    \begin{itemize}
+        \ii Commutativity, \(v + w = w + v\).
+        \ii Associativity, \((u + w) + v = u + (w + v)\) and \(a(bv) = (ab)v\).
+        \ii Additive Identity, there an element \(0 \in V\) such that \(v + 0 = v\).
+        \ii Additive Inverse, there exist an element \(-v \in V\) for each \(v\) such that 
+        \(v + (-v) = 0\).
+        \ii Multiplicative Identity, \(1v = v\)
+        \ii Distributive Property, \(a(u + v) = au + av\) and \(v(a + b) = va + vb\). 
+    \end{itemize}
+
+\end{definition}
