@@ -15,6 +15,8 @@ define a complex number as,
     is called a \emph{complex number}.
 \end{definition}
 
+Clearly, \(z_1(x_1, y_1) = z_2(x_1, y_1) \iff x_1 = x_2, y_1 = y_2\).
+
 \marginnote{The letter \(z\) is often used to denote a complex number.}
 
 The operations addition and multiplication are defined simply as, 
@@ -31,3 +33,94 @@ And multiplication is defined as,
 
 Although the definition of multiplication may seem complicated now, we will be able
 to gain intuition for it after introducing the algebraic form of complex numbers.
+
+\begin{remark}
+    Note that,
+    \begin{itemize}
+        \item \(z_{1} = (x_{1}, 0)\), \(z_2 = (x_2, 0)\). Then, \(z_1z_2 = (x_1x_2, 0)\).
+        \item \(z_1 = (0, y_1)\), \(z_2 = (0, y_2)\). Then, \(z_1z_2 = (-y_1y_2, 0)\).
+    \end{itemize}
+\end{remark}
+
+The usual properties regarding addition and multiplication, commutativity, associativity, and existence of identity
+and inverses are true, and can be shown through simple proofs by properties of reals.
+
+\section{Inverses}
+
+The additive inverse of \(z = (x, y)\) is defined \(-z = (-x, -y)\). 
+
+The multiplicative inverse of \(z\), \(z^{-1}\), such that \(zz^{-1} = 1\) is,
+\((x,y) \cdot (a,b) = (1, 0)\). We get that,
+\[
+    \begin{cases}
+        ax - yb = 1 \\
+        ay + bx = 0 \\
+    \end{cases}\] 
+ And we simply have,
+ \[
+    \frac{1}{z} = z^{-1} = \left(\frac{x}{x^2 + y^2}, \frac{y}{x^2 + y^2} \right)
+\]
+
+Two complex number \(z_1\), \(z_2\) also \emph{uniquely} determine a quotient,
+\[\frac{z_1}{z_2} = z_1z_{2}^{-1} = \left(\frac{x_1x_2 + y_1y_2}{x_{2}^{2} + y_{2}^{2}},
+\frac{-x_1y_2 + y_1x_2}{x_{2}^{2} + y_{2}^{2}} \right)\]
+
+The set \(\RR^2\) with the operations addition and multiplication forms the field of 
+complex numbers, \(\CC\). 
+
+Powers are defined similar to reals,
+\[
+    z^n = \underbrace{z\cdot z \cdot \dots \cdot z}_{n \, \text{times}}\]%
+for all integers \(n > 0\). For \(n < 0\), \(z^{n} = (z^{-1})^{-n}\). 
+
+\marginnote{We shall use \(\CC^*\) to show \(\CC \setminus \{0\}\).}
+
+\begin{proposition}
+    For \(z_1, z_2, z \in \CC^*\), \(a, b \in \ZZ\),
+    \begin{itemize}
+        \item \(z^m \cdot z^n = z^{m + n}\).
+        \item \(\dfrac{z^m}{z^n} = z^{m-n}\).
+        \item \((z^m)^n = z^{mn}\).
+        \item \((z_1z_2)^n = z_{1}^n \cdot z_{2}^n\).
+    \end{itemize}
+\end{proposition}
+
+\section{Algebraic Form of Complex Numbers}
+
+To deal with complex numbers, we introduce their algebraic form. 
+Consider a function \(f\),
+\[
+    f \colon \RR \to \RR \times \{0\}, f(x) = (x, 0)\]%
+Clearly such a \(f\) is a bijective. Moreover, 
+\[(x, 0) + (y, 0) = (x + y, 0), (x,0) \cdot (y, 0) = (xy, 0)\]
+
+Thus, \(x, 0\) behaves in the same as \(x \in \RR\). Therefore, we may write each \((x, 0) \in 
+\RR \times \{0\} = x \in \RR\) since \(f\) is bijective.
+
+\begin{definition}
+    We define \(i \in \CC\) as, 
+    \[i = (0, 1) \in \CC\]
+\end{definition}
+
+Note that, 
+\begin{align*}
+    z &= (x, y) = (x, 0) + (0, y)  \\ 
+    &= (x, 0) + (y, 0) \cdot (0,1) \\
+    &= x + yi = x + iy
+\end{align*}
+
+\begin{lemma}
+    Every complex number, \((x, y)\) can be represented as 
+    \[
+        z = x + yi \mid x, y \in \RR\]
+    where \(x\) is the real part of \(z\) and is denoted \(\Re(z)\). \(y\) is said
+    to be the imaginary part of \(z\) and is denoted \(\Im(z)\).
+\end{lemma}
+
+\(i^2 = -1\) by definition, since, \(i \cdot i = (0,1) \cdot (0,1) = (-1,0) = -1\).
+
+This representation of complex numbers is called the algebraic representation, where we can
+say that \(\CC = \{x + iy \mid x, y \in \RR, i^2 = -1\}\). 
+
+Complex numbers of the form \(0 + iy\) are purely imaginary and the ones of the form \(x + 0i\)
+are purely real. 
