@@ -357,17 +357,20 @@ tkzSecondPointResult)}
 
 \usepackage{scrextend}
 
+\definecolor{boldcolor}{gray}{0.18} % range from [0,1]
+\newcommand{\lightbold}[1]{\textcolor{boldcolor}{#1}}
+
 \newcommand{\marginnote}[1]{%
     \Ifthispageodd{%
-        \marginpar{\begin{marginnotebox}\RaggedRight#1\end{marginnotebox}}}{%
-        \marginpar{\begin{marginnotebox}\RaggedRight#1\end{marginnotebox}}}%
+        \marginpar{\begin{marginnotebox}\sffamily\RaggedRight\lightbold{#1}\end{marginnotebox}}}{%
+        \marginpar{\begin{marginnotebox}\sffamily\RaggedRight\lightbold{#1}\end{marginnotebox}}}%
     }
 
 
 \newcommand{\marginref}[1]{%
     \Ifthispageodd{%
-        \marginpar{\begin{marginrefbox}\RaggedRight#1\end{marginrefbox}}}{%
-        \marginpar{\begin{marginrefbox}\RaggedRight#1\end{marginrefbox}}}%
+        \marginpar{\begin{marginrefbox}\sffamily\RaggedRight#1\end{marginrefbox}}}{%
+        \marginpar{\begin{marginrefbox}\sffamily\RaggedRight#1\end{marginrefbox}}}%
     }
 
 

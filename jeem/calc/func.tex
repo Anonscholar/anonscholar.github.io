@@ -212,8 +212,8 @@ of \(A\) has an image, i.e. every element in \(A\) is included in the ordered pa
 for \(f\) is the \emph{set of all images of pre-images.}}
 
 \begin{example}
-    For \(f\) from \(\RR-\left\{0\right\}\) to \(\RR\) such that \(f(x)=\dfrac{1}{x}\). The Range
-    is \(\RR-\left\{0\right\}\), as is the domain. The Co-domain is \(\RR\).
+    For \(f \colon \RR \setminus \left\{0\right\} \to \RR\) such that \(f(x)=\dfrac{1}{x}\). The Range
+    is \(\RR \setminus \left\{0\right\}\), as is the domain. The Co-domain is \(\RR\).
 \end{example}
 
 \subsection{Informal Definition}
@@ -442,12 +442,14 @@ in the caption, where \(D\) is the domain, and \(R\) the range.}
 \para{When a function \(f\) of \(x\) has a different formula for particular intervals of \(x\),
 we call it a piecewise function. We represent it as, \[
     \begin{cases}
-        F & x \dots \\
-        G & x \dots \\
-        \vdots \\
-        Z & x \dots \\
+        F & \phi(x) \\
+        G & \varphi(x) \\
+        \vdots & \vdots \\
+        Z & \pi(x) \\
     \end{cases}
 \]
+Where each of the 
+
 }
 \begin{example}
     The modulus function, \(y = \abs{x}\) is a piecewise function:
@@ -783,9 +785,10 @@ and uncountably infinite if \(n(A) \ge n(\RR)\).
 \section{Even-Odd}
 
 \subsection{Even Functions}
+\label{Function!odd}
 
 If \(\forall x \in D_f, f(-x) = f(x)\) then \(f(x)\) is said to be an even function. 
-Clearly, all such functions is many-one. Clearly, \((x,y) \in f \iff (-x,y) \in f\).
+Clearly, all such functions are many-one. Also, \((x,y) \in f \iff (-x,y) \in f\).
 
 \begin{example}
     [Even fucntions]
@@ -816,3 +819,120 @@ Clearly, all such functions is many-one. Clearly, \((x,y) \in f \iff (-x,y) \in 
     \caption{Even Functions}
     \end{figure}
 \end{example}
+
+\subsection{Odd Functions}
+
+If \(\forall x \in D_{f}\), \(f(-x) = -f(x)\), then \(f\) is said to be an odd functions. These functions may
+or may not be injective. Also, \(\left( x,y \right) \in f \iff \left( -x, -y \right) \in f\). 
+
+\begin{example}
+    \(\sin(x)\), \(x^3\), \(\tan(x)\) are all odd functions.
+
+    \begin{figure}[H]
+        \begin{subfigure}{.3\textwidth}
+        \begin{tikzpicture}[scale=0.7]
+            \begin{axis}[funcgraph]
+                \addplot[blue, domain=-pi:pi]{sin(deg(x))};
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}%
+    \begin{subfigure}{.3\textwidth}
+        \begin{tikzpicture}[scale=0.7]
+            \begin{axis}[funcgraph]
+                \addplot[blue, domain=-2:2]{x^3};
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}%
+    \begin{subfigure}{.3\textwidth}
+        \begin{tikzpicture}[scale=0.7]
+            \begin{axis}[funcgraph]
+                \addplot[blue, domain=-1.5:1.5, samples=100]{tan(deg(x))};
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}%
+    \caption{Odd Functions}
+    \end{figure}
+
+\end{example}
+
+\begin{proposition}
+    Some properties related to odd and even functions are,
+    \begin{itemize}
+        \item A function can be even or odd or both or neither.
+        \item \(f\) such that \(f(x) = 0\) is both even and odd.
+        \item It is possible to express any function as sum of even and odd functions. \[
+          f(x) = \underbrace{\left( \frac{f(x) + f(-x)}{2}\right)}_{even} + \underbrace{\left( \frac{f(x) - f(x)}{2} \right)}_{odd}  
+        \]
+        \item The first derivative of an even function is an odd function and vice versa.
+        \item If an odd function \(f\) is continous at \(0\), then \(f(0) = 0\). 
+        \item \(f^{\prime}(x) = 0\) at \(x = 0\) if \(f\) is continous and differentiable at \(0\). 
+    \end{itemize}    
+\end{proposition}
+
+\subsection{Odd and even extensions of a function}
+
+If a function \(f\) is defined only on \(\left( 0, L \right)\), then we may extend \(f\) as an even function as,
+\[
+    f(x) =
+    \begin{cases}
+        f(x) & x \in \left( 0, L \right) \\
+        f(-x) & x \in \left( -L, 0 \right)
+    \end{cases}\]
+
+We may extend it as odd function as,
+\[
+    f(x) =
+    \begin{cases}
+        f(x) & x \in \left( 0, L \right) \\
+        -f(-x) & x \in \left( -L, 0 \right)
+    \end{cases}\]   
+
+\section{Periodic Functions}
+
+A function \(f\) is periodic if \(\forall x \in D_{f}, f(x) = f(x + T)\). The least positive value of \(T\) for
+which this is valid is called the \emph{principal} period of \(f\). 
+
+Clearly, \(f(x) = f(x + T) = f(x + 2T) = \dots = f(x + nT)\). One thing of note is that some functions
+may be periodic but have no fixed period. In particular the constant function, \(f(x) = c\) is periodic but
+there is no findable smallest value for which it is periodic. 
+
+\subsection{Period of transformed functions}
+\begin{claim}
+    For a function \(f\) of period \(T\), the transformed functions \(af(x)\), \(f(x \pm a)\), \(f(x) \pm a\)
+    all have period \(T\). 
+\end{claim}
+
+\begin{proof}
+    By definition, \(f(x) = f(x + T)\). Thus, 
+    \begin{align*}
+        & f(x) = f(x + T) \\
+        \iff & af(x) = af(x + T) \\
+    \end{align*}
+    The rest can be shown similarly. 
+\end{proof}
+
+\begin{claim}
+    For a function \(f\) of period \(T\), the function \(f(ax)\) has period \(T/\abs{a}\).
+\end{claim}
+
+\begin{proof}
+    Obviously, \(f(x) = f(x + T)\). Replace \(x\) by \(ax\). Then,
+    \begin{align*}
+        f(ax) &= f(ax + T) \\
+        f(ax) &= f(a(x + T/a))
+    \end{align*}
+    Now, clearly \(T/a\) is a period of \(f(ax)\). However, the principal period of \(f(ax)\) must be 
+    \(T/\abs*{a}\) since \(a\) may be negative.
+\end{proof}
+
+\subsection{Period of Algebraically operated functions}
+
+If period of \(f\) is \(p = m/n\), and period of \(g\) is \(q = r/s\), then
+the period of any algebraic manipulation of the two functions, \(f + g\), \(f - g\), 
+\(f \cdot g\) and \(f/g\) is \(t = \lcm(p,q)\),
+\[
+    t = \frac{\lcm(m, r)}{\gcd(n, s)}\]
+Where \(n, m, r, s \in \NN\) and \(\gcd(m,n) = \gcd(r,s) = 1\). 
+If \(p\), \(q\) are irrational, then their lcm is only defined if they have a common surd.
+In such a case, \(p = a\sqrt{n}\), \(q = b\sqrt{n}\) where \(n\) is not a perfect square and
+\(a, b \in \ZZ\). Then, \(\lcm(p,q) = \sqrt{n} \lcm(a,b)\). 

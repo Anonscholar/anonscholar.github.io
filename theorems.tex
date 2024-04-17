@@ -124,17 +124,12 @@ mdframed={style=mdblackbox}
     roundcorner=0pt,
     linewidth=1pt,
     skipabove=12pt,
-    skipbelow=12pt,
+    skipbelow=7pt,
     innertopmargin=9pt,
     innerbottommargin=9pt,
     linecolor=Orchid!35,
     nobreak=false,
     backgroundcolor=Orchid!5,
-    frametitleaboveskip=8pt,
-    frametitlebelowskip=8pt,
-    frametitlebackgroundcolor=Violet!50!black,
-    frametitlefont=\bfseries\sffamily\color{white},
-    frametitlerule=true,
 }
 \declaretheoremstyle[
 headfont=\rmfamily\bfseries\color{Orchid},
@@ -147,35 +142,28 @@ postheadhook={\textcolor{Orchid!80}{\rule[.6ex]{\linewidth}{0.4pt}} \\ }, % \\ r
 
 
 \mdfdefinestyle{mdsiennamargin}{%
+    roundcorner=5pt,
     skipabove=8pt,
-    linewidth=2pt,
-    rightline=false,
-    leftline=true,
-    topline=false,
-    bottomline=false,
+    linewidth=0.25pt,
     linecolor=RoyalBlue!40,
     backgroundcolor=RoyalBlue!5,
 }
 \declaretheoremstyle[
 headfont=\bfseries\rmfamily\color{purple},
-bodyfont=\normalfont,
 postheadspace={0pt},
 mdframed={style=mdsiennamargin},
 headpunct={ \\[3pt] },
 ]{thmmarginbox}
 
 \mdfdefinestyle{mdgreymargin}{%
+    roundcorner=5pt,
     skipabove=8pt,
-    linewidth=2pt,
-    rightline=false,
-    leftline=false,
-    topline=false,
-    bottomline=false,
+    linewidth=0.25pt,
+    linecolor=JungleGreen!40,
     backgroundcolor=JungleGreen!15,
 }
 \declaretheoremstyle[
 headfont=\bfseries\rmfamily\color{purple},
-bodyfont=\normalfont,
 postheadspace={0pt},
 mdframed={style=mdgreymargin},
 headpunct={ \\[3pt] },
@@ -266,4 +254,5 @@ bodyfont=\normalfont
         \bfseries\color{green!50!black}}%
     {\end{mdframed}}
 
-    \usepackage{exsheets}
+
+\usepackage{exsheets}

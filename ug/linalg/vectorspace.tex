@@ -144,11 +144,11 @@ above for \(\RR^n\). Defining our operations for any vector space,
 
 \begin{definition}
     [Operators on a vector space]
-    \emph{Addition} on \(V\) is a function \(+ : V^2 \to V\) where \(v + w \in V\) for 
-    any \(v, w \in V\).
+    \emph{Addition} on \(V\) is a function \(+ : V^2 \to V\) where \(\vect{v} + \vect{w} \in V\) for 
+    any \(\vect{v}, \vect{w} \in V\).
 
-    \noindent\emph{Scalar multiplication} on \(V\) is a function \(\times : V \times R \to V\) where \(\lambda \times v \in V\) for 
-    any \(v \in V\) and \(\lambda \in \RR\). This is simply written as \(\lambda v\).
+    \noindent\emph{Scalar multiplication} on \(V\) is a function \(\cdot : V \times R \to V\) where 
+    \(\lambda \vect{v} \in V\) for any \(\vect{v} \in V\) and \(\lambda \in \RR\). 
 \end{definition}
 
 Now, let us formally define \(V\). 
@@ -158,14 +158,14 @@ Now, let us formally define \(V\).
     A set \(V\) along with the operations of addition and scalar multiplication is a vector
     space if the following properties hold for \(u, v, w \in V\) and \(a, b \in \RR\).
 
-    \begin{itemize}
-        \ii Commutativity, \(v + w = w + v\).
-        \ii Associativity, \((u + w) + v = u + (w + v)\) and \(a(bv) = (ab)v\).
-        \ii Additive Identity, there an element \(0 \in V\) such that \(v + 0 = v\).
-        \ii Additive Inverse, there exist an element \(-v \in V\) for each \(v\) such that 
+    \begin{axioms}
+        \item Commutativity, \(v + w = w + v\).
+        \item Associativity, \((u + w) + v = u + (w + v)\) and \(a(bv) = (ab)v\).
+        \item Additive Identity, there an element \(0 \in V\) such that \(v + 0 = v\).
+        \item Additive Inverse, there exist an element \(-v \in V\) for each \(v\) such that 
         \(v + (-v) = 0\).
-        \ii Multiplicative Identity, \(1v = v\)
-        \ii Distributive Property, \(a(u + v) = au + av\) and \(v(a + b) = va + vb\). 
-    \end{itemize}
+        \item Multiplicative Identity, \(1v = v\)
+        \item Distributive Property, \(a(u + v) = au + av\) and \(v(a + b) = va + vb\). 
+    \end{axioms}
 
 \end{definition}

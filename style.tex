@@ -14,8 +14,7 @@
 
 \usepackage[]{minitoc}
 \doparttoc[n]
-\noptcrule
-\renewcommand\beforeparttoc{{\bfseries \Large Part \thepart: Contents}\vspace{1em}\hrule}
+\renewcommand\beforeparttoc{{\bfseries \Large Part \thepart: Contents}}
 \usepackage{etoolbox}
 
 
@@ -32,7 +31,7 @@
 \renewcommand\chapternamenum{}
 \renewcommand\printchaptername{}
 \renewcommand\printchapternum{}
-\renewcommand\chapnumfont{\Huge\bfseries\centering}
+\renewcommand\chapnumfont{\Huge\em\centering}
 \renewcommand\chaptitlefont{\Huge\bfseries\raggedright}
 \renewcommand\printchaptertitle[1]{%
 \Vlines\hspace*{-2em}%
@@ -213,6 +212,7 @@ citecolor=TealBlue,
 \usepackage{physics}
 \usepackage{mathdots}
 \usepackage{tkz-euclide}
+\usepackage[ragged]{sidecap}
 \usepackage{babel}
 \usepackage{float}
 \usepackage{caption}
@@ -229,6 +229,14 @@ citecolor=TealBlue,
 \usepackage{ellipsis}
 \usepackage{nameref}
 \usepackage{tzplot}
+\usepackage{enumitem}
+\newlist{axioms}{enumerate}{10}
+\setlist[axioms]{label=\textbf{Axiom\,\arabic*.},ref=Axiom\arabic*,leftmargin=*}
+
+\newlist{casework}{enumerate}{10}
+\setlist[casework]{label=\textbf{Case\,\Roman*},ref=Axiom\arabic*,leftmargin=*}
+
+
 \usepackage{ragged2e}
 \usepackage{empheq}
 \usepackage[citestyle=alphabetic]{biblatex}
@@ -314,6 +322,8 @@ citecolor=TealBlue,
 \renewcommand*{\partnamefont}{\normalfont\Huge\scshape\MakeLowercase}
 \renewcommand*{\partnumfont}{\color{black}\normalfont\scshape\MakeLowercase}
 
+\renewcommand*{\thesection}{\thechapter\,-\arabic{section}}
+
 \setsechook{\hangsecnum}
 
 \makeatletter
@@ -334,4 +344,3 @@ citecolor=TealBlue,
 
 \setsubsechook{\hangsecnum}
 \setsubsubsechook{\hangsecnum}
-

@@ -128,7 +128,7 @@ talking into consideration. Thus, it is a \emph{scalar} quantity.}
 \para{The Velocity of a particle, contrastingly, contains information about both the speed and direction of the
 object in consideration. It is a vector. Similar to position, it is also generally a function of time \(v(t)\), though it
 may also be dependent on the position \(v(x)\).} 
-
+~\\
 \begin{definition}
     [Velocity]
     \label{def: velocity}
@@ -148,16 +148,16 @@ In such a case we use the concept of \textbf{average velocity}, \[
 
 \begin{algorithm}
     Let us consider the cases of average velocity,
-    \begin{enumerate}
-        \ii[\textbf{Case 1}] When there are \(n\) equal time intervals with velocity \(\vect{v}_1\), \(\vect{v}_2\), \ldots \(\vect{v}_n\).
+    \begin{casework}
+        \ii When there are \(n\) equal time intervals with velocity \(\vect{v}_1\), \(\vect{v}_2\), \ldots \(\vect{v}_n\).
         Then, \[
             \avg{\vect{v}} = \frac{\vect{v}_1 + \vect{v}_2 + \dots + \vect{v}_n}{n} 
         \]
-        \ii[\textbf{Case 2}] When there are \(n\) equal intervals of distance/displacement with velocity \(\vect{v}_1\), \(\vect{v}_2\), \ldots \(\vect{v}_n\).
+        \ii When there are \(n\) equal intervals of distance/displacement with velocity \(\vect{v}_1\), \(\vect{v}_2\), \ldots \(\vect{v}_n\).
         Then, \[
             \avg{\vect{v}} = \frac{n}{\frac{1}{\vect{v}_1} + \frac{1}{\vect{v}_2} + \dots + \frac{1}{\vect{v}_n}} 
         \]
-    \end{enumerate}
+    \end{casework}
 \end{algorithm}
 
 \para{In general velocity is also referred to as `instantaneous velocity'. This is done to remind of the difference
@@ -165,7 +165,7 @@ with average velocity. We will not refer to it that way since by velocity we sha
 \Cref{def: velocity}. The same goes for speed. Speed is defined as \(\ndiv{d}\) where \(d\) is the distance.
 Average speed is defined similar to average velocity.}
 
-\marginnote{Magnitude refers to the absolute value of a vector, i.e., its modulus. \(\abs{\vect{a}}\) is the 
+\marginnote{Magnitude refers to the absolute value of a vector, i.e., its modulus. \(\norm{\vect{a}}\) is the 
 magnitude of \(\vect{a}\) and is often simply denoted \(a\).}
 
 \para{There is an interesting relation between speed and velocity. Consider the distance between \(a\) and \(b\) as 
@@ -258,7 +258,7 @@ and finally for \(n^{th}\) second just do \(s_n - s_{n-1}\).}
         \begin{align*}
             \alpha(t_0) &= \beta(T-t_0) \\
             \alpha(t_0) &= \beta(T) - \beta(t_0) \\
-            alpha(t_0) + \beta(t_0) &= \beta(T) \\
+            \alpha(t_0) + \beta(t_0) &= \beta(T) \\
             t_0 &= \frac{\beta T}{\alpha + \beta} \\
             v_{max} &= \alpha t_0 \\
             v_{max} &= \frac{\alpha\beta T}{\alpha + \beta}
@@ -384,13 +384,14 @@ and finally for \(n^{th}\) second just do \(s_n - s_{n-1}\).}
 \] The derivative differs from the derivative of a scalar. It has both magnitude and direction.
 One way to compute it is to break it down to its components, \[
     \derivative{\vect{r}}{t} = \derivative{x}{t}  \unitv{i} + \derivative{y}{t}  \unitv{j} + \derivative{z}{t}  \unitv{k}
-\]. But since the components of the vector depend on the reference frame, we may generalise the differentiation of a vector
+.\]
+But since the components of the vector depend on the reference frame, we may generalise the differentiation of a vector
 in two parts.}
 
-\begin{enumerate}
-        \ii[\textbf{Case I}] \(\displaystyle\derivative{\vect{A}}{t} \perp \vect{A}\)
-        \ii[\textbf{Case II}] \(\displaystyle\derivative{\vect{A}}{t} \parallel \vect{A}\)
-\end{enumerate}
+\begin{casework}
+        \ii \(\displaystyle\derivative{\vect{A}}{t} \perp \vect{A}\)
+        \ii \(\displaystyle\derivative{\vect{A}}{t} \parallel \vect{A}\)
+\end{casework}
 
 \para{For the first case, let us first consider a geometric argument for \(\increment \vect{A}\)
 which is perpendicular to \(\vect{A}\). For sufficiently small values of \(\increment \vect{A}\),
@@ -403,14 +404,14 @@ definitive in the limiting case. Consider the following figure,}
     \scalebox{0.7}{\incfig{timedev}}
 \end{figure}
 
-\para{\noindent This allows us to consider a simple geometric argument which gives \(\abs{\increment \vect{A}} = 2A\sin(\theta/2)\)
+\para{\noindent This allows us to consider a simple geometric argument which gives \(\norm{\increment \vect{A}} = 2A\sin(\theta/2)\)
 where \(\theta\) is the angle between \(\vect{A}_1\) and \(\vect{A}_2\).}
 
 Since we're considering values of small \(\theta\), we may use the small angle approximation,
 \(\sin(\theta) \approx \theta\). Therefore,
 
 \begin{align}
-    \abs{\vect{\increment A}} &\approx 2A \times \frac{\theta}{2}\\ 
+    \norm{\vect{\increment A}} &\approx 2A \times \frac{\theta}{2}\\ 
     &\approx A \times \theta
 \end{align}
 
@@ -422,12 +423,12 @@ Which is equivalent to \(A \increment \theta\). In the limit \(\increment \theta
 
 Which finally gives us,
 \begin{equation}
-    \abs{\derivative{\vect{A}_{\perp}}{t}} = A\derivative{\theta}{t}
+    \norm{\derivative{\vect{A}_{\perp}}{t}} = A\derivative{\theta}{t}
 \end{equation}
 
 The second case is easy as it is just 
 \begin{equation}
-    \abs{\derivative{\vect{A}_{\parallel}}{t}} = \derivative{A}{t}
+    \norm{\derivative{\vect{A}_{\parallel}}{t}} = \derivative{A}{t}
 \end{equation}
     
 This completes our formulation of the time derivative of any vector, independent of its co-ordinate
@@ -644,8 +645,7 @@ This allows for a very neat simplification of problems.
 Consider the first case, where the velocity of the man jumping into the river, \(\vect{V}\) is
 perpendicular to the velocity of the river, \(\vect{U}_f\). We have,
 
-\begin{figure}
-    [H]
+\begin{figure}[H]
     \centering
     \scalebox{1.6}{\incfig{river1}}
 \end{figure}
@@ -675,44 +675,40 @@ Consider the second case now, a man jumping into the river downstream with angle
     \scalebox{1.6}{\incfig{river2}}
 \end{figure}
 
-Then, 
+Then,
+
 \[
     t = \frac{d}{V\cos\theta}
 \]
-
 And, 
 \[
     x = (U_f - V\sin\theta)t 
 \]
-
 Therefore, we have,
-
 \begin{equation}
     x = (U_f - V\sin\theta) \frac{d}{V\cos\theta}
 \end{equation}
-
 Finally, consider when he swims upstream with angle \(\theta\), 
-
 
 \begin{figure}[H]
     \centering
     \scalebox{1.6}{\incfig{river3}}
 \end{figure}
 
-Then, 
+Then,
+
 \[
     t = \frac{d}{V\cos(\theta)}
 \]
-
 And, 
 \[
     x = (U_f + V\sin\theta)t 
 \]
-
 Therefore, we have,
-
 \begin{equation}
     x = (U_f + V\sin\theta) \frac{d}{V\cos\theta}
 \end{equation}
+
+
 
 
