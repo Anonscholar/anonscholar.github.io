@@ -936,3 +936,55 @@ Where \(n, m, r, s \in \NN\) and \(\gcd(m,n) = \gcd(r,s) = 1\).
 If \(p\), \(q\) are irrational, then their lcm is only defined if they have a common surd.
 In such a case, \(p = a\sqrt{n}\), \(q = b\sqrt{n}\) where \(n\) is not a perfect square and
 \(a, b \in \ZZ\). Then, \(\lcm(p,q) = \sqrt{n} \lcm(a,b)\). 
+
+\section{Composite Functions}   
+
+Let \(A\), \(B\), \(C\) be three non-empty sets. Then for \(f : A \to B\) and \(g : B \to C\), 
+there exists \(f \circ g : A \to C\) where \(g \circ f (x) = g(f(x)),\) \(\forall x \in A\). 
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzcd}
+        A\ar[r,"f"]\ar[rr,out=-30,in=210,swap,"g \circ f"] & B\ar[r,"g"] & C
+    \end{tikzcd}
+    \caption{Composite Functions}
+    \label{fig: composition}
+\end{figure}
+
+Thus, the image of \(x \mid x \in A\) under \(g \circ f\) is the image under \(g\) of the image
+of \(x\) under \(f\). 
+Clearly, \(R_f \subseteq D_{g \circ f}\). Note that in general \(g \circ f \ne f \circ g\).
+
+Also, composition is associative, \(g \circ (f \circ h) = (g \circ f) \circ h\). 
+
+\begin{example}
+    If \(f : \RR \to \RR \mid f(x) = \sin(x)\) and \(g : \RR \to \RR \mid g(x) = \cos(x)\).
+
+    Then \(g \circ f = \cos(\sin(x))\) and \(f \circ g = \sin(\cos(x))\). 
+\end{example}
+
+\subsection{Injectivity and Surjectivity of Composite functions}
+
+\begin{proposition}
+    If \(f : A \to B\), \(g : B \to C\) are injective, then \(g \circ f : A \to C\) is also injective.
+\end{proposition}
+
+\begin{proof}
+    Note that \(f(a) = f(b) \iff a = b\) and \(g(a) = g(b) \iff a = b\), then,
+    \begin{align*}
+        g \circ f (a) = g \circ f(b) &\iff g(f(a) = g(f(b)))\\
+        &\iff f(a) = f(b) \\
+        & \iff a = b 
+    \end{align*}  
+    Thus, \(g \circ f (a) = g \circ f (b) \iff a = b\).  
+\end{proof}
+
+\begin{proposition}
+    If \(f : A \to B\) and \(g : B \to C\) are surjective, then \(g \circ f \) is also surjective.
+\end{proposition}
+
+\begin{proof}
+    Given an arbitrary element \(c \in C\), \(\exists x \in B, g(x) = c\). Now,
+    \(\forall x \in B, \exists a \in A, f(a) = x\). Substitute \(x = f(a)\) and thus
+    for \(\forall b \in C, \exists a \in A \mid g \circ f (a) = c\).
+\end{proof}
