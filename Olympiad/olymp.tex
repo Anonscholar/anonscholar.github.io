@@ -35,32 +35,19 @@
     \restoregeometry
     \pagestyle{mystyle}
     \input{intro.tex}
-    
-
 
     \mainmatter 
-    \newgeometry{right=1.5cm,left=1.5cm}
-    \part{Number Theory}
-    \parttoc
-    \restoregeometry
+    \spart{Number Theory}
     \input{nt/divisibility}
     \input{nt/modular.tex}
   
     
-    \newgeometry{right=1.5cm,left=1.5cm}
-    \part{Combinatorics}
-    \parttoc
-    \restoregeometry
-
+    \spart{Combinatorics}
+    
     \appendix
-    \newgeometry{right=1.5cm,left=1.5cm}
-    \part{Appendices}
-    \parttoc
-    \restoregeometry
+    \spart{Appendices}
     \input{appendices/term}
     
-
-
     \backmatter
     \printindex
     \printbibliography

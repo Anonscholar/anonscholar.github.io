@@ -1,23 +1,21 @@
 \documentclass[twoside, a4paper, 10pt]{memoir}
 
-
 \input{../style.tex}
 \input{../theorems.tex}
 \input{../macros.tex}
 
-\descrip{On the universal truths}
+\descrip{A foray into Physics}
 \author{Adyansh Mishra}
 \date{\today}
-\title{A Foray into Physics}
+\title{The Physics Notebook}
 
 \begin{document}
 %https://tex.stackexchange.com/questions/249475/index-hyperlink-not-pointing-to-correct-page
 \pagenumbering{roman}
 
-
     \frontmatter
-    \includepdf[scale=1.15]{cover.pdf}
-    \fncytitle
+    \includepdf[scale=1.15]{./cover.pdf}
+    \clearpage\fncytitle
 
     \newgeometry{right=1.5cm,left=1.5cm}
     \renewcommand*{\contentsname}{Short contents}
@@ -26,40 +24,28 @@
 
     \clearpage
     \renewcommand*{\contentsname}{Contents}
-    \setcounter{tocdepth}{1}
+    \setcounter{tocdepth}{1}% subsections and above
     \tableofcontents
-    
     \clearpage
     \listoffigures
     \restoregeometry
 
     \mainmatter
-    \setcounter{chapter}{-1}
-    
+
+    \setcounter{chapter}{0}
     \input{elem/math.tex}
     \input{elem/ud.tex}
-    
-    \newgeometry{right=1.5cm,left=1.5cm}
-    \part{Mechanics}
-    \parttoc
-    \restoregeometry
-    
-    \input{mech/kin.tex}
-    
-    \newgeometry{right=1.5cm,left=1.5cm}
-    \part{Electricity \& Magnetism}
-    \parttoc
-    \restoregeometry
-    
-    \input{em/elecstatic.tex}
-    
 
-    \newgeometry{right=1.5cm,left=1.5cm}
-    \part{Appendices}
-    \parttoc
-    \restoregeometry
+
+    \spart{Mechanics}
+    \input{mech/kin.tex}
+
+    \spart{Electrodynamics}
+
     \appendix
+    \spart{Appendix}
 
     \backmatter
     \printindex
+
 \end{document}

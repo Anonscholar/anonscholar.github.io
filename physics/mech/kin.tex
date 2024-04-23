@@ -628,7 +628,7 @@ If \(\vect{r}_1\) evolves with time, \(r_1(t)\). And so does \(r_2(t)\). Then,
 
 \begin{align*}
     \vect{r}_1 &= \vect{r}_{1,2} + \vect{r}_2 \\
-    \ndiv{\vect{r}_1} &= \ndiv{\vect{r}_{1,2}} + \ndiv{\vect{r_2}} \\
+    \ndiv{\vect{r}}_1 &= \ndiv{\vect{r}}_{1,2} + \ndiv{\vect{r}}_2 \\
     \vect{v}_1 &= \vect{v}_{1,2} + \vect{v}_{2}\\
     \vect{v}_{1,2} &= \vect{v}_1 - \vect{v}_{2}
 \end{align*}
@@ -639,76 +639,5 @@ opposite direction, then the components add.
 \(\vect{v}_{1,2}\) is called the velocity of \(\mathit{1}\) w.r.t \(\mathit{2}\). When doing
 problems, try to setup a reference frame such that velocity of any single object vanishes.
 This allows for a very neat simplification of problems. 
-
-\subsection{River Flow Cases}
-
-Consider the first case, where the velocity of the man jumping into the river, \(\vect{V}\) is
-perpendicular to the velocity of the river, \(\vect{U}_f\). We have,
-
-\begin{figure}[H]
-    \centering
-    \scalebox{1.6}{\incfig{river1}}
-\end{figure}
-
-We can easily see that,
-
-\[
-    t = \frac{d}{V}
-\]
-
-Also, 
-
-\[
-    t = \frac{x}{U_f}
-\]
-
-where \(x\) is the drift of the man. Thus,
-
-\begin{equation}
-    x = U_f\frac{d}{V}
-\end{equation}
-
-Consider the second case now, a man jumping into the river downstream with angle \(\theta\).
-
-\begin{figure}[H]
-    \centering
-    \scalebox{1.6}{\incfig{river2}}
-\end{figure}
-
-Then,
-
-\[
-    t = \frac{d}{V\cos\theta}
-\]
-And, 
-\[
-    x = (U_f - V\sin\theta)t 
-\]
-Therefore, we have,
-\begin{equation}
-    x = (U_f - V\sin\theta) \frac{d}{V\cos\theta}
-\end{equation}
-Finally, consider when he swims upstream with angle \(\theta\), 
-
-\begin{figure}[H]
-    \centering
-    \scalebox{1.6}{\incfig{river3}}
-\end{figure}
-
-Then,
-
-\[
-    t = \frac{d}{V\cos(\theta)}
-\]
-And, 
-\[
-    x = (U_f + V\sin\theta)t 
-\]
-Therefore, we have,
-\begin{equation}
-    x = (U_f + V\sin\theta) \frac{d}{V\cos\theta}
-\end{equation}
-
-
 
 

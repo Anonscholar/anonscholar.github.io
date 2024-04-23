@@ -16,8 +16,7 @@
 \doparttoc[n]
 \renewcommand\beforeparttoc{{\bfseries \Large Part \thepart: Contents}}
 \usepackage{etoolbox}
-
-
+\usepackage{booktabs, tabularx}
 
 %Chapter Style
 \usepackage{calc,color}
@@ -215,6 +214,7 @@ citecolor=TealBlue,
 \usepackage[ragged]{sidecap}
 \usepackage{babel}
 \usepackage{float}
+\usepackage[cleanlook,british]{isodate}% day-first date
 \usepackage{caption}
 \usepackage{paralist}
 \usepackage{graphicx}
@@ -225,6 +225,8 @@ citecolor=TealBlue,
 \usepackage{framed}
 \usepackage{siunitx}
 \usepackage{pdfpages}
+\usepackage{bohr}
+\usepackage{modiagram}
 \usepackage{subcaption}
 \usepackage{ellipsis}
 \usepackage{nameref}
@@ -321,8 +323,6 @@ citecolor=TealBlue,
 \renewcommand*{\parttitlefont}{\color{black}\sffamily\HUGE}
 \renewcommand*{\partnamefont}{\normalfont\Huge\scshape\MakeLowercase}
 \renewcommand*{\partnumfont}{\color{black}\normalfont\scshape\MakeLowercase}
-
-\renewcommand*{\thesection}{\thechapter\,-\arabic{section}}
 
 \setsechook{\hangsecnum}
 
