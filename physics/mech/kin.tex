@@ -46,11 +46,11 @@ of time. We generally denote this as \(r(t)\) to show that is a function.}
 \para{We define the position of a particle relative to a reference frame using a \emph{position 
 vector}. One end of the position vector is the origin of our reference frame. The other is 
 the particle itself. Consider \Cref{fig: position}, the 
-vector \(\vect{r}\) from \(O\) to \(A\). It describes the position of \(A\) relative to the
-co-ordinate frame. Let \(A = (x,y,z)\). Then we denoted \(\vect{r}\) as \(\vect{r}(x,y,z)\).}
+vector \(\vec{r}\) from \(O\) to \(A\). It describes the position of \(A\) relative to the
+co-ordinate frame. Let \(A = (x,y,z)\). Then we denoted \(\vec{r}\) as \(\vec{r}(x,y,z)\).}
 
 \para{The position to any point is written as, \[
-    \vect{r} = (x,y,z) = x\unitv{i} + y\unitv{j} + z\unitv{k}
+    \vec{r} = (x,y,z) = x\unitv{i} + y\unitv{j} + z\unitv{k}
 \]}
 
 
@@ -72,12 +72,12 @@ co-ordinate frame. Let \(A = (x,y,z)\). Then we denoted \(\vect{r}\) as \(\vect{
     reference frame.}
 
 \para{Consider the movement of a particle from \(A = (x_1,y_1,z_1)\) to \(B = (x_2,y_2,z_2)\). 
-The \emph{displacement} defines a true vector \(\vect{S} = (x_2-x_1,y_2-y_1,z_2-z_1)\).
-\(\vect{S}\) is called the displacement vector. Note that it contains no information about the
+The \emph{displacement} defines a true vector \(\vec{S} = (x_2-x_1,y_2-y_1,z_2-z_1)\).
+\(\vec{S}\) is called the displacement vector. Note that it contains no information about the
 individual points, but only about the relative position of each. Thus, our choice
 of reference frame, and thus position vector does not matter when we're concerned with displacement
 . In \Cref{fig: displacement}, the vector
-\(\vect{S}_{AB}\) defines a displacement from \(A\) to \(B\).}
+\(\vec{S}_{AB}\) defines a displacement from \(A\) to \(B\).}
 
 \begin{figure}
     [H]
@@ -134,39 +134,39 @@ may also be dependent on the position \(v(x)\).}
     \label{def: velocity}
     Velocity is defined as,
     \begin{equation}
-        \vect{v} \equiv \ndiv{\vect{r}}    
+        \vec{v} \equiv \ndiv{\vec{r}}    
     \end{equation}
 \end{definition}
-\marginnote{The dot over \(r\) in \(\dot{\vect{r}}\) tells us that \(r\) has been differentiated
+\marginnote{The dot over \(r\) in \(\dot{\vec{r}}\) tells us that \(r\) has been differentiated
 with respect to time.}
 
 \para{Sometimes, we do not need to compute the derivative of the position vector, and simply need an average
 estimate, or in the case of uniformly accelerated motion, it is not required that we computer derivatives.
 In such a case we use the concept of \textbf{average velocity}, \[
-    \avg{\vect{v}}_{12} = \frac{\vect{r}_1-\vect{r}_2}{t_2 - t_1}  
+    \avg{\vec{v}}_{12} = \frac{\vec{r}_1-\vec{r}_2}{t_2 - t_1}  
 \]}
 
 \begin{algorithm}
     Let us consider the cases of average velocity,
     \begin{casework}
-        \ii When there are \(n\) equal time intervals with velocity \(\vect{v}_1\), \(\vect{v}_2\), \ldots \(\vect{v}_n\).
+        \ii When there are \(n\) equal time intervals with velocity \(\vec{v}_1\), \(\vec{v}_2\), \ldots \(\vec{v}_n\).
         Then, \[
-            \avg{\vect{v}} = \frac{\vect{v}_1 + \vect{v}_2 + \dots + \vect{v}_n}{n} 
+            \avg{\vec{v}} = \frac{\vec{v}_1 + \vec{v}_2 + \dots + \vec{v}_n}{n} 
         \]
-        \ii When there are \(n\) equal intervals of distance/displacement with velocity \(\vect{v}_1\), \(\vect{v}_2\), \ldots \(\vect{v}_n\).
+        \ii When there are \(n\) equal intervals of distance/displacement with velocity \(\vec{v}_1\), \(\vec{v}_2\), \ldots \(\vec{v}_n\).
         Then, \[
-            \avg{\vect{v}} = \frac{n}{\frac{1}{\vect{v}_1} + \frac{1}{\vect{v}_2} + \dots + \frac{1}{\vect{v}_n}} 
+            \avg{\vec{v}} = \frac{n}{\frac{1}{\vec{v}_1} + \frac{1}{\vec{v}_2} + \dots + \frac{1}{\vec{v}_n}} 
         \]
     \end{casework}
 \end{algorithm}
 
 \para{In general velocity is also referred to as `instantaneous velocity'. This is done to remind of the difference
-with average velocity. We will not refer to it that way since by velocity we shall always mean \(\vect{v}\) as defined in
+with average velocity. We will not refer to it that way since by velocity we shall always mean \(\vec{v}\) as defined in
 \Cref{def: velocity}. The same goes for speed. Speed is defined as \(\ndiv{d}\) where \(d\) is the distance.
 Average speed is defined similar to average velocity.}
 
-\marginnote{Magnitude refers to the absolute value of a vector, i.e., its modulus. \(\norm{\vect{a}}\) is the 
-magnitude of \(\vect{a}\) and is often simply denoted \(a\).}
+\marginnote{Magnitude refers to the absolute value of a vector, i.e., its modulus. \(\norm{\vec{a}}\) is the 
+magnitude of \(\vec{a}\) and is often simply denoted \(a\).}
 
 \para{There is an interesting relation between speed and velocity. Consider the distance between \(a\) and \(b\) as 
 \(a \to b\). The path between them approaches a straight line. Thus, the distance and displacement become the same
@@ -177,13 +177,13 @@ in the limiting case. Therefore, the \emph{magnitude} of velocity is the speed a
     and we have to figure out displacement or when displacement and and velocity are given, but time is not. 
     \begin{enumerate}
         \ii \(v = c\) : This is a trivial case. Just use equations of uniformly accelerated motion.
-        \ii \(v = f(x)\) : \(\displaystyle \derivative{x}{t} = f(x)\). Then, \(\dfrac{\differential{x}}{f(x)} = \differential{t}\).
+        \ii \(v = f(x)\) : \(\displaystyle \dv{x}{t} = f(x)\). Then, \(\dfrac{\dd{x}}{f(x)} = \dd{t}\).
         Now, we simply have, \[
-            \int^{x_2}_{x_1} \frac{\differential{x}}{f(x)} = \int^{t_2}_{t_1} \differential{t}
+            \int^{x_2}_{x_1} \frac{\dd{x}}{f(x)} = \int^{t_2}_{t_1} \dd{t}
         \] to get \(x_1\) and \(x_2\) or \(t_1\) and \(t_2\). We may also set our co-ordinates such that \(x_2 = x\), \(x_1 = 0\) and \(t_2 = t\), \(t_1 = 0\).
-        \ii \(v = f(t)\) : This is also easy, just, \(\displaystyle f(x) = \derivative{x}{t}\), then,
+        \ii \(v = f(t)\) : This is also easy, just, \(\displaystyle f(x) = \dv{x}{t}\), then,
         \[
-            \int^{t_2}_{t_1} f(t) \differential{t} = \int^{x_2}_{x_1} \differential{x}
+            \int^{t_2}_{t_1} f(t) \dd{t} = \int^{x_2}_{x_1} \dd{x}
         \] We simply get \(x_1\) and \(x_2\) or \(t_1\) and \(t_2\) by solving the integral.
     \end{enumerate}
 \end{algorithm}
@@ -199,12 +199,12 @@ in the limiting case. Therefore, the \emph{magnitude} of velocity is the speed a
     \label{def: acceleration}
     Acceleration is defined as,
     \begin{equation}
-        \vect{a} \equiv \ndiv{\vect{v}} = \nddiv{\vect{r}}    
+        \vec{a} \equiv \ndiv{\vec{v}} = \nddiv{\vec{r}}    
     \end{equation}
 \end{definition}
 
 \para{There is also another way to represent acceleration, as, \[
-    \vect{a} = \vect{v}\derivative{\vect{v}}{x}
+    \vec{a} = \vec{v}\dv{\vec{v}}{x}
 \]
 I must be held accountable here, because I do not, particularly, know the use of this representation, if it is worth
 remembering, or should be discarded.}
@@ -225,8 +225,8 @@ the equations of importance.}
     \end{align}
 \end{theorem}
 
-\para{The derivation of these is quite easy, integrate \(\int a \differential{x}\) for the first, 
-\(\int a \differential{t}\) for the second (both with constant acceleration), substitute from the former into the latter for the third,
+\para{The derivation of these is quite easy, integrate \(\int a \dd{x}\) for the first, 
+\(\int a \dd{t}\) for the second (both with constant acceleration), substitute from the former into the latter for the third,
 and finally for \(n^{th}\) second just do \(s_n - s_{n-1}\).} 
 
 \para{Now, we will be looking at some fascinating questions that I have encountered.}
@@ -380,21 +380,21 @@ and finally for \(n^{th}\) second just do \(s_n - s_{n-1}\).}
 \todo{Add vectors, atleast elem stuff and rename jee to general or olymp.}
 
 \para{When we write, \[
-    \derivative{\vect{r}}{t}
+    \dv{\vec{r}}{t}
 \] The derivative differs from the derivative of a scalar. It has both magnitude and direction.
 One way to compute it is to break it down to its components, \[
-    \derivative{\vect{r}}{t} = \derivative{x}{t}  \unitv{i} + \derivative{y}{t}  \unitv{j} + \derivative{z}{t}  \unitv{k}
+    \dv{\vec{r}}{t} = \dv{x}{t}  \unitv{i} + \dv{y}{t}  \unitv{j} + \dv{z}{t}  \unitv{k}
 .\]
 But since the components of the vector depend on the reference frame, we may generalise the differentiation of a vector
 in two parts.}
 
 \begin{casework}
-        \ii \(\displaystyle\derivative{\vect{A}}{t} \perp \vect{A}\)
-        \ii \(\displaystyle\derivative{\vect{A}}{t} \parallel \vect{A}\)
+        \ii \(\displaystyle\dv{\vec{A}}{t} \perp \vec{A}\)
+        \ii \(\displaystyle\dv{\vec{A}}{t} \parallel \vec{A}\)
 \end{casework}
 
-\para{For the first case, let us first consider a geometric argument for \(\increment \vect{A}\)
-which is perpendicular to \(\vect{A}\). For sufficiently small values of \(\increment \vect{A}\),
+\para{For the first case, let us first consider a geometric argument for \(\increment \vec{A}\)
+which is perpendicular to \(\vec{A}\). For sufficiently small values of \(\increment \vec{A}\),
 the change in magnitude is negligible, we only observe a change in direction. This becomes
 definitive in the limiting case. Consider the following figure,}
 
@@ -404,31 +404,31 @@ definitive in the limiting case. Consider the following figure,}
     \scalebox{0.7}{\incfig{timedev}}
 \end{figure}
 
-\para{\noindent This allows us to consider a simple geometric argument which gives \(\norm{\increment \vect{A}} = 2A\sin(\theta/2)\)
-where \(\theta\) is the angle between \(\vect{A}_1\) and \(\vect{A}_2\).}
+\para{\noindent This allows us to consider a simple geometric argument which gives \(\norm{\increment \vec{A}} = 2A\sin(\theta/2)\)
+where \(\theta\) is the angle between \(\vec{A}_1\) and \(\vec{A}_2\).}
 
 Since we're considering values of small \(\theta\), we may use the small angle approximation,
 \(\sin(\theta) \approx \theta\). Therefore,
 
 \begin{align}
-    \norm{\vect{\increment A}} &\approx 2A \times \frac{\theta}{2}\\ 
+    \norm{\vec{\increment A}} &\approx 2A \times \frac{\theta}{2}\\ 
     &\approx A \times \theta
 \end{align}
 
 Which is equivalent to \(A \increment \theta\). In the limit \(\increment \theta \to 0\),
 
 \begin{equation}
-    \diffd{A_{\perp}} = A \diffd{\theta}
+    \dd{A_{\perp}} = A \dd{\theta}
 \end{equation}
 
 Which finally gives us,
 \begin{equation}
-    \norm{\derivative{\vect{A}_{\perp}}{t}} = A\derivative{\theta}{t}
+    \norm{\dv{\vec{A}_{\perp}}{t}} = A\dv{\theta}{t}
 \end{equation}
 
 The second case is easy as it is just 
 \begin{equation}
-    \norm{\derivative{\vect{A}_{\parallel}}{t}} = \derivative{A}{t}
+    \norm{\dv{\vec{A}_{\parallel}}{t}} = \dv{A}{t}
 \end{equation}
     
 This completes our formulation of the time derivative of any vector, independent of its co-ordinate
@@ -461,7 +461,7 @@ These two unit vectors are \emph{orthogonal} at any point.
     \label{fig: polarunit}
 \end{figure}
 
-\noindent In \Cref{fig: polarunit} if \(\vect{r}\) makes
+\noindent In \Cref{fig: polarunit} if \(\vec{r}\) makes
 an angle \(\theta\) with the horizontal, then,
 
 \begin{align}
@@ -472,30 +472,30 @@ an angle \(\theta\) with the horizontal, then,
 
 \section{Kinematics in Polar Co-ordinates}
 
-Now let us formulate kinematics in polar co-ordinates. The position \(\vect{r}\) can be written as
+Now let us formulate kinematics in polar co-ordinates. The position \(\vec{r}\) can be written as
 
 \begin{equation}
-    \vect{r} = r \unitv{r}
+    \vec{r} = r \unitv{r}
 \end{equation}
 
 \noindent Velocity follows normally, 
 \begin{equation}
-    \vect{v} = \ndiv{\vect{r}} = \ndiv{r} \unitv{r} + r\derivative{\unitv{r}}{t} 
+    \vec{v} = \ndiv{\vec{r}} = \ndiv{r} \unitv{r} + r\dv{\unitv{r}}{t} 
 \end{equation}
-or does it? What even is \(\displaystyle\derivative{\unitv{r}}{t}\) ? Well the answer lies in 
+or does it? What even is \(\displaystyle\dv{\unitv{r}}{t}\) ? Well the answer lies in 
 the time-derivative of the unit vectors. Using the definitions in \eqref{eq: polardef}, we get,
 
 \begin{align}
-    \derivative{\unitv{r}}{t} &= \ndiv{\theta} \unitv{\theta}\\
-    \derivative{\unitv{\theta}}{t} &= -\ndiv{\theta} \unitv{r}
+    \dv{\unitv{r}}{t} &= \ndiv{\theta} \unitv{\theta}\\
+    \dv{\unitv{\theta}}{t} &= -\ndiv{\theta} \unitv{r}
 \end{align}
 
 \noindent Using these results, we get that
 
 \begin{empheq}[box=\widefbox]{align}    
-    \vect{v} & = \ndiv{r} \unitv{r} + r\ndiv{\theta} \unitv{\theta}\\
+    \vec{v} & = \ndiv{r} \unitv{r} + r\ndiv{\theta} \unitv{\theta}\\
     \label{polar: accel}
-    \vect{a} & = (\nddiv{r} - r\ndiv{\theta}^2) \unitv{r} + (r\nddiv{\theta} + 2\ndiv{r}\ndiv{\theta}) \unitv{\theta}
+    \vec{a} & = (\nddiv{r} - r\ndiv{\theta}^2) \unitv{r} + (r\nddiv{\theta} + 2\ndiv{r}\ndiv{\theta}) \unitv{\theta}
 \end{empheq}
 
 \noindent The most interesting result are the various terms of acceleration in \eqref{polar: accel}. First let 
@@ -512,12 +512,12 @@ acceleration resulting from change in tangential speed. The other term \(2\ndiv{
 When an object is dropped downwards freely, it undergoes \emph{free fall}. We ignore
 air resistance, until we're told not to and in general also talk about cases of the
 object being thrown instead of dropped. An object dropped from any height undergoes
-accelerations \(\vect{a}\) where \(\norm{\vect{a}} = g\). The direction and sign of acceleration
+accelerations \(\vec{a}\) where \(\norm{\vec{a}} = g\). The direction and sign of acceleration
 is entirely dependent on us.
 
 In general, it is a good idea to setup our axes such that the direction above ground is positive
 and towards the ground is negative. The acceleration during free fall is always towards
-the ground. Therefore, for these cases \(\vect{a} = -g \unitv{j}\). 
+the ground. Therefore, for these cases \(\vec{a} = -g \unitv{j}\). 
 
 Some important points of note are that ``\(g\)'' does not become positive or negative or whatever,
 this is a common misconception. Instead, we just decide where exactly the positive direction is
@@ -624,20 +624,21 @@ reference frames. Let the base reference frame be that of earth, then,
     \incfig{reference}
 \end{figure}
 
-If \(\vect{r}_1\) evolves with time, \(r_1(t)\). And so does \(r_2(t)\). Then,
+If \(\vec{r}_1\) evolves with time, \(r_1(t)\). And so does \(r_2(t)\). Then,
 
 \begin{align*}
-    \vect{r}_1 &= \vect{r}_{1,2} + \vect{r}_2 \\
-    \ndiv{\vect{r}}_1 &= \ndiv{\vect{r}}_{1,2} + \ndiv{\vect{r}}_2 \\
-    \vect{v}_1 &= \vect{v}_{1,2} + \vect{v}_{2}\\
-    \vect{v}_{1,2} &= \vect{v}_1 - \vect{v}_{2}
+    \vec{r}_1 &= \vec{r}_{1,2} + \vec{r}_2 \\
+    \ndiv{\vec{r}}_1 &= \ndiv{\vec{r}}_{1,2} + \ndiv{\vec{r}}_2 \\
+    \vec{v}_1 &= \vec{v}_{1,2} + \vec{v}_{2}\\
+    \vec{v}_{1,2} &= \vec{v}_1 - \vec{v}_{2}
 \end{align*}
 
 Obviously if the vectors face the same direction in the same plane, then, the components subtract. If they face
 opposite direction, then the components add. 
 
-\(\vect{v}_{1,2}\) is called the velocity of \(\mathit{1}\) w.r.t \(\mathit{2}\). When doing
+\(\vec{v}_{1,2}\) is called the velocity of \(\mathit{1}\) w.r.t \(\mathit{2}\). When doing
 problems, try to setup a reference frame such that velocity of any single object vanishes.
 This allows for a very neat simplification of problems. 
+
 
 

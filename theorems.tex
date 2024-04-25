@@ -45,7 +45,7 @@
     innerbottommargin=9pt,
     skipbelow=2pt,
     linecolor=TealBlue!35,
-    nobreak=false,
+    nobreak=true,
     backgroundcolor=TealBlue!5,
 }
 \declaretheoremstyle[
@@ -81,6 +81,7 @@ postheadhook={\textcolor{RawSienna!80}{\rule[.6ex]{\linewidth}{0.4pt}} \\ }, % \
 ]{thmredbox}
 
 \mdfdefinestyle{mdgreenbox}{%
+    skipbelow=0pt,
     skipabove=8pt,
     linewidth=2pt,
     innertopmargin=9pt,
@@ -142,7 +143,7 @@ postheadhook={\textcolor{Orchid!80}{\rule[.6ex]{\linewidth}{0.4pt}} \\ }, % \\ r
 
 
 \mdfdefinestyle{mdsiennamargin}{%
-    skipabove=20pt,
+    skipabove=8pt,
     linewidth=2pt,
     leftline=true,
     rightline=false,

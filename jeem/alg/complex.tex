@@ -2,24 +2,13 @@
 
 We will begin our study of complex numbers in a little bit of a 
 different manner. Instead of using algebraic form as the base, we will
-define a complex number as,
+first consider the set \(\RR^2\),
+\[\RR^2 = \Set{(x,y) \given x, y \in \RR}\]
 
-\index{Complex Number}
+Clearly, \((x_1, y_1) = (x_1, y_1) \iff x_1 = x_2, y_1 = y_2\) by the definition of 
+ordered pairs.
 
-\begin{definition}
-    [Complex Numbers]
-    An ordered pair, \((x, y)\) such that,
-    \[
-        z = (x, y) \in \RR^2 = \left\{(x, y) \mid x, y \in \RR \right\}
-    \]
-    is called a \emph{complex number}.
-\end{definition}
-
-Clearly, \(z_1(x_1, y_1) = z_2(x_1, y_1) \iff x_1 = x_2, y_1 = y_2\).
-
-\marginnote{The letter \(z\) is often used to denote a complex number.}
-
-The operations addition and multiplication are defined simply as, 
+Let us represent the elements as \(z = (x, y)\). Now, let us define the operations of addition and multiplication on this set as, 
 \[
     z_1 + z_2 = (x_1, y_1) + (x_2, y_2) = (x_1 + x_2, y_1 + y_2)
 \]
@@ -32,7 +21,23 @@ And multiplication is defined as,
 \]
 
 Although the definition of multiplication may seem complicated now, we will be able
-to gain intuition for it after introducing the algebraic form of complex numbers.
+to gain intuition for it soon.
+
+\marginnote{The letter \(z\) is used to represent a complex number.}
+
+\index{Complex Number}
+\begin{definition}
+    [Complex Numbers]
+    An ordered pair, \((x, y)\) such that,
+    \[
+        z = (x, y) \in \RR^2 = \left\{(x, y) \mid x, y \in \RR \right\}
+    \]
+    with the operations of addition and multiplication as defined
+    above is called a \emph{complex number}.
+\end{definition}
+
+The field of complex numbers is the earlier set defined with the earlier operations,
+\((\RR^2, +, \cdot)\). 
 
 \begin{remark}
     Note that,
@@ -94,20 +99,23 @@ Consider a function \(f\),
 Clearly such a \(f\) is a bijective. Moreover, 
 \[(x, 0) + (y, 0) = (x + y, 0), (x,0) \cdot (y, 0) = (xy, 0)\]
 
-Thus, \(x, 0\) behaves in the same as \(x \in \RR\). Therefore, we may write each \((x, 0) \in 
-\RR \times \{0\} = x \in \RR\) since \(f\) is bijective.
+Thus, \((x, 0)\) behaves in the same as \(x \in \RR\). Therefore, we may write each \((x, 0) \in 
+\RR \times \{0\} = x \in \RR\) for all \((x,0) \in \RR \times \Set{0}\) since \(f\) is bijective.
 
 \begin{definition}
     We define \(i \in \CC\) as, 
     \[i = (0, 1) \in \CC\]
 \end{definition}
 
-Note that, 
+By the definition of multiplication and using \(f\) as defined earlier, we may get that
 \begin{align*}
     z &= (x, y) = (x, 0) + (0, y)  \\ 
     &= (x, 0) + (y, 0) \cdot (0,1) \\
     &= x + yi = x + iy
 \end{align*}
+
+This gives us a fascinating result! We can represent each of the complex numbers in a simple
+algebraic form.
 
 \begin{lemma}
     Every complex number, \((x, y)\) can be represented as 
@@ -125,6 +133,32 @@ say that \(\CC = \{x + iy \mid x, y \in \RR, i^2 = -1\}\).
 Complex numbers of the form \(0 + iy\) are purely imaginary and the ones of the form \(x + 0i\)
 are purely real. 
 
-\begin{tikzcd}
-    a\ar[r,"A"]\ar[rr,out=-30,in=210,swap,"C"] & b\ar[r,"B"] & c
-\end{tikzcd}
+Using an ordered pair first approach allows us to discern something very interesting, the difference
+between \(i\) and \(-i\). Clearly, both are roots of \(x^2 + 1\). However, it is rather
+difficult to differentiate them. Let's say \(i = \sqrt{-1}\) and thus, \(-i = -\sqrt{-1}\).
+What exactly is the difference between them?
+
+The answer is that it is not so obvious. We can easily differentiate between 
+\(\sqrt{a}\) and \(-\sqrt{a}\) for any real \(a\) the former is positive and the latter
+negative, because \(\sqrt{\bullet} : \RR \to \RR \), the principal square root function,
+is defined to return a positive value. 
+
+Unfortunately, no such thing is generally true for \(\CC\). The complex
+numbers aren't ``ordered'' like the reals. You can't establish \(z_1 \ge z_2\) in general,
+except for the special case when they are both purely real. So how exactly are they different?
+
+If we don't define \(i\) to \((0,1)\) and instead \(\sqrt{-1}\), we can't
+establish a difference. After all, why would \(i\) lie on the positive \(y\) axis
+and not the negative one? In reals, we could this would be true if \(i \ge 0\). 
+I mean, isn't that how we plot stuff on cartesian plane anyway? 
+
+But here, the square root definition restricts us a lot. We can't know by it if
+\(i\) is \((0,1)\) or \((0,-1)\). Of course, we can define our axes such that it
+automatically lies on the positive \(y\) axis, but I feel that the ordered pair
+definition is much better, since there we know the difference \(i\) and \(-i\). 
+The former is \((0, 1)\) and the later \((0, -1)\). 
+
+And clearly, both are still solutions of \(x^2 + 1 = 0\)! Now of course,
+we can define the principal square root, \(\sqrt{-1}\) to be \(i\) but in general,
+it is better to avoid it all together because there is little consensus on which of the
+two complex roots of such a polynomial should be the principal root.

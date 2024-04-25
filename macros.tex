@@ -30,8 +30,13 @@
 \usepackage{tikz-cd}
 
 \newcommand{\increment}{\Delta}
-\newcommand{\vect}[1]{\boldsymbol{\mathbf{#1}}}
-\newcommand{\unitv}[1]{{\hat{\vect{#1}}}}
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand{\unitv}[1]{{\hat{\vec{#1}}}}
+
+\usepackage{braket}
+\renewcommand*{\Set}[1]{\left\{#1\right\}}
+\newcommand{\given}{\mid}
+\newcommand{\cgiven}{:}
 
 \newcommand{\avg}[1]{\overline{#1}}
 \newcommand{\notiff}{%
@@ -154,6 +159,7 @@
 \newcommand{\kz}{\mathfrak z}
 \DeclareMathOperator{\Ext}{Ext} % Ext functor
 \DeclareMathOperator{\Tor}{Tor} % Tor functor
+\newcommand{\SC}{\mathcal{S}}
 \newcommand{\SCF}{\mathscr F}
 \newcommand{\SCG}{\mathscr G}
 \newcommand{\SCH}{\mathscr H}
@@ -349,8 +355,8 @@ tkzSecondPointResult)}
 
 \newcommand{\marginref}[1]{%
     \Ifthispageodd{%
-        \marginpar{\begin{marginrefbox}\sffamily\RaggedRight#1\end{marginrefbox}}}{%
-        \marginpar{\begin{marginrefbox}\sffamily\RaggedRight#1\end{marginrefbox}}}%
+        \marginpar{\begin{marginrefbox}\sffamily\RaggedRight\lightbold{#1}\end{marginrefbox}}}{%
+        \marginpar{\begin{marginrefbox}\sffamily\RaggedRight\lightbold{#1}\end{marginrefbox}}}%
     }
 
 
@@ -402,3 +408,11 @@ tkzSecondPointResult)}
 \renewcommand*{\Im}{\mathfrak{I}}
 
 \newcommand{\spart}[1]{\newgeometry{left=2cm,right=2cm} \part{#1} \parttoc \restoregeometry} 
+
+\renewcommand*{\vocab}[1]{\emph{#1}\index{#1}}
+\newcommand{\chvocab}[2]{\emph{#2}\index{#1!#2}}
+\newcommand{\vv}{\vec{v}}
+\newcommand{\uu}{\vec{u}}
+\newcommand{\ww}{\vec{w}}
+
+\newcommand{\dtp}{\dotproduct}

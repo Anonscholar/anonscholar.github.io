@@ -222,10 +222,9 @@ We can, in fact, show that the two definition of gcd are equivalent.
 
 \begin{proof}
     Let \( \SC = \{p : p \mid a, b \) and \(p \) is a prime\( \} \). Suppose that \(\gcd(a,b) \ne \SC \). Then \( \gcd(a,b) > \SC \). 
-    \\
-    \par
+
     Note that \( \gcd(a,b)\) must contain an element \(x \notin \SC \) where \(x\) is prime.(Since it is an element in the multiset of \(\gcd(a,b)\)). 
-    \par
+
     But, \(x \in \gcd(a,b) \iff x \mid \gcd(a,b)\), and \(x \mid \gcd(a,b) \), \(\gcd(a,b) \mid a, b \implies x \mid a,b\). \(x\) is prime, and \(x \mid a,b\ \implies x \in \SC\). This contradicts our earlier deduction that \(x \notin \SC\). By \textit{reductio ad absurdum}, we have \(\gcd(a,b) = \SC \).
 \end{proof}
 
