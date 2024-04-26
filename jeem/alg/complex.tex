@@ -162,3 +162,56 @@ And clearly, both are still solutions of \(x^2 + 1 = 0\)! Now of course,
 we can define the principal square root, \(\sqrt{-1}\) to be \(i\) but in general,
 it is better to avoid it all together because there is little consensus on which of the
 two complex roots of such a polynomial should be the principal root.
+
+\subsection{Operations in algebraic form}
+
+The addition of two complex numbers in algebraic form is simply,
+\[(x + iy) + (a + ib) = (x+a) + i(y+b)\] Thus, 
+\[\Re(z_1 + z_2) = \Re(z_1) + \Re(z_2)\]
+
+Multiplication while not much more intuitive yet, is easy to calculate using \(i^2 = -1\).
+\[(x+iy)(a+ib) = (xa - yb) + i(xb + ay)\] Which gives us,
+\begin{align*}
+    \Re(z_1z_2) &= \Re(z_1)\Re(z_2) - \Im(z_1)\Im(z_2) \\
+    \Im(z_1z_2) &= \Re(z_1)\Im(z_2) - \Re(z_2)\Im(z_1)
+\end{align*}
+
+\subsection{Powers of \emph{i}}
+
+Using some simple algebraic manipulation,
+
+\begin{align*}
+    i &= i, \quad i^2 = -1, \quad i^3 = i^2 \cdot i = -i, \quad i^4 = (i^2)^2 = 1; \\
+    i^5 &= i^4 \cdot i = i, \quad i^6 = i^4 \cdot i^2 = -1, \quad \dots  
+\end{align*}
+
+Thus, for \(n \in \ZZ\), 
+\[i^{4n} = 1, \quad i^{4n+1} = i, \quad i^{4n+2} = -1, \quad i^{4n+3} = -i.\]
+
+Also, we have, 
+\[i^{4n} + i^{4n+1} + i^{4n+2} + i^{4n+3} = 0\]
+
+\section{Complex Conjugate}
+
+\begin{definition}
+    The complex conjugate, \(\conjugate{z}\) of \(z = x + iy\) is,
+    \[\conjugate{z} = x - iy\]
+\end{definition}
+
+We can immediately get some properties of complex numbers,
+mainly,
+
+\begin{proposition}
+    For \(z \in \CC\), and \(\conjugate{z}\) the complex conjugate of \(z\), we have,
+    \begin{enumerate}
+        \item \(z = \conjugate{z} \iff z \in \RR\).
+        \item \(z = -\conj{z} \iff z \in \CC \setminus \RR\)
+        \item \(\conj{z_1 + z_2} = \conj{z_1} + \conj{z_2}\)
+        \item \(\conj{z_1z_2} = \conj{z_1} \cdot \conj{z_2}\)
+        \item \(\conj{z^{-1}} = \conj{z}^{-1} \given z \ne 0\)
+        \item  \(\Re(z) = \dfrac{z + \conj{z}}{2}\), \(\Im(z) = \dfrac{z - \conj{z}}{2i}\) 
+    \end{enumerate}
+\end{proposition}
+
+
+

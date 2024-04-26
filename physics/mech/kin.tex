@@ -640,5 +640,74 @@ opposite direction, then the components add.
 problems, try to setup a reference frame such that velocity of any single object vanishes.
 This allows for a very neat simplification of problems. 
 
+\section{Motion in higher dimensions}
 
+We can mostly safely extend our results from one dimension to higher dimensions.
+So for instances, velocity of a particle whose trajectory is defined as 
+\(x\unitv{i} + y\unitv{j} + z\unitv{k}\) can simply be computed as,
+\[v = \ndiv{x}\unitv{i} + \ndiv{y}\unitv{j} + \ndiv{z}\unitv{k}\] Such a thing
+is not true for non-cartesian co-ordinates, as we say in the case of polar forms.
+Due to the orthogonality of the cartesian unit vectors, and using dot products
+we simply have, 
+\[v_x = \ndiv{x}, v_y = \ndiv{y}, v_z = \ndiv{z}\]
 
+And the same is true for all other vectors. This gives us the power to
+resolve our vector components into components alongside unit vectors
+and consider independent one dimensional motion for each of them.
+
+\section{Projectile Motion}
+
+Projectile motion is one of the most important motion to consider in 
+2 dimensions. It is the motion of a projected body. Generally, we
+only care about the motion of a body projected from ground under the influence
+of gravity. 
+
+Let a body be projected at an angle \(\theta\) from the ground at velocity \(\vec{v}\)
+along \(\theta\). Then, by resolving \(\vv\) into \(v_x \unitv{i} + v_y\unitv{j}\),
+we have, 
+\begin{align*}
+    x &= v_xt \unitv{i} \\
+    y &= v_yt - \frac{1}{2}gt^2 \unitv{j}
+\end{align*}
+
+Doing some manipulations, we may note that \(v_x = v\sin(\theta)\), \(v_y = v\cos(\theta)\).
+Also, substituting \(t = x/v\sin(\theta)\), we have,
+\begin{equation}
+    \boxed{y = x\tan(\theta) - \frac{gx^2}{2v^2\cos^2(\theta)}}
+\end{equation}
+
+The path of the projectile is parabolic as shown in \Cref{fig: projectile}.
+
+\begin{figure}[H]
+    \centering
+    \incfig{projectile}
+    \caption{Trajectory of a projectile}
+    \label{fig: projectile}
+\end{figure}
+
+Here, \(H\) is the maximum height of the particle. Clearly,
+when the projectile is at \(H\), \(v_y = 0\). We have, 
+\(v_y^2 = 2gH\),
+\begin{equation}
+    \boxed{H = \frac{u^2\sin^2(\theta)}{2g}}
+\end{equation}
+
+The time period of the projectile can be simply calculated as well,
+since at the final time, \(T\), \(y = v_yt - 1/2gt^2 = 0\) and,
+
+\begin{equation}
+    \boxed{T = \frac{2v\sin(\theta)}{g}}
+\end{equation}
+
+\(R\) is the range the particle covers horizontally in time \(T\) and is
+clearly,
+
+\begin{equation}
+    \boxed{R = \frac{v^2\sin(2\theta)}{g}}
+\end{equation}
+
+Note that if the particle is projected at \(\theta = \pi/4\), 
+the range is maximum and is \(u^2/2g\). Otherwise,
+for \(0 < \theta < \pi/2\), \(\sin(2\theta)\) attains the same 
+value for two \(\theta_1, \theta_2\). These \(\theta_1\), \(\theta_2\) are complementary
+by trigonometry.
