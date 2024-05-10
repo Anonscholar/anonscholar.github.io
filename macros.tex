@@ -24,6 +24,15 @@
 %ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 %DEALINGS IN THE SOFTWARE.
 
+%use l instead of ell in math mode.
+\mathcode`l="8000
+\begingroup
+\makeatletter
+\lccode`\~=`\l
+\DeclareMathSymbol{\lsb@l}{\mathalpha}{letters}{`l}
+\lowercase{\gdef~{\ifnum\the\mathgroup=\m@ne \ell \else \lsb@l \fi}}%
+\endgroup
+
 \usepackage{xargs}
 \usepackage{centernot}
 \usepackage{mathtools}
@@ -40,7 +49,7 @@
 \newcommand{\given}{\mid}
 \newcommand{\cgiven}{:}
 
-\newcommand{\avg}[1]{\overline{#1}}
+\newcommand{\avg}[1]{\langle#1\rangle}
 \newcommand{\notiff}{%
   \mathrel{{\ooalign{\hidewidth$\not\phantom{"}$\hidewidth\cr$\iff$}}}}
   

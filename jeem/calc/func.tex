@@ -2,7 +2,7 @@
 \section{Relation}
 
 
-\marginref{\raggedright\Cref{sec: ctp} \nameref{sec: ctp}}
+\marginref{\raggedright\cref{sec: ctp} \nameref{sec: ctp}}
 
 \index{Relation}
 \para{A relation between two sets \(A\), \(B\) is the subset of their \emph{cartesian
@@ -34,7 +34,7 @@ Hence, we can think of a relation as somehow connecting the two elements.}
 \begin{figure}[H]
     \centering
     \scalebox{.7}{\incfig{relation}}
-    \caption{Pictorial representation of \Cref{ex: reltri}}
+    \caption{Pictorial representation of \cref{ex: reltri}}
 \end{figure}
 
 \subsection{Domain}
@@ -97,7 +97,7 @@ Therefore, we may have \((a,b) \in R \iff (b,a) \in R\inv\).}
 \subsubsection{Reflexive relation}
 
 \marginnote{All identity relations are reflexive relations but all reflexive relations are
-not identity relations. See \Cref{ex: identity}.}
+not identity relations. See \cref{ex: identity}.}
 
 \para{A relation \(R\) is a reflexive relation on \(A\), if for every \(a \in A\),
 \((a,a) \in R\).}
@@ -160,8 +160,7 @@ than relations for us.}
 \begin{definition}
     \label{def: function}
     A function from \(A\) to \(B\) is a set of ordered pairs, \[
-        f = \left\{(a,b) \mid a \in A, b \in B, \text{ for every } a \in A, \text{ there
-        exist one and only one } b \in B \right\}
+        f = \left\{(a,b) \mid a \in A, b \in B \land (x, y) \in f, (x, z) \in f \iff y = z \right\}
     \]
 \end{definition}
 
@@ -202,9 +201,9 @@ Alternatively, and more commonly, \(f(a) = b\).}
 
 \subsubsection{Domain}
 
-\para{From the little use of `every' in \Cref{def: function}, you may realise that every element
+Although it may not be obvious, from \cref{def: function} you may realise that every element
 of \(A\) has an image, i.e. every element in \(A\) is included in the ordered pairs of a function
-\(f\). Thus, the domain of a function \(f : A \rightarrow B\) is the whole set \(A\).}
+\(f\). Thus, the domain of a function \(f : A \to B\) is the whole set \(A\).
 
 \subsubsection{Range and Co-domain}
 
@@ -215,6 +214,31 @@ for \(f\) is the \emph{set of all images of pre-images.}}
     For \(f \colon \RR \setminus \left\{0\right\} \to \RR\) such that \(f(x)=\dfrac{1}{x}\). The Range
     is \(\RR \setminus \left\{0\right\}\), as is the domain. The Co-domain is \(\RR\).
 \end{example}
+
+\subsection{Questions of Domain and Range}
+
+\irrev
+
+There are many questions regarding the domain and range of a function, given an
+analytic formula of the same. These questions are weird in general, a function
+is categorised by not only its analytic formula\footnote{Which it may or may not have.}, 
+but also by its mapping.
+
+For example, given \(f(x) = e^x\), we may create infinite such functions \(f\),
+the perhaps most natural one, \(f : \RR \to \RR\), the not so obvious
+one \(f : \RR \to (0, \infty)\) and another not intuitive one, \(f : \{1\} \to \{e\}\).
+
+All of these are different from each other\footnote{In fact, the second
+one is rather special, since it is bijective, something covered a little later.}.
+
+How could then we, given such a formula conjure up a domain and range? Well, by using
+some rather ill conventions. Generally, we find the domain that is the largest
+subset of \(\RR\) and the range that is defined by it. However, for 
+functions of the form \(h(x) = f(x)^{g(x)}\), we always assume \(f(x) \ge 0\). 
+
+This leads to a nice domain but is rigorously inconsistent. I won't 
+mention how to figure out these domain and ranges, it is not explicitly needed
+to be mentioned.
 
 \subsection{Informal Definition}
 
@@ -474,21 +498,14 @@ Where each of the
     given than \(g(x) \ne 0\) for all \(x \in A\).
 \end{enumerate}}
 
-\section{Exponential/Power Functions}
+\section{Exponential}
 
-\index{Function!power}
 \index{Function!exponential}
 
 A function \(f\) such that \(x \xmapsto{f} e^x\) or more compactly \(f(x) = e^x\) is called
 the exponential functional. A pedantic point much in spirit of \cref{sec: pedantic} 
-is that \(f(x)\)
-is not a function, it is a value. We'll henceforth sometimes omit this, but also refrain ourselves
+is that \(f(x)\) is not a function, it is a value. We'll henceforth sometimes omit this, but also refrain ourselves
 from going as far as to call ``\(y = f(x)\)'' a function. 
-
-For some reason, JEE seems fond of calling power function \(f\) such that \(f(x) = a^x\) an 
-exponential function. I'll try to avoid collisions of the two different things, but just 
-entertain this weird notion for a moment.
-\parbreak
 
 Whenever we write the function \(a^x\) we assume two implicit conditions, \begin{inparaenum}[1)]
     \ii that \(a > 0\), \(a\) is non-negative,
@@ -897,6 +914,9 @@ may be periodic but have no fixed period. In particular the constant function, \
 there is no findable smallest value for which it is periodic. 
 
 \subsection{Period of transformed functions}
+
+We make the following claims,
+
 \begin{claim}
     For a function \(f\) of period \(T\), the transformed functions \(af(x)\), \(f(x \pm a)\), \(f(x) \pm a\)
     all have period \(T\). 
@@ -965,6 +985,8 @@ Also, composition is associative, \(g \circ (f \circ h) = (g \circ f) \circ h\).
 
 \subsection{Injectivity and Surjectivity of Composite functions}
 
+From the careful observation of composite functions, we may propose,
+
 \begin{proposition}
     If \(f : A \to B\), \(g : B \to C\) are injective, then \(g \circ f : A \to C\) is also injective.
 \end{proposition}
@@ -988,3 +1010,5 @@ Also, composition is associative, \(g \circ (f \circ h) = (g \circ f) \circ h\).
     \(\forall x \in B, \exists a \in A, f(a) = x\). Substitute \(x = f(a)\) and thus
     for \(\forall b \in C, \exists a \in A \mid g \circ f (a) = c\).
 \end{proof}
+
+Lets check is this works

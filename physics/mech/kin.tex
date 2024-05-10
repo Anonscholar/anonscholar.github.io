@@ -17,7 +17,7 @@ a body with respect to any other body or co-ordinate frame.}
 \end{figure}
 
 \para{We use a reference frame according to our convenience. In general, we use the 3-dimensional cartesian system like the one
-in \Cref{fig: 3daxes}.}
+in \cref{fig: 3daxes}.}
 
 \index{Reference Frame}
 
@@ -45,7 +45,7 @@ of time. We generally denote this as \(r(t)\) to show that is a function.}
 
 \para{We define the position of a particle relative to a reference frame using a \emph{position 
 vector}. One end of the position vector is the origin of our reference frame. The other is 
-the particle itself. Consider \Cref{fig: position}, the 
+the particle itself. Consider \cref{fig: position}, the 
 vector \(\vec{r}\) from \(O\) to \(A\). It describes the position of \(A\) relative to the
 co-ordinate frame. Let \(A = (x,y,z)\). Then we denoted \(\vec{r}\) as \(\vec{r}(x,y,z)\).}
 
@@ -76,7 +76,7 @@ The \emph{displacement} defines a true vector \(\vec{S} = (x_2-x_1,y_2-y_1,z_2-z
 \(\vec{S}\) is called the displacement vector. Note that it contains no information about the
 individual points, but only about the relative position of each. Thus, our choice
 of reference frame, and thus position vector does not matter when we're concerned with displacement
-. In \Cref{fig: displacement}, the vector
+. In \cref{fig: displacement}, the vector
 \(\vec{S}_{AB}\) defines a displacement from \(A\) to \(B\).}
 
 \begin{figure}
@@ -109,7 +109,7 @@ of the actual path, while the magnitude of the displacement is simply the length
     [H]
     \centering
     \incfig{distdisp}
-    \caption{}
+    \caption{Displacement in a circle}
 \end{figure}
 
 \section{Speed and Velocity}
@@ -137,14 +137,16 @@ may also be dependent on the position \(v(x)\).}
         \vec{v} \equiv \ndiv{\vec{r}}    
     \end{equation}
 \end{definition}
-\marginnote{The dot over \(r\) in \(\dot{\vec{r}}\) tells us that \(r\) has been differentiated
-with respect to time.}
+
 
 \para{Sometimes, we do not need to compute the derivative of the position vector, and simply need an average
 estimate, or in the case of uniformly accelerated motion, it is not required that we computer derivatives.
 In such a case we use the concept of \textbf{average velocity}, \[
     \avg{\vec{v}}_{12} = \frac{\vec{r}_1-\vec{r}_2}{t_2 - t_1}  
 \]}
+
+\marginnote{The dot over \(r\) in \(\dot{\vec{r}}\) tells us that \(r\) has been differentiated
+with respect to time.}
 
 \begin{algorithm}
     Let us consider the cases of average velocity,
@@ -162,7 +164,7 @@ In such a case we use the concept of \textbf{average velocity}, \[
 
 \para{In general velocity is also referred to as `instantaneous velocity'. This is done to remind of the difference
 with average velocity. We will not refer to it that way since by velocity we shall always mean \(\vec{v}\) as defined in
-\Cref{def: velocity}. The same goes for speed. Speed is defined as \(\ndiv{d}\) where \(d\) is the distance.
+\cref{def: velocity}. The same goes for speed. Speed is defined as \(\ndiv{d}\) where \(d\) is the distance.
 Average speed is defined similar to average velocity.}
 
 \marginnote{Magnitude refers to the absolute value of a vector, i.e., its modulus. \(\norm{\vec{a}}\) is the 
@@ -374,8 +376,8 @@ and finally for \(n^{th}\) second just do \(s_n - s_{n-1}\).}
 
 \section{Time derivative of a vector}
 
-\para{The time derivative of \(r\) and \(v\) have already been observed in \Cref{def: velocity} and 
-\Cref{def: acceleration} already. However, let us have a better discussion of what it really entails.}
+\para{The time derivative of \(r\) and \(v\) have already been observed in \cref{def: velocity} and 
+\cref{def: acceleration} already. However, let us have a better discussion of what it really entails.}
 
 \todo{Add vectors, atleast elem stuff and rename jee to general or olymp.}
 
@@ -449,7 +451,7 @@ maybe written explicitly as \(\unitv{r}(\theta)\) and \(\unitv{\theta}(\theta)\)
     \label{fig: polar}
 \end{figure}
 
-Here, \(\unitv{r}\) points in the direction of increasing radius(along the straight lines in \Cref{fig: polar})
+Here, \(\unitv{r}\) points in the direction of increasing radius(along the straight lines in \cref{fig: polar})
 \(\unitv{\theta}\) points in the direction of increasing \(\theta\) (along the tangent to the circles).
 These two unit vectors are \emph{orthogonal} at any point. 
 
@@ -461,7 +463,7 @@ These two unit vectors are \emph{orthogonal} at any point.
     \label{fig: polarunit}
 \end{figure}
 
-\noindent In \Cref{fig: polarunit} if \(\vec{r}\) makes
+\noindent In \cref{fig: polarunit} if \(\vec{r}\) makes
 an angle \(\theta\) with the horizontal, then,
 
 \begin{align}
@@ -676,7 +678,7 @@ Also, substituting \(t = x/v\sin(\theta)\), we have,
     \boxed{y = x\tan(\theta) - \frac{gx^2}{2v^2\cos^2(\theta)}}
 \end{equation}
 
-The path of the projectile is parabolic as shown in \Cref{fig: projectile}.
+The path of the projectile is parabolic as shown in \cref{fig: projectile}.
 
 \begin{figure}[H]
     \centering
@@ -711,3 +713,4 @@ the range is maximum and is \(u^2/2g\). Otherwise,
 for \(0 < \theta < \pi/2\), \(\sin(2\theta)\) attains the same 
 value for two \(\theta_1, \theta_2\). These \(\theta_1\), \(\theta_2\) are complementary
 by trigonometry.
+

@@ -1,23 +1,23 @@
-\usepackage{amsmath, amsthm, amssymb, lmodern}
-\renewcommand{\sfdefault}{cmbr}
+\usepackage{amsmath, amssymb}
+
 \nonzeroparskip
-\usepackage[right=4.5cm,left=2cm,bottom=1in,top=1in,marginparwidth=4cm]{geometry}
+\usepackage[right=4.5cm,left=2cm,bottom=1in,top=1in,marginparwidth=3.75cm,marginparsep=.5cm]{geometry}
 
-\usepackage[activate={true,nocompatibility},factor=1100,stretch=10,shrink=10]{microtype} % better spacing
-\microtypecontext{spacing=nonfrench}  % silence warning
-
-% silence warning
 
 \usepackage[texindy]{imakeidx}
 \makeindex[intoc]
+
 \usepackage[dvipsnames]{xcolor}
 
 \usepackage[]{minitoc}
 \doparttoc[n]
 \renewcommand\beforeparttoc{{\bfseries \Large Part \thepart: Contents}}
 \usepackage{etoolbox}
+
 \usepackage{booktabs, tabularx}
 \setlength{\parindent}{0em}
+
+
 %Chapter Style
 \usepackage{calc,color}
 \newif\ifNoChapNumber
@@ -90,13 +90,6 @@
 \let\oldbackmatter\backmatter
 \renewcommand{\backmatter}{\chapterstyle{backmatter}\oldbackmatter}
 
-\usepackage[linktoc=page]{hyperref}
-\hypersetup{
-colorlinks=true,
-linkcolor=TealBlue!70!black,
-citecolor=TealBlue,
-}
-
 
 \usepackage[object=vectorian]{pgfornament}
 \usepackage{xparse}
@@ -108,8 +101,8 @@ citecolor=TealBlue,
 \nouppercaseheads
 \makepagestyle{mystyle}
 \copypagestyle{mystyle}{companion}
-\makeevenhead{mystyle}{\bfseries\thepage}{}{\textbf{\color{TealBlue!70!black}\thechapter}\,: \leftmark}
-\makeoddhead{mystyle}{\textbf{\color{TealBlue!70!black}\S}\,\rightmark}{}{\bfseries\thepage}
+\makeevenhead{mystyle}{\em\thepage}{}{\emph{\thechapter.\,\leftmark}}
+\makeoddhead{mystyle}{\emph{\rightmark}}{}{\em\thepage}
 \makeevenfoot{mystyle}{}{}{}
 \makeoddfoot{mystyle}{}{}{}
 \makepsmarks{mystyle}{%
@@ -125,70 +118,13 @@ citecolor=TealBlue,
 \pagestyle{mystyle}
 
 \copypagestyle{chapter}{plain}
-\makeoddfoot{chapter}{}{}{\rule[0cm]{0.8cm}{0.12cm}\\\thepage}
+\makeoddfoot{chapter}{}{}{\rule[0cm]{0.8cm}{0.12cm}\\\emph{\thepage}}
 
 \copypagestyle{part}{plain}
-\makeoddfoot{part}{}{}{\rule[0cm]{0.8cm}{0.12cm}\\\thepage}
-
-%chapter formatting
-
-%for description(subtitle)
-\newcommand{\descrip}[1]{\def \thedescrip{#1}}
-
-\NewDocumentCommand{\fncytitling}{s}{
-  \newgeometry{left=1.5cm,right=1.5cm}
-    \begin{titlingpage}
-        \topskip0pt
-        \vspace*{10em}
-        \begin{center}
-            {\pgfornament[scale=0.35, ydelta=-7pt, symmetry=v]{11} \em \Huge  \thetitle \ \pgfornament[scale=0.35, ydelta=-7pt]{11}}
-            {\par \vspace*{1em}\hspace{20em} \emph{\thedescrip}  \large }
-        \end{center}
-        \vspace{14em}
-        { 
-        \begin{center}
-           {\bfseries \LARGE \theauthor}
-        \end{center}
-        }
-        \vspace*{14em}
-        { 
-        \begin{center}  
-            {\bfseries \Large \thedate}    
-        \end{center}
-        }
-    \end{titlingpage}
-}
-
-\NewDocumentCommand{\fncytitle}{s}{
-  \newgeometry{left=1.5cm,right=1.5cm}
-    \begin{titlingpage*}
-        \topskip0pt
-        \vspace*{10em}
-        \begin{center}
-            {\pgfornament[scale=0.35, ydelta=-7pt, symmetry=v]{11} \em \Huge  \thetitle \ \pgfornament[scale=0.35, ydelta=-7pt]{11}}
-            {\par \vspace*{1em}\hspace{20em} \emph{\thedescrip}  \large }
-        \end{center}
-        \vspace{14em}
-        { 
-        \begin{center}
-           {\bfseries \LARGE \theauthor}
-        \end{center}
-        }
-        \vspace*{14em}
-        { 
-        \begin{center}  
-            {\bfseries \Large \thedate}    
-        \end{center}
-        }
-    \end{titlingpage*}
-}
-
-\colorlet{tealblue}{TealBlue}
-
+\makeoddfoot{part}{}{}{\rule[0cm]{0.8cm}{0.12cm}\\\emph{\thepage}}
 
 
 %some graph stuff
-\usepackage[nameinlink]{cleveref}
 \usepackage{todonotes}
 \usepackage{tikz}
   \usetikzlibrary{arrows.meta,backgrounds}
@@ -209,28 +145,25 @@ citecolor=TealBlue,
 
 
 \usepackage{physics}
-\usepackage{mathdots}
 \usepackage{tkz-euclide}
-\usepackage[ragged]{sidecap}
+
 \usepackage{babel}
-\usepackage{float}
+\usepackage{mhchem}
 \usepackage[cleanlook,british]{isodate}% day-first date
 \usepackage{caption}
 \usepackage{paralist}
 \usepackage{graphicx}
 \usepackage{import}
 \usepackage{xifthen}
-\usepackage{pdfpages}
-\usepackage{transparent}
-\usepackage{framed}
+
 \usepackage{siunitx}
-\usepackage{pdfpages}
 \usepackage{bohr}
 \usepackage{modiagram}
 \usepackage{subcaption}
 \usepackage{ellipsis}
 \usepackage{nameref}
 \usepackage{tzplot}
+\usepackage[some]{background}
 \usepackage{enumitem}
 \newlist{axioms}{enumerate}{10}
 \setlist[axioms]{label=\textbf{Axiom\,\arabic*.},ref=Axiom\arabic*,leftmargin=*}
@@ -241,6 +174,18 @@ citecolor=TealBlue,
 
 \usepackage{ragged2e}
 \usepackage{empheq}
+
+\usepackage[linktoc=page]{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=TealBlue!70!black,
+citecolor=TealBlue,
+urlcolor=TealBlue!70!black
+}
+\usepackage[nameinlink]{cleveref}
+\usepackage{float}
+
+
 \usepackage[citestyle=alphabetic]{biblatex}
 \usepackage{listings}
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -270,7 +215,6 @@ citecolor=TealBlue,
 \lstset{style=mystyle}
 
 
-
 \usetikzlibrary{decorations.markings}
 \tikzset{
     arrow inside/.style = {
@@ -298,8 +242,6 @@ citecolor=TealBlue,
 \makeatletter
 \patchcmd{\epigraph}{\@epitext{#1}}{\itshape\@epitext{#1}}{}{}
 \makeatother
-
-\usepackage{lettrine}
 
 \usepackage{collectbox}
 
@@ -344,3 +286,49 @@ citecolor=TealBlue,
 
 \setsubsechook{\hangsecnum}
 \setsubsubsechook{\hangsecnum}
+\batchmode
+
+\definecolor{titlepagecolor}{cmyk}{1,.60,0,.40}
+
+\backgroundsetup{
+scale=1,
+angle=0,
+opacity=1,
+contents={\begin{tikzpicture}[remember picture,overlay]
+ \path [fill=titlepagecolor] (current page.west)rectangle (current page.north east); 
+ \draw [color=white, very thick] (5,0)--(5,0.5\paperheight);
+\end{tikzpicture}}
+}
+
+\makeatletter                   
+\def\printauthor{%                  
+    {\large \@author}}          
+\makeatother
+
+\usepackage{fontawesome5}
+
+\makeatletter
+\newcommand{\github}[1]{%
+   \href{#1}{\textcolor{black}{\faGithub}}%
+}
+\makeatother
+
+
+\author{
+    \github{https://github.com/Anonscholar} Adyansh Mishra \\
+    \mailto{adyanshmishra@proton.me}
+}
+
+% text styling of all side footnotes
+\renewcommand{\footnotesize}{\fontsize{8pt}{10pt}\selectfont}
+\renewcommand{\foottextfont}{\footnotesize}
+% styling and placement of mark
+\footmarkstyle{{#1. }}
+\setlength{\footmarkwidth}{0em}
+\setlength{\footmarksep}{-\footmarkwidth}
+% memoir command - do all footnotes in margin
+\footnotesinmargin
+
+\usepackage{silence}
+\WarningsOff[everypage]% Suppress warnings related to package everypage
+
