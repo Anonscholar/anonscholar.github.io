@@ -10,33 +10,8 @@
 \begin{document}
 %https://tex.stackexchange.com/questions/249475/index-hyperlink-not-pointing-to-correct-page
 \pagenumbering{roman}
-
-\begin{titlingpage}
-    \BgThispage
-    \newgeometry{left=1cm,right=6cm,bottom=2cm}
-    \vspace*{0.4\textheight}
-    \noindent
-    \textcolor{white}{\Huge\textbf{\textsf{\thetitle}}}
-    \vspace*{2cm}\par
-    \noindent
-    \begin{minipage}{0.35\linewidth}
-        \begin{flushright}
-            {\printauthor}
-        \end{flushright}
-    \end{minipage} \hspace{15pt}
-    %
-    \begin{minipage}{0.02\linewidth}
-        \rule{1pt}{175pt}
-    \end{minipage} \hspace{-10pt}
-    %
-    \begin{minipage}{0.6\linewidth}
-    \vspace{5pt}
-        \begin{abstract} 
-     This is a foray into undergraduate physics, primarily initially focused on physics and tricks for olympiads, and letter on rigorous and no-nonsense treatment of physics in a not too unfriendly way.
-        \end{abstract}
-    \end{minipage}
-\end{titlingpage}
-    \restoregeometry
+    
+    \titleSW
 
     \frontmatter
     \newgeometry{right=1.5cm,left=1.5cm}

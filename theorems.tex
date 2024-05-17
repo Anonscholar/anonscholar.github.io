@@ -237,8 +237,6 @@ bodyfont=\normalfont
 \declaretheorem[style=thmpurplebox,name=Definition,sibling=theorem]{definition}
 \declaretheorem[style=thmpurplebox,name=Definition,numbered=no]{definition*}
 
-\declaretheorem[style=basehead,name=Exercise,sibling=theorem]{exercise}
-\declaretheorem[style=basehead,name=Exercise,numbered=no]{exercise*}
 \declaretheorem[style=basehead,name=Fact,sibling=theorem]{fact}
 \declaretheorem[style=basehead,name=Fact,numbered=no]{fact*}
 \declaretheorem[style=basehead,name=Problem,sibling=theorem]{problem}
@@ -262,4 +260,40 @@ bodyfont=\normalfont
     {\end{mdframed}}
 
 
-\usepackage{exsheets}
+\usepackage{xsim, needspace}
+
+
+\makeatletter
+\DeclareExerciseEnvironmentTemplate{custom}{%
+  \par\vspace{3.25ex plus 1ex minus .2ex}
+  \Needspace*{3\baselineskip}%
+  \noindent\sffamily\normalsize
+  \textcolor{black}{%
+    \textbf{\XSIMmixedcase{\GetExerciseName}\nobreakspace\GetExerciseProperty{counter}}%
+  }%
+  \IfInsideSolutionF{%
+    \GetExercisePropertyT{subtitle}{ {\normalfont\itshape\PropertyValue}}%
+  }%
+  \normalsize
+  \GetExercisePropertyT{points}{%
+    \marginpar{%
+        \printgoal{\PropertyValue}\,\spadesuit%
+        \GetExercisePropertyT{bonus-points}{~[+\printgoal{\PropertyValue}]}%
+    }%
+  }%
+  \par\vspace{1.5ex plus .2ex}
+  \@afterindentfalse\@afterheading
+}
+{}
+\makeatother
+
+\xsimsetup{
+  exercise/the-counter = \arabic{exercise}. ,
+  exercise/template = custom ,
+  solution/template = custom ,
+  exercise/name = Q. 
+}
+
+\newenvironment{exc}{%
+    ~\\ \ \rule[0cm]{\textwidth-4cm}{0.01cm}\rule[-0.11cm]{4cm}{0.12cm} \vskip {\hspace*{\textwidth-3.8cm}\Large\textbf{Exercises}}}%
+    {~\\ \hrule ~\\}

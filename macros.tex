@@ -101,6 +101,7 @@
 \newcommand{\NN}{\mathbb N}
 \newcommand{\NNO}{\mathbb N_{\ge 0}}
 \newcommand{\ZZO}{\mathbb Z_{\ge 0}}
+\newcommand{\RRO}{\mathbb R_{\ge 0}}
 \newcommand{\QQ}{\mathbb Q}
 \newcommand{\RR}{\mathbb R}
 \newcommand{\ZZ}{\mathbb Z}
@@ -191,9 +192,6 @@
 \newcommand{\parbreak}{\smallskip}
 
 %some stuff
-\newcommand{\pointspades}[1]{[{\color{red}#1}\spadesuit]}
-
-
 
 %geo
 \newcommand{\rantri}{\tkzDefPoints{0/1/A,4/3/B,5/1/C}%
@@ -370,14 +368,8 @@ tkzSecondPointResult)}
         \marginpar{\begin{marginrefbox}\sffamily\RaggedRight\lightbold{#1}\end{marginrefbox}}}%
     }
 
-
-    \usepackage{palatino}
-    \usepackage{enumitem}
-    \usepackage{fontawesome}
-    \usepackage{multicol}
-    
-
-\newcommand{\cautionmark}{\scshape{\color{black}\faWarning}}
+  
+\newcommand{\cautionmark}{{\Huge\color{red}!}}
 \newlist{Caution}{enumerate}{1}
 \setlist[Caution]{label=\raisebox{-0.5cm}[0pt][0pt]{\cautionmark},leftmargin=1cm}
 

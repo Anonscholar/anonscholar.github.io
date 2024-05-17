@@ -1,7 +1,7 @@
 \usepackage{amsmath, amssymb}
 
 \nonzeroparskip
-\usepackage[right=4.5cm,left=2cm,bottom=1in,top=1in,marginparwidth=3.75cm,marginparsep=.5cm]{geometry}
+\usepackage[right=5cm,left=2cm,bottom=1in,top=1in,marginparwidth=3.75cm,marginparsep=.5cm]{geometry}
 
 
 \usepackage[texindy]{imakeidx}
@@ -160,10 +160,9 @@
 \usepackage{bohr}
 \usepackage{modiagram}
 \usepackage{subcaption}
-\usepackage{ellipsis}
+
 \usepackage{nameref}
 \usepackage{tzplot}
-\usepackage[some]{background}
 \usepackage{enumitem}
 \newlist{axioms}{enumerate}{10}
 \setlist[axioms]{label=\textbf{Axiom\,\arabic*.},ref=Axiom\arabic*,leftmargin=*}
@@ -286,19 +285,7 @@ urlcolor=TealBlue!70!black
 
 \setsubsechook{\hangsecnum}
 \setsubsubsechook{\hangsecnum}
-\batchmode
 
-\definecolor{titlepagecolor}{cmyk}{1,.60,0,.40}
-
-\backgroundsetup{
-scale=1,
-angle=0,
-opacity=1,
-contents={\begin{tikzpicture}[remember picture,overlay]
- \path [fill=titlepagecolor] (current page.west)rectangle (current page.north east); 
- \draw [color=white, very thick] (5,0)--(5,0.5\paperheight);
-\end{tikzpicture}}
-}
 
 \makeatletter                   
 \def\printauthor{%                  
@@ -313,22 +300,30 @@ contents={\begin{tikzpicture}[remember picture,overlay]
 }
 \makeatother
 
+\usepackage{authblk}
 
 \author{
-    \github{https://github.com/Anonscholar} Adyansh Mishra \\
-    \mailto{adyanshmishra@proton.me}
+    \github{https://github.com/Anonscholar} Adyansh Mishra
 }
 
-% text styling of all side footnotes
-\renewcommand{\footnotesize}{\fontsize{8pt}{10pt}\selectfont}
-\renewcommand{\foottextfont}{\footnotesize}
-% styling and placement of mark
-\footmarkstyle{{#1. }}
-\setlength{\footmarkwidth}{0em}
-\setlength{\footmarksep}{-\footmarkwidth}
-% memoir command - do all footnotes in margin
-\footnotesinmargin
+\newcommand*{\email}[1]{%
+    \normalsize\href{mailto:#1}{#1}\par
+    }
 
-\usepackage{silence}
-\WarningsOff[everypage]% Suppress warnings related to package everypage
+\affil{\email{adyanshmishra@proton.me}}
 
+
+\newcommand*{\titleSW}{\begin{titlingpage}
+\begingroup% Story of Writing
+\raggedleft
+\vspace*{\baselineskip}
+{\HUGE\itshape \thetitle}\\[\baselineskip]
+\vspace{3em}
+{\printauthor}
+\vfill
+\vspace*{\baselineskip}
+\endgroup
+\end{titlingpage}}
+
+\usepackage{ellipsis}
+\batchmode

@@ -96,11 +96,12 @@ To deal with complex numbers, we introduce their algebraic form.
 Consider a function \(f\),
 \[
     f \colon \RR \to \RR \times \{0\}, f(x) = (x, 0)\]%
-Clearly such a \(f\) is a bijective. Moreover, 
-\[(x, 0) + (y, 0) = (x + y, 0), (x,0) \cdot (y, 0) = (xy, 0)\]
 
-Thus, \((x, 0)\) behaves in the same as \(x \in \RR\). Therefore, we may write each \((x, 0) \in 
-\RR \times \{0\} = x \in \RR\) for all \((x,0) \in \RR \times \Set{0}\) since \(f\) is bijective.
+Clearly such a \(f\) is a bijective. Note that by using our earlier definitions
+of addition and multiplication, \((x, 0)\) behaves exactly like \(x\).
+
+Therefore, we may write that \(\forall (x, 0) \in \RR \times \{0\}, \exists x \in \RR\) such that we
+can write \((x,0)\) as \(x\).
 
 \begin{definition}
     We define \(i \in \CC\) as, 
@@ -140,7 +141,7 @@ What exactly is the difference between them?
 
 The answer is that it is not so obvious. We can easily differentiate between 
 \(\sqrt{a}\) and \(-\sqrt{a}\) for any real \(a\) the former is positive and the latter
-negative, because \(\sqrt{\bullet} : \RR \to \RR \), the principal square root function,
+negative, because \(\sqrt{\bullet} : \RRO \to \RRO \), the principal square root function,
 is defined to return a positive value. 
 
 Unfortunately, no such thing is generally true for \(\CC\). The complex

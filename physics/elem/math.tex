@@ -2,10 +2,30 @@
 
 \section{Vectors}
 
-Vectors are quantities with magnitude and direction, contrastingly to scalars which only have magnitude.
-I shall use boldface to denote vectors, \(\vec{A}\). The magnitude of the vector \(\vec{A}\),
-shall be denoted as \(\norm{\vec{A}}\) or simply \(A\). \(\unitv{A}\) is 
-the vector of magnitude \(1\) pointing in the direction of \(\vec{A}\).
+Vectors are quantities with magnitude and direction, contrastingly to scalars which only have magnitude. 
+For our purposes, vectors can be understood as directed line segments, although
+they're more rigorously defined as elements of a vector space, or can be 
+understood through rotations. We'll talk about rotations later, but will not deal with
+vector spaces right now.
+
+I shall use boldface to denote vectors, such as \(\vec{A}\). 
+
+The utility of vectors stem from their independence from a particular co-ordinate system. They're
+directed \emph{line segments}, only their length
+matters and we're not concerned with their end points. This means that a vector 
+can be freely translated. 
+
+\begin{marginfigure}
+    \scalebox{2}{\incfig{transvectors}}
+    \caption{Identical Vectors}
+\end{marginfigure}
+
+The magnitude of a vector, its norm, is its euclidean ``length'', we denote it
+by \(\norm*{\vec{A}}\) or simply \(A\). 
+
+A unit vector, \(\unitv{A}\) (``A hat'') is a vector whose magnitude is unity
+and which points in the direction of \(\vec{A}\). We use unit vectors when we're merely
+concerned with the direction of a vector. It is defined as,
 
 \[
     \unitv{A} = \frac{\vec{A}}{A}
