@@ -201,7 +201,7 @@ kramdown:
 
 # Collections
 collections:
-  teaching:
+  notes:
     output: true
     permalink: /:collection/:path/
   publications:
