@@ -11,4 +11,4 @@ main:
     url: /cv/
     
   - title: "Notes"
-    url: notes
+    url: /pages/notes.md
