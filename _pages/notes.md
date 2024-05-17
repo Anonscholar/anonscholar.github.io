@@ -9,8 +9,8 @@ Here is a collection of notes I am currently working on. Some these are rather a
 one aiming for whole of undergrad, while some are rather incomplete(jee chem not containing organic and math olympiad ones not
 having geometry). 
 
- - [Jee Math](/anonscholar.github.io/files/jeem.pdf)
- - [Jee Chemistry](/anonscholar.github.io/files/chem.pdf)
- - [Olympiad/JEE/UG Physics](/anonscholar.github.io/files/phy.pdf)
- - [Olympiad Math](/anonscholar.github.io/files/olymp.pdf)
- - [Undergrad Math](/anonscholar.github.io/files/ug.pdf)
+ - [Jee Math](/files/jeem.pdf)
+ - [Jee Chemistry](/files/chem.pdf)
+ - [Olympiad/JEE/UG Physics](/files/phy.pdf)
+ - [Olympiad Math](/files/olymp.pdf)
+ - [Undergrad Math](/files/ug.pdf)
