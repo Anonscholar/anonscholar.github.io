@@ -376,68 +376,6 @@ and finally for \(n^{th}\) second just do \(s_n - s_{n-1}\).}
     given the data, since I wanted to mention the idea.
 \end{example}
 
-\section{Time derivative of a vector}
-
-\para{The time derivative of \(r\) and \(v\) have already been observed in \cref{def: velocity} and 
-\cref{def: acceleration} already. However, let us have a better discussion of what it really entails.}
-
-\todo{Add vectors, atleast elem stuff and rename jee to general or olymp.}
-
-\para{When we write, \[
-    \dv{\vec{r}}{t}
-\] The derivative differs from the derivative of a scalar. It has both magnitude and direction.
-One way to compute it is to break it down to its components, \[
-    \dv{\vec{r}}{t} = \dv{x}{t}  \unitv{i} + \dv{y}{t}  \unitv{j} + \dv{z}{t}  \unitv{k}
-.\]
-But since the components of the vector depend on the reference frame, we may generalise the differentiation of a vector
-in two parts.}
-
-\begin{casework}
-        \ii \(\displaystyle\dv{\vec{A}}{t} \perp \vec{A}\)
-        \ii \(\displaystyle\dv{\vec{A}}{t} \parallel \vec{A}\)
-\end{casework}
-
-\para{For the first case, let us first consider a geometric argument for \(\increment \vec{A}\)
-which is perpendicular to \(\vec{A}\). For sufficiently small values of \(\increment \vec{A}\),
-the change in magnitude is negligible, we only observe a change in direction. This becomes
-definitive in the limiting case. Consider the following figure,}
-
-\begin{figure}
-    [H]
-    \centering
-    \scalebox{0.7}{\incfig{timedev}}
-\end{figure}
-
-\para{\noindent This allows us to consider a simple geometric argument which gives \(\norm{\increment \vec{A}} = 2A\sin(\theta/2)\)
-where \(\theta\) is the angle between \(\vec{A}_1\) and \(\vec{A}_2\).}
-
-Since we're considering values of small \(\theta\), we may use the small angle approximation,
-\(\sin(\theta) \approx \theta\). Therefore,
-
-\begin{align}
-    \norm{\vec{\increment A}} &\approx 2A \times \frac{\theta}{2}\\ 
-    &\approx A \times \theta
-\end{align}
-
-Which is equivalent to \(A \increment \theta\). In the limit \(\increment \theta \to 0\),
-
-\begin{equation}
-    \dd{A_{\perp}} = A \dd{\theta}
-\end{equation}
-
-Which finally gives us,
-\begin{equation}
-    \norm{\dv{\vec{A}_{\perp}}{t}} = A\dv{\theta}{t}
-\end{equation}
-
-The second case is easy as it is just 
-\begin{equation}
-    \norm{\dv{\vec{A}_{\parallel}}{t}} = \dv{A}{t}
-\end{equation}
-    
-This completes our formulation of the time derivative of any vector, independent of its co-ordinate
-axes.
-
 \section{Motion in Polar Co-ordinates}
 
 The polar co-ordinate axes are the two-dimesional subset of the 3-d cylindrical co-ordinates. 
