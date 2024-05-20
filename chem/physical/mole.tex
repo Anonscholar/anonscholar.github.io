@@ -17,3 +17,258 @@ more fundamental particles, which do not exist in stable forms independently.
 \end{definition}
 
 Some example of molecules are, \(\ce{H2O}\), \(\ce{NH3}\), \dots
+
+Atoms don't always combine chemically, they may also be held together with
+electrostatic forces. These are termed ionic compounds. 
+
+These aren't found in some discrete units as molecular compounds are. Therefore,
+we consider another term to describe them,
+
+\begin{definition}
+    A \vocab{formula unit} is the smallest unit of a non-molecular substance, such as an ionic compound, covalent network solid, or metal.
+\end{definition}
+
+Some examples of them are salts, like \(\ce{NaCl}\). 
+
+\begin{definition}
+    A species of atoms; all atoms with the same number of protons in the atomic nucleus.
+\end{definition}
+
+An element is not its atom or a molecule or any of that sort. The element 
+oxygen refers to any species of atoms, all having the atomic number \(8\). It
+is not necessary to distinguish between an element and its atom, molecule, etc. but we'll
+do it for the sake of clarity. 
+
+A molecule consisting of \(\ce{O2}\) and the atom \(\ce{O}\) are both referred to as
+oxygen. 
+
+\begin{definition}
+    A \vocab{compound} is a chemical substance containing identical molecules of 
+    more than one type of atom.
+\end{definition}
+
+An example would be something like \(\ce{CO2}\). Note that while 
+some molecules like of \(\ce{CO2}\) are compounds, some like \(\ce{O2}\) aren't.
+
+\begin{definition}
+    Allotropy is the property of some chemical elements to exist in two or more different forms, 
+    in which there atoms are bonded in different manner, in the same physical state, known as \vocab{allotropes} of the elements.
+\end{definition}
+
+For instance, \(\ce{O2}\) and \(\ce{O3}\) are allotropes. 
+
+\section{Weight units}
+
+The mass of atoms are measured in accordance to
+the unified atomic mass unit, ``\uch''.
+
+\begin{definition}
+    The unified atomic mass unit, ``\uch'' is defined as
+    \[1 \uch = \frac{1}{12} \text{ mass of } \ce{^12C}\] 
+    atom.
+\end{definition}
+
+The \vocab{atomic mass} of atoms 
+is thus measured in terms of \uch.
+
+Experimentally, \(1 \uch = 1.66 \times 10^{-24} \si{\gram}\). 
+
+Next, we define \vocab{Avogadro's number} to be the 
+number of atoms of \(\ce{^12C}\) having mass \(12\) \si{\gram}.
+
+This can be calculated rather simply, and comes out to be \(1/1.66 \times 10^{-24}\)
+which is \(6.022 \times 10^23 = N_A\).
+
+The \vocab{gram atomic mass} of an element is the
+mass of Avogadro's number of its atoms. If its atomic mass is \(x \uch\), 
+a trivial calculation leads us to conclude that its gram atomic mass is
+\(x\) \si{\gram}.
+
+By using Avogadro's number, we defined a very important quantity called
+the mole.
+
+\begin{definition}
+    A \vocab{mole} of any entity consists of Avogadro's number, \(6.02214076 \times 10^{23}\) such entities.
+\end{definition}
+
+Molecular mass and gram molecular mass are defined similarly. Where we calculate
+the mass of a molecule by adding the atomic masses of its atoms.
+
+We define a very specific term using mole.
+
+\begin{definition}
+    The \vocab{molar mass} of any entity is simply the mass of a mole of that entity.
+\end{definition}
+
+We use the term \vocab{formula unit mass} for defining the mass 
+of one ``formula'' of a non-molecular substance. Where the formula unit 
+mass is simply the addition of the masses of the entities that make up the
+substance in their lowest possible ratios.
+
+For example, the formula unit mass of \(\ce{NaCl}\) is simply 
+the mass of \(\ce{Na+}\) plus the mass of \(\ce{Cl-}\). 
+
+A mole of such a formula unit is simply the mole of its constituent entities in that ratio.
+1 mole of \(\ce{NaCl}\) is 1 mole of \(\ce{Na+}\) ions and 1 mole of \(\ce{Cl-}\) ions. 
+One mole of say \(\ce{Na2SO4}\) is 2 moles of \(\ce{Na+}\) and one mole of \(\ce{SO4^{2-}}\).
+
+
+\section{On Gases}
+
+Consider the following figure.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \def\Ra{0.5}
+        \def\Rb{1.0}
+        \def\ra{0.1}
+        \def\rb{0.2}
+        \def\w{0.08} % wall thickness
+        \def\x{2.9}  % piston position
+        \def\L{3.7}  % container length
+        \def\l{2.2}  % piston arm length
+        \def\v{0.68} % velocity
+        
+        % WALL
+        \draw[wall]
+          (0,\Rb) -- (0,-\Rb) --++ (\L,0) arc (-90:90:{\Ra} and {\Rb}) -- cycle;
+        \draw[walldark] (0,0) ellipse ({\Ra} and \Rb);
+        
+        % SHELL
+        \draw[walldark]
+          (0,\Rb) rectangle++ (\L,\w);
+        \draw[walldark]
+          (0,-\Rb) rectangle++ (\L,-\w);
+        \draw[walldark]
+          (\L,\Rb+\w) arc (90:-90:{\Ra+\w} and {\Rb+\w}) --++ (0,\w) arc (-90:90:{\Ra} and {\Rb}) -- cycle;
+        \draw[walldark]
+          (0,\Rb) arc (90:270:{\Ra} and {\Rb}) --++ (0,-\w) arc (-90:-270:{\Ra+\w} and {\Rb+\w}) -- cycle;
+        
+        % PISTON
+        \draw[walldark]
+          (\x,\Rb) arc (90:270:{\Ra} and {\Rb}) --++ (-2*\w,0) arc (-90:-270:{\Ra} and {\Rb}) -- cycle;
+        \draw[piston] (\x,0) ellipse ({\Ra} and \Rb);
+        \draw[piston]
+          (\x,\rb) arc (90:270:{\ra} and {\rb}) --++ (\l,0) --++ (0,2*\rb) -- cycle;
+        \draw[walldark] (\x+\l,0) ellipse ({\ra} and \rb);
+        
+        % LABELS
+        \draw[->,very thick,orange!90!black] (\x,0.5*\Rb) --++ (0.2*\L,0)
+          node[right=-2,orange!90!black] {$P$};
+        \node[right,blue!60!black,above] at (\L/2-\Ra,\Rb+\w) {$V$, $P$, $T$};
+        \draw[<-,thick,blue!60!black] (\x,0.7*\Rb) to[in=-30] (\x,1.2*\Rb)
+          node[below=3,above left] {$A$};
+        
+        % GAS PARTICLE
+        \pic at (-0.12*\x, 0.2*\Rb) {gasparticle={vec={ -40:0.7*\v}}};
+        \pic at (-0.07*\x,-0.5*\Rb) {gasparticle={vec={  48:0.6*\v}}};
+        \pic at ( 0.00*\x, 0.3*\Rb) {gasparticle={vec={ 105:0.6*\v}}};
+        \pic at ( 0.05*\x,-0.5*\Rb) {gasparticle={vec={-100:0.6*\v}}};
+        \pic at ( 0.08*\x, 0.0*\Rb) {gasparticle={vec={  70:0.5*\v}}};
+        \pic at ( 0.07*\x, 0.7*\Rb) {gasparticle={vec={ -10:0.9*\v}}};
+        \pic at ( 0.15*\x,-0.2*\Rb) {gasparticle={vec={  30:0.7*\v}}};
+        \pic at ( 0.20*\x,-0.8*\Rb) {gasparticle={vec={ -10:0.6*\v}}};
+        \pic at ( 0.35*\x, 0.6*\Rb) {gasparticle={vec={-110:0.7*\v}}};
+        \pic at ( 0.35*\x,-0.6*\Rb) {gasparticle={vec={ 140:0.4*\v}}};
+        \pic at ( 0.40*\x, 0.9*\Rb) {gasparticle={vec={ -40:0.7*\v}}};
+        \pic at ( 0.43*\x,-0.2*\Rb) {gasparticle={vec={  75:0.8*\v}}};
+        \pic at ( 0.50*\x, 0.5*\Rb) {gasparticle={vec={-170:0.5*\v}}};
+        \pic at ( 0.52*\x,-0.7*\Rb) {gasparticle={vec={ 120:0.6*\v}}};
+        \pic at ( 0.60*\x, 0.4*\Rb) {gasparticle={vec={ -80:0.5*\v}}};
+        \pic at ( 0.63*\x,-0.6*\Rb) {gasparticle={vec={  42:0.5*\v}}};
+        \pic at ( 0.65*\x,-0.2*\Rb) {gasparticle={vec={ 150:0.6*\v}}};
+        \pic at ( 0.68*\x,-0.8*\Rb) {gasparticle={vec={ 190:0.5*\v}}};
+        \pic at ( 0.72*\x, 0.8*\Rb) {gasparticle={vec={ 160:0.5*\v}}};
+        \pic at ( 0.72*\x, 0.3*\Rb) {gasparticle={vec={  80:0.6*\v}}};
+        
+      \end{tikzpicture}
+      
+      
+      % PISTON
+      \begin{tikzpicture}
+        \def\Ra{0.45}
+        \def\Rb{1.10}
+        \def\ra{0.20}
+        \def\rb{0.25}
+        \def\w{0.12}  % wall thickness
+        \def\l{2}     % piston length
+        \def\ang{140} % momentum angle
+        \def\p{1.3}   % momentum length
+        
+        % PISTON
+    \end{tikzpicture}
+    \caption{A Piston and a container of gas}
+\end{figure}
+
+What we have here is a piston pressing down on gas molecules.
+Pistons are either freely movable, such that the external pressure
+is able to equilibrate itself with the internal pressure, or they're
+fixed unless another external force is applied.
+
+Consider a fixed option now. If we press down on the piston, decreasing its volume, the pressure that the gas exerts
+increases because the atoms become much more energetic since they collide much more.
+
+Using this rather vague idea, we may say that pressure is inversely proportional to
+volume under fixed temperature and suitable conditions. 
+
+Therefore, 
+\[ V \propto \frac{1}{P}\]
+
+If we heat the container, note that if we keep the pressure constant,
+the piston must move up to balance the pressure, increasing the volume of the gas.
+
+Thus, 
+\[ V \propto T\]
+
+Also, if week temperature and pressure constance, a simple increase
+in the number of moles of the gas results in an increase in volume. 
+
+\marginnote{\(n\) is used to represent the number of moles.}
+
+Which gives us,
+\[ V \propto n\]
+
+Putting these together, 
+\[ PV = nRT\]
+where \(R\), called the ideal gas constant is the proportionality constant.
+
+This derivation is a sham but we'll do it for now and learn how many holes we went through
+to derive it.
+
+The unit of pressure we generally use are bar and atm. 
+
+Where, 
+\begin{align*}
+    1 \si{\bar} &= 10^5 \, \si{\newton\per\meter\squared} \\
+    1 \mathrm{atm} &= 1.013 \times 10^5 \, \si{\newton\per\meter\squared}
+\end{align*}
+
+For specific units, the values of \(R\) are,
+
+\begin{align*}
+    R &= 0.0821 \, \si{\liter} - \mathrm{atm} \si{\per\kelvin\per\mole} \\
+    &= 8.314 \, \si{\joule\per\kelvin\per\mole} \\
+    &= 0.8314 \, \si{\liter\bar\per\kelvin\per\mole} \\
+    &= 2 \, \mathrm{cal}\,\si{\per\kelvin\per\mole}
+\end{align*}
+
+\section{Standards of temperature and pressure}
+
+We talk about two more things here.
+
+\begin{definition}
+  \vocab{Standard Temperature and Pressure}, STP, is
+  the standard at which the pressure is \(1\) \si{\bar} and 
+  temperature is \(273.15\) \si{\kelvin}.
+  By some unimportant calculations, the volume of 1 mole 
+  of a gas at STP is \(22.7\) \si{\mole}.
+\end{definition}
+
+STP is a neat standard for gas laws and what not but it is better
+to consider SATP for standard room temperature stuff.
+
+\begin{definition}
+  The \vocab{Standard Ambient Temperature and Pressure} is the 
+  standard at which pressure is \(1\) atm and the temperature is \(25\) \si{\degree\celsius}.
+\end{definition}

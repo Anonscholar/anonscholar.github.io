@@ -327,3 +327,36 @@ urlcolor=TealBlue!70!black
 
 \usepackage{ellipsis}
 \batchmode
+
+\usetikzlibrary{patterns,decorations.pathmorphing}
+\usetikzlibrary{arrows.meta}
+\tikzset{>=latex}
+
+\colorlet{mydarkblue}{blue!50!black}
+\colorlet{myblue}{blue!30}
+\colorlet{mydarkred}{red!60!black}
+\colorlet{myred}{red!30}
+\colorlet{mydarkgreen}{green!60!black}
+\colorlet{mygreen}{green!30}
+\colorlet{mydarkorange}{yellow!40!red}
+\colorlet{myorange}{yellow!80!red}
+\colorlet{myyellow}{yellow!80}
+\colorlet{mygrey}{black!15}
+\colorlet{mydarkgrey}{black!50}
+
+\tikzstyle{piston}=[blue!40!black,top color=blue!40!black!30,bottom color=blue!40!black!30,
+                    middle color=blue!50!black!15,shading angle=0]
+\tikzstyle{walldark}=[blue!25!black,top color=blue!20!black!12,bottom color=blue!20!black!20,shading angle=-30]
+\tikzstyle{wall}=[blue!20!black,top color=blue!35!black!6,bottom color=blue!25!black!12,shading angle=30]
+
+% GAS MOLECULE with vector
+\tikzset{
+  gasparticle/.pic={
+    \tikzset{/gasparticle/.cd,#1}
+    \draw[-{Latex[length=4,width=3]},green!60!black,thick] (0,0) -- (\vec);
+    \node[circle,fill,inner sep=1.5,ball color=black!80!blue] at (0,0) {};
+  }
+  /gasparticle/.search also={/tikz},
+  /gasparticle/.cd,
+  vec/.store in=\vec, vec={90:0.5},
+}

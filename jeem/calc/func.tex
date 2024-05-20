@@ -1020,3 +1020,24 @@ From the careful observation of composite functions, we may propose,
     for \(\forall b \in C, \exists a \in A \mid g \circ f (a) = c\).
 \end{proof}
 
+\section{Inverse Functions}
+
+Consider a function \(f : A \to B\). If \(f\) is bijective,
+then we may note that \(\forall y \in B\), there exists one and only one
+\(x \in A\) such that \(f(x) = y\). Therefore,
+this leads us to motivate the existence of an \chvocab{Function}{inverse}
+\(f^{-1} : B \to A\) where \(f^{-1}(y) = x\). 
+
+\begin{example}
+    Does the function \(f : \RR \to \RR\), \(f(x) = x + 2\) have an inverse?
+    If yes, the find it.
+
+    \begin{soln}
+        Note that each \(y \in \RR\) it has a pre-image \(y - 2 \in \RR\), therefore
+        it is surjective. Clearly, the function is injective.
+        To find its inverse, note that \(x + 2 = y \iff x = y - 2\).
+
+        Therefore, \(f^{-1}(x) = x-2\) where we change the variable from 
+        \(y\) to \(x\). 
+    \end{soln}
+\end{example}
