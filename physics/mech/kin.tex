@@ -7,8 +7,8 @@ concern ourselves with some definitions.
 
 \section{Reference Frame and Point Particle}
 
-Motion of any object is considered to relative to a reference frame. We consider motion of
-a body with respect to any other body or co-ordinate frame.
+Motion of any object is considered to relative to an observer. The observer defines
+a particular co-ordinate system called the reference frame
 
 \begin{figure}[ht]
         \centering
@@ -26,8 +26,8 @@ in \cref{fig: 3daxes}.
     A reference frame is a co-ordinate frame relative to which motion of a particle is considered.
 \end{definition}
 
-\para{We always consider the motion of a point particle. Well, why? It is done so to simplify
-the calculation of our system. The motion of a (rigid)body is discussed later.}
+We shall, until we encounter rigid body systems consider the motion of a point particle. 
+Well, why? It is done so to simplify the calculation of our system. The motion of a (rigid)body is discussed later.
 
 \index{Particle}
 \begin{definition}
@@ -35,35 +35,35 @@ the calculation of our system. The motion of a (rigid)body is discussed later.}
     A particle whose size is negligible in the study of its motion is called a point particle.
 \end{definition}
 
+To discuss the motion, state of our body, it is also necessary to setup some time co-ordinate.
+It is the reading of the clock in the observer's frame. In general, we setup our clocks
+at \(0\) at the start of an event.
+
 \section{Position Vector and Displacement}
 
 \subsection{Position Vector}
 \index{Position Vector}
 
-\marginnote{One thing of importance is that a position vector of a particle is `generally' a function
+\marginnote{One thing of importance is that a position vector of a particle is a function
 of time. We generally denote this as \(r(t)\) to show that is a function.}
 
-\para{We define the position of a particle relative to a reference frame using a \emph{position 
+We define the position of a particle relative to a reference frame using a \emph{position 
 vector}. One end of the position vector is the origin of our reference frame. The other is 
 the particle itself. Consider \cref{fig: position}, the 
 vector \(\vec{r}\) from \(O\) to \(A\). It describes the position of \(A\) relative to the
-co-ordinate frame. Let \(A = (x,y,z)\). Then we denoted \(\vec{r}\) as \(\vec{r}(x,y,z)\).}
+co-ordinate frame. Let \(A = (x,y,z)\). Then we denoted \(\vec{r}\) as \(\vec{r}(x,y,z)\).
 
-\para{The position to any point is written as, \[
+The position to any point is written as, \[
     \vec{r} = (x,y,z) = x\unitv{i} + y\unitv{j} + z\unitv{k}
-\]}
-
-
+\]
 
 \begin{figure}
     [H]
     \centering
-    \scalebox{0.6}{\incfig{position}}
+    \scalebox{0.8}{\incfig{position}}
     \caption{A position vector, \(\mathbf{r}\).}
     \label{fig: position}
 \end{figure}
-
-
 
 \subsection{Displacement}
 \index{Displacement}
@@ -71,31 +71,32 @@ co-ordinate frame. Let \(A = (x,y,z)\). Then we denoted \(\vec{r}\) as \(\vec{r}
 \marginnote{Note that the position vector is not a \emph{true} vector. It is tied to particular
     reference frame.}
 
-\para{Consider the movement of a particle from \(A = (x_1,y_1,z_1)\) to \(B = (x_2,y_2,z_2)\). 
-The \emph{displacement} defines a true vector \(\vec{S} = (x_2-x_1,y_2-y_1,z_2-z_1)\).
-\(\vec{S}\) is called the displacement vector. Note that it contains no information about the
-individual points, but only about the relative position of each. Thus, our choice
-of reference frame, and thus position vector does not matter when we're concerned with displacement
-. In \cref{fig: displacement}, the vector
-\(\vec{S}_{AB}\) defines a displacement from \(A\) to \(B\).}
+Consider the movement of a particle from \(A = (x_1,y_1,z_1)\) to \(B = (x_2,y_2,z_2)\). 
+The \emph{displacement} is the change in the position vector,
+and defines a true vector \(\vec{s} = (x_2-x_1,y_2-y_1,z_2-z_1)\).
+\(\vec{s}\) is called the displacement vector. 
+Note that it contains no information about the
+individual positions, but only about the relative position of each. Thus, our choice
+of reference frame, and thus position vector does not matter when we're concerned with displacement. 
+In \cref{fig: displacement}, the vector
+\(\vec{S}_{AB}\) defines a displacement from \(A\) to \(B\).
 
 \begin{figure}
     [H]
     \centering
-    \scalebox{0.8}{\incfig{displacement}}
+    \scalebox{1}{\incfig{displacement}}
     \caption{Displacement from \(A\) to \(B\)}
     \label{fig: displacement}
 \end{figure}
 
-\para{The difference between displacement and distance is that of the path they describe. The distance covered is the length
-of the actual path, while the magnitude of the displacement is simply the length of the vector between the final and initial positions.}
+The difference between displacement and distance is that of the path they describe. The distance covered is the length
+of the actual path, while the magnitude of the displacement is simply the length of the vector between the final and initial positions.
 
-\begin{figure}
-    [H]
+\begin{marginfigure}
     \centering
-    \incfig{distance}
-    \caption{Distance vs Displacement}
-\end{figure}
+    \scalebox{2.4}{\incfig{distance}}
+    \caption{Distance}
+\end{marginfigure}
 
 \begin{algorithm}
     Consider the case of displacement and distance of a particle in circular motion with radius \(r\) Let it move from \(A\) to \(B\), inscribing
@@ -116,19 +117,19 @@ of the actual path, while the magnitude of the displacement is simply the length
 
 \index{Speed}
 
-\para{We are already familiar with the notion of speed. In elementary terms, speed is \({distance}/{time}\).
+We are already familiar with the notion of speed. In elementary terms, speed is \({distance}/{time}\).
 Speed itself is an elementary concept. It tells us nothing about the direction of the object whose speed we are
-talking into consideration. Thus, it is a \emph{scalar} quantity.}
+talking into consideration. Thus, it is a \emph{scalar} quantity.
 
 \parbreak
 \marginnote{The symbol \(\equiv\) stands for `defined as'.}
 
 \index{Velocity}
 
-\para{The Velocity of a particle, contrastingly, contains information about both the speed and direction of the
+The Velocity of a particle, contrastingly, contains information about both the speed and direction of the
 object in consideration. It is a vector. Similar to position, it is also generally a function of time \(v(t)\), though it
-may also be dependent on the position \(v(x)\).} 
-~\\
+may also be dependent on the position \(v(x)\).
+
 \begin{definition}
     [Velocity]
     \label{def: velocity}
@@ -138,12 +139,24 @@ may also be dependent on the position \(v(x)\).}
     \end{equation}
 \end{definition}
 
+One thing of note is that velocity can also be expressed as the derivative of 
+displacement, which is just \(\vec{r} - \vec{r}_0\). Since the latter 
+term is constant, we simply get that \(\ndiv{\vec{s}} = \ndiv{\vec{r}}\).
 
-\para{Sometimes, we do not need to compute the derivative of the position vector, and simply need an average
+From this definition, we may gather that,
+
+\[\int_{r_0}^{r} \dd{\vec{r}} = \int_{0}^{t} \vv \dd{t}\]
+
+Or, 
+\begin{equation}
+    \vec{r} = \vec{r}_0 + \int_{0}^{t} \vv \dd{t}
+\end{equation}
+
+Sometimes, we do not need to compute the derivative of the position vector, and simply need an average
 estimate, or in the case of uniformly accelerated motion, it is not required that we computer derivatives.
 In such a case we use the concept of \textbf{average velocity}, \[
-    \avg{\vec{v}}_{12} = \frac{\vec{r}_1-\vec{r}_2}{t_2 - t_1}  
-\]}
+    \avg{\vec{v}}_{12} = \frac{\increment\vec{s}}{t_2 - t_1}  
+\]
 
 \marginnote{The dot over \(r\) in \(\dot{\vec{r}}\) tells us that \(r\) has been differentiated
 with respect to time.}
@@ -206,6 +219,12 @@ is the rate of change of velocity.
     \end{equation}
 \end{definition}
 
+Much like the velocity definition, we have,
+
+\begin{equation}
+    \vv = \vv_0 + \int_0^t \vec{a} \dd{t}
+\end{equation}
+
 There is also another way to represent acceleration, as, \[
     \vec{a} = \vec{v}\dv{\vec{v}}{x}
 \]
@@ -215,9 +234,9 @@ is a function of its position. In such a case, derivating with time is quite a h
 
 \section{Uniformly Accelerated Motion}
 
-\para{When the acceleration of a particle, \(a\) is constant, it undergoes uniformly accelerated motion.
+When the acceleration of a particle, \(a\) is constant, it undergoes uniformly accelerated motion.
 We use special cases of integrals of \(a\) and \(v\) with respect to time and position for deriving
-the equations of importance.}
+the equations of importance.
 
 \begin{theorem}
     For a particle with initial velocity \(u\) undergoing uniformly accelerated motion of acceleration \(a\),

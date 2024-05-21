@@ -185,3 +185,133 @@ their linear combination,
 
 only has a trivial solution of \(c_1 = c_2 = \dots = c_n = 0\), when equated to the \(n\) dimensional null
 vector, \(c_1\vec{e}_1 + c_2\vec{e}_2 + \dots + c_n\vec{e}_n = \vec{0}\). 
+
+These vectors being linearly independent imply that they can not be written as linear 
+combination of other vectors. Otherwise, we could have simply written the term 
+\(\vec{e}_i\) as the linear combination of other vectors whenever we needed to use it.
+
+Although it might not be so obvious, all orthogonal sets of vectors are linearly 
+independent. If we represent these as \(\Set{\vec{e}_1, \vec{e}_2, \dots, \vec{e}_n}\), we
+can construct a set of basis vectors that are not orthogonal as,
+\(\Set{\vec{e}_1, \vec{e}_2, \dots, \vec{e}_{n-1}, \vec{e}_1 + \vec{e_2} + \dots + \vec{e}_n}\).
+
+Which means that we don't always need the basis vectors to be orthogonal, but
+in practice we usually adopt orthogonal basis vectors.
+
+In particular, we'll use the basis vectors which have magnitude of \(1\), i.e. unit vectors.
+
+In cartesian co-ordinates, we use the unit vectors along the three axes, \(x\), \(y\) and 
+\(z\). These are written as \(\unitv{i}\), \(\unitv{j}\) and \(\unitv{k}\) respectively.
+
+But how can we write an arbitrary vector \(\Aa\) in terms of these unit vectors?
+The answer lies in projecting the vector along the axes. We use the dot product for it.
+
+\begin{align}
+    A_x &= \Aa \dtp \unitv{i} = A \cos \alpha \\
+    A_x &= \Aa \dtp \unitv{j} = A \cos \beta \\
+    A_x &= \Aa \dtp \unitv{k} = A \cos \gamma 
+\end{align}
+
+Where \(\alpha\), \(\beta\), and \(\gamma\) are the angles 
+the vector makes with the \(x\), \(y\) and \(z\) axes respectively.
+The cosine of these angles are called \vocab{directional cosines}. 
+
+Thus, we write \(\Aa\) in terms of it elements, in matrix form, as, 
+
+\begin{equation}
+    \Aa = 
+    \begin{pmatrix}
+        A_x \\
+        A_y \\
+        A_z
+    \end{pmatrix}
+\end{equation}
+    
+
+Now scalar multiplication is simply, 
+
+\[
+    c\Aa = 
+    \begin{pmatrix}
+        cA_x \\
+        cA_y \\
+        cA_z
+    \end{pmatrix}
+\]
+
+And vector addition is,
+
+\[
+    \Aa + \BB = 
+    \begin{pmatrix}
+        A_x + B_x\\
+        A_y + B_y\\
+        A_z + B_z 
+    \end{pmatrix}
+\]
+
+For the dot product, representing \(\Aa\) and \(\BB\) in terms of the basis vectors,
+
+\begin{align*}
+    \Aa \dtp \BB &= (A_x \unitv{i} + A_y \unitv{j} + A_z \unitv{k}) (\dtp B_x \unitv{i} + B_y \unitv{j} + B_z \unitv{k}) \\
+    \Aa \dtp \BB &= A_xB_x + A_yB_y + A_zB_z
+\end{align*}
+
+Where we use the distributive property of dot product and the fact 
+that \(\unitv{i} \dtp \unitv{j} = \unitv{j} \dtp \unitv{k} = \unitv{k} \dtp \unitv{i} = 0\).
+
+Finally, the cross product is a little difficult to compute.
+It can be computed either as the determinant,
+
+\[\Aa \cp \BB =
+\begin{vmatrix}
+    \unitv{i} & \unitv{j} & \unitv{k} \\
+    A_x & A_y & A_z \\
+    B_x & B_y & B_z
+\end{vmatrix}\]
+
+Or using the matrix notation,
+\[
+\begin{pmatrix}
+    A_x \\
+    A_y \\
+    A_z
+\end{pmatrix} \cp
+%
+\begin{pmatrix}
+    B_x \\
+    B_y \\
+    B_z
+\end{pmatrix}
+%
+=
+%
+\begin{pmatrix}
+    A_yB_z - A_zB_y \\
+    A_zB_x - A_xB_z \\
+    A_xB_y - A_yB_x
+\end{pmatrix}
+\]
+
+To compute a particular component, cover up that particular row. Then, multiply the component 
+of \(\Aa\) in the row below (loop to the top if necessary) 
+with the diagonal component of \(\BB\) and
+subtract it by the product of the component of \(\Aa\) two rows below, and the
+diagonal component of \(\BB\). For example, for the y-component,
+
+\[
+\begin{pmatrix}
+    A_x \\
+    - \\
+    A_z
+\end{pmatrix} \cp
+%
+\begin{pmatrix}
+    B_x \\
+    - \\
+    B_z
+\end{pmatrix}
+%
+\]
+
+And the term simply is \(A_zB_x - A_xb_z\) by looping through the top.
