@@ -673,3 +673,169 @@ for \(0 < \theta < \pi/2\), \(\sin(2\theta)\) attains the same
 value for two \(\theta_1, \theta_2\). These \(\theta_1\), \(\theta_2\) are complementary
 by trigonometry.
 
+More generally, if we consider the projectile to have an initial position of 
+\(\qty(x_0, y_0)\), then, by substituting for time, we find that the 
+vertex of the parabola is \(\qty(y_0 + \frac{u^2\sin^2\theta}{2g}, x_0 + \frac{u^2\sin2\theta}{g})\).
+
+The range is a little more difficult to computer here, as the particle will transverse to 
+the ground which is lower than \(y_0\). Freely setting up our co-ordinates 
+as \(\qty(h, 0)\), we get by the equation of trajectory,
+
+\[
+    0 = h + R\tan(\theta) - \frac{gx^2}{2v^2\cos^2(\theta)}
+\]
+
+Derivating this with respect to theta to find the maxima, and then using the attained
+value, we have, 
+
+\begin{equation}
+    R = \frac{u}{g}\sqrt{u^2 + 2gh}
+\end{equation}
+
+Some peculiar things about projectile motion is that, \begin{inparaenum}[a)]
+    \ii it is reversible, and
+    \ii the time to attain some vertical displacement can be found in terms of 
+    the maximum height alone.
+\end{inparaenum}
+
+Consider the vertical position of the particle to be 
+\(s\) at some time \(t\). Then, 
+\[s = u_yt - \frac{1}{2}gt^2\] 
+Also, note that if the maximum height is \(h\), 
+\[u_y = \pm \sqrt{2gh}\]
+
+Where the positive value is during the ascent and the negative is during the descent. Then,
+
+\[s = \pm\sqrt{2gh}t - \frac{1}{2}gt^2\]
+
+Solving for \(t\) gives us,
+\[t = \pm \sqrt{\frac{2h}{g}} \pm \sqrt{\frac{2(h-s)}{g}}\]
+
+If the initial velocity is positive and \(s > 0\), 
+
+\begin{equation}
+    t = \sqrt{\frac{2h}{g}} \pm \sqrt{\frac{2(h-s)}{g}}
+\end{equation}
+the two values correspond to the fact that the particle will have the same vertical
+displacement at two instances of time.
+
+If the initial velocity is positive but \(s < 0\), i.e the particle 
+starts at some height but then transverses below it, 
+
+\begin{equation}
+    t = \sqrt{\frac{2h}{g}} + \sqrt{\frac{2(h-s)}{g}}
+\end{equation}
+is the only reasonable solution.
+
+If the initial velocity is negative, then clearly the 
+particle will attain a lower position. The maximum height in this 
+case is simply the initial height of the particle.
+
+\begin{equation}
+    t = - \sqrt{\frac{2h}{g}} + \sqrt{\frac{2(h-s)}{g}}
+\end{equation}
+
+\todo{add drag forces}
+
+\section{Kinematics of a rigid body}
+
+When we describe the motion of a point particle, we need \(3\) co-ordinates 
+to do so in free space. For a system of \(n\) particles, we thus need
+\(3n\) \emph{generalised co-ordinates}. This makes a description of motion
+rather difficult. 
+
+However, when we concern ourselves with rigid bodies, the problem becomes
+much easier. A rigid body is a system of particles such that they are 
+always at a fixed distance apart from each other. For instance, 
+the end points of a rod.
+
+Rigid bodies, like everything in physics are a good approximation. 
+The distances won't always be equal (for instance, at the time of collision).
+But it is enough of an approximation that we'll let it go.
+
+By Chasles' theorem, which we'll only state, we only \(6\) co-ordinates to 
+describe a rigid body. Generally, we use \(3\) translational and \(3\) angular
+ones.
+
+Here, we're only going to look into the rotation of a rigid body.
+
+Take an arbitrary point \(P\) on the body and set up cylindrical co-ordinates around it.
+We note that the body rotates about \(P\) in such a frame.
+Which are polar co-ordinates with the \(z\) axis. We'll also set up an \(x-y\)
+plane. 
+
+In cylindrical coordinates, every point on the body can be ascribed a
+coordinate \(θ\), the angle between the projection of its position vector on the 
+\(x-y\) plane. This is called the \vocab{azimuthal angle}.
+
+The other two co-ordinates are \(r\), the distance of a particle from the 
+\(z\) axis, and \(z\) the signed height of the body.
+
+\begin{marginfigure}
+    \centering
+    \scalebox{0.4}{\includegraphics{../figures/rigidbody.png}}
+    \caption{Rigid Body about \(P\)}
+\end{marginfigure}
+
+If a particle on a rigid body undergoes a change in its azimuth by \(\dd{\theta}\),
+then because of the constraints of a rigid body, every particle 
+undergoes a change of \(\dd{\theta}\). Thus, we define 
+the angular speed of the rigid body, \(\omega\) to be \(\dv*{\theta}{t}\).
+
+In the case of rigid body motion, we also define \(\vec{\omega}\), the \vocab{angular velocity}.
+It has the magnitude \(\omega\) but points in the direction perpendicular 
+to plane of rotation. We define the unique direction by the right hand grip rule. 
+If you curl your fingers in the direction of rotation, then the direction 
+in which your thumb points is the direction of \(\vec{\omega}\).
+
+Consider a particle at a position \(\vec{r}\) from \(P\), and makes an angle
+\(\phi\) with \(\vec{\omega}\). 
+
+\begin{marginfigure}
+    \scalebox{0.4}{\includegraphics{../figures/rigidrotation.png}}
+\end{marginfigure}
+
+Then, if it undergoes a change of \(\dd{\theta}\) azimuthally,
+it moves through a circle of radius \(r\sin\phi\)
+and transverses a distance \(\norm*{\dd{\vec{r}}} = r\sin\phi\dd{\theta} = r\sin\phi\,\omega\dd{t}\).
+
+Thus, 
+
+\[\dd{\vec{r}} = \vec{\omega} \cp \vec{r} \dd{t},\]
+
+And, 
+
+\begin{equation}
+    \boxed{\dv{\vec{r}}{t} = \vv = \vec{\omega} \cp \vec{r}} 
+\end{equation}
+
+One thing we note across here is that if we take any another point on 
+the rigid body, say \(Q\) which has a velocity \(\vv_Q\) in the frame of 
+\(P\), then,
+
+\[\vv_Q = \vec{\omega} \cp \vec{r}_{PQ}\]
+
+In the frame of \(Q\), let us suppose that the body has an angular velocity, 
+\(\vec{\omega}_1\). Then the velocity of \(P\) in the frame of \(Q\) must be 
+
+\[\vv_P = \vec{\omega}_1 \cp \vec{r}_{QP} = -\vec{\omega}_1 \cp \vec{r}_{PQ}\]
+
+Since \(\vv_P = -\vv_Q\) if \(Q\) is non-rotating, accelerating,
+
+\[\vec{\omega}_1 \cp \vec{r}_{PQ} = \vec{\omega} \cp \vec{r}_{PQ}\]
+
+which gives us that \(\vec{\omega}_1 = \vec{\omega}\). This means that in any 
+non-rotating frame with respect to \(P\), the angular velocity is the same.
+
+Basically, the angular velocity of a rigid body is intrinsic. It does not depend upon
+the arbitrary point on the rigid body about which we establish our co-ordinates.
+
+This is in contrast to something like the velocity which does depend on it. 
+
+Generally, If the particle \(P\) has a velocity \(\vv_{ref}\) in the lab frame,
+then the velocity of a point at a position \(\vec{r}\) from \(P\) in the lab 
+frame is,
+
+\[\vv = \vv_{ref} + \vec{\omega} \cp \vec{r}.\]
+
+
