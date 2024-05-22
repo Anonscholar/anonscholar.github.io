@@ -62,8 +62,8 @@ of one vector with the head of another.
 \begin{figure}[H]
     \centering
     {\incfig{vectoradd}}
-    \label{fig: vectoradd}
     \caption{Vector Addition}
+    \label{fig: vectoradd}
 \end{figure}
 
 We can calculate the magnitude of their resultant vector, \(\norm*{\Aa + \BB}\)
@@ -108,8 +108,8 @@ Consider the following figure,
     \scalebox{0.7}{\incfig{timedev}}
 \end{figure}
 
-\para{\noindent This allows us to consider a simple geometric argument which gives \(\norm{\increment \vec{A}} = 2A\sin(\theta/2)\)
-where \(\theta\) is the angle between \(\vec{A}(t_1)\) and \(\vec{A}(t_2)\).}
+This allows us to consider a simple geometric argument which gives \(\norm{\increment \vec{A}} = 2A\sin(\theta/2)\)
+where \(\theta\) is the angle between \(\vec{A}(t_1)\) and \(\vec{A}(t_2)\).
 
 Since we're considering values of small \(\theta\), we may use the small angle approximation,
 \(\sin(\theta) \approx \theta\). Therefore,
@@ -253,7 +253,7 @@ And vector addition is,
 For the dot product, representing \(\Aa\) and \(\BB\) in terms of the basis vectors,
 
 \begin{align*}
-    \Aa \dtp \BB &= (A_x \unitv{i} + A_y \unitv{j} + A_z \unitv{k}) (\dtp B_x \unitv{i} + B_y \unitv{j} + B_z \unitv{k}) \\
+    \Aa \dtp \BB &= (A_x \unitv{i} + A_y \unitv{j} + A_z \unitv{k}) \dtp (B_x \unitv{i} + B_y \unitv{j} + B_z \unitv{k}) \\
     \Aa \dtp \BB &= A_xB_x + A_yB_y + A_zB_z
 \end{align*}
 
