@@ -59,16 +59,16 @@ We define an operation called addition of vectors which produces another vector.
 To add two vectors, \(\Aa\) and \(\BB\), we stick the tail
 of one vector with the head of another. 
 
-\begin{figure}[H]
-    \centering
-    {\incfig{vectoradd}}
-    \caption{Vector Addition}
-    \label{fig: vectoradd}
-\end{figure}
-
 We can calculate the magnitude of their resultant vector, \(\norm*{\Aa + \BB}\)
 by using the cosine rule. In \cref{fig: vectoradd} \(\theta\) is the angle between 
 \(\Aa\) and \(\BB\).
+
+\begin{marginfigure}
+    \hspace*{-1.3cm}
+    \scalebox{2.5}{\incfig{vectoradd}}
+    \caption{Vector Addition}
+    \label{fig: vectoradd}
+\end{marginfigure}
 
 \begin{align*}
     &\norm*{\Aa + \BB}^2 = A^2 + B^2 - 2AB\cos(\pi - \theta) \\
@@ -95,24 +95,25 @@ magnitude.
 
 The magnitude of the first can be calculated as,
 
-Let us first consider a geometric argument for \(A\dd{\unitv{A}}\)
+First consider \cref{fig: timedev}.
+
+Now, let us first work out a geometric argument for \(A\dd{\unitv{A}}\)
 which is perpendicular to \(\vec{A}\). In the limiting case, \(A\dd{\unitv{A}}\),
 the change in magnitude is negligible, we only observe a change in direction. For now,
 let us consider \(\increment \Aa\) perpendicular to \(\Aa\) as an approximation.
-
-Consider the following figure,
-
-\begin{figure}
-    [H]
-    \centering
-    \scalebox{0.7}{\incfig{timedev}}
-\end{figure}
 
 This allows us to consider a simple geometric argument which gives \(\norm{\increment \vec{A}} = 2A\sin(\theta/2)\)
 where \(\theta\) is the angle between \(\vec{A}(t_1)\) and \(\vec{A}(t_2)\).
 
 Since we're considering values of small \(\theta\), we may use the small angle approximation,
 \(\sin(\theta) \approx \theta\). Therefore,
+
+\begin{marginfigure}
+    \centering
+    \scalebox{2}{\incfig{timedev}}
+    \caption{\(\increment\vec{A} \perp \vec{A}\)}
+    \label{fig: timedev}
+\end{marginfigure}
 
 \begin{align}
     \norm{\vec{\increment A}} &\approx 2A \times \frac{\theta}{2}\\ 

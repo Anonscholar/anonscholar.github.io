@@ -175,17 +175,22 @@ with respect to time.}
     \end{casework}
 \end{algorithm}
 
-\para{In general velocity is also referred to as `instantaneous velocity'. This is done to remind of the difference
+
+In general velocity is also referred to as `instantaneous velocity'. This is done to remind of the difference
 with average velocity. We will not refer to it that way since by velocity we shall always mean \(\vec{v}\) as defined in
-\cref{def: velocity}. The same goes for speed. Speed is defined as \(\ndiv{d}\) where \(d\) is the distance.
-Average speed is defined similar to average velocity.}
+\cref{def: velocity}. The same goes for speed. Notably, speed is not defined as \(\ndiv{d}\) where \(d\) is the distance.
 
-\marginnote{Magnitude refers to the absolute value of a vector, i.e., its modulus. \(\norm{\vec{a}}\) is the 
-magnitude of \(\vec{a}\) and is often simply denoted \(a\).}
-
-\para{There is an interesting relation between speed and velocity. Consider the distance between \(a\) and \(b\) as 
+While the average speed is very well that, speed is actually the magnitude of the velocity of that point. 
+Consider the distance between \(a\) and \(b\) as 
 \(a \to b\). The path between them approaches a straight line. Thus, the distance and displacement become the same
-in the limiting case. Therefore, the \emph{magnitude} of velocity is the speed at that instant.} 
+in the limiting case. Therefore, the \emph{magnitude} of velocity is the speed at that instant.
+
+Therefore, 
+
+\[\text{speed} = \abs{\dv{\vec{r}}{t}}\]
+
+
+
 
 \begin{algorithm}
     Let us consider some techniques for solving equations of velocity. Consider the case when velocity and time are given
@@ -402,16 +407,8 @@ Any point in polar co-ordinates is depicted by a system of two unit vectors, \(\
 \(\unitv{\theta}\). However, each of these are \framebox{dependent on the position of the particle} and
 maybe written explicitly as \(\unitv{r}(\theta)\) and \(\unitv{\theta}(\theta)\).  
 
-\begin{figure}
-    [H]
-    \centering
-    \scalebox{0.7}{\incfig{polar}}
-    \caption{Polar axes}
-    \label{fig: polar}
-\end{figure}
-
-Here, \(\unitv{r}\) points in the direction of increasing radius(along the straight lines in \cref{fig: polar})
-\(\unitv{\theta}\) points in the direction of increasing \(\theta\) (along the tangent to the circles).
+Here, \(\unitv{r}\) points in the direction of increasing radius(along the radial vector)
+\(\unitv{\theta}\) points in the direction of increasing \(\theta\) (tangent to the radial vector).
 These two unit vectors are \emph{orthogonal} at any point. 
 
 \begin{figure}
@@ -760,9 +757,10 @@ ones.
 Here, we're only going to look into the rotation of a rigid body.
 
 Take an arbitrary point \(P\) on the body and set up cylindrical co-ordinates around it.
-We note that the body rotates about \(P\) in such a frame.
 Which are polar co-ordinates with the \(z\) axis. We'll also set up an \(x-y\)
-plane. 
+plane.
+We note that the body rotates about \(P\) in such a frame.
+
 
 In cylindrical coordinates, every point on the body can be ascribed a
 coordinate \(θ\), the angle between the projection of its position vector on the 
@@ -837,6 +835,26 @@ Generally, If the particle \(P\) has a velocity \(\vv_{ref}\) in the lab frame,
 then the velocity of a point at a position \(\vec{r}\) from \(P\) in the lab 
 frame is,
 
-\[\vv = \vv_{ref} + \vec{\omega} \cp \vec{r}.\]
+\begin{equation}
+    \label{eq: velocity for rigid bodies}
+    \vv = \vv_{ref} + \vec{\omega} \cp \vec{r}.
+\end{equation}
 
+\subsection{Instantaneous center of Rotation}
 
+\Cref{eq: velocity for rigid bodies} can be seemingly simplified
+by using a point known as the Instantaneous Center of Rotation, ICoR.
+
+\begin{definition}
+    The \vocab{Instantaneous Center of Rotation} is defined as the point that is fixed to the
+    frame of the rigid body --- but not necessarily lying on the body --- that has
+    zero velocity in the lab frame at that particular instant.
+\end{definition}
+
+The concept of being fixed to the ``frame'' of the body is a weird one. You may imagine 
+it as something like a plane being attached to the body. This planes rotates with the body.
+Now the ICoR is a point on the plane that has a \(0\) velocity in the lab frame. 
+
+It does not, necessarily, lie on the body, but on the ``frame'' of the body, where it rotates just as the body does.
+Of course, this talk to an attached plane is merely hypothetical. The ICoR lies 
+on the extension of the body.
