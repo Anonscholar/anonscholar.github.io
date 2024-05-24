@@ -763,7 +763,7 @@ We note that the body rotates about \(P\) in such a frame.
 
 
 In cylindrical coordinates, every point on the body can be ascribed a
-coordinate \(θ\), the angle between the projection of its position vector on the 
+coordinate \(\theta\), the angle between the projection of its position vector on the 
 \(x-y\) plane. This is called the \vocab{azimuthal angle}.
 
 The other two co-ordinates are \(r\), the distance of a particle from the 
@@ -819,12 +819,15 @@ In the frame of \(Q\), let us suppose that the body has an angular velocity,
 
 \[\vv_P = \vec{\omega}_1 \cp \vec{r}_{QP} = -\vec{\omega}_1 \cp \vec{r}_{PQ}\]
 
-Since \(\vv_P = -\vv_Q\) if \(Q\) is non-rotating, accelerating,
+
+Since \(\vv_P = -\vv_Q\) if \(Q\) is non-rotating,
 
 \[\vec{\omega}_1 \cp \vec{r}_{PQ} = \vec{\omega} \cp \vec{r}_{PQ}\]
 
 which gives us that \(\vec{\omega}_1 = \vec{\omega}\). This means that in any 
 non-rotating frame with respect to \(P\), the angular velocity is the same.
+
+\marginnote{\(\vec{\omega}\) is defined to be positive along the positive \(z\) axis.}
 
 Basically, the angular velocity of a rigid body is intrinsic. It does not depend upon
 the arbitrary point on the rigid body about which we establish our co-ordinates.
@@ -858,3 +861,181 @@ Now the ICoR is a point on the plane that has a \(0\) velocity in the lab frame.
 It does not, necessarily, lie on the body, but on the ``frame'' of the body, where it rotates just as the body does.
 Of course, this talk to an attached plane is merely hypothetical. The ICoR lies 
 on the extension of the body.
+
+We may note that since the ICoR, which we shall denoted \(I\), has zero velocity in the lab frame, 
+the velocity of any point \(P\) is simply,
+
+\[\vv_P = \vec{\omega} \cp \vec{r}_{IP}\]
+
+Thus the velocity at the point \(P\) is perpendicular to the line joining 
+the ICoR and \(P\). 
+
+For parallel velocities, thus, we may see that the ICoR lies on the line joining them.
+
+\begin{marginfigure}
+    \scalebox{2}{\incfig{icorpar}}
+    \caption{ICoR for parallel velocities}
+\end{marginfigure}
+
+Here, 
+
+\[v_A = \omega r_A, \, v_B = \omega r_B,\]
+
+And, 
+\[\frac{v_A}{r_A} = \frac{v_B}{r_A + d}\]
+
+This allows us to greatly simplify and find for not only ICoR but the velocities 
+from some type of argument to figure out the distances.
+
+However, it is a bit more complicated for non-parallel velocities.
+
+Consider \cref{fig: icornonpar}. The ICoR lies on the intersection point of the lines 
+perpendicular to the velocity. Unfortunately, there is general way to calculate the 
+ICoR and some geometric argument must be considered.
+
+\begin{marginfigure}
+    \scalebox{2}{\incfig{icornonpar}}
+    \caption{ICoR for non-parallel velocities}
+    \label{fig: icornonpar}
+\end{marginfigure}
+
+\subsection{Additive Property of Angular Velocities}
+
+Angular velocities, much like velocities, are additive across
+reference frames, i.e, for a rigid body \(B\), 
+
+\begin{equation}
+    \label{eq: angular velocities addition}
+    \boxed{\vec{\omega}_{B1} = \vec{\omega}_{B2} + \vec{\omega}_{21}}
+\end{equation}
+
+Let us sketch out a proof of this. First, let us mention 
+one extremely important equation that will be of much use, 
+
+If a particle has velocities \(\vv_1\) and \(vv_2\) in two
+reference frames, the axes of frame \(2\) are rotating 
+at \(\vec{\omega}_{21}\) with respect to the first frame
+and \(\vec{r}_1\) is the position vector of the particle in the first
+frame,
+
+\begin{equation}
+    \label{eq: rigidbody velocity accross rotating frames}
+    \boxed{\vv_{1} = \vv_2 + \vec{\omega}_{21} \cp \vec{r}}
+\end{equation}
+
+While \cref{eq: rigidbody velocity accross rotating frames} bears 
+a particular similarity to \cref{eq: velocity for rigid bodies}, they are 
+very different.
+
+\Cref{eq: rigidbody velocity accross rotating frames} tells us 
+the velocity of a particle across two \textbf{rotating} frames,
+while \cref{eq: velocity for rigid bodies} tells us the velocity 
+of particle relative to the lab frame by using a reference point on the rigid body.
+
+We won't prove this equation now but rather use it to prove \cref{eq: angular velocities addition}.
+
+\begin{proof}
+    Let \(R\) be the ICoR in the first reference frame.
+    Then, for a rigid body \(B\) and the point on the body, \(P\),
+
+    \[\vv_{P1} = \vec{\omega}_{B1} \cp \vec{r}_{RP}.\]
+
+The velocity of \(P\) in frame \(2\) is, 
+
+\[\vv_{P2} = \vv_{R2} + \vec{\omega}_{B2} \cp \vec{r}_{RP}.\]
+
+Now, using \cref{eq: rigidbody velocity accross rotating frames} for \(\vv{R1}\), \(\vv{R2}\),
+
+\[\vv_{R1} = \vv_{R2} + \vec{\omega}_{21} \cp \vec{r}_{R1},\]
+
+where \(\vv_{R1} = 0\) because it is the ICoR. This gives us,
+
+\[\vv_{P2} = \vec{\omega}_{B2} \cp \vec{r}_{RP} - \vec{\omega}_{21} \cp \vec{r}_{R1}\]
+
+Finally, applying \cref{eq: rigidbody velocity accross rotating frames} for 
+\(\vv_{P1}\) and \(\vv_{P2}\),
+
+\[\vv_{P1} = \vv_{P2} + \vec{\omega}_{21} \cp \vec{r}_{P1},\]
+
+And, 
+
+\begin{align*}
+    \vec{\omega}_{B1} \cp \vec{r}_{RP} &= \vec{\omega}_{B2} \cp \vec{r}_{RP} - \vec{\omega}_{21} \cp \vec{r}_{R1} + \vec{\omega}_{21} \cp \vec{r}_{P1} \\
+    \vec{\omega}_{B1} \cp \vec{r}_{RP} &= \vec{\omega}_{B2} \cp \vec{r}_{RP} + \vec{\omega}_{21} \cp (\vec{r}_{R1} - \vec{r}_{P1}) \\
+    \vec{\omega}_{B1} \cp \vec{r}_{RP} &= \vec{\omega}_{B2} \cp \vec{r}_{RP} + \vec{\omega}_{21} \cp \vec{r}_{RP}
+\end{align*}
+
+Since \(P\) was an arbitrary point, we can safely remove it, 
+
+\begin{equation*}
+    \vec{\omega}_{B1} = \vec{\omega}_{B2} + \vec{\omega}_{21}.
+\end{equation*}
+
+\end{proof}
+
+\section{Angular Acceleration}
+
+\begin{definition}
+    The \vocab{angular acceleration} of a rigid body is the rate of 
+    change of its angular velocity,
+    \begin{equation}
+        \vec{\alpha} = \ndiv{\vec{\omega}}
+    \end{equation}
+\end{definition}
+
+Writing it more explicitly, 
+
+\[\vec{\alpha} = \dv{\omega\unitv{\omega}}{t} = \ndiv{\omega}\unitv{\omega} + \omega\dv{\unitv{\omega}}{t}\]
+
+For our purposes, we shall only consider \vocab{fixed axis rotation}. That is, rotation 
+in which the direction of angular velocity does not change. 
+
+Thus, 
+
+\[\vec{\alpha} = \ndiv{\omega}\unitv{\omega} = \alpha\unitv{\omega}\]
+
+The acceleration of an arbitrary point on the rigid body can be computed 
+with respect to the lab frame with the help of another reference point on the 
+body can be computed using \cref{eq: velocity for rigid bodies}.
+
+\begin{equation*}
+    \dv{\vv}{t} = \ndiv{\vv}_{ref} + \dv{\vec{\omega}}{t} \cp \vec{r} + \vec{\omega} \cp \dv{\vec{r}}{t} 
+\end{equation*}
+
+Here, \(\vec{r}\) is the position of the vector of the body relative to the reference point. 
+Thus, it changes as \(\ndiv{\vec{r}} = \vv - \vv_{ref} = \vec{\omega} \cp \vec{r}\).
+
+\begin{equation}
+    \vec{a} = \vec{a}_{ref} + \vec{\alpha} \cp \vec{r} + \vec{\omega} \cp  (\vec{\omega} \cp \vec{r})
+\end{equation}
+
+This equation is general and valid for non-fixed axis rotation as well. 
+
+For fixed axis rotation,
+
+\begin{equation}
+    \vec{a} = \vec{a}_{ref} + \alpha\unitv{\omega} \cp \vec{r} + \vec{\omega} \cp  (\vec{\omega} \cp \vec{r})
+\end{equation}
+
+If the rotation and translation of the body is strictly in a \(2\) dimensional plane,
+the equation can be greatly simplified as \(\unitv{\omega} \cp \vec{r} = r\unitv{\theta}\)
+(because \(\unitv{\theta}\) is along the direction of the cross product as \(\vec{r}\) and 
+\(\vec{\omega}\) are perpendicular). 
+
+\(\vec{\omega} \cp  (\vec{\omega} \cp \vec{r})\) can be simplified using the 
+BAC-CAB rule, where, 
+
+\begin{align*}
+    \vec{\omega} \cp  (\vec{\omega} \cp \vec{r}) &= \vec{\omega}(\vec{\omega} \dtp \vec{r}) - \vec{r}(\vec{\omega} \dtp \vec{\omega}) \\
+    \vec{\omega} \cp  (\vec{\omega} \cp \vec{r}) &= -\omega^2\vec{r} = -\omega^2r\unitv{r}
+\end{align*}
+
+Finally, we get, 
+
+\begin{equation}
+    \vec{a} - \vec{a}_{ref} = \alpha r \unitv{\theta} -\omega^2r\unitv{r}
+\end{equation}
+
+Just a point to remember is that we are taking \(\alpha\) as signed here, 
+thus remember to use \(-\alpha\) if \(\alpha = -\alpha\unitv{\omega}\) in the equation.
+
