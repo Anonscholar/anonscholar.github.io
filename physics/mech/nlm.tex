@@ -55,15 +55,15 @@ hold. Certainly, if our frame is non-inertial, none of the laws will hold in thi
 
 \section{Newton's Second Law}
 
-I'll recommend you read Kleppner for a very nice discussion of this.
+A very nice reference which discusses interaction in detail is \cite{kleppner}
 
 \begin{axioms}
-    \ii The net external force on a body is proportional to its change in 
+    \ii[\textbf{Axiom 2.}] The net external force on a body is proportional to its change in 
     momentum.
 \end{axioms}
 
 Thus, our claim is that
-\[\sum \vec{F} = \dv{(m\vv)}{t} = m\vec{a},\]
+\[\sum \Vec{F} = \dv{(m\vv)}{t} = m\vec{a},\]
 
 if the mass is constant. 
 
@@ -93,4 +93,117 @@ of any body.
 
 The talk about equal physical interaction is vague and purely experimental concept.
 It is entirely physical and has no theoretical basis on which we can rely. It
-may seem a little wooly, but it is a truth.
+may seem a little wooly, but it works.
+
+\subsubsection{Force}
+
+We say a \vocab{force} is produced by a physical interaction. We dont 
+talk about what forces ``are''. Merely, how they come to be. Whenever 
+we interact physically with an object, we apply a force on it.  
+
+It might be tempting to ask in case of forces where such an interaction 
+is not visible, say gravity, does this really hold? In fact, it does
+the interaction is mediated through the use of fields. We'll have 
+a look at them later.
+
+\subsection{Newton's Third Law}
+
+The final law describes how forces come in pairs and result of a physical interaction.
+
+\begin{axioms}
+    \ii[\textbf{Axiom 3.}] If a body \(A\) applies a force on a body \(B\), then the body 
+    \(B\) applies an equal and opposite force on \(A\). These forces are 
+    called \vocab{action-reaction pairs}.
+\end{axioms}
+
+That is to say, 
+
+\[\Vec{F}_{AB} = - \Vec{F}_{BA}.\]
+
+The third law is also known as the weak law of action and reaction ---
+in direct contrast with the strong law which requires the equal and opposite
+forces to lie on the same line of action. Most forces such as gravity and the
+normal force in fact obey the strong law of action and reaction.
+
+\section{Force on a system of particles}
+
+Consider a system of \(N\) particles. For an \(i\)th particle, by the second law,
+
+\begin{equation*}
+    \qty(\sum \Vec{F})_i + \sum_{j, j \ne i} \vec{f}_{ij} = \ndiv{\vec{p}_i}
+\end{equation*}
+
+where \(\Vec{F}\) is the external force and \(\vec{f}_{ij}\) is the internal force
+on \(i\) due to \(j\). Summing this for all \(N\) particles, 
+
+\begin{equation*}
+    \sum\qty(\sum \Vec{F})_i + \sum_{i}\sum_{j, j \ne i} \vec{f}_{ij} = \sum_i\ndiv{\vec{p}_i}
+\end{equation*}
+
+Note that the first term is simply the net external force, \(\sum\Vec{F}_{ext}\). The second 
+term actually goes to zero since if we split the sum into action-reaction pairs,
+\(\vec{f}_{ij} + \vec{f}_{ji}\), they cancel out by the third law. 
+
+So we simply have, 
+
+\begin{equation*}
+    \sum \Vec{F}_{ext} = \sum_{i=1}^N\ndiv{\vec{p}_i}
+\end{equation*}
+
+It's very difficult to compute the sum of momentums for large values of \(N\). Thus
+we define something called the \emph{centre of mass}.
+
+\begin{definition}
+    The position vector, \(\Vec{R}\), of the \vocab{Centre of Mass} of a (system)body of \(N\) particles is,
+    \begin{equation}
+        \Vec{R} = \frac{\sum_{i=1}^N m_i\vec{r}_i}{\sum_{i=1}^N m_i}
+    \end{equation} 
+\end{definition}
+
+If the body has a mass \(M\), 
+
+\[M = \sum_{i=1}^N m_i\],
+
+Then, for infintisemal \(\dd{\vec{r}}\), 
+
+\begin{equation*}
+    M\dd{\vec{R}} = \sum_{i=1}^N m_i\vec{r_i}
+\end{equation*}
+
+Note that, 
+
+\begin{equation*}
+    \sum_{i=1}^N \vec{p}_i = \sum_{i=1}^N m_i \dv{\vec{r}_i}{t}
+\end{equation*}
+
+Thus,
+
+\begin{equation}
+    \boxed{\sum_{i=1}^N \vec{p}_i = M\ndiv{\Vec{R}}}
+\end{equation}
+
+Where let \(\vec{R}\) is the position vector of the centre of mass(CM). Thus, 
+
+\begin{equation*}
+    {\sum_{i=1}^N \vec{p}_i = M\vec{v}_{CM}}
+\end{equation*}
+
+And, 
+
+\begin{equation*}
+    {\sum_{i=1}^N \ndiv{\vec{p}}_i = M\vec{a}_{CM}}
+\end{equation*}
+
+Which finally gives us,
+
+\begin{equation}
+    \boxed{\sum \Vec{F}_{ext} = M\vec{a}_{CM}.}
+\end{equation}
+
+This means that a system of particles evolves translationally due to a net external force as if
+it were a point particle of mass \(M\) located at the center of mass of the system, with 
+a position vector \(\Vec{R}\).
+
+This means that we can simply analyze the translational motion of the center of mass which 
+defines the translational motion of the entire rigid body, as the 
+position vector of the particles are fixed relative to each other.
