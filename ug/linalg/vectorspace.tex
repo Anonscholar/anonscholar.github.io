@@ -1,4 +1,4 @@
-\chapter{vecor Spaces}
+\chapter{Vector Spaces}
 
 This part of linear algebra is almost entirely based on \cite{axlerlin}.
 
@@ -35,7 +35,7 @@ To generalise these results to \(n\) dimensions, we use the concept of \(n\)-tup
 \end{definition}
 
 Thus, two lists are equal iff their length is equal and they have the same elements in the same order.
-A list has a finite number of elements, thus, even though \(a_1, a_2, \dots, a_m\) is a list, \(a_1, a_2, \dots\) is not.
+A list has a finite number of elements, thus, even though \((a_1, a_2, \dots, a_m)\) is a list, \((a_1, a_2, \dots)\) is not.
 The list of length \(0\) is denoted by \(()\). 
 
 \begin{example}
@@ -50,12 +50,6 @@ Generalising the \(n\)th cartesian product of \(\FF\) with itself,
 \[
     \FF^n = \underbrace{\FF \times \FF \times \dots \times \FF}_{n\textup{-times}}
 \]
-
-\begin{example}
-    [Lists vs sets]
-    The lists \((3,5)\) and \((5,3)\) are not equal but \(\left\{3,5\right\} = \left\{5,3\right\}\). 
-    The list \((4,4,4) \ne (4,4) \ne (4)\) but \(\left\{4,4,4\right\} = \left\{4,4\right\} = \left\{4,\right\}\).
-\end{example}
 
 
 We may say,
@@ -164,8 +158,8 @@ Now, let us formally define \(V\).
         \item Additive Identity, there an element \(0 \in \vv\) such that \(\vv + 0 = \vv\).
         \item Additive Inverse, there exist an element \(-\vv \in V\) for each \(\vv\) such that 
         \(\vv + (-\vv) = 0\).
-        \item Multiplicative Identity, \(1v = \vv\)
-        \item Distributive Property, \(a(\uu + \vv) = au + av\) and \(\vv(a + b) = va + vb\). 
+        \item Multiplicative Identity, \(1\vv = \vv\)
+        \item Distributive Property, \(a(\uu + \vv) = a\uu + a\vv\) and \(\vv(a + b) = \vv a + \vv b\). 
     \end{axioms}
 
 \end{definition}
