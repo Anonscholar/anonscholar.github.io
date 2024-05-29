@@ -45,7 +45,7 @@ at \(0\) at the start of an event.
 \index{Position Vector}
 
 \marginnote{One thing of importance is that a position vector of a particle is a function
-of time. We generally denote this as to show that is a function.}
+of time. We generally denote this as \(r(t)\) to show that is a function.}
 
 We define the position of a particle relative to a reference frame using a \emph{position 
 vector}. One end of the position vector is the origin of our reference frame. The other is 
@@ -155,7 +155,7 @@ Or,
 Sometimes, we do not need to compute the derivative of the position vector, and simply need an average
 estimate, or in the case of uniformly accelerated motion, it is not required that we computer derivatives.
 In such a case we use the concept of \textbf{average velocity}, \[
-    \avg{\vec{v}}_{12} = \frac{\increment\vec{s}}{t_2 - t_1}  
+    \bavg{\vec{v}}_{12} = \frac{\increment\vec{s}}{t_2 - t_1}  
 \]
 
 \marginnote{The dot over \(r\) in \(\dot{\vec{r}}\) tells us that \(r\) has been differentiated
@@ -164,13 +164,13 @@ with respect to time.}
 \begin{algorithm}
     Let us consider the cases of average velocity,
     \begin{casework}
-        \ii When there are \(n\) equal time intervals with velocity \(\vec{v}_1\), \(\vec{v}_2\), \ldots \(\vec{v}_n\).
+        \ii When there are \(n\) equal time intervals with velocity \(\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n\).
         Then, \[
-            \avg{\vec{v}} = \frac{\vec{v}_1 + \vec{v}_2 + \dots + \vec{v}_n}{n} 
+            \bavg{\vec{v}} = \frac{\vec{v}_1 + \vec{v}_2 + \dots + \vec{v}_n}{n} 
         \]
-        \ii When there are \(n\) equal intervals of distance/displacement with velocity \(\vec{v}_1\), \(\vec{v}_2\), \ldots \(\vec{v}_n\).
+        \ii When there are \(n\) equal intervals of distance/displacement with velocity \(\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n\).
         Then, \[
-            \avg{\vec{v}} = \frac{n}{\frac{1}{\vec{v}_1} + \frac{1}{\vec{v}_2} + \dots + \frac{1}{\vec{v}_n}} 
+            \bavg{\vec{v}} = \frac{n}{\frac{1}{\vec{v}_1} + \frac{1}{\vec{v}_2} + \dots + \frac{1}{\vec{v}_n}} 
         \]
     \end{casework}
 \end{algorithm}
@@ -912,7 +912,7 @@ reference frames, i.e, for a rigid body \(B\),
 Let us sketch out a proof of this. First, let us mention 
 one extremely important equation that will be of much use, 
 
-If a particle has velocities \(\vv_1\) and \(vv_2\) in two
+If a particle has velocities \(\vv_1\) and \(\vv_2\) in two
 reference frames, the axes of frame \(2\) are rotating 
 at \(\vec{\omega}_{21}\) with respect to the first frame
 and \(\vec{r}_1\) is the position vector of the particle in the first
