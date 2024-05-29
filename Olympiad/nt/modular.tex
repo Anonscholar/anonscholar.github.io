@@ -173,11 +173,11 @@ Leaving this, if we multiply the rest of the elements together,
 
 We can pair these up as inverses,
 
-\[2 \cdot 2^{-1} \cdot \dots (p-2)^-1 \cdot (p-2)\]
+\[2 \cdot 2^{-1} \cdot \dots (p-2)^{-1} \cdot (p-2)\]
 
 And now consider them modulo \(p\),
 
-\[2 \cdot 2^{-1} \cdot \dots (p-2)^-1 \cdot (p-2) \equiv 1 \cdot 1 \cdot \dots \cdot 1 \pmod{p}\]
+\[2 \cdot 2^{-1} \cdot \dots (p-2)^{-1} \cdot (p-2) \equiv 1 \cdot 1 \cdot \dots \cdot 1 \pmod{p}\]
 
 Finally multiplying by \(p-1\), we get that,
 
@@ -193,6 +193,96 @@ any number that fulfills this criterion is infact a prime.
     if and only if \(n\) is prime.
 \end{theorem}
 
+\section{General Equal Sets}
 
+Previously we showed that \(a\SC \equiv \SC \pmod{p}\). Note that we use two things 
+in the proof, that \(\gcd(a, p) = 1\) and that every element in \(\SC\) itself was co-prime 
+to \(p\). 
 
+Let us extend this to any integer, \(n\). Note that if we take the set \(\SC\) to be the 
+set of integers relatively prime to \(n\), we see that the set \(a\SC \equiv \SC \pmod{n}\).
 
+This is because we can see that if \(ai \equiv aj \pmod{n}\) where \(i, j \in \SC\), 
+since \(\gcd(a, p) = \gcd(i, p) = \gcd(j, p) = 1\), we must have \(i = j\) much like our previous 
+proof. 
+
+\begin{theorem} 
+    Let \(n\) be any integer. Let \(\SC\) be the set of integers less
+    than \(n\) and relatively prime to \(n\). Let \(a\) be any integer coprime to \(n\). Then,
+
+    \begin{equation}
+        a\SC \equiv \SC \pmod{n}
+    \end{equation}
+
+\end{theorem}
+
+Also, 
+
+\begin{definition}
+    The set \(\SC\) is called a \vocab{reduced residue system} modulo \(n\).
+\end{definition}
+
+\section{Euler's Theorem}
+
+If we again, multiply the elements of the set \(a\SC\) and \(\SC\), and represent the cardinality of \(\SC\) as \(n(\SC)\),
+
+\begin{equation*}
+    a^{n(\SC)} \prod_{\begin{subarray}{c} 1 \le i < n \\ \gcd(i, n) = 1 \end{subarray}}i \equiv \prod_{\begin{subarray}{c} 1 \le i < n \\ \gcd(i, n) = 1 \end{subarray}}i \pmod{n}
+\end{equation*}
+
+We can then cancel out the products because they're co-prime to \(p\), 
+
+\begin{equation*}
+    a^{n(s)} \equiv 1 \pmod{n}
+\end{equation*}
+
+Now we need to calculate \(n(\SC)\), the no. of integers relatively co-prime to \(n\).
+A function to calculate this was discovered by Euler, and is called \vocab{Euler's Totient Function}.
+
+\begin{definition}
+    Let \(n\) be a positive integer. The function \(\varphi(n)\) is called Euler's totient
+    function, and it denotes the number of positive integers less than \(n\) that are co-prime to it.
+\end{definition}
+
+A way to calculate this is, 
+
+\begin{theorem}[Euler's Totient Function]
+    Let \(n = p_1^{\alpha_1}p_2^{\alpha_2}\dots p_k^{\alpha_k}\), then,
+
+    \begin{equation}
+        \varphi(n) = n\qty(1 - \frac{1}{p_1})\qty(1 - \frac{1}{p_2})\cdots\qty(1 - \frac{1}{p_k})
+    \end{equation} 
+\end{theorem}
+
+Another way or writing them is, 
+
+\begin{equation}
+    \varphi(n) = (p_1^{\alpha_1 - 1})(p_1-1) \cdot (p_2^{\alpha - 1})(p_2 - 1) \cdots (p_k^{\alpha_k - 1})(p_k - 1)
+\end{equation}
+
+This is derived from the fact that \(\varphi\) is a \vocab{multiplicative function}, i.e, for any 
+\emph{co-prime} integers \(m\), \(n\),
+
+\begin{equation}
+    \varphi(mn) = \varphi(m)\varphi(n)
+\end{equation}
+
+This finally gives us Euler's theorem, 
+
+\begin{theorem}[Euler's Theorem]
+    For any integer \(n \ge 2\), and an integer \(a\) co-prime to \(n\), 
+    \begin{equation}
+        a^{\varphi(n)} \equiv 1 \pmod{n}
+    \end{equation}
+\end{theorem}
+
+\section{General Inverses}
+
+We see that \(1 \in \SC\) for all integers \(n\). Thus, 
+since \(a\SC = \SC \pmod{n}\), there must exist a \(x\) such that, 
+
+\begin{equation*}
+    ax \equiv 1 \pmod{n}
+\end{equation*}
+
+if \(\gcd(a, n) = 1\).
