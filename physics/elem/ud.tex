@@ -34,3 +34,124 @@ its dimension. For instance, \[
     \]Evaluating the dimensions has a really neat use, it allows us to check
     our answers, and establish some relations through the use of \emph{dimensional}
     analysis.   
+
+\section{Rules regarding dimensions}
+
+There are particle constrains that help us utilise dimensions quite a lot. For one,
+the dimensions on both sides of an equation must be homogenous, i.e the same. It is nonsense
+to ask if \(1\) second is equal to \(1\) kelvin. 
+
+Another constraint is that the operations of addition and subtraction can only be 
+performed on quantities of the same dimension, and indeed you cannot add a metre to a kilogram.
+
+Thus, we arrive at a third derived constraint, namely that the functions such as \(\sin\), 
+\(\cos\), \(\exp\), \(\log\) must all have dimensionless constraints. 
+
+This because for instance, let us take the taylor expansion of \(e^x\),
+
+\begin{equation*}
+    e^x = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \dots
+\end{equation*}
+
+We note that if we \(x\) had a dimension, for example \([x] = L\), then we would be adding 
+\(L\) to \(L^2\), \(L^3\) and so on. But this is not permitted, we cannot add a metre to a square metre
+or a square metre to a cubic metre and so on. Thus, we have that their arguments
+must be dimensionless.
+
+\section{Dimensional Analysis}
+
+Suppose that we know that the rest energy of a particle depends on it mass and 
+the speed of light. If we were asked to find a relation determining its rest energy
+we could use the idea of dimensional analysis.
+
+We see that, 
+\begin{equation*}
+    E \propto m, c
+\end{equation*}
+
+We could note that the dimesion on both side of the equation must have the same dimesions. Thus 
+we need to combine them in such a manner that we get the dimensions of energy. 
+
+Since \([c] = LT^{-1}\), \([m] = M\) and \([E] = ML^{-2}T^{-2}\), we can form a guess 
+and say that,
+
+\begin{equation*}
+    E = mc^2,
+\end{equation*}
+
+since the dimensions are same across both quantities. In fact this the correct formula!
+
+In general, for some quantity \(A\) dependent on parameters \(Q_1, Q_2, \dots, Q_n\), 
+
+\begin{equation*}
+    A = Q_1^{\alpha_1} \cdot Q_2^{\alpha_2} \cdot \dots \cdot Q_n^{\alpha_n}
+\end{equation*}
+
+where each of \(\alpha_1, \alpha_2, \dots, \alpha_n\) are constants. Then we simply use dimensional 
+analysis to compute the result. 
+
+There are catches, however, suppose that we were asked to find the kinetic 
+energy of the particle which depends on its mass and velocity. We might guess 
+by dimensional analysis alone that it is \(mv^2\), which is obviously false. What dimensional
+analysis gives us is that,
+\begin{equation*}
+    E \propto mv^2
+\end{equation*} 
+
+And we must attach a constant for a definite answer, 
+
+\begin{equation*}
+    E = kmv^2
+\end{equation*}
+
+The constants comes out to be \(1/2\), but we can't determine it with 
+dimensional analysis alone. 
+
+Let us take a particular example now, the pendulum: its period depends on \(L\), \(g\), and the
+amplitude \(\theta_0\).  
+
+We note that the amplitude and angles in general are dimensionless since they're arguments 
+of the trig functions. If we use dimensional analysis, we run into a bit of a problem.
+
+If we use dimensional analysis, we see that we can use any combination of \(\theta_0\), 
+since they're all dimensionless. In particular, we can use any function of \(\theta_0\).
+
+If we ignore \(\theta_0\) since its dimensionless, we get that 
+
+\begin{equation*}
+    T \propto \sqrt{\frac{L}{g}}
+\end{equation*}
+We hence attach a dimensionless group, a function of \(\theta_0\) to get the period of a pendulum as \(T = f (\theta_0)\sqrt{L/g}.\) 
+
+In general this can be done for any dimensionless group, for instance the 
+resistance of conductor depends on its resistivity, the cross-sectional area, 
+and its length. Say we know their dimensions and get that, 
+
+\begin{equation*}
+    R = \rho \frac{L}{A}
+\end{equation*}
+
+We could have also formulated by dimensional analysis, that \(R = \rho/\sqrt{A}\), the 
+dimensions are the same. In fact, we could multiply it by any function of 
+\(L^2/A\) since it is dimensionless.
+
+\begin{theorem}(Buckingham Pi Theorem)
+    Dimensional analysis can't always pin down the form of the answer. If one has \(N\) 
+    quantities with \(D\) independent dimensions, then one can form \(N - D\) 
+    independent dimensionless quantities. Dimensional analysis can't say how the answer depends 
+    on them.
+\end{theorem}
+
+This is one of the limitations of dimensional analysis.
+
+\section{Limiting Cases}
+
+Sometimes we can verify our answers using limiting cases.
+
+Suppose that we don't remember if the acceleration of a block 
+on a smooth, non-accelerating wedge is \(g\sin\theta\) or \(g\cos\theta\).
+
+We can then consider the limiting cases of \(\theta\). For instance, 
+if \(\theta \to 0\) then the block rests on a horizontal plane and experiences no 
+acceleration, which is only satisfied by \(g\sin\theta\). We could have 
+also looked at \(\theta \to \pi/2\) as another limiting case.

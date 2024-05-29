@@ -154,6 +154,7 @@ It's very difficult to compute the sum of momentums for large values of \(N\). T
 we define something called the \emph{centre of mass}.
 
 \begin{definition}
+    \label{def: com}
     The position vector, \(\Vec{R}\), of the \vocab{Centre of Mass} of a (system)body of \(N\) particles is,
     \begin{equation}
         \Vec{R} = \frac{\sum_{i=1}^N m_i\vec{r}_i}{\sum_{i=1}^N m_i}
@@ -207,3 +208,90 @@ a position vector \(\Vec{R}\).
 This means that we can simply analyze the translational motion of the center of mass which 
 defines the translational motion of the entire rigid body, as the 
 position vector of the particles are fixed relative to each other.
+
+For continous mass distributions, 
+
+\begin{equation}
+    \Vec{R} = \frac{\int\vec{r}\dd{m}}{\int\dd{m}}
+\end{equation}
+
+\subsection{Calculating the Centre of Mass}
+
+Let us first calculate the centre of mass of two particles of masses 
+\(m\) and \(M\) located at \(\qty(x_1, y_1, z_1)\) and \(\qty(x_2, y_2, z_2)\). 
+By \cref{def: com}, 
+
+\begin{equation*}
+    \Vec{R} = \frac{1}{m+M}\qty[\begin{pmatrix} mx_1 \\ my_1 \\ mz_1\end{pmatrix} + \begin{pmatrix} Mx_2 \\ My_2 \\ Mz_2\end{pmatrix}]
+    = \frac{1}{m + M}\begin{pmatrix} mx_1 + Mx_2 \\ my_1 + My_2 \\ mz_1 + Mz_2\end{pmatrix}
+\end{equation*}
+
+One special thing we may note is that instead of calculating the centre of mass 
+for each particle, we reduce some say \(n\) particles or distributions into 
+point particles by first calculating their centre of mass. For instance,
+instead of calculating the com of three them at once, we 
+can calculate the com of the first two, and then that of the third.
+
+This works because suppose the com of any \(n\) particles or distributions is located at 
+\(\Vec{R}\). Then, if we calculate the com of this with another say \(n+1\)th particle, 
+
+\begin{equation*}
+    \Vec{R'} = \frac{M\Vec{R} + m_{n+1}\vec{r}_{n+1}}{M + m_{n+1}},
+\end{equation*}
+
+where \(M\) is the total mass of the \(n\) particles. By the definition of com, 
+
+\begin{equation*}
+    M\Vec{R} = \sum^N_{i=1} m_i\vec{r}_i
+\end{equation*}
+
+Replacing this, 
+
+\begin{equation*}
+    \Vec{R'} = \frac{\sum^N_{i=1} m_i\vec{r}_i + m_{n+1}\vec{r}_{n+1}}{\sum_{i=1}^N m_i + m_{n+1}},
+\end{equation*}
+
+Which is simply the com of the \(n+1\) particles, at once calculated!
+
+\begin{equation*}
+    \Vec{R'} = \frac{\sum^{N+1}_{i=1} m_i\vec{r}_i}{\sum_{i=1}^{N+1}}
+\end{equation*}
+
+The same can be extended to mass distributions.
+
+For example, to calculate the com of two spheres of uniform mass distribution, 
+we may calculate their com, which is at their centre (by a symmetry argument), and then just 
+use our previous result of com of two point masses.
+
+This can also be used to find the com for ``missing masses''. Where we replace 
+our incomplete system with a complete system having the total mass of the system 
+if it were complete, and a negative mass. This might be a little difficult 
+to understand, so let us look at an example:
+
+
+\begin{marginfigure}
+    \centering
+    \scalebox{2}{\incfig{imaginarycom}}
+    \caption{Missing mass}\label{fig: missingmasscom}
+\end{marginfigure}
+
+\begin{example}
+    A uniform circle of radius \(R\) has a circular hole of radius \(R/2\). The surface 
+    density of the circle is \(\sigma\). Find the centre of mass of the system.
+    \begin{soln}
+        To calculate the com, we first ``fill up'' or replace the incomplete the circle with 
+        a complete circle. This can then be reduced to a point mass of mass \(M = \sigma\pi r^2\).
+
+        To counter effect this addition of mass by filling up the circle, we associate 
+        a negative mass with the smaller circle, \(-m = -\frac{\sigma\pi r^2}{4}\).
+
+        Let the origin the com of the first circle, then the first circle, which we have 
+        reduced to be a particle at its com, has a position vector, \(\vec{0}\). 
+        Thus, com of the system is,
+
+        \begin{equation*}
+            \Vec{R} = \frac{M \times 0 -mR/2}{M - m} = \frac{-mR/2}{M-m} = \frac{R}{6}
+        \end{equation*}
+    \end{soln}
+\end{example}   
+
