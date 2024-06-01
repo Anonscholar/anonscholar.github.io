@@ -94,7 +94,7 @@ postheadhook={\textcolor{RawSienna!80}{\rule[.6ex]{\linewidth}{0.4pt}} \\ }, % \
     backgroundcolor=ForestGreen!4,
 }
 \declaretheoremstyle[
-headfont=\bfseries\rmfamily\color{ForestGreen},
+headfont=\bfseries\sffamily\color{ForestGreen},
 bodyfont=\normalfont,
 postheadspace={0pt},
 mdframed={style=mdgreenbox},
@@ -211,16 +211,7 @@ headpunct={ \\[3pt] },
 \declaretheorem[style=thmmarginbox,name=\begingroup\color{RoyalBlue}\blacktriangleright\endgroup,numbered=no]{marginnotebox}
 \declaretheorem[style=thmmarginref,name=\begingroup\color{JungleGreen}\blacksquare\endgroup,numbered=no]{marginrefbox}
 
-
-\declaretheoremstyle[
-headfont=\color{blue!40!black}\normalfont\bfseries,
-spaceabove=8pt,
-spacebelow=8pt,
-bodyfont=\normalfont
-]{basehead}
-
-\declaretheoremstyle[spaceabove=6pt,spacebelow=6pt]{basehead}
-
+\declaretheoremstyle[spaceabove=6pt,spacebelow=6pt, bodyfont=\em,]{basehead}
 
 \declaretheorem[style=basehead,name=Answer,sibling=theorem]{answer}
 \declaretheorem[style=basehead,name=Answer,numbered=no]{answer*}

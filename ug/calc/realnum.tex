@@ -7,6 +7,7 @@ them is a real number.
 
 \section{Real Number Axioms}
 
+
 The axioms of real numbers can be divided broadly into three different types,
 
 \begin{itemize}
@@ -14,6 +15,8 @@ The axioms of real numbers can be divided broadly into three different types,
     \ii The Order axioms
     \ii The Continuity axiom
 \end{itemize}
+
+\subsection{Field Axioms}
 
 The field axioms are something like this. We consider the set of reals, \(\RR\) along with the operations \((+, \cdot)\). Broadly,
 the \vocab{field} is \((\RR, +, \cdot)\). I'll define what a field is after calculus. These operations are such that for every
@@ -25,9 +28,118 @@ and only have one \(x+y, xy\) for \(x, y \in \RR\). Then,
     \ii \chvocab{Real Numbers}{Associativity}, \(x + (y+z) = (x+y) + z\), and \(x(yz) = (xy)z\).
     \ii \chvocab{Real Numbers}{Distributivity}, \(x(y + z) = xy + xz\).
     \ii \chvocab{Real Numbers}{Identity}. There exist two \emph{distinct} identity elements, \(0\) and \(1\) such that \(x + 0 = x\) and \(x \cdot 1 = x\).
-    \ii \chvocab{Real Numbers}{Inverses}, for \(\forall x \in \RR \setminus \{0\}\) there exists a \(y, z\) such that \(xy = 1\) and \(\forall x \in \RR\), \(x + z = 0\). These are called the reciprocal 
-    and negative of \(x\) and are denoted as \(1/x\) and \(-x\).
+    \ii \chvocab{Real Numbers}{Inverses}, for \(\forall x \in \RR \setminus \{0\}\) there exists a \(y\) such that \(xy = 1\) and \(\forall x \in \RR\),
+    there exists a \(z \in \RR\), such that \(x + z = 0\). These are called the reciprocal 
+    and negative of \(x\) and are denoted as \(1/x\)  (\(x^{-1}\)) and \(-x\).
 \end{axioms}
  
-It is possible to formulate subtraction and division from these axioms, as \(x + a = b\) to be denoted as \(b - a\). And for 
-\(xa = b\) to be denoted as \(ba^{-1}\). 
+It is possible to formulate subtraction and division from these axioms, if \(x + a = b\), then it is denoted as \(b - a\). 
+And if \(xa = b\), it is denoted as \(ba^{-1}\). 
+
+These are also unique. It is not difficult to show that, by the uniqueness of inverses.
+
+It is also possible to treat subtraction as a shorthand for addition, \(a + (-b) = a - b\) using 
+inverses. Division can be treated similarly.
+
+These properties allow us to form laws of addition and multiplication --- such as 
+cancellation. We can form an outline of a proof of cancellation as, 
+
+\begin{proof}
+    We need to show that \(a + b = a + c \iff b = c\). 
+    This can be done simply by adding \(-a\) on both sides. Since addition is unique, 
+    and both numbers are equal, so must be their addition with another number. 
+\end{proof}
+
+A similar procedure can be done for multiplication.
+
+We see that this can also be used to prove that the product of any two negative numbers is 
+positive. Let us first prove that \((-a)b = -ab\). This is rather easy as well, and follows 
+from distributivity,
+
+\begin{align*}
+    (-a)b + ab &= b[(-a) + a] \\
+    (-a)b + ab &= 0 \\
+    (-a)b + ab - ab &= -ab\\
+    (-a)b &= -ab
+\end{align*}
+
+A similar proof can be used to show that \((-a)(-b) = ab\), as 
+
+\begin{align*}
+    (-a)(-b) + (-a)b &= -a[(-b) + b] \\
+    (-a)(-b) - ab &= 0\\
+    (-a)(-b) - ab + ab &= ab\\
+    (-a)(-b) &= ab
+\end{align*}
+
+Here we use our previous result to prove this one. Now it is obvious that the product of 
+any two negatives will be positive --- however, let us first discuss what exactly ``positive''
+and negative mean.
+
+\subsection{Order Axioms}
+
+The real numbers are ordered, we now present some axioms to look at what we mean by order.
+
+\begin{axioms}
+    \ii There exists a subset of real numbers, \(\RR^+\) such that \(\forall x \in \RR \setminus \Set{0}\),
+     either \(x \in \RR^+\) or \(-x \in \RR^+\).
+    \ii If \(x, y \in \RR^+\), both \(xy\) and \(x + y\) are also in \(\RR^+\).
+    \ii 0 is not in \(\RR^+\).
+\end{axioms}
+
+We say that a number \(x\) is positive if it is in \(\RR^+\). We also know define some symbols, 
+
+\begin{align*}
+    x > y \text{ means that } x - y \text{ is in } \RR^+ \\
+    x < y \text{ means that } y - x \text{ is in } \RR^+
+\end{align*}
+
+The symbols \(\ge\) and \(\le\) just imply that ``\dots'' is either greater/lesser or equal to ``\dots''.
+Note that weird as it may appear, statements like \(6 \ge 6\) are completely valid. 
+The real use of these symbols lie in terms of dealing with variables, or general 
+statements.
+
+Consider the following proposition, 
+
+\begin{plainprop}[Trichotomy]
+    If we have \(x, y \in \RR\), the one of the following must hold, 
+    \begin{enumerate}
+        \item \(x < y\)
+        \item \(x > y\)
+        \item \(x = y\)
+    \end{enumerate}
+\end{plainprop}
+
+This can be inferred rather directly from the order axioms. Clearly, by the order 
+axioms we have that either \(a = 0\), \(a \in \RR^+\) or \(-a \in \RR^+\).
+Replace \(a\) by \(x - y\) and we're done.
+
+This also forms the basis of the idea of the absolute value, which is, 
+
+\begin{equation}
+    \abs{a} = 
+    \begin{cases}
+    a & a \ge 0 \\
+    -a & a \le 0    
+    \end{cases}
+\end{equation}
+
+We see that this clearly a positive number. It is also referred to as the euclidean length of 
+a number from \(0\) on the number line. Let us consider some serious properties now, 
+
+Consider the following two properties regarding the absolute value,
+
+\begin{plaintheo}
+    For \(x, a \in \RR\), \(\abs{x} \le a\) if and only if \( -a \le x \le a\).
+\end{plaintheo}
+
+\begin{proof}
+    Let us suppose \(\abs{x} \le a\). Then clearly, \(-\abs{x} \ge -a\). But 
+    \(\abs{x}\) can only take two values, and is obviously positive. Thus, \(-\abs{x} \le 
+    x \le \abs{x}\). Thus, we have that, \(-a \le -\abs{x} \le x \le \abs{x} \le a\) which 
+    proves one direction.
+    
+    For the other direction, suppose \(-a \le x \le a\). Then, if \(x \ge 0\), 
+    \(\abs{x} = x \le a\). If \(x < 0\), \(\abs{x} = -x \le a\) since \(x \ge -a \implies -x \le a\).
+    In both cases, \(\abs{x} \le a\). 
+\end{proof}
