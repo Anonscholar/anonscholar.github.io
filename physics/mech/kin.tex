@@ -734,6 +734,56 @@ case is simply the initial height of the particle.
 
 \todo{add drag forces}
 
+\section{Drag Forces}
+
+In a more realistic scenario, a particle undergoing motion in any 
+media experiences a \vocab{drag force}, anti-parallel to its velocity.
+In particular,  
+
+\begin{equation*}
+    \vec{a} = -\alpha v \unitv{v} - \beta v^2 \unitv{v}
+\end{equation*}
+
+where the linear term arises from a property of the media, 
+the viscosity(we will talk about it in the later sections.)
+
+The quadratic term is a result of the collision of the particles with atoms 
+and molecules during its motion. In general, 
+the quadratic term dominates for higher velocities.
+
+It is very difficult to analyse motion with drag, but we shall have a look at some particular 
+cases of linear drag.
+
+\marginref{\Cref{sec: newton's second law} \nameref{sec: newton's second law}}
+
+\begin{example}
+    Consider a projectile of mass \(m\) thrown upwards with initial velocity \(v_0\). It undergoes a linear drag 
+    force, \(\Vec{F} =  -kv \unitv{v}\). Find the velocity of the particle as 
+    a function of time. 
+
+    \begin{soln}
+        Using newton's second law, also by noting that 
+        it also undergoes gravitation, \(\vec{a} = -g -kv/m \unitv{v}\).
+
+        Now, we note that, 
+        \begin{equation*}
+            \dv{v}{t} = -g  \frac{-kv}{m}
+        \end{equation*}
+
+        \begin{align*}
+            \frac{\dd{v}}{g + kv/m} &= - \dd{t} \\
+            \int_{v_0}^{v_f} \frac{\dd{v}}{g + kv/m} &= \int_{0}^{t}\dd{t} \\
+            \frac{m}{k} \eval{\log(g + kv/m)}_{v_0}^{v_f} &= t \\
+        \end{align*}
+        Which finally gives us,
+
+        \begin{equation}
+            v(t) = e^{-kt/m}v_0 + \frac{gm}{k}(e^{-kt/m} - 1)
+        \end{equation}
+
+    \end{soln}
+\end{example}
+
 \section{Kinematics of a rigid body}
 
 When we describe the motion of a point particle, we need \(3\) co-ordinates 

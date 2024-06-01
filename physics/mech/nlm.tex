@@ -54,7 +54,7 @@ Another way to talk about inertial frames is that they are the frames in which n
 hold. Certainly, if our frame is non-inertial, none of the laws will hold in this frame.
 
 \section{Newton's Second Law}
-
+\label{sec: newton's second law}
 A very nice reference which discusses interaction in detail is \cite{kleppner}
 
 \begin{axioms}
@@ -217,6 +217,8 @@ For continous mass distributions,
 
 \subsection{Calculating the Centre of Mass}
 
+A good reference here is \cite{wangricardo}.
+
 Let us first calculate the centre of mass of two particles of masses 
 \(m\) and \(M\) located at \(\qty(x_1, y_1, z_1)\) and \(\qty(x_2, y_2, z_2)\). 
 By \cref{def: com}, 
@@ -295,3 +297,99 @@ to understand, so let us look at an example:
     \end{soln}
 \end{example}   
 
+For continuous distributions, we may use integration to calculate the centre of mass,
+
+\begin{example}
+    Determine the center of mass of a right-angled triangle of a uni-
+    form surface mass density \(\sigma\) and with an angle of inclination θ in the \(xy\)
+    plane. Let the length of its base be \(l\).
+
+    \begin{soln}
+        Note that \(\sigma = \dv*{m}{A} \iff \dd{m} = \sigma\dd{A} = \sigma\dd{x}\dd{y}\).
+
+        So, we can setup a double integral, 
+
+        \begin{equation*}
+            \Vec{R} = \frac{1}{M} \int_{0}^{l} \int_{0}^{x\tan\theta} x \unitv{i} + y\unitv{j} \sigma \dd{y} \dd{x}
+        \end{equation*}
+
+        Splitting up the integrals, 
+
+        \begin{align*}
+            R_x &= \frac{1}{M} \int_{0}^{l} \int_{0}^{x\tan\theta} x \sigma \dd{y} \dd{x} \\
+            R_x &= \frac{1}{M} \int_{0}^{l} \sigma \eval{xy}_{0}^{x\tan\theta} \dd{x} \\
+            R_x &= \frac{1}{M} \int_{0}^{l} x^2 \tan\theta \sigma \dd{x} \\
+            R_x &= \frac{1}{M} \eval*{\frac{x^3\sigma\tan\theta}{3}}_{0}^{l} \\
+            R_x &= \frac{2}{l^2 \sigma\tan\theta} \frac{l^3\sigma\tan\theta}{3} \\
+            R_x &= \frac{2l}{3}
+        \end{align*}
+
+        And by a similar procedure, \(R_y = l\tan\theta/3\). Which gives you \(\Vec{R}\).
+
+    \end{soln}
+\end{example}
+
+\section{Some Phenomenological Forces}
+
+\subsection{The Normal Force}
+
+The contact force on a body can be resolved to two mutually perpendicular forces, the \vocab{normal force},
+perpendicular to the object, and \vocab{friction}, tangential to the object. 
+
+These contact forces arise due to atomic interactions. If we say keep a book on a table,
+the book pushes against the table. On a microscopic scale, the molecules push against each other.
+After a certain point, the molecules start repulsing each other and the table applies a normal force,
+perpendicular to the body, to stop it. 
+
+Since no object is perfectly rigid, there always occurs a deformation on its surface. However, 
+this is usually negligible, and we may safely assume that the object is perfectly rigid. 
+
+\subsection{Friction}
+
+Friction much like the normal force, arises from molecular interactions.
+It is, however, way too complex to analyse. Thus, our study of friction is 
+pure phenomenological. Here, by friction we refer to dry friction, and not as is, drag. 
+
+Friction opposes the relative motion of objects --- and this is in fact the most we 
+can say safely, and generally. It is independent of the contact area.
+
+This might feel a little weird, but consider the following argument --- say we have an object 
+who has contact area with another object. This contact area is actually a very small fraction 
+of its overall surface area. It is, also, proportional to the pressure.
+
+If we double the surface area of the object, let us assume that the contact area doubles as well.
+If we keep the normal force constant, the pressure halves. Friction, however, the 
+product of the now half pressure, and the double contact area, remains the same.
+
+This is a very ideal approximation of friction, but we'll leave it here for now. 
+
+We differentiate between \vocab{static friction} and \vocab{kinetic friction}. When we apply 
+a force on an object, and yet it does not undergo motion, the static friction assumes a value 
+to balance out the force. This friction is actually related to the normal by \(\abs{f_s} \le \mu_sN\).
+Where \(\mu_s\) is the coefficient of static friction. 
+
+However, it can not keep the object at rest forever, after a certain amount of force is applied, 
+the object undergoes motion and experiences kinetic friction. It is approximately constant 
+and related to the normal by \(\abs{f_k} = \mu_kN\), where \(\mu_k\) is the coefficient of kinetic friction.
+
+Generally, \(\mu_k < \mu_s\) and they're both less than \(1\). Though for some exceptionally rough surfaces, they
+may have a value greater than \(1\).
+
+\subsection{Spring Force}
+
+The relation between the \vocab{spring force} and the displacement of the spring
+from its equilibrium position \(x_0\) was empirically found by Robert Hooke and is popularly 
+known as \vocab{Hooke's Law}, which states that,
+
+\begin{equation}
+    F_s = -k(x - x_0)
+\end{equation}
+
+where \(x\) is the displacement from its equilibrium position, \(x_0\). \(k\) is the
+spring constant and depends on the spring used. 
+
+Hooke's law actually fails for rather large displacements but is remarkably good for 
+small displacements. It works not only here, but in a lot more places where the restoring forces 
+are concerned.
+
+\subsection{Tension}
