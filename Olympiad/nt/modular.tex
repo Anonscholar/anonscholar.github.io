@@ -77,6 +77,21 @@ Consider \(a + b \pmod{n}\) for \(a \equiv r \pmod{n}\) and \(b = m \pmod{n}\). 
     \end{enumerate}
 \end{proposition}
 
+One important claim is that, 
+
+\begin{claim}
+    A perfect square is either \(0\) or \(1\) modulo \(4\).
+\end{claim}
+
+\begin{proof}
+    Let \(a\) be a number whose square is \(a^2\), thus \(a^2\) is a perfect 
+    square.
+
+    We see that \(a = 2k\) or \(2k + 1\) since they're the only residue classes 
+    modulo \(2\). Then \(a^2 = 4k^2 \equiv 0 \pmod{4}\) or \(a^2 = 4k^2 + 4k + 1
+    \equiv 1 \pmod{4}\).
+\end{proof}
+
 \section{Fermat's Little Theorem}
 
 Consider the set \(\SC = \Set{0, a, 2a, \dots, (p-1)a}\) where \(p\)
