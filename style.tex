@@ -1,17 +1,16 @@
 \usepackage{amsmath, amssymb}
 
 \nonzeroparskip
-\usepackage[right=7cm,left=2cm,bottom=1in,top=1in,marginparwidth=5cm,marginparsep=.5cm]{geometry}
-
+\usepackage[right=7cm,left=2cm,bottom=1in,top=1in,marginparwidth=5cm,marginparsep=.5cm,asymmetric]{geometry}
 
 \usepackage[texindy]{imakeidx}
 \makeindex[intoc]
 
+
 \usepackage[dvipsnames]{xcolor}
 
 \usepackage[]{minitoc}
-\doparttoc[n]
-\renewcommand\beforeparttoc{{\bfseries \Large Part \thepart: Contents}}
+\dominitoc[n]
 \usepackage{etoolbox}
 
 \usepackage{booktabs, tabularx}
@@ -19,7 +18,7 @@
 
 
 %Chapter Style
-\usepackage{calc,color}
+\usepackage{calc}
 \newif\ifNoChapNumber
 \newcommand\Vlines{%
 \def\VL{\rule[-1cm]{1pt}{2.3cm}\hspace{1mm}\relax}
@@ -61,28 +60,6 @@
   \chapterstyle{frontmatter}% Backmatter chapterstyle is similar to frontmatter
 }
 
-\makeatletter
-\renewcommand{\partnumberline}[1]{Part \bfseries#1:~}
-\renewcommand*{\l@part}[2]{%
-  \ifnum \c@tocdepth >-2\relax
-    \cftpartbreak
-    \begingroup
-      {
-        \setlength{\memRTLleftskip}{0pt}
-        \setlength{\memRTLrightskip}{0pt}
-        \interlinepenalty\@M
-        \centering
-        \cftpartfont #1
-        \par
-      }
-      \nobreak
-        \global\@nobreaktrue
-        \everypar{\global\@nobreakfalse\everypar{}}%
-    \endgroup
-  \fi}
-\makeatother
-\renewcommand{\cftpartfont}{\large\normalfont}
-
 \let\oldfrontmatter\frontmatter
 \renewcommand{\frontmatter}{\chapterstyle{frontmatter}\oldfrontmatter}
 \let\oldmainmatter\mainmatter
@@ -91,18 +68,16 @@
 \renewcommand{\backmatter}{\chapterstyle{backmatter}\oldbackmatter}
 
 
-\usepackage[object=vectorian]{pgfornament}
 \usepackage{xparse}
 \usepackage{lipsum}
 
-\usepackage{titling}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \nouppercaseheads
 \makepagestyle{mystyle}
 \copypagestyle{mystyle}{companion}
-\makeevenhead{mystyle}{\em\thepage}{}{\emph{\thechapter.\,\leftmark}}
-\makeoddhead{mystyle}{\emph{\rightmark}}{}{\em\thepage}
+\makeevenhead{mystyle}{{\sffamily\thepage}}{}{\emph{\thechapter.\,\leftmark}}
+\makeoddhead{mystyle}{\emph{\rightmark}}{}{\sffamily\thepage}
 \makeevenfoot{mystyle}{}{}{}
 \makeoddfoot{mystyle}{}{}{}
 \makepsmarks{mystyle}{%
@@ -127,6 +102,7 @@
 %some graph stuff
 \usepackage{todonotes}
 \usepackage{tikz}
+\usetikzlibrary{mindmap}
   \usetikzlibrary{arrows.meta,backgrounds}
 \usepackage{pgfplots}
 \pgfplotsset{width=7cm,compat=1.18}
@@ -148,6 +124,7 @@
 \usepackage{tkz-euclide}
 
 \usepackage{babel}
+\usepackage[htt]{hyphenat}
 \usepackage{mhchem}
 \usepackage[cleanlook,british]{isodate}% day-first date
 \usepackage{caption}
@@ -156,7 +133,7 @@
 \usepackage{import}
 \usepackage{xifthen}
 
-\usepackage{siunitx}
+\usepackage[per-mode=symbol]{siunitx}
 \usepackage{bohr}
 \usepackage{modiagram}
 \usepackage{subcaption}
@@ -175,18 +152,19 @@
 \usepackage{ragged2e}
 \usepackage{empheq}
 
-\usepackage[linktoc=page]{hyperref}
+\usepackage[linktoc=page,hyperfootnotes=false]{hyperref}
 \hypersetup{
 colorlinks=true,
 linkcolor=TealBlue!70!black,
 citecolor=TealBlue,
-urlcolor=TealBlue!70!black
+urlcolor=TealBlue!70!black,
 }
 \usepackage[nameinlink]{cleveref}
 \usepackage{float}
 
 
 \usepackage[citestyle=alphabetic]{biblatex}
+
 \usepackage{listings}
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -360,3 +338,101 @@ urlcolor=TealBlue!70!black
   /gasparticle/.cd,
   vec/.store in=\vec, vec={90:0.5},
 }
+
+\usepackage{framed}
+% colors to be used
+\definecolor{myred}{RGB}{127,0,0}
+\definecolor{myyellow}{RGB}{169,121,69}
+
+% a modification of the leftbar environment defined by the framed package
+% will be used to place a vertical colored bar separating the page number and the
+% title in chapter entries
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\textcolor{myyellow}{\vrule width 1.4pt depth 5pt}\hspace*{15pt}}%
+  \MakeFramed{\advance\hsize-\width\FrameRestore}}%
+ {\endMakeFramed}
+
+% redefinition of the name of the ToC
+
+\makeatletter
+
+
+% redefinitions for chapter entries
+\renewcommand\chapternumberline[1]{\mbox{\small\itshape\rmfamily\@chapapp~#1}\par\noindent\large}
+\renewcommand\cftchapterfont{\sffamily}
+\cftsetindents{chapter}{0pt}{0em}
+\renewcommand\cftchapterpagefont{\LARGE\bfseries\color{red}}
+
+\newcommand*{\l@mychap}[3]{%
+  \def\@chapapp{#3}
+  \vskip1ex%
+  \par\noindent\begin{minipage}{\textwidth}%
+  \parbox{1em}{%
+    \hfill{\cftchapterpagefont#2}%
+  }\hspace*{1.5em}%
+  \parbox{\dimexpr\textwidth-4.5em-15pt\relax}{%
+    \leftbar\cftchapterfont#1\hspace{1sp}\endleftbar%
+  }%
+  \end{minipage}\par%
+}
+
+\renewcommand*{\l@chapter}[2]{%
+  \l@mychap{#1}{#2}{\chaptername}%
+}
+
+\renewcommand*{\l@appendix}[2]{%
+  \l@mychap{#1}{#2}{\appendixname}%
+}
+
+% redefinitions for part entries
+\renewcommand{\partnumberline}[1]{\mbox{\centering\normalfont\itshape\rmfamily Part\thepart~#1}\par\noindent\Large}
+\renewcommand\cftpartafterpnum{\vskip1ex}
+
+\makeatletter
+\renewcommand*{\l@part}[2]{%
+  \ifnum \c@tocdepth >-2\relax
+    \cftpartbreak
+    \begingroup
+      {
+        \setlength{\memRTLleftskip}{0pt}
+        \setlength{\memRTLrightskip}{0pt}
+        \interlinepenalty\@M
+        \centering
+        \cftpartfont #1
+        \par
+      }
+      \nobreak
+        \global\@nobreaktrue
+        \everypar{\global\@nobreakfalse\everypar{}}%
+    \endgroup
+  \fi}
+\makeatother
+\renewcommand{\cftpartfont}{\sffamily}
+
+% redefinitions for section entries
+\renewcommand\cftsectionfont{\rmfamily}
+\renewcommand\cftsectionpagefont{\rmfamily\itshape\color{myred}}
+
+\cftsetindents{section}{2.5em}{2.5em}
+
+% text styling of all side footnotes
+\renewcommand{\footnotesize}{\fontsize{9pt}{10pt}\selectfont}
+\renewcommand{\foottextfont}{\footnotesize}
+% styling and placement of mark
+\footmarkstyle{{#1. }}
+\setlength{\footmarkwidth}{0em}
+\setlength{\footmarksep}{-\footmarkwidth}
+% memoir command - do all footnotes in margin
+\footnotesinmargin
+
+% SIDECAPTIONS
+\setsidecaps{\marginparsep}{\marginparwidth}
+\sidecapmargin{outer}
+\setsidecappos{t}
+\renewcommand*{\sidecapstyle}{%
+\captionnamefont{\foottextfont\scshape}
+\ifscapmargleft
+\captionstyle{\RaggedLeft\footnotesize\foottextfont}%
+\else
+\captionstyle{\RaggedRight\footnotesize\foottextfont}%
+\fi}

@@ -28,6 +28,7 @@
 
 \usepackage{amsthm}
 \usepackage{thmtools}
+
 \usepackage[framemethod=TikZ]{mdframed}
 \usetikzlibrary{shadows}
 % https://tex.stackexchange.com/a/292090/76888
@@ -38,60 +39,57 @@
 {}{}
 
 \mdfdefinestyle{mdbluebox}{%
-    roundcorner=0pt,
-    linewidth=1pt,
-    skipabove=12pt,
-    innertopmargin=9pt,
-    innerbottommargin=9pt,
-    skipbelow=2pt,
-    linecolor=TealBlue!35,
-    nobreak=true,
-    backgroundcolor=TealBlue!5,
+    skipbelow=0pt,
+    skipabove=8pt,
+    linewidth=2pt,
+    innertopmargin=12pt,
+    innerbottommargin=5pt,
+    rightline=false,
+    leftline=true,
+    topline=false,
+    bottomline=false,
+    linecolor=RoyalBlue,
+    backgroundcolor=RoyalBlue!2,
 }
 \declaretheoremstyle[
-headfont=\rmfamily\bfseries\color{TealBlue},
+headfont=\sffamily\bfseries\color{RoyalBlue},
 mdframed={style=mdbluebox},
-headpunct={\\[3pt]},
+headpunct={\;\;},
+bodyfont=\itshape,
 postheadspace={0pt},
-postheadhook={\textcolor{TealBlue!80}{\rule[.6ex]{\linewidth}{0.4pt}} \\ }, % \\ removed
 ]{thmbluebox}
 
 \mdfdefinestyle{mdredbox}{%
-    roundcorner=0pt,
-    linewidth=1pt,
-    skipabove=12pt,
-    skipbelow=12pt,
-    innertopmargin=9pt,
-    innerbottommargin=9pt,
-    backgroundcolor=Salmon!5,
-    linecolor=Salmon!35,
-    frametitleaboveskip=8pt,
-    frametitlebelowskip=8pt,
-    frametitlebackgroundcolor=Violet!50!black,
-    frametitlefont=\bfseries\sffamily\color{white},
-    frametitlerule=true,    
-    nobreak=false,
+    skipbelow=2pt,
+    skipabove=8pt,
+    linewidth=2pt,
+    innertopmargin=12pt,
+    innerbottommargin=5pt,
+    rightline=false,
+    leftline=true,
+    topline=false,
+    bottomline=false,
+    linecolor=RawSienna,
+    backgroundcolor=RawSienna!1,
 }
 \declaretheoremstyle[
-headfont=\bfseries\color{RawSienna},
+headfont=\bfseries\sffamily\color{RawSienna},
 mdframed={style=mdredbox},
-headpunct={\\[3pt]},
-postheadspace={0pt},
-postheadhook={\textcolor{RawSienna!80}{\rule[.6ex]{\linewidth}{0.4pt}} \\ }, % \\ removed
+headpunct={\;\;},
 ]{thmredbox}
 
 \mdfdefinestyle{mdgreenbox}{%
     skipbelow=0pt,
     skipabove=8pt,
     linewidth=2pt,
-    innertopmargin=9pt,
+    innertopmargin=12pt,
     innerbottommargin=9pt,
     rightline=false,
     leftline=true,
     topline=false,
     bottomline=false,
-    linecolor=ForestGreen!40,
-    backgroundcolor=ForestGreen!4,
+    linecolor=ForestGreen,
+    backgroundcolor=ForestGreen!2,
 }
 \declaretheoremstyle[
 headfont=\bfseries\sffamily\color{ForestGreen},
@@ -106,7 +104,7 @@ headpunct={ --- },
     linewidth=3pt,
     rightline=false,
     leftline=true,
-    innertopmargin=9pt,
+    innertopmargin=12pt,
     innerbottommargin=9pt,
     topline=false,
     bottomline=false,
@@ -126,16 +124,16 @@ mdframed={style=mdblackbox}
     linewidth=1pt,
     skipabove=12pt,
     skipbelow=7pt,
-    innertopmargin=9pt,
+    innertopmargin=12pt,
     innerbottommargin=9pt,
     linecolor=Orchid!35,
     nobreak=true,
-    backgroundcolor=Orchid!5,
+    backgroundcolor=Orchid!6,
 }
 \declaretheoremstyle[
-headfont=\rmfamily\bfseries\color{Orchid},
+headfont=\sffamily\bfseries\color{Orchid},
 mdframed={style=mdpurplebox},
-headpunct={\\[3pt]},
+headpunct={\\[2pt]},
 postheadspace={0pt},
 postheadhook={\textcolor{Orchid!80}{\rule[.6ex]{\linewidth}{0.4pt}} \\ }, % \\ removed
 ]{thmpurplebox}
@@ -149,8 +147,8 @@ postheadhook={\textcolor{Orchid!80}{\rule[.6ex]{\linewidth}{0.4pt}} \\ }, % \\ r
     rightline=false,
     bottomline=false,
     topline=false,
-    linecolor=RoyalBlue!40,
-    backgroundcolor=RoyalBlue!5,
+    linecolor=RoyalBlue,
+    backgroundcolor=RoyalBlue!2,
 }
 \declaretheoremstyle[
 headfont=\bfseries\rmfamily\color{purple},
@@ -166,8 +164,8 @@ headpunct={ \\[3pt] },
     rightline=false,
     bottomline=false,
     topline=false,
-    linecolor=JungleGreen!40,
-    backgroundcolor=JungleGreen!15,
+    linecolor=JungleGreen,
+    backgroundcolor=JungleGreen!4,
 }
 \declaretheoremstyle[
 headfont=\bfseries\rmfamily\color{purple},
@@ -178,7 +176,7 @@ headpunct={ \\[3pt] },
 
 
 \theoremstyle{definition}
-\declaretheorem[style=thmbluebox,name=Theorem,numberwithin=section]{theorem}
+\declaretheorem[style=thmbluebox,name=Theorem,numberwithin=chapter]{theorem}
 
 
 \declaretheorem[style=thmbluebox,name=Theorem,numbered=no]{theorem*}
@@ -286,5 +284,5 @@ headpunct={ \\[3pt] },
 }
 
 \newenvironment{exc}{%
-    ~\\ \ \rule[0cm]{\textwidth-4cm}{0.01cm}\rule[-0.11cm]{4cm}{0.12cm} \vskip {\hspace*{\textwidth-3.8cm}\Large\textbf{Exercises}}}%
+    ~\\ \rule[0cm]{\textwidth-4cm}{0.01cm}\rule[-0.11cm]{4cm}{0.12cm} \vskip2pt {\hspace*{\textwidth-3.8cm}\Large\textbf{Exercises}}}%
     {~\\ \hrule ~\\}
