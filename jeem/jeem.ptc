@@ -1,0 +1,106 @@
+\babel@toc {nil}{}\relax 
+\babel@toc {nil}{}\relax 
+\contentsline {chapter}{Short contents}{i}{section*.1}%
+\contentsline {chapter}{Contents}{iii}{section*.2}%
+\contentsline {chapter}{List of Figures}{v}{section*.3}%
+\contentsline {chapter}{Preface}{vii}{chapter*.4}%
+\contentsline {section}{The Philosophy}{vii}{section*.5}%
+\contentsline {part}{\partnumberline {\color {purple}A}Algebra}{1}{part.1}%
+\contentsline {xpart}{Algebra}{3}{part.1}%
+\contentsline {chapter}{\chapternumberline {1}Sets}{3}{chapter.1}%
+\ttl@starttoc {default@1}
+\contentsline {section}{\numberline {1.1}Naive Set Theory}{4}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Why Naive?}{5}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Types of Sets}{5}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}Equality and Subsets}{5}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Sets of Sets}{5}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Subsets}{5}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Superset}{6}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Equality}{6}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}Power-set and Cardinality}{6}{subsection.1.2.5}%
+\contentsline {subsubsection}{Cardinality}{7}{section*.7}%
+\contentsline {subsection}{\numberline {1.2.6}Universal Set}{7}{subsection.1.2.6}%
+\contentsline {section}{\numberline {1.3}Operations on Sets}{7}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Union of Sets}{7}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Cartesian Product}{7}{subsection.1.3.2}%
+\contentsline {chapter}{\chapternumberline {2}Elementary Prereqs}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Intervals}{9}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Inequalities}{9}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Inequalities concerning inverses}{10}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Inequalities concerning squares}{10}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Sign Scheme Method}{11}{section.2.3}%
+\contentsline {chapter}{\chapternumberline {3}Sequence and Series}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Sequences}{13}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Progression}{13}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Arithmetic Progression}{13}{section.3.3}%
+\contentsline {chapter}{\chapternumberline {4}Complex Numbers}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Inverses}{16}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Algebraic Form of Complex Numbers}{16}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Operations in algebraic form}{17}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Powers of \emph {i}}{18}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Complex Conjugate}{18}{section.4.3}%
+\contentsline {part}{\partnumberline {\color {purple}B}Calculus}{19}{part.2}%
+\contentsline {xpart}{Calculus}{21}{part.2}%
+\contentsline {chapter}{\chapternumberline {5}Functions and Relations}{21}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Relation}{21}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Domain}{21}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Range and Co-domain}{22}{subsection.5.1.2}%
+\contentsline {subsubsection}{Range}{22}{section*.15}%
+\contentsline {subsubsection}{Co-domain}{22}{section*.16}%
+\contentsline {section}{\numberline {5.2}Types Of Relations}{22}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Trivial Types}{22}{subsection.5.2.1}%
+\contentsline {subsubsection}{Empty Relation}{22}{section*.17}%
+\contentsline {subsubsection}{Universal Relation}{22}{section*.18}%
+\contentsline {subsubsection}{Inverse Relation}{22}{section*.19}%
+\contentsline {subsubsection}{Identity Relation}{22}{section*.20}%
+\contentsline {subsection}{\numberline {5.2.2}Equivalence Relation}{22}{subsection.5.2.2}%
+\contentsline {subsubsection}{Reflexive relation}{22}{section*.21}%
+\contentsline {subsubsection}{Symmetric Relation}{23}{section*.22}%
+\contentsline {subsubsection}{Transitive Relation}{23}{section*.23}%
+\contentsline {subsubsection}{Equivalence Relation}{23}{section*.24}%
+\contentsline {section}{\numberline {5.3}Functions}{23}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Domain and Range}{24}{subsection.5.3.1}%
+\contentsline {subsubsection}{Domain}{24}{section*.26}%
+\contentsline {subsubsection}{Range and Co-domain}{24}{section*.27}%
+\contentsline {subsection}{\numberline {5.3.2}Questions of Domain and Range}{24}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Informal Definition}{24}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Implicit and Explicit}{25}{subsection.5.3.4}%
+\contentsline {subsubsection}{Explicit Function}{25}{section*.29}%
+\contentsline {subsubsection}{Implicit Function}{25}{section*.30}%
+\contentsline {subsection}{\numberline {5.3.5}Digression}{25}{subsection.5.3.5}%
+\contentsline {subsection}{\numberline {5.3.6}Bounded Functions}{25}{subsection.5.3.6}%
+\contentsline {section}{\numberline {5.4}The ``...'' function}{26}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Graphing the Function}{26}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Vertical Line Test}{26}{subsection.5.5.1}%
+\contentsline {section}{\numberline {5.6}Identical Functions}{28}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Piecewise functions}{28}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Algebra of Functions}{28}{section.5.8}%
+\contentsline {section}{\numberline {5.9}Exponential}{28}{section.5.9}%
+\contentsline {subsection}{\numberline {5.9.1}Case I}{29}{subsection.5.9.1}%
+\contentsline {subsection}{\numberline {5.9.2}Case II}{29}{subsection.5.9.2}%
+\contentsline {section}{\numberline {5.10}The Logarithm function}{30}{section.5.10}%
+\contentsline {section}{\numberline {5.11}Some other functions}{30}{section.5.11}%
+\contentsline {subsection}{\numberline {5.11.1}Greatest Integer Function}{30}{subsection.5.11.1}%
+\contentsline {section}{\numberline {5.12}Injective, Surjective and all that}{31}{section.5.12}%
+\contentsline {subsection}{\numberline {5.12.1}Injective}{31}{subsection.5.12.1}%
+\contentsline {subsection}{\numberline {5.12.2}Surjective}{32}{subsection.5.12.2}%
+\contentsline {subsection}{\numberline {5.12.3}Bijection}{32}{subsection.5.12.3}%
+\contentsline {section}{\numberline {5.13}Infinite sets and their sizes}{33}{section.5.13}%
+\contentsline {section}{\numberline {5.14}Even-Odd}{33}{section.5.14}%
+\contentsline {subsection}{\numberline {5.14.1}Even Functions}{33}{subsection.5.14.1}%
+\contentsline {subsection}{\numberline {5.14.2}Odd Functions}{33}{subsection.5.14.2}%
+\contentsline {subsection}{\numberline {5.14.3}Odd and even extensions of a function}{34}{subsection.5.14.3}%
+\contentsline {section}{\numberline {5.15}Periodic Functions}{34}{section.5.15}%
+\contentsline {subsection}{\numberline {5.15.1}Period of transformed functions}{34}{subsection.5.15.1}%
+\contentsline {subsection}{\numberline {5.15.2}Period of Algebraically operated functions}{35}{subsection.5.15.2}%
+\contentsline {section}{\numberline {5.16}Composite Functions}{35}{section.5.16}%
+\contentsline {subsection}{\numberline {5.16.1}Injectivity and Surjectivity of Composite functions}{35}{subsection.5.16.1}%
+\contentsline {section}{\numberline {5.17}Inverse Functions}{36}{section.5.17}%
+\contentsline {chapter}{\chapternumberline {6}Limits}{37}{chapter.6}%
+\contentsline {section}{\numberline {6.1}The Neighborhood of a Real Number}{37}{section.6.1}%
+\contentsline {section}{\numberline {6.2}The Limit}{37}{section.6.2}%
+\contentsline {part}{\partnumberline {\color {purple}C}Appendices}{39}{part.3}%
+\contentsline {xpart}{Appendices}{41}{part.3}%
+\contentsline {appendix}{\chapternumberline {A}Logic and Proofs}{41}{chapter.A}%
+\contentsline {chapter}{Index}{43}{section*.43}%
+\contentsfinish 

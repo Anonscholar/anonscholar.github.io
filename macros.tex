@@ -103,7 +103,7 @@
 \newcommand{\CC}{\mathbb C}
 \newcommand{\FF}{\mathbb F}
 \newcommand{\NN}{\mathbb N}
-\newcommand{\NNO}{\mathbb N_{\ge 0}}
+\newcommand{\NNO}{\mathbb N_{0}}
 \newcommand{\ZZO}{\mathbb Z_{\ge 0}}
 \newcommand{\RRO}{\mathbb R_{\ge 0}}
 \newcommand{\QQ}{\mathbb Q}
@@ -350,7 +350,7 @@ tkzSecondPointResult)}
 \newcommand{\irrev}[1]{%
     \Ifthispageodd{%
     \reversemarginpar\marginpar{\RaggedLeft\large \bfseries \color{purple}Extra}\normalmarginpar}{%
-    \marginpar{\RaggedLeft\large\bfseries \color{purple}Extra}}%
+    \reversemarginpar\marginpar{\RaggedLeft\large \bfseries \color{purple}Extra}\normalmarginpar}%
     }
 
 
@@ -359,20 +359,6 @@ tkzSecondPointResult)}
 \definecolor{boldcolor}{gray}{0.18} % range from [0,1]
 \newcommand{\lightbold}[1]{\textcolor{boldcolor}{#1}}
 
-\newcommand{\marginnote}[1]{%
-    \Ifthispageodd{%
-        \marginpar{\begin{marginnotebox}\sffamily\RaggedRight\lightbold{#1}\end{marginnotebox}}}{%
-        \marginpar{\begin{marginnotebox}\sffamily\RaggedRight\lightbold{#1}\end{marginnotebox}}}%
-    }
-
-
-\newcommand{\marginref}[1]{%
-    \Ifthispageodd{%
-        \marginpar{\begin{marginrefbox}\sffamily\RaggedRight\lightbold{#1}\end{marginrefbox}}}{%
-        \marginpar{\begin{marginrefbox}\sffamily\RaggedRight\lightbold{#1}\end{marginrefbox}}}%
-    }
-
-  
 \newcommand{\cautionmark}{{\Huge\color{red}!}}
 \newlist{Caution}{enumerate}{1}
 \setlist[Caution]{label=\raisebox{-0.5cm}[0pt][0pt]{\cautionmark},leftmargin=1cm}
@@ -429,3 +415,9 @@ tkzSecondPointResult)}
 \newcommand{\uch}{\,{\text{u}}}
 \renewcommand{\dd}{\mathop{}\!{d}}
 \renewcommand{\diffd}{\mathop{}\!{d}}
+
+\newcommand{\sidenote}[1]{%
+    \marginpar{\RaggedRight \itshape #1 }}
+
+\newcommand{\marginnote}[1]{\sidenote{#1}}
+\newcommand{\marginref}[1]{\sidenote{#1}}

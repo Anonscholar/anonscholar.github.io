@@ -16,7 +16,7 @@
 
     \frontmatter
 
-    \newgeometry{right=1.5cm,left=1.5cm}
+    \newgeometry{right=2cm,left=2cm}
     \renewcommand*{\contentsname}{Short contents}
     \setcounter{tocdepth}{0}% chapters and above
     \tableofcontents
@@ -35,22 +35,13 @@
     \setcounter{chapter}{-1}
     \input{preq/proofs.tex}
 
-    \newgeometry{right=1.5cm,left=1.5cm}
-    \part{Calculus}
-    \parttoc
-    \restoregeometry
+    \spart{Calculus}
     \input{calc/realnum.tex}
 
-    \newgeometry{right=1.5cm,left=1.5cm}
-    \part{Linear Algebra}
-    \parttoc
-    \restoregeometry
+    \spart{Linear Algebra}
     \input{linalg/vectorspace.tex}
     
-    \newgeometry{right=1.5cm,left=1.5cm}
-    \part{Appendices}
-    \parttoc
-    \restoregeometry
+    \spart{Appendices}
     \appendix
 
     \backmatter

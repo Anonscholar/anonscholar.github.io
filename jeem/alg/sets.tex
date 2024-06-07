@@ -2,28 +2,27 @@
 
 \motiv{There is little Mathematics that does not use the language of sets.}
 
-
 \section{Naive Set Theory}
 
 
-\para{Sets are perhaps the most important structures in all of Mathematics. Although
+Sets are perhaps the most important structures in all of Mathematics. Although
 an indepth discussion of sets is beyond these notes, and their axiomation is complicated, we 
 shall not let this affect us and discuss a less rigorous formalisatpion of sets. 
-Namely, \emph{Naive Set Theory}.}
+Namely, \emph{Naive Set Theory}.
 
-\marginnote{ These definitions are superfluous, we have not and will not define what
-we mean by collection or elements. That is what makes this theory \emph{naive}.}
+\sidenote{These definitions are superfluous, we have not and will not define what
+    we mean by collection or elements. That is what makes this theory \emph{naive}.}
 
 \begin{definition}
     A set is any collection of elements.
 
     It is denoted as \(\Set{a,b,c}\) where \(a,b, c\) are elements of the set.
-    This representation of sets is called \emph{Roster form}.
+    This representation of sets is called \emph{Roster form}
 \end{definition}
 
-\para{Well, what do we mean by any collection? To give a few examples, the set of flowers
+Well, what do we mean by any collection? To give a few examples, the set of flowers
 would be \{roses, lilies, sunflowers, \dots\}. The trailing ``{\dots}'' are used to show
-that the elements continue on \emph{ad infinitum}. Hence, any collection of objects is a set.}
+that the elements continue on \emph{ad infinitum}. Hence, any collection of objects is a set.
 
 Often, instead of manually writing out \{roses, lilies, sunflowers, \dots\}, we will
 use a condition that each element in the set follows. Here, the condition is that all
@@ -55,8 +54,8 @@ mostly for ensuring that the statements are clear.
     \end{enumerate}
 \end{example}
 
-\marginnote{The symbol \(\in\) in \(x \in S\) is used to show that \(x\) is an element
-of \(S\). It may be read as `belongs to'.}
+\sidenote{The symbol \(\in\) in \(x \in S\) is used to show that \(x\) is an element
+of \(S\). It may be read as `in'.}
 
 \begin{example}
     The cartesian plane is also a set. It defined as \[\{(x,y) \mid x, y \in \RR\}\]
@@ -79,7 +78,7 @@ why this discussion of sets is so naive.}
 \para{Although this division of sets is superfluous at best, we will still categorise them for 
 a reference.}
 
-\marginnote{ The set \(\{\varnothing\}\),is not a null set! In-fact it is the set that contains
+\sidenote{ The set \(\{\varnothing\}\),is not a null set! In-fact it is the set that contains
 the empty or null set.}
 
 \begin{itemize}
@@ -100,7 +99,7 @@ elements of this set are themselves sets. One thing to note here is that we cann
 of all sets, and we will see why in a moment.}
 
 \subsection{Subsets}
-\marginnote{The empty set \(\varnothing\) is a subset of all sets.}
+\sidenote{The empty set \(\varnothing\) is a subset of all sets.}
 \para{Consider the sets \(\NN\) and \(\ZZ\). You might see that all the elements of \(\NN\) are also 
 present in \(\ZZ\). If we were to describe it, we could say that \(\NN\) is contained in \(\ZZ\).
 Such a relation between sets is expressed by saying \(\NN\) is a subset of \(\ZZ\).}
@@ -125,7 +124,7 @@ have less elements than \(B\). Infact, \(A\) is a subset of \(A\) itself because
 \para{To show that each element of \(A\) is contained in \(B\) but all elements of \(B\) are not
 contained in \(A\), we say that \(A\) is a proper subset of \(B\).}
 
-\marginnote{ Note that \(A\) is not a proper subset of \(A\).}
+\sidenote{ Note that \(A\) is not a proper subset of \(A\).}
 
 \begin{definition}
     \(A\) is a proper subset of \(B\) if all elements of \(A\) are in \(B\) but all elements of
@@ -151,7 +150,7 @@ for subsets and supersets, \textbf{the frequency of elements does not matter.}}
 
 \para{We can phrase the equality of sets in another manner, in terms of subsets.}
 
-\marginref{ Refer to \Cref{app: logic} for the symbol \(\iff\).}
+\sidenote{ Refer to \Cref{app: logic} for the symbol \(\iff\).}
 
 \begin{definition}
     [Equality in sets]
@@ -166,7 +165,7 @@ for subsets and supersets, \textbf{the frequency of elements does not matter.}}
 of \(A\). Note that it is the set of all \emph{subsets} and not proper subsets, therefore,
 \(A\) is an element of \(P(A)\). Formally,}
 
-\marginnote{ Because of the definition of powerset, \(A \subseteq B \iff P(A) \subseteq
+\sidenote{ Because of the definition of powerset, \(A \subseteq B \iff P(A) \subseteq
 P(B)\).}
 
 \begin{definition}
@@ -205,7 +204,7 @@ there is a lot of sources that will adequately satisfy you.}}
 \subsection{Union of Sets}
 \index{Union}
 
-\marginnote{`Or' in mathematics refer to something along the lines of one, the other, or both.
+\sidenote{`Or' in mathematics refer to something along the lines of one, the other, or both.
 This is in contrast with English, in which it refers to one or the other. The case of both
 is also included by `or' in mathematics.}
 \begin{definition}
