@@ -417,9 +417,9 @@ urlcolor=TealBlue!70!black,
 
 % text styling of all side footnotes
 \renewcommand{\footnotesize}{\fontsize{9pt}{10pt}\selectfont}
-\renewcommand{\foottextfont}{\footnotesize}
+\renewcommand{\foottextfont}{\footnotesize\itshape}
 % styling and placement of mark
-\footmarkstyle{{#1. }}
+\footmarkstyle{{\itshape#1. }}
 \setlength{\footmarkwidth}{0em}
 \setlength{\footmarksep}{-\footmarkwidth}
 % memoir command - do all footnotes in margin
@@ -436,5 +436,3 @@ urlcolor=TealBlue!70!black,
 \else
 \captionstyle{\RaggedRight\footnotesize\foottextfont}%
 \fi}
-
-\usepackage{titletoc}

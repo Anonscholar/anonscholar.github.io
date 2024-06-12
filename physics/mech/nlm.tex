@@ -392,6 +392,72 @@ Hooke's law actually fails for rather large displacements but is remarkably good
 small displacements. It works not only here, but in a lot more places where the restoring forces 
 are concerned.
 
-The springs can be connected in two main ways.
+The springs can be connected in two main ways, in parallel and in series, 
+
+\subsubsection{In Parallel}
+
+If the springs are in parallel, their constants \(k_1\), \(k_2\) and their 
+displacements \(x_1\), \(x_2\). Then the displacements are equals\footnote{Inferred by 
+looking at a simple diagram.}. 
+
+We can analogously replace these two springs with a single spring of some constant 
+to produce the same effect. This greatly simplifies the phenomenon and is easier to compute.
+
+Thus, let \(k_{eff}\) be the effective spring constant, as a way to replace the two
+springs. 
+Clearly since \(k_1x_1\) and \(k_2x_2\) are two restoring forces on the body, they can be replaced with one equivalent force, 
+\(k_{eff}x\). Which gives 
+
+\begin{equation*}
+    k_{eff}x = k_1x_1 + k_2x_2 = k_1x + k_2x
+\end{equation*}
+
+Thus, springs in parallel can be reduced to a spring of constant \(k_{eff}\) where
+
+\begin{equation*}
+    \boxed{k_{eff} = k_1 + k_2},
+\end{equation*}
+
+and in general, for parallel springs, 
+
+\begin{equation}
+    \boxed{k_{eff} = \sum k_i.}
+\end{equation}
+
+\subsubsection{In Series}
+
+This is a little more complicated than the prior case. Here, 
+we must note that the forces applied by each spring must be equal, 
+\(k_{eff}x = k_1x_1 = k_2x_2\) because 
+the forces on each spring must be \(0\) \sidenote{They're massless which 
+by the second law produce must experience \(0\) force.}.
+
+Now, we note that the total displacement \(x\) is simply \(x_1 + x_2\). 
+
+We can now solve a series of linear equations,
+
+\begin{align*}
+    k_1x_1k_2 &= k_{eff} xk_2 \\
+    k_2x_2k_1 &= k_{eff} xk_1 \\
+    k_1k_2(x_1 + x_2) &= k_{eff}(k_1 + k_2) x\\
+    k_{eff} &= \frac{k_1k_2}{k_1 + k_2}
+\end{align*}
+
+This gives us, 
+
+\begin{equation*}
+    k_{eff} = \frac{1}{k_1} + \frac{1}{k_2},
+\end{equation*}
+
+and in general,
+
+\begin{equation}
+    \boxed{k_{eff} = \sum \frac{1}{k_i}}
+\end{equation}
 
 \subsection{Tension}
+
+So tension is \(T\). Just checking 
+\[
+    T = mc^2 \Vec{a} 
+\]
