@@ -535,8 +535,6 @@ Also, always remember,
     acceleration, it inherits its velocity but not its acceleration.
 \end{moral}
 
-\todo{add screw/lift example}
-
 \section{Graphs in Motion}
 
 In the graphs we are going to discuss, acceleration will either be \(0\) or constant.
@@ -732,8 +730,6 @@ case is simply the initial height of the particle.
     t = - \sqrt{\frac{2h}{g}} + \sqrt{\frac{2(h-s)}{g}}
 \end{equation}
 
-\todo{add drag forces}
-
 \section{Drag Forces}
 
 In a more realistic scenario, a particle undergoing motion in any 
@@ -783,6 +779,23 @@ cases of linear drag.
 
     \end{soln}
 \end{example}
+
+The same idea can be extended to projectile --- \(2\)d motion 
+by considering the components of the accelerations,
+
+\[
+    \vec{a} = -kv_x \unitv{i} - (g + kv_y) \unitv{j},
+\]
+
+and now considering the equations \(\dot{\vec{v}} = -kv_x\)
+and the same for the \(y\) co-ordinate. 
+
+Ulitmately, this leads to the equations,
+
+\begin{align}
+    v_x &= u_x e^{-kt} \\
+    v_y &= \qty(u_y + \frac{g}{k})e^{-kt} - \frac{g}{k}
+\end{align}
 
 \section{Kinematics of a rigid body}
 
