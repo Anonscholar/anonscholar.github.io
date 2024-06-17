@@ -436,3 +436,8 @@ urlcolor=TealBlue!70!black,
 \else
 \captionstyle{\RaggedRight\footnotesize\foottextfont}%
 \fi}
+
+ \makeatletter
+  \renewcommand{\fnum@figure}{
+  {\small\scshape\figurename~\thefigure}}
+\makeatother

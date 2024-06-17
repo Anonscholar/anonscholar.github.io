@@ -39,9 +39,9 @@
 \usepackage{tikz-cd}
 
 \newcommand{\increment}{\Delta}
-\renewcommand{\vec}[1]{\boldsymbol{#1}}
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
 \renewcommand{\Vec}[1]{\mathbf{#1}}
-\newcommand{\unitv}[1]{{{\boldsymbol{\hat{#1}}}}}
+\newcommand{\unitv}[1]{\hat{\vec{#1}}}
 \let\conjugate\overline
 \newcommand{\conj}[1]{\overline{#1}}
 \newcommand{\seq}[2]{\left\langle#1_1, #1_2, \dots, #1_{#2}\right\rangle}
@@ -53,7 +53,7 @@
 \newcommand{\cgiven}{:}
 
 \newcommand{\avg}[1]{\langle#1\rangle}
-\newcommand{\bavg}[1]{\bar{#1}}
+\newcommand{\bavg}[1]{\overline{#1}}
 \newcommand{\notiff}{%
   \mathrel{{\ooalign{\hidewidth$\not\phantom{"}$\hidewidth\cr$\iff$}}}}
   

@@ -127,8 +127,10 @@ talking into consideration. Thus, it is a \emph{scalar} quantity.
 \index{Velocity}
 
 The Velocity of a particle, contrastingly, contains information about both the speed and direction of the
-object in consideration. It is a vector. Similar to position, it is also generally a function of time \(v(t)\), though it
-may also be dependent on the position \(v(x)\).
+object in consideration. 
+It is a vector. Similar to position, it is also a function of time \(v(t)\), though it
+may also be dependent on the position \(v(x)\). Even when that is the case,
+it can still be written as function of time.
 
 \begin{definition}
     [Velocity]
@@ -139,6 +141,26 @@ may also be dependent on the position \(v(x)\).
     \end{equation}
 \end{definition}
 
+In particular, velocity is a function that maps three values --- the velocity components 
+of the particle to a particle time instant, 
+
+\[
+    \vv : \RR \to \RR^3.
+\] 
+
+This is actually independent of the co-ordinate system we adopt. For any 
+particle, we require merely three co-ordinates to describe its velocity. 
+
+The same holds for position as well,
+
+\[
+    \vec{x} : \RR \to \RR^3.
+\]
+
+\sidenote{Infact to describe the motion of any body, we merely require its initial position and velocity functions.
+Well, not quite, we also need the equations of motion, of how the system evolves. These 
+end up being second order differential equations in Lagrangian Mechanics with which we'll deal
+later.}
 One thing of note is that velocity can also be expressed as the derivative of 
 displacement, which is just \(\vec{r} - \vec{r}_0\). Since the latter 
 term is constant, we simply get that \(\ndiv{\vec{s}} = \ndiv{\vec{r}}\).
@@ -936,7 +958,7 @@ the ICoR and \(P\).
 For parallel velocities, thus, we may see that the ICoR lies on the line joining them.
 
 \begin{marginfigure}
-    \scalebox{2}{\incfig{icorpar}}
+    \scalebox{2}{\incfig{icorpar}}z
     \caption{ICoR for parallel velocities}
 \end{marginfigure}
 
