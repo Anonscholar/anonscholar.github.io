@@ -3,6 +3,8 @@ main:
     
   #- title: "Portfolio"
    #url: /portfolio/
+  - title: "Notes"
+    url: /notes
         
   - title: "Blog Posts"
     url: /year-archive/
@@ -10,5 +12,3 @@ main:
   - title: "CV"
     url: /cv/
     
-  - title: "Notes"
-    url: /notes
