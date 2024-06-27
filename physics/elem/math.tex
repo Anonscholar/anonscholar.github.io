@@ -378,6 +378,8 @@ And the term simply is \(A_zB_x - A_xb_z\) by looping through the top.
 
 \section{Some geometric results regarding vectors}
 
+\subsection{Lami's Theorem}
+
 Consider three vectors, \(\vec{A}_1, \vec{A}_2, \vec{A}_3\) such that 
 \(\vec{A}_1 + \vec{A}_2 + \vec{A}_3 = 0\). If the angles \(\theta_1\), \(\theta_2\)
 and \(\theta_3\) are chosen according to \cref{fig: lami}, then,
@@ -399,3 +401,74 @@ and \(\theta_3\) are chosen according to \cref{fig: lami}, then,
 The proof follows from arranging the vectors as sides of a triangle and then applying the 
 sine law. Note that the angles between the sides would be \(\pi - \theta_i\). Since 
 \(\sin(\pi-\theta) = \sin\theta\), we can simply replace them. 
+
+\subsection{Internal and External Segments}
+
+Consider a point \(P\) between the points \(A\) and \(B\) which divides the line segment \(\overline{AB}\) into 
+two parts, \(\overline{AP}\) and \(\overline{PB}\) where
+
+\begin{equation*}
+    \frac{AP}{PB} = \frac{m}{n}
+\end{equation*}
+
+\begin{theorem}
+    Given that the position vector of \(A\) is \(\vec{r}_A\) and of \(B\) is 
+    \(\vec{r}_B\), the position vector of \(P\) will be,
+
+    \begin{equation}
+        \vec{r}_P = \frac{n\vec{r_A} + m\vec{r_B}}{m+n}
+    \end{equation}
+\end{theorem}
+
+The proof is almost trivial if you know the section theorem. Then we can 
+just apply the theorem for all components of \(\vec{r}_{A,B}\) and add them to 
+get the desired result. 
+
+The same result if \(P\) lies on the extension of \(\overline{AB}\) and 
+\begin{equation*}
+    \frac{AP}{BP} = \frac{m}{n}
+\end{equation*}
+
+is,
+
+\begin{equation}
+    \boxed{\vec{r}_P = \frac{n\vec{r_A} - m\vec{r_B}}{m-n}}
+\end{equation}
+
+This can also be derived geometrically by consider two vector triangles. 
+
+Another important result, the component wise proof of which we'll take as granted from 
+co-ordinate geometry is of the centroid of a triangle. Given position vectors 
+of the vertices \(\vec{r}_A\), \(\vec{r}_B\) and \(\vec{r_C}\), the position 
+vector of the centroid of the triangle is,
+
+\begin{equation}
+    \boxed{\vec{r}_C = \frac{\vec{r}_A + \vec{r}_B + \vec{r}_C}{3}}
+\end{equation}
+
+\begin{marginfigure}
+    \centering
+    \scalebox{1.7}{\incfig{anglebisect1}}
+    \caption{Angle bisector of \(2\theta\).}
+\end{marginfigure}
+
+\subsection{Angle Bisectors}
+
+Given two vectors \(\vec{A}\) and \(\vec{B}\), we can find out 
+the direction of the angle bisector of the angle between them.
+
+A natural instinct might be to construct something like a parallelogram. Well, 
+that doesn't quite work since the resultant does not co-incide with the angle bisector. 
+
+But we can use a parallelogram of \(\unitv{A}\) and \(\unitv{B}\) to construct a rhombus ---
+whose diagonal, the resultant of these vectors lies along the angle bisector! Constructing 
+and shifting parallelly the external angle bisector, we find it lies along the other diagonal,
+the difference of the two unit vectors.
+
+\begin{marginfigure}
+    \centering
+    \scalebox{2}{\incfig{anglebisect2}}
+    \caption{The internal angle bisector lies along \(\unitv{A} + \unitv{B}\) and
+    the external lies along \(\unitv{A} - \unitv{B}\).}
+\end{marginfigure}
+
