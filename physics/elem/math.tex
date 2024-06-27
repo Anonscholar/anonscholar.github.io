@@ -64,7 +64,6 @@ by using the cosine rule. In \cref{fig: vectoradd} \(\theta\) is the angle betwe
 \(\Aa\) and \(\BB\).
 
 \begin{marginfigure}
-    \hspace*{-1.3cm}
     \scalebox{2.5}{\incfig{vectoradd}}
     \caption{Vector Addition}
     \label{fig: vectoradd}
@@ -261,6 +260,66 @@ For the dot product, representing \(\Aa\) and \(\BB\) in terms of the basis vect
 Where we use the distributive property of dot product and the fact 
 that \(\unitv{i} \dtp \unitv{j} = \unitv{j} \dtp \unitv{k} = \unitv{k} \dtp \unitv{i} = 0\).
 
+We can find the angle between two vectors, \(\theta\), as,
+
+\begin{marginfigure}
+    \centering
+    \scalebox{1.5}{\incfig{vectproject1}}
+    \caption{Two arbitrary vectors}
+\end{marginfigure}
+
+\begin{equation*}
+    \cos\theta = \frac{\vec{A} \dtp \vec{B}}{AB}
+\end{equation*}
+
+Given two vectors \(\vec{A}\) and \(\vec{B}\), we can find the projection of one along the \emph{direction} of 
+the other by using the dot product.
+
+We use the fact that the vector \(\vec{A}\) along \(\vec{B}\) is simply 
+\(\vec{A} \dtp \unitv{B}\). Since this is the magnitude, we now simply 
+multiply this by \(\unitv{B}\). 
+
+The projection of \(\vec{A}\) along the direction perpendicular
+to \(\vec{B}\) is simply \(\vec{A} - (\vec{A} \dtp \unitv{B})\unitv{B}\). 
+
+The two directions can be seen in \cref{fig: vectproject}.
+
+\begin{marginfigure}
+    \centering
+    \scalebox{2}{\incfig{vectproject2}}
+    \caption{\(\vec{A}\) projected along directions tangential and 
+    perpendicular to \(\vec{B}\).}
+    \label{fig: vectproject}
+\end{marginfigure}
+
+
+\begin{example}
+    Consider the unit vectors along the incident, reflected, and normal ray.
+    Given that the unit vectors along the incident ray and normal ray are 
+    \(\unitv{I}\) and \(\unitv{N}\) respectively, find the reflected unit vector.
+    
+    \begin{soln}
+        The projection of \(\unitv{I}\) perpendicular and tangential to the 
+        normal are \(\unitv{I} - (\unitv{I} \dtp \unitv{N})\unitv{N}\) and \((\unitv{I} \dtp \unitv{N})\unitv{N}\).
+
+        Clearly, for the reflected unit vector, the direction of the perpendicular will remain the same 
+        while of the tangential will be flipped. Thus, the components of 
+        \(\unitv{R}\) along the normal are, \(\unitv{I} - (\unitv{I} \dtp \unitv{N})\unitv{N}\)
+        and \(-(\unitv{I} \dtp \unitv{N})\unitv{N}\). Adding these vectors gives us \(\unitv{R}\),
+
+        \begin{equation*}
+            \unitv{R} = \unitv{I} - 2(\unitv{I} \dtp \unitv{N})\unitv{N}
+        \end{equation*}
+    \end{soln}
+\end{example}
+
+\begin{marginfigure}
+    \centering
+    \scalebox{1.8}{\incfig{reflectionvect}}
+    \caption{Incidence, normal and reflected unit vectors.}
+\end{marginfigure}
+
+
 Finally, the cross product is a little difficult to compute.
 It can be computed either as the determinant,
 
@@ -316,3 +375,27 @@ diagonal component of \(\BB\). For example, for the y-component,
 \]
 
 And the term simply is \(A_zB_x - A_xb_z\) by looping through the top.
+
+\section{Some geometric results regarding vectors}
+
+Consider three vectors, \(\vec{A}_1, \vec{A}_2, \vec{A}_3\) such that 
+\(\vec{A}_1 + \vec{A}_2 + \vec{A}_3 = 0\). If the angles \(\theta_1\), \(\theta_2\)
+and \(\theta_3\) are chosen according to \cref{fig: lami}, then,
+
+\begin{theorem}
+    [Lami's Theorem]
+    \begin{equation*}
+        \frac{A_1}{\theta_1} = \frac{A_2}{\theta_2} = \frac{A_3}{\theta_3}
+    \end{equation*}
+\end{theorem}
+
+\begin{marginfigure}
+    \centering
+    \scalebox{1.5}{\incfig{lamitheorem}}
+    \caption{Lami's Theorem}
+    \label{fig: lami}
+\end{marginfigure}
+
+The proof follows from arranging the vectors as sides of a triangle and then applying the 
+sine law. Note that the angles between the sides would be \(\pi - \theta_i\). Since 
+\(\sin(\pi-\theta) = \sin\theta\), we can simply replace them. 

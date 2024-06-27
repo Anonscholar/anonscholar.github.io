@@ -1,7 +1,7 @@
 \usepackage{amsmath, amssymb}
 
 \nonzeroparskip
-\usepackage[right=7cm,left=2cm,bottom=1in,top=1in,marginparwidth=5cm,marginparsep=.5cm,asymmetric]{geometry}
+\usepackage[right=7.5cm,left=2cm,bottom=1in,top=1in,marginparwidth=6cm,marginparsep=.5cm,asymmetric]{geometry}
 
 \usepackage[texindy]{imakeidx}
 \makeindex[intoc]
@@ -68,6 +68,7 @@
 \renewcommand{\backmatter}{\chapterstyle{backmatter}\oldbackmatter}
 
 
+
 \usepackage{xparse}
 \usepackage{lipsum}
 
@@ -83,8 +84,7 @@
 \makepsmarks{mystyle}{%
   \createmark{chapter}{left}{nonumber}{}{}}
   \setlength{\headwidth}{\textwidth}
-  \addtolength{\headwidth}{\marginparsep}
-\addtolength{\headwidth}{\marginparwidth}
+
 
 \makeheadrule{mystyle}{\headwidth}{\normalrulethickness}
 
