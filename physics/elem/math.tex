@@ -558,3 +558,81 @@ An ellipse can extended to three dimensions to form a shape called ellipsoid. It
 \end{equation}
 
 Its volume is given by \(\dfrac{4}{3}\pi abc\).
+
+\section{Radius of Curvature}
+
+The \vocab{radius of curvature} is the radius of the circle which best approximates 
+a curve at any given point. The talk of a circle at any given point can be non-rigorously 
+understood as the circle containing the arc from \((x, f(x))\) to \((x + \dd{x}, f(x + \dd{x}))\). 
+
+We can create a formula of the radius of curvature by first noting that the 
+radius at the point, \(R_c\) will be, 
+
+\begin{equation*}
+    R_c = \dv{l}{\theta}
+\end{equation*}
+
+Where \(\dd{l} = \sqrt{\dd{x}^2 + \dd{y}^2} = \sqrt{1 + (f'(x))^2} \dd{x}\) is uniquely described by that point. 
+
+Now we just need to figure out \(\dd{\theta}\). We can do so by first noting that 
+if the curve is the graph of some differentiable function, \(f\), then,
+
+\begin{equation*}
+    \tan \theta = f'(x)
+\end{equation*}
+
+We can differentiate this again with respect to \(x\) to get,
+
+\begin{equation*}
+    \sec^2\theta \dv{\theta}{x} = f''(x)
+\end{equation*}
+
+Using the identity \(1 + \tan^2\theta = \sec^2 \theta\) and \(\tan^2 \theta = f'(x)\),
+
+\begin{equation*}
+    (1 + (f'(x))^2) \dv{\theta}{x} = f''(x)
+\end{equation*}
+
+And, 
+
+\begin{equation*}
+    \dd{\theta} = \frac{f''(x)}{1 + (f'(x)^2)} \dd{x}
+\end{equation*}
+
+Substituting both of these, we get, 
+
+\begin{equation}
+    \label{eq: roc}
+    \boxed{R_c = \frac{[1 + (f'(x))^2]^{3/2}}{f''(x)}}
+\end{equation}
+
+Which can also be written as,
+
+\begin{equation*}
+    R_c = \frac{\left[1 + \left(\displaystyle \dv{y}{x}\right)^2\right]^{3/2}}{\dv*[2]{y}{x}}
+\end{equation*}
+
+The radius of curvature allows us to say much about \(f''(x)\). In \eqref{eq: roc} 
+clearly the numerator is positive. Thus, the sign of the radius of curvature is uniquely determined 
+by \(f''(x)\). 
+
+What exactly does the negative sign mean? Well it basically tells whether the circle of 
+that radius lies above or below our curve. In \cref{fig: roc}, we 
+can easily find out where \(f''(x)\) is negative or 
+positive depending on where the circle lies. The blue circle of infinite radius 
+is at the \vocab{inflection point}, a point where \(f''(x)\) is \(0\). 
+
+An inflection point occurs here since \(f''(x)\) changes signs from negative to positive
+and thus, must become \(0\) at some point.
+
+\begin{marginfigure}
+    \scalebox{3}{\incfig{roc}}
+    \caption{Circles formed by the radius of curvature for several points. The circles
+    formed by positive ones are in red while the ones by the negative ones are in teal. 
+    The blue circle has an infinite radius.}
+    \label{fig: roc}
+\end{marginfigure}
+
+Given something like a position time graph, 
+we can easily find where the acceleration is positive by just well, drawing out circles.
+Nice.
