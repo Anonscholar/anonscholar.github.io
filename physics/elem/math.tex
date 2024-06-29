@@ -489,3 +489,72 @@ the difference of the two unit vectors.
 Note that \(\unitv{A} + \unitv{B}\) is not a unit vector, we will need to find the 
 unit vector along that direction. 
 
+\subsection{Loci}
+
+A set of points that fulfill some particular condition are called a locus. Some loci that will be of 
+our use are given.
+
+\subsubsection{Circle}
+
+A point lies on a circle with center at \((h,k)\) if it is at some fixed distance, \(r\), 
+the radius from the center. Thus, if the point has co-ordinated \(x, y\) it 
+must obey the equation, 
+
+\begin{equation}
+    (x-h)^2 + (y-k)^2 = r^2.
+\end{equation}
+
+The area of such a circle is \(\pi r^2\) and its perimeter is \(2\pi r\). 
+
+\subsubsection{Sphere}
+
+A natural extension of the circle into \(3\) dimensions is the sphere. 
+If the center of the sphere is at \(h, k, f\), then the co-ordinate 
+of any point on its surface will be determined by, 
+
+\begin{equation}
+    (x-h)^2 + (y-k)^2 + (z-f)^2 = r^2
+\end{equation}
+
+For some fixed \(z\), the \(x\) and \(y\) co-ordinates just form 
+a circle. Thus, a sphere can be thought of being made up these circles. The idea 
+is useful in differential analysis.
+
+\subsubsection{Ellipse}
+
+\begin{marginfigure}
+    \centering
+    \scalebox{2}{\incfig{ellipse}}
+    \caption{Ellipse by Ag2gaeh CC BY-SA 4.0, \url{https://commons.wikimedia.org/w/index.php?curid=57497218}}
+    \label{fig: ellipse}
+\end{marginfigure}
+
+
+A ellipse is a weirder shape. It is a sort of stretched circle, and the 
+stretching is non-uniform across the two dimensions. In \cref{fig: ellipse}, the 
+length of the semi-minor axis is commonly denoted as \(b\) and that of the semi major 
+axis is \(a\). Then any point on the ellipse must have co-ordinates \((x,y)\) such that,
+
+\begin{equation}
+    \frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} = 1
+\end{equation}
+
+The distance of the foci from the center is its linear eccentricity, \(c = \sqrt{a^2 - b^2}\). 
+Overall, the ellipse and other conic sections are characterized by their eccentricity, 
+
+\begin{equation*}
+    e = \sqrt{1 - \frac{b^2}{a^2}}
+\end{equation*}
+
+The eccentricity of the ellipse ranges from \(0\) which is just a circle, to \(1\) where 
+it becomes a parabola. The area of the ellipse is \(\pi ab\). However, its 
+perimeter only has a solution through an infinite series integral, so we'll leave it 
+out for now.
+
+An ellipse can extended to three dimensions to form a shape called ellipsoid. Its locus is given by,
+
+\begin{equation}
+    \frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} + \frac{(z-f)^2}{c^2} = 1
+\end{equation}
+
+Its volume is given by \(\dfrac{4}{3}\pi abc\).
