@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "A humble abode"
+title: "A cozy home"
 author_profile: true
 redirect_from: 
   - /about/
