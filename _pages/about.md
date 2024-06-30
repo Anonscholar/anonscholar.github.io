@@ -35,7 +35,7 @@ Some trivia ---
 
   - Personality type - INFP-M [but](https://en.wikipedia.org/wiki/Myers-Briggs_Type_Indicator#Criticism).
   - I like open source stuff a lot and hope to contribute soon myself.
-  - I am pretty soft-hearted and get sad over fiction a lot.
+  - I am a pretty soft-hearted guy and get sad over fiction a lot.
   - I like manga too! I usually read school romance, slice of life stuff or punpun these days. Yes, both, I don't know why.
 
 If you find something common here, hit me up on discord at *anon_scholar*.
