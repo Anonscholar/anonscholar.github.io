@@ -27,13 +27,13 @@ read later when I get a decently organized list. Though I like drama and non-fan
 Dostoevsky and what not, but sometimes I dabble in romance when I feel cute. I also like poetry and sometimes write it.
 I like to write prose too but rarely get the time to. ╥﹏╥ 
 
-I like cats quite a lot, eh well that might have been a little obvious. I also like cute things, they're
+I love cats, yay, well that might have been a little obvious. I also like cute things, they're
 nice :3. I listen to classical music quite a bit of times but am not too knowledgeable, feel free to give 
 me some recommendations! The same kinda thing is true for coffee too.
 
 Some trivia ---
 
-  - I am an INFP-M but I am quite skeptical about the test.
+  - I am an INFP-M [but](https://en.wikipedia.org/wiki/Myers-Briggs_Type_Indicator#Criticism).
   - I like open source stuff a lot and hope to contribute soon myself.
   - I am pretty soft-hearted and get sad over fiction a lot.
   - I like manga too! I usually read school romance, slice of life stuff or punpun these days. Yes, both, I don't know why.
