@@ -38,6 +38,6 @@ Some trivia ---
   - I am a pretty soft-hearted guy and get sad over fiction a lot.
   - I like manga too! I usually read school romance, slice of life stuff or punpun these days. Yes, both, I don't know why.
 
-If you find something common here, hit me up on discord at *anon_scholar*.
+If you find something common here, dm me on discord at *anon_scholar*!
 
 [^1]: Mostly from MIT open learning courses for philosophy. They're seriously great!
