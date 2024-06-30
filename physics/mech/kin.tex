@@ -592,6 +592,94 @@ graphs,
     \end{subfigure}%
 \end{figure}
 
+I use these in particular to demonstrate concavity and convexity. 
+For a twice differentiable function \(f\), it is concave if \(f''(x) > 0\) and convex 
+otherwise. 
+
+\subsubsection{Displacement Time}
+
+Displacement time graphs can be generally interpreted also as position 
+time graphs since the two differ only by a constant initial value.
+
+Their area under the curve, \(\int x \dd{t}\) is not of much use but their 
+slope, \(\ndiv{x}\) represents the velocity. We can also analyze the graphs 
+to figure out whether their roc circle lies above or below the graph to figure out 
+the sign of acceleration at any given moment.
+
+\subsubsection{Velocity Time}
+
+Their slope is simply \(\ndiv{v}\) or the acceleration. Their area is 
+\(\int v \dd{t}\) which is the displacement. We need to remember that 
+we need to setup definite integrals since these actually give the value 
+we need and not a family of solutions. 
+
+\subsubsection{Acceleration Time}
+
+Acceleration time graphs are useful for their area which represents the difference 
+in velocities in an interval,
+
+\begin{equation*}
+    \int_{0}^{t} a \dd{t} = v(t) - v_0
+\end{equation*}
+
+\subsubsection{Velocity Displacement}
+
+These are the more esoteric and interesting graphs. The slope is simply,
+
+\begin{equation*}
+    \dv{v}{x} = \frac{a}{v}
+\end{equation*}
+
+where we use the fact that \(a = v \dv*{v}{x}\). Thus given a velocity time 
+graph we can figure out the acceleration at any given \(x\) as, 
+
+\begin{equation*}
+    a = v_{x_0} \eval{\dv{v}{x}}_{x_0} = v_{x_0} \tan\theta
+\end{equation*}
+
+\begin{marginfigure}
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}
+        [funcgraphbare, xlabel=$t$, ylabel=$\vec{v}$]
+        \addplot[red, domain=0:4]{-3*x + 12};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{A linear velocity time graph.}
+    \label{fig: vt to at example}
+\end{marginfigure}
+
+\begin{example}
+    Given the velocity time graph in \cref{fig: vt to at example}, sketch out the acceleration time graph.
+
+    \begin{soln}
+        We see that \(v = mx + c\) where \(m < 0\). Now, 
+
+        \begin{equation*}
+            a = v \dv{v}{x} = m(mx + c) = m^2x + mc
+        \end{equation*}
+
+        Thus, it is of form \(ax + b\) where \(a > 0\), \(b < 0\).
+
+        There-fore its graph is,
+        
+    \begin{figure}[H]
+    \centering
+        \begin{tikzpicture}
+            \begin{axis}
+            [funcgraphbare, xlabel=$t$, ylabel=$\vec{a}$]
+            \addplot[red, domain=0:4]{9*x - 36};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{The corresponding acceleration time graph.}
+    \end{figure}%
+    \end{soln}
+\end{example}
+
+\subsubsection{Velocity square time}
+
+This is the last family of graphs we'll look at.
+
 \section{Relative Motion}
 
 There is a very neat technique to solve questions of kinematics, it is to switch our 

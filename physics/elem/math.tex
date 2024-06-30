@@ -636,3 +636,33 @@ and thus, must become \(0\) at some point.
 Given something like a position time graph, 
 we can easily find where the acceleration is positive by just well, drawing out circles.
 Nice.
+
+\begin{example}
+    Find the roc of ellipse at its top most and right most points, \((0,b)\) and \((a, 0)\) centered 
+    at \((0,0)\)
+
+    \begin{soln}
+        We will here figure out the radius at \((0,b)\) and argue by symmetry for \((a,0)\).
+        In well actuality, the roc at \((a, 0)\) needs use of parametrized forms and 
+        so does the general roc equation.
+
+        However, for \((0,b)\) we may note that \[\eval{\dv{y}{x}}_{(0, b)}=0.\]
+        
+        And then implicitly derivate the ellipse equation wrt \(x\). We then obtain,
+        
+        \begin{equation*}
+            \eval{\dv[2]{y}{x}}_{(0,b)} = -\frac{b}{a^2} 
+        \end{equation*}
+
+        By using \eqref{eq: roc} we get,
+
+        \begin{equation}
+            \eval{R_c}_{(0,b)} = \frac{-a^2}{b}
+        \end{equation}
+
+        By a bit of an ad-hoc symmetric argument, the roc at \((a, 0)\) is 
+        \(b^2/a\).
+    \end{soln} 
+\end{example}
+
+\marginnote{It's much better evaluated using the parametric equations.}.
