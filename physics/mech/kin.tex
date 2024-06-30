@@ -751,6 +751,15 @@ Also, substituting \(t = x/v\sin(\theta)\), we have,
     \boxed{y = x\tan(\theta) - \frac{gx^2}{2v^2\cos^2(\theta)}}
 \end{equation}
 
+We can also use the identity \(1/\cos^2\theta = \tan^2\theta + 1\) and get another and 
+perhaps nicer form of the equations,
+
+\begin{equation}
+    \boxed{y = x\tan\theta\left(1 - \frac{x}{R}\right)}
+\end{equation}
+
+after substituting with \(R\)\footnote{calculated just a bit later.}.
+
 The path of the projectile is parabolic as shown in \cref{fig: projectile}.
 
 \begin{figure}[H]
@@ -806,6 +815,51 @@ value, we have,
     R = \frac{u}{g}\sqrt{u^2 + 2gh}
 \end{equation}
 
+\begin{example}
+    A projectile starting from one vertex of a wedge, grazes the other 
+    vertex and ends upon the other vertex, with an initial velocity 
+    \(v_0\) making an angle \(\theta\) with the horizontal. If the
+    angles of the vertices are \(\alpha\) and \(\beta\), figure 
+    out a relation between \(\tan \theta\), \(\tan\alpha\) and \(\tan\beta\).
+
+    \begin{soln}
+        Divide the range of the projectile into two lengths, \(x\) and 
+        \(x'\) such that \(x + x' = R\). Now, clearly, 
+        \begin{equation*}
+            \tan\alpha = \frac{y_0}{x} \quad \tan\beta = \frac{y_0}{x'}
+        \end{equation*}
+
+        Also, by the alternate equation of trajectory,
+
+        \begin{equation*}
+            y_0 = x\tan\theta\left(1 - \frac{x}{R}\right) = x\tan\theta\left(1 - \frac{x}{x + x'}\right) 
+        \end{equation*}
+
+        Which gives us, 
+
+        \begin{equation*}
+            \tan\theta = y_0 \left(\frac{x + x'}{xx'}\right) = \frac{y_0}{x} + \frac{y_0}{x'}
+        \end{equation*}
+
+        Finally substituting the values, we get, 
+
+        \begin{equation}
+            \tan\theta = \tan\alpha + \tan\beta
+        \end{equation}
+        
+        Pretty nice and useful result.
+
+    \end{soln}
+
+\end{example}
+
+\begin{marginfigure}
+    \centering
+    \scalebox{2.2}{\incfig{projectilewedge}}
+    \caption{Projectile grazing a wedge.}
+\end{marginfigure}
+
+
 Some peculiar things about projectile motion is that, \begin{inparaenum}[a)]
     \ii it is reversible, and
     \ii the time to attain some vertical displacement can be found in terms of 
@@ -848,6 +902,10 @@ case is simply the initial height of the particle.
 \begin{equation}
     t = - \sqrt{\frac{2h}{g}} + \sqrt{\frac{2(h-s)}{g}}
 \end{equation}
+
+Somewhat qualitatively, projectile motion is independent of its horizontal range. 
+If some projectiles have same maximum height, their time of flight \emph{will be the 
+same}.
 
 \section{Drag Forces}
 
