@@ -16,6 +16,7 @@
     \titleSW
 
     \frontmatter
+    \pagestyle{empty}
     \newgeometry{right=2cm,left=2cm}
     \renewcommand*{\contentsname}{Short contents}
     \setcounter{tocdepth}{0}% chapters and above
@@ -31,7 +32,7 @@
     \restoregeometry
 
     \mainmatter
-    
+    \pagestyle{mystyle}
     \setcounter{chapter}{0}
     \input{elem/math.tex}
     \input{elem/ud.tex}
