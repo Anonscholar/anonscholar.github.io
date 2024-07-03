@@ -1,7 +1,7 @@
 \usepackage{amsmath, amssymb}
 
 \nonzeroparskip
-\usepackage[right=7.5cm,left=2cm,bottom=1in,top=1in,marginparwidth=6cm,marginparsep=.5cm,asymmetric]{geometry}
+\usepackage[right=8.5cm,left=2cm,bottom=1in,top=1in,marginparwidth=6cm,marginparsep=.5cm,asymmetric]{geometry}
 
 \usepackage[texindy]{imakeidx}
 \makeindex[intoc]
@@ -291,6 +291,7 @@ urlcolor=TealBlue!70!black,
 
 
 \newcommand*{\titleSW}{\begin{titlingpage}
+\newgeometry{left=10cm}
 \begingroup% Story of Writing
 \raggedleft
 \vspace*{\baselineskip}
@@ -300,6 +301,7 @@ urlcolor=TealBlue!70!black,
 \vfill
 \vspace*{\baselineskip}
 \endgroup
+\restoregeometry
 \end{titlingpage}}
 
 \usepackage{ellipsis}

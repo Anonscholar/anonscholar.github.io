@@ -7,8 +7,8 @@ microscopic particles. So a study of electromagnetism is
 of vital importance to us.}
 
 \emph{In electrostatics we will deal with the study of stationary charges. We will 
-discuss Coloumb's law and further alternate versions of it 
-for high symmetries like Gauss' law. This forms the basis of all 
+discuss Coulomb's law and further alternate versions of it 
+for high symmetries like Gauss's law. This forms the basis of all 
 of electromagnetic theory we will encounter.}
 
 \section{Electric Charge}
@@ -65,10 +65,17 @@ charge \(2e/3\), rendering the overall charge neutral.
 Quarks, however, have yet to be found singularly, thus we have not observed such fractional charges
 and the basic unit of charges remains \(e\). 
 
-\section{Coloumb's Law}
+\section{Coulomb's Law}
 
-Coloumb's law, which we take as an empirical law, states that 
-for charges of charge \(q_1\), \(q_2\), the electrical force 
+\begin{marginfigure}
+    \centering
+    \scalebox{2}{\incfig{coulomb}}
+    \caption{Two charges \(q_1\) and \(q_2\) and the 
+    radial vector between them.}
+\end{marginfigure}
+
+Coulomb's law, which we take as an empirical law, states that 
+for point charges of charge \(q_1\), \(q_2\), the electrical force 
 on the charge \(2\) by \(1\) is,
 
 \begin{equation}
@@ -80,3 +87,21 @@ where according to standard convention, \(\unitv{r}_{21}\) is the unit vector
 in the direction of the line from charge \(1\) to \(2\) and \(\vec{F}_{21}\) is 
 the force on \(2\) by \(1\).
 
+We could also argue that the line joining the two charges is the only possible direction 
+the force could act at all. After-all, for stationary charges, there is no other 
+\emph{unique} direction\footnote{Note of course, that this is not true for 
+moving charges and in fact one component of the force acts along the direction 
+\(\vec{r} \cp (\vec{r} \cp a)\).}.
+
+The constant \(k\) here evaluates to \(8.988 \times 10^5\) \unit{\newton\meter\squared\per\coulomb\squared}.
+For reasons involving easier calculations, \(k\) is often written as,
+
+\begin{equation}
+    k \equiv \frac{1}{4\pi\epsilon_0} \iff \boxed{\epsilon_0 = \frac{1}{4\pi k} = 8.854 \times 10^{-12} \unit{\coulomb\squared\per\newton\per\meter\squared}}
+\end{equation}
+
+We will see its use when talking about Gauss's law.
+
+Note that for two alike charges, \(q_1q_2 > 0\) and the electrical force points along the direction of 
+\(\vec{r}_{21}\) or from the charge \(1\) towards \(2\). Thus, it is repulsive 
+in nature. The converse is clearly true for particles of unlike charge.

@@ -815,6 +815,12 @@ value, we have,
     R = \frac{u}{g}\sqrt{u^2 + 2gh}
 \end{equation}
 
+\begin{marginfigure}
+    \centering
+    \scalebox{2.5}{\incfig{projectilewedge}}
+    \caption{Projectile grazing a wedge.}
+\end{marginfigure}
+
 \begin{example}
     A projectile starting from one vertex of a wedge, grazes the other 
     vertex and ends upon the other vertex, with an initial velocity 
@@ -852,13 +858,6 @@ value, we have,
     \end{soln}
 
 \end{example}
-
-\begin{marginfigure}
-    \centering
-    \scalebox{2.2}{\incfig{projectilewedge}}
-    \caption{Projectile grazing a wedge.}
-\end{marginfigure}
-
 
 Some peculiar things about projectile motion is that, \begin{inparaenum}[a)]
     \ii it is reversible, and
@@ -906,6 +905,171 @@ case is simply the initial height of the particle.
 Somewhat qualitatively, projectile motion is independent of its horizontal range. 
 If some projectiles have same maximum height, their time of flight \emph{will be the 
 same}.
+
+\subsection{Projectile Motion and Vectors}
+
+If we write the equations of projectile motion as a vector equation, it 
+corresponds to, 
+
+\begin{equation*}
+    \vec{v}(t) = \vec{v}_0 + \vec{g}t
+\end{equation*}
+
+and for the displacement,
+
+\begin{equation*}
+    \vec{s}(t) = \vec{v}_0t + \frac{1}{2}\vec{g}t^2
+\end{equation*}
+
+We see that the velocity at any further moment is just the resultant of a scaled 
+gravitational acceleration vector and the initial velocity vector and the displacement is the resultant of 
+the scaled velocity and gravitational acceleration vectors. 
+
+Since both of them are multiplied by a positive scalar the time \(t\) or that squared, we simply
+scale both of the vectors to find the resultant. These allow for some very slick derivations regarding
+projectile motion and are a nicer way to solve some of the problems regarding 
+the evolution of say the velocity vector.
+
+\begin{marginfigure}
+    \centering
+    \scalebox{2}{\incfig{projectilevector1}}
+    \caption{Scaled up \(\vec{v}_0\) and \(\vec{g}\) vectors in projectile motion.}
+    \label{fig: rangewithvectors}
+\end{marginfigure}
+
+In \cref{fig: rangewithvectors}, we can clearly note that since \(\vec{v}_0\) is tangent 
+to the curve at the initial point, so is \(\vec{v}_0t\). Now, we can calculate 
+the time taken to reach the following point since the displacement at that instant, 
+\(R\), is going to be the resultant of the two vectors as shown in \(\cref{fig: rangewithvectors}\).
+
+Thus,
+
+\begin{equation*}
+    \sin\theta = \frac{gt^2}{2v_0t} \implies t = \frac{2v_0\sin\theta}{g}
+\end{equation*}
+
+which is the desired flight time. We can also use,
+
+\begin{equation*}
+    \cos\theta = \frac{2R}{v_0t} \implies 2R = v_0t\cos\theta
+\end{equation*}
+
+by plugging in the expression for time we just got, we also get the range of the projectile. 
+
+This is an example of a really slick derivation. We can use such an idea to often solve from 
+problems where the final velocity or displacement vector has a known direction. 
+
+I would not recommend using it completely by itself, it is more slick than its often useful
+and while useful can also sometimes hold you back.
+
+\subsection{Projectile Motion with rotated axes}
+
+\begin{marginfigure}
+    \centering
+    \scalebox{2.2}{\incfig{projectilevector2}}
+    \caption{Projectile along a wedge}
+    \label{fig: projectilealongwedge}
+\end{marginfigure}
+
+In this particular section we'll particularly look at projectile motion along a wedge. Consider 
+\cref{fig: projectilealongwedge}. If we were to figure out \(d\), we could 
+use a number of ways. The locus of the projectile is,
+
+\begin{equation*}
+    y = x\tan(\theta+\alpha) - \frac{gx^2}{2v_0^2\cos^2(\theta+\alpha)}
+\end{equation*}
+
+and of the wedge is,
+
+\begin{equation*}
+    y = x\tan\theta 
+\end{equation*}
+
+We could simply equate them to figure out the distance \(d\), which is the range of the projectile.
+
+\begin{marginfigure}
+    \centering
+    \scalebox{2.2}{\incfig{projectilevector3}}
+    \caption{The cartesian axes rotated by \(\theta\).}
+    \label{fig: projectilerotatedaxes}
+\end{marginfigure}
+
+However, more generally, we have some other information than simply this which means that we 
+can use a different way to look at things. Instead of the standard axes, consider them rotated 
+by the angle of the wedge, \(\theta\). Consider \cref{fig: projectilerotatedaxes}.
+We can resolve \(\vec{v}_0\) vector into two components, along and perpendicular to the wedge,
+and thus along the \(x\) and \(y\) axis respectively. 
+
+The acceleration along the \(y\) axis is simply \(g\cos\theta\) and along the \(x\) axis 
+is \(g\sin\theta\). Thus, our equations in each direction are,
+
+\begin{align*}
+    v_x(t) = v_0\cos\alpha - g\sin\theta t\\
+    v_y(t) = v_0\sin\alpha - g\cos\theta t 
+\end{align*}
+
+and we may solve each of these to get any desired result. Due to the dependence 
+on both \(\theta\) and \(\alpha\), it is a bit difficult to things like maximum range
+and the loci method maybe preferred.  
+
+\begin{marginfigure}
+    \centering
+    \scalebox{2}{\incfig{projectilealongwedgeex}}
+    \caption{Projectile thrown from a wedge.}
+    \label{fig: projectile wedge example}
+\end{marginfigure}
+
+\begin{example}
+Consider a projectile thrown with a velocity \(v_0\) making an angle \(\alpha\) with 
+a wedge of inclination \(\theta\) as shown in the \cref{fig: projectile wedge example}. Find out the angle \(\alpha\) 
+such that the projectile has maximum range.    
+
+\begin{soln}
+    The locus of the projectile is, 
+    \begin{equation*}
+        y = x\tan\alpha - \frac{gx^2}{2v_0^2\cos^2\alpha}
+    \end{equation*}
+
+    and of the wedge is, 
+
+    \begin{equation*}
+        y = -x\tan\theta
+    \end{equation*}
+
+    At the range, they will be equal,
+
+    \begin{equation*}
+        x\tan\alpha - \frac{gx^2}{2v_0^2\cos^2\alpha} = -x\tan\theta \implies 
+        \tan\alpha + \tan\theta = \frac{gx}{2v_0^2\cos^2\alpha}
+    \end{equation*}
+
+    which gives us the desired range, 
+
+    \begin{equation*}
+        x = \frac{2v_0^2(\tan\alpha + \tan\theta)\cos^2\alpha}{g}
+    \end{equation*}
+
+    So the condition for maximum range is simply, \(\dv*{x}{\alpha} = 0\). This is also 
+    kind of illustrates a nice idea, since we need to get the derivative \(0\), we
+    can safely discard any multiplicative or additive constants right away which will 
+    either have a zero differentiation, or can be divided by since the other side of the 
+    equation is simply \(0\). 
+    
+    We get that, 
+
+    \begin{align*}
+        &\dv{(\tan\alpha + \tan\theta)\cos^2\alpha}{\alpha} = 0 \\
+        &\dv{\sin 2\alpha/2 + \tan\theta\cos^2\alpha}{\alpha} = 0 \\
+        &\cos 2\alpha - \tan\theta\sin 2\alpha = 0 \\
+        &\tan 2\alpha = \cot\theta \\
+        &\tan 2\alpha = \tan (\pi/2 - \theta) \\
+        &\alpha = \frac{\pi}{4} - \frac{\theta}{2}
+    \end{align*}
+
+    And we're done.
+\end{soln}
+
+\end{example}
 
 \section{Drag Forces}
 
@@ -974,3 +1138,95 @@ Ulitmately, this leads to the equations,
     v_y &= \qty(u_y + \frac{g}{k})e^{-kt} - \frac{g}{k}
 \end{align}
 
+\subsection{A bag of techniques}
+
+Although almost everything can be found with a bash-y mathematical solution, sometimes 
+it is just nicer to use a particularly slick idea to solve problems. Some of these are discussed 
+below.
+
+\subsection{Fermat's Principle}
+
+Given that in a medium, the body can move relative to it with some fixed 
+velocity \(v_1\). Ultimately, it has to cross to a point in another medium, in which 
+it can move with velocity \(v_2\) with respect to the first one. If it has to reach 
+some fixed point in the other medium, what could be its \emph{optimal} trajectory?
+
+\begin{marginfigure}
+    \centering
+    \scalebox{2.3}{\incfig{fermatprinciple}}
+    \caption{The optimal trajectory in the two media.}
+    \label{fig: fermat's principle}
+\end{marginfigure}
+
+Let the optimal trajectory be as in \cref{fig: fermat's principle}. The time in the first media
+is \[t_1 = \frac{\sqrt{x^2 + y^2}}{v_1},\] and in the other media is \[t_2 = \frac{\sqrt{(L-y)^2 + (d-x)^2}}{v_2}\].
+
+Note that \(y\) is fixed (since it is the vertical distance between the media.), Thus, 
+the way to get minimum time is, to get for \(t = t_1 + t_2\) to be such that,
+
+\begin{equation*}
+    \dv{t}{x} = 0
+\end{equation*}
+
+Now, differentiating the whole equation, we will get the final result,
+
+\begin{equation}
+    \frac{-2x}{\sqrt{(x^2+y^2)}v_1} + \frac{-2(d-x)}{\sqrt{(L-y)^2 + (d-x)^2}v_2} = 0 
+\end{equation}
+
+Note however, that, 
+
+\begin{equation*}
+    \sin\theta_1 = \frac{x}{\sqrt{(x^2+y^2)}} \quad \sin\theta_2 = \frac{(d-x)}{\sqrt{(L-y)^2 + (d-x)^2}}
+\end{equation*}
+
+Replacing both of these and factoring out \(-2\), we get that, 
+
+\begin{equation}
+    \boxed{\frac{\sin\theta_1}{v_1} = \frac{\sin\theta_2}{v_2}}
+\end{equation}
+
+This is a very neat result and allows us to greatly simplify everything. Note 
+here that both the velocities, \(v_1\) and \(v_2\) are relative to any common inertial
+frame. We can use some frame moving at some velocity to observe this and it wouldn't change 
+a thing. 
+
+
+\begin{marginfigure}
+    \centering
+    \scalebox{2.2}{\incfig{fermatprincipleex}}
+    \caption{Shortest time to reach opposite point in a stream.}
+    \label{fig: fermat example}
+\end{marginfigure}
+
+\begin{example}
+    If a man can swim relative to water with a velocity \(v_0\), and can walk on the ground 
+    with velocity \(3v_0\) and the velocity of the stream is \(2v_0\), find out minimum time 
+    in which the man can reach a point directly opposite to him. The width of the river is \(L\).
+    Look at \cref{fig: fermat example} for clarity.
+    
+    \begin{soln}
+        The man could walk in any direction on the ground, but since we want to minimize 
+        the time, we consider him walking in the same direction as the river current to get 
+        the velocity of man on ground relative to water being \(5v_0\). The velocity 
+        of him in the river relative to the stream is \(v_0\). 
+
+        From fermat's principle, the most optimal trajectory obeys 
+        
+        \begin{equation*}
+            \frac{\sin\theta_1}{v_1} = \frac{\sin\theta_2}{v_2}
+        \end{equation*}
+        where the angles are taken relative to the normal. 
+        
+        Since \(\theta_2 = \dfrac{\pi}{2}\), \(v_1 = v_0\), and \(v_2 = 5v_0\),
+
+        \begin{equation*}
+            sin\theta_1 = \frac{1}{5}
+        \end{equation*}
+
+        After which we can easily find the time as by a simple angle chase, \(\theta_1\) is 
+        the angle between the velocity of man and the vertical. From it we 
+        can find the resultant velocity with water (using components) 
+        and subsequently the drift and time required.
+    \end{soln}
+\end{example}
