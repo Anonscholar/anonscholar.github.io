@@ -1,7 +1,7 @@
 \usepackage{amsmath, amssymb}
 
 \nonzeroparskip
-\usepackage[right=8.5cm,left=2cm,bottom=1in,top=1in,marginparwidth=6cm,marginparsep=.5cm,asymmetric]{geometry}
+\usepackage[right=8cm,left=2cm,bottom=1in,top=1in,marginparwidth=5.5cm,marginparsep=.5cm,includeheadfoot,asymmetric]{geometry}
 
 \usepackage[texindy]{imakeidx}
 \makeindex[intoc]
@@ -19,7 +19,7 @@
 \usepackage{calc}
 \newif\ifNoChapNumber
 \newcommand\Vlines{%
-\def\VL{\rule[-1cm]{1pt}{2.3cm}\hspace{1mm}\relax}
+\def\VL{\rule[-1cm]{1pt}{2.8cm}\hspace{1mm}\relax}
 \VL\VL\VL\VL\VL\VL\VL}
 \makeatletter
 \setlength\midchapskip{0pt}
@@ -74,18 +74,17 @@
 
 \nouppercaseheads
 \makepagestyle{mystyle}
-\copypagestyle{mystyle}{companion}
-\makeevenhead{mystyle}{{\sffamily\thepage}}{}{\emph{\thechapter.\,\leftmark}}
-\makeoddhead{mystyle}{\emph{\rightmark}}{}{\sffamily\thepage}
+\makeevenhead{mystyle}{{\emph{\thechapter.\,\leftmark}}}{\hspace*{43em} \sffamily\thepage}{}
+\makeoddhead{mystyle}{\emph{\rightmark}}{\hspace*{43em} \sffamily\thepage}{}
+
 \makeevenfoot{mystyle}{}{}{}
 \makeoddfoot{mystyle}{}{}{}
 \makepsmarks{mystyle}{%
   \createmark{chapter}{left}{nonumber}{}{}}
   \setlength{\headwidth}{\textwidth}
-
-
-\makeheadrule{mystyle}{\headwidth}{\normalrulethickness}
-
+  \makeheadrule{mystyle}{\headwidth}{\normalrulethickness}
+\addtolength{\headwidth}{\marginparwidth}
+\addtolength{\headwidth}{\marginparsep}
  \nouppercaseheads 
 
 \pagestyle{mystyle}

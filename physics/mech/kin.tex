@@ -39,13 +39,13 @@ To discuss the motion, state of our body, it is also necessary to setup some tim
 It is the reading of the clock in the observer's frame. In general, we setup our clocks
 at \(0\) at the start of an event.
 
+\marginnote{One thing of importance is that a position vector of a particle is a function
+of time. We generally denote this as \(r(t)\) to show that is a function.}
+
 \section{Position Vector and Displacement}
 
 \subsection{Position Vector}
 \index{Position Vector}
-
-\marginnote{One thing of importance is that a position vector of a particle is a function
-of time. We generally denote this as \(r(t)\) to show that is a function.}
 
 We define the position of a particle relative to a reference frame using a \emph{position 
 vector}. One end of the position vector is the origin of our reference frame. The other is 
@@ -57,13 +57,12 @@ The position to any point is written as, \[
     \vec{r} = (x,y,z) = x\unitv{i} + y\unitv{j} + z\unitv{k}
 \]
 
-\begin{figure}
-    [H]
+\begin{marginfigure}
     \centering
-    \scalebox{0.8}{\incfig{position}}
+    \scalebox{2.2}{\incfig{position}}
     \caption{A position vector, \(\mathbf{r}\).}
     \label{fig: position}
-\end{figure}
+\end{marginfigure}
 
 \subsection{Displacement}
 \index{Displacement}
@@ -84,7 +83,7 @@ In \cref{fig: displacement}, the vector
 \begin{figure}
     [H]
     \centering
-    \scalebox{1}{\incfig{displacement}}
+    \scalebox{1.4}{\incfig{displacement}}
     \caption{Displacement from \(A\) to \(B\)}
     \label{fig: displacement}
 \end{figure}
@@ -92,26 +91,20 @@ In \cref{fig: displacement}, the vector
 The difference between displacement and distance is that of the path they describe. The distance covered is the length
 of the actual path, while the magnitude of the displacement is simply the length of the vector between the final and initial positions.
 
+\begin{example}
+    Consider the case of displacement and distance of a particle in circular motion with radius \(r\) Let it move from \(A\) to \(B\), inscribing
+    an angle \(\theta\) (in radians) Then, we have,
+    \begin{itemize}
+        \item Distance between \(A\), \(B\) = \(r\theta\)
+        \item Displacement between \(A\), \(B\) = \(2r\sin\left(\dfrac{\theta}{2}\right)\)
+    \end{itemize}
+\end{example}
+
 \begin{marginfigure}
     \centering
-    \scalebox{2.4}{\incfig{distance}}
-    \caption{Distance}
-\end{marginfigure}
-
-\begin{algorithm}
-    Consider the case of displacement and distance of a particle in circular motion with radius \(r\) Let it move from \(A\) to \(B\), inscribing
-    an angle \(\theta\) (in radians) Then, we have,\\
-    ~\\
-    Distance between \(A\), \(B\) = \(r\theta\)\\
-    Displacement between \(A\), \(B\) = \(2r\sin\left(\dfrac{\theta}{2}\right)\)
-\end{algorithm}
-
-\begin{figure}
-    [H]
-    \centering
-    \incfig{distdisp}
+    \scalebox{2}{\incfig{distdisp}}
     \caption{Displacement in a circle}
-\end{figure}
+\end{marginfigure}
 
 \section{Speed and Velocity}
 
@@ -200,7 +193,7 @@ with respect to time.}
 
 In general velocity is also referred to as `instantaneous velocity'. This is done to remind of the difference
 with average velocity. We will not refer to it that way since by velocity we shall always mean \(\vec{v}\) as defined in
-\cref{def: velocity}. The same goes for speed. Notably, speed is not defined as \(\ndiv{d}\) where \(d\) is the distance.
+\cref{def: velocity}. The same goes for speed. Notably, speed is not defined as \(\dv{\abs{r}}{t}\).
 
 While the average speed is very well that, speed is actually the magnitude of the velocity of that point. 
 Consider the distance between \(a\) and \(b\) as 
