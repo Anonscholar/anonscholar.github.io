@@ -272,6 +272,41 @@ We can find the angle between two vectors, \(\theta\), as,
     \cos\theta = \frac{\vec{A} \dtp \vec{B}}{AB}
 \end{equation*}
 
+Note that now we can calculate the magnitude of \(\vec{A}\) as, 
+
+\begin{equation*}
+    \vec{A} \dtp \vec{A} = A^2 = A_x^2 + A_y^2 + A_z^2
+\end{equation*}
+
+which gives the magnitude as \(A = \sqrt{A_x^2 + A_y^2 + A_z^2}\).
+
+Also, a very neat observation from the dot product is that,
+\begin{equation*}
+    \vec{A} \dtp \vec{B} \le AB
+\end{equation*}
+
+This is a rather simple idea since \(\cos\theta \in [-1, 1]\). 
+
+Now if generalize this to \(n\) dimensions, we will find the inner product,
+\(\vec{A} \dtp {B} = AB \cos\theta\) with each 
+vector lying in an \(n\) dimensional space with \(n\) axis components. This has similar properties to that of the dot 
+product and has the same but extended computation for 
+the component form. Let \((a_1, a_2, \dots, a_n)\) be the components of \(\vec{A}\) and 
+\((b_1, b_2, \dots, b_n)\) be the components of \(\vec{B}\), then,
+\begin{equation*}
+    \vec{A} \dtp \vec{B} \le AB
+\end{equation*}
+
+Using the magnitude formula we derived earlier and that the inner product has the same 
+computation(sum of the product of same axis components),
+\begin{equation}
+    a_1b_1 + a_2b_2 + \dots + a_nb_n \le \sqrt{a_1^2 + a_2^2 + \dots + a_n^2}\sqrt{b_1^2 + b_2^2 + \dots b_n^2}
+\end{equation}
+
+which is the \emph{Cauchy-Shwartz} inequality. Note that the equality is when \(\cos\theta=0\).
+Thus, when \(\vec{A}\) lies parallel to \(\vec{B}\). This can also be interpreted as \(\vec{A}\) being 
+being a scaling of \(\vec{B}\) by some real number \(\lambda = B/A\). 
+
 Given two vectors \(\vec{A}\) and \(\vec{B}\), we can find the projection of one along the \emph{direction} of 
 the other by using the dot product.
 
