@@ -102,7 +102,7 @@ of the actual path, while the magnitude of the displacement is simply the length
 
 \begin{marginfigure}
     \centering
-    \scalebox{1.4}{\incfig{distdisp}}
+    \scalebox{1.8}{\incfig{distdisp}}
     \caption{Displacement in a circle}
 \end{marginfigure}
 
@@ -957,13 +957,6 @@ and while useful can also sometimes hold you back.
 
 \subsection{Projectile Motion with rotated axes}
 
-\begin{marginfigure}
-    \centering
-    \scalebox{2.2}{\incfig{projectilevector2}}
-    \caption{Projectile along a wedge}
-    \label{fig: projectilealongwedge}
-\end{marginfigure}
-
 In this particular section we'll particularly look at projectile motion along a wedge. Consider 
 \cref{fig: projectilealongwedge}. If we were to figure out \(d\), we could 
 use a number of ways. The locus of the projectile is,
@@ -971,6 +964,13 @@ use a number of ways. The locus of the projectile is,
 \begin{equation*}
     y = x\tan(\theta+\alpha) - \frac{gx^2}{2v_0^2\cos^2(\theta+\alpha)}
 \end{equation*}
+
+\begin{marginfigure}
+    \centering
+    \scalebox{2.2}{\incfig{projectilevector2}}
+    \caption{Projectile along a wedge}
+    \label{fig: projectilealongwedge}
+\end{marginfigure}
 
 and of the wedge is,
 
@@ -980,18 +980,18 @@ and of the wedge is,
 
 We could simply equate them to figure out the distance \(d\), which is the range of the projectile.
 
+However, more generally, we have some other information than simply this which means that we 
+can use a different way to look at things. Instead of the standard axes, consider them rotated 
+by the angle of the wedge, \(\theta\). Consider \cref{fig: projectilerotatedaxes}.
+We can resolve \(\vec{v}_0\) vector into two components, along and perpendicular to the wedge,
+and thus along the \(x\) and \(y\) axis respectively. 
+
 \begin{marginfigure}
     \centering
     \scalebox{2.2}{\incfig{projectilevector3}}
     \caption{The cartesian axes rotated by \(\theta\).}
     \label{fig: projectilerotatedaxes}
 \end{marginfigure}
-
-However, more generally, we have some other information than simply this which means that we 
-can use a different way to look at things. Instead of the standard axes, consider them rotated 
-by the angle of the wedge, \(\theta\). Consider \cref{fig: projectilerotatedaxes}.
-We can resolve \(\vec{v}_0\) vector into two components, along and perpendicular to the wedge,
-and thus along the \(x\) and \(y\) axis respectively. 
 
 The acceleration along the \(y\) axis is simply \(g\cos\theta\) and along the \(x\) axis 
 is \(g\sin\theta\). Thus, our equations in each direction are,
@@ -1185,13 +1185,6 @@ frame. We can use some frame moving at some velocity to observe this and it woul
 a thing. 
 
 
-\begin{marginfigure}
-    \centering
-    \scalebox{2.2}{\incfig{fermatprincipleex}}
-    \caption{Shortest time to reach opposite point in a stream.}
-    \label{fig: fermat example}
-\end{marginfigure}
-
 \begin{example}
     If a man can swim relative to water with a velocity \(v_0\), and can walk on the ground 
     with velocity \(3v_0\) and the velocity of the stream is \(2v_0\), find out minimum time 
@@ -1223,3 +1216,10 @@ a thing.
         and subsequently the drift and time required.
     \end{soln}
 \end{example}
+
+\begin{marginfigure}
+    \centering
+    \scalebox{2.2}{\incfig{fermatprincipleex}}
+    \caption{Shortest time to reach opposite point in a stream.}
+    \label{fig: fermat example}
+\end{marginfigure}
