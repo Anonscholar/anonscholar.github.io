@@ -39,23 +39,26 @@
 {}{}
 
 \mdfdefinestyle{mdbluebox}{%
-    skipbelow=0pt,
-    skipabove=8pt,
-    linewidth=2pt,
+    roundcorner=1pt,
+    linewidth=1pt,
+    skipabove=12pt,
+    skipbelow=7pt,
     innertopmargin=12pt,
-    innerbottommargin=5pt,
-    rightline=false,
-    leftline=true,
-    topline=false,
-    bottomline=false,
-    linecolor=RoyalBlue,
-    backgroundcolor=RoyalBlue!2,
+    innerbottommargin=9pt,
+    linecolor=RoyalBlue!35,
+    nobreak=true,
+    backgroundcolor=RoyalBlue!4,
+    shadow=true,
+    shadowsize=4.7pt,
+    shadowcolor=black!30,
 }
 \declaretheoremstyle[
 headfont=\sffamily\bfseries\color{RoyalBlue},
 mdframed={style=mdbluebox},
-bodyfont=\itshape,
+headpunct={\\[2pt]},
 postheadspace={0pt},
+postheadhook={\textcolor{RoyalBlue!60}{\rule[.6ex]{\textwidth}{0.4pt}} \\ }, % \\ removed
+bodyfont=\itshape,
 ]{thmbluebox}
 
 \mdfdefinestyle{mdredbox}{%
@@ -69,7 +72,7 @@ postheadspace={0pt},
     topline=false,
     bottomline=false,
     linecolor=RawSienna,
-    backgroundcolor=RawSienna!1,
+    backgroundcolor=RawSienna!3,
 }
 \declaretheoremstyle[
 headfont=\bfseries\sffamily\color{RawSienna},
@@ -118,7 +121,7 @@ mdframed={style=mdblackbox}
 ]{thmblackbox}
 
 \mdfdefinestyle{mdpurplebox}{%
-    roundcorner=0pt,
+    roundcorner=1pt,
     linewidth=1pt,
     skipabove=12pt,
     skipbelow=7pt,
@@ -126,14 +129,17 @@ mdframed={style=mdblackbox}
     innerbottommargin=9pt,
     linecolor=Orchid!35,
     nobreak=true,
-    backgroundcolor=Orchid!6,
+    backgroundcolor=Orchid!10,
+    shadow=true,
+    shadowsize=4pt,
+    shadowcolor=black!30,
 }
 \declaretheoremstyle[
 headfont=\sffamily\bfseries\color{Orchid},
 mdframed={style=mdpurplebox},
 headpunct={\\[2pt]},
 postheadspace={0pt},
-postheadhook={\textcolor{Orchid!80}{\rule[.6ex]{\linewidth}{0.4pt}} \\ }, % \\ removed
+postheadhook={\textcolor{Orchid!80}{\rule[.6ex]{\textwidth}{0.4pt}} \\ }, % \\ removed
 ]{thmpurplebox}
 \newcommand{\listhack}{$\empty$\vspace{-2em}}
 
