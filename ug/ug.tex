@@ -1,13 +1,14 @@
 \documentclass[twoside, 11pt]{memoir}
-\setstocksize{26.3cm}{23.3cm}
-\settrimmedsize{26cm}{23cm}{*}
+\setstocksize{26.3cm}{23.7cm}
+\settrimmedsize{26cm}{23.5cm}{*}
 
 \input{../style.tex}
 \input{../theorems.tex}
 \input{../macros.tex}
 
 \date{\today}
-\title{An Undergraduate Notebook}
+\title{A Math Notebook}
+
 \addbibresource{ugreferences.bib}
 
 \begin{document}
@@ -17,20 +18,20 @@
     \titleSW
 
     \frontmatter
-
-    \newgeometry{right=2cm,left=2cm}
+    \pagestyle{empty}
+    \newgeometry{right=3cm,left=3cm}
     \renewcommand*{\contentsname}{Short contents}
     \setcounter{tocdepth}{0}% chapters and above
     \tableofcontents
 
     \clearpage
     \renewcommand*{\contentsname}{Contents}
-    \setcounter{tocdepth}{1}
+    \setcounter{tocdepth}{1}% subsections and above
     \tableofcontents
-    
     \clearpage
+
     \listoffigures
-    \clearpage
+    \restoregeometry
 
     \mainmatter
     \pagestyle{mystyle}
