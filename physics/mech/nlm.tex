@@ -58,14 +58,17 @@ hold. Certainly, if our frame is non-inertial, none of the laws will hold in thi
 A very nice reference which discusses interaction in detail is \cite{kleppner}
 
 \begin{axioms}
-    \ii[\textbf{Axiom 2.}] The net external force on a body is proportional to its change in 
+    \ii[\textbf{Axiom 2.}] In an inertial frame, the net external force on a body is proportional to its change in 
     momentum.
 \end{axioms}
 
 Thus, our claim is that
 \[\sum \Vec{F} = \dv{(m\vv)}{t} = m\vec{a},\]
 
-if the mass is constant. 
+if the mass is constant. We now see the importance of the first law, it sets up the 
+frame in which the second law works, and unlike what one could 
+deduce from its earlier understanding, is not 
+a special case of the second law.
 
 Let us take an interlude here and talk about what mass and force really are.
 
@@ -251,12 +254,174 @@ and related to the normal by \(\abs{f_k} = \mu_kN\), where \(\mu_k\) is the coef
 Generally, \(\mu_k < \mu_s\) and they're both less than \(1\). Though for some exceptionally rough surfaces, they
 may have a value greater than \(1\).
 
+\begin{marginfigure}
+    \scalebox{1}{\incfig{spinning terror}}
+\end{marginfigure}
+
+\begin{example}
+    Consider a person along the wall standing inside vertical drum, of radius \(r\), in which the floor is slowly falling 
+    away. If the coefficient of friction between the wall and person is \(\mu\), find 
+    the smallest value of the angular speed, \(\omega\) such that the person does not fall away.
+
+    \begin{soln}
+        This is a particularly famous amusement park ride, called the spinning terror. Using
+        polar co-ordinates, and that the friction must be equal to the weight to prevent slipping,
+        \begin{align*}
+            f &= mg \\
+            N &= m\omega^2r
+        \end{align*}
+        
+        Since \(f \le \mu N\),
+
+        \begin{equation*}
+            g \le \mu \omega^2 r \iff \omega \ge \sqrt{\frac{g}{\mu r}}
+        \end{equation*}
+        
+    \end{soln}
+\end{example}
+
 \subsection{Tension}
+
+\begin{marginfigure}
+    \scalebox{2}{\incfig{tension,rope}}
+    \caption{\(F_A\), the tension at \(A\), and \(F_B\) the tension at \(B\).}
+\end{marginfigure}
 
 The tension is the force a piece of string applies on another. Such a force 
 is applied due to molecular interactions, when we stretch a string, the attraction 
 between molecules opposes such a stretch and each piece of string applies tension on one another.
 
-If the string would be compressible however, we would have had another layer of complexity,
+If the string could be compressible however, we would have had another layer of complexity,
 the fact that we can bring the molecules close till only a certain distance after which 
 they will start repelling each other and tension would oppose the compression.
+
+So tension at any point is really the magnitude of force acting between adjacent sections of a rope.
+
+\begin{marginfigure}
+    \scalebox{2}{\incfig{tension,rigid}}
+    \caption{Tension applied on a body connected rigidly to a pulley.}
+    \label{fig: rigid tension}
+\end{marginfigure}
+
+We will shortly consider pulleys as well. If the pulleys are connected rigidly to 
+a body, and a string is wrapped around it, the tension experienced by the string applies on the 
+pulley as well. And since the pulley is connected through a rigid support to a body, 
+it applies on the body as well. Look at \cref{fig: rigid tension}. In particular note that 
+the tension on the body is directed towards the extension of the strings.
+
+\begin{example}
+    Let the rope of uniform mass density, \(\lambda\) and length \(L\) hang from a tree. Write the tension as 
+    a function of position from the bottom. 
+    \begin{soln}
+        Consider an infinitesimal section of the rope, of length \(\dd{x}\). Since 
+        the rope isn't accelerating, the net tension on the rope must balance its weight.
+        Thus,
+        \begin{equation*}
+            T(x + \dd{x}) - T(x) = \dd{T} = \dd{m} g
+        \end{equation*}
+
+        Using \(\lambda = \dv*{m}{x} \iff \dd{m} = \lambda \dd{x}\),
+
+        \begin{equation*}
+            \int_{T}^{T_0} \dd{T} = \int_0^{L-x} \lambda g \dd{x}
+        \end{equation*}
+
+        Which is a differential equation. To solve, it we need to find \(T_0\), 
+        a boundary value condition. However, note that at \(x = 0\), 
+        the tension must balance the rope's weight, hence, \(T_0 = mg = \lambda Lg\).
+
+        So we get the desired expression, \begin{equation*}
+            T = \lambda xg
+        \end{equation*}
+    \end{soln}
+\end{example}
+
+\section{Constraints}
+
+Sometimes the equation \(F = ma\) doesn't have all the information we need to solve a 
+problem. This is often when there are constraints involved in the problem which give 
+additional information.
+
+\begin{marginfigure}
+    \scalebox{2.3}{\incfig{wedge constraint}}
+\end{marginfigure}
+
+\begin{example}
+Consider a block placed on a wedge. Let the wedge accelerate 
+at some horizontal acceleration. Then find the relation between the accelerations 
+of the block and the wedge.
+
+\begin{soln}
+    If the position of the front end of the block is 
+    \((x,y)\) and that of the wedge is \((X, Y)\), 
+
+    \begin{equation*}
+        \tan\theta = \frac{Y-y}{x - X} \iff (X - x)\tan\theta = Y - y
+    \end{equation*}
+
+    Differentiating this twice with respect to time, 
+
+    \begin{equation}
+        \nddiv{y} = (\nddiv{X} - \nddiv{x}) \tan\theta
+    \end{equation}
+
+    where \(\nddiv{X}\) is the horizontal acceleration of the wedge.
+\end{soln}
+\end{example}
+
+Now we will consider a rather classic system for the use of constraints,
+Atwood's machine. As show in \cref{fig: atwood 1}, it is a system consisting of a pulley 
+and two masses. 
+
+\begin{marginfigure}
+    \scalebox{2}{\incfig{atwood 1}}
+    \caption{Classic Atwood's machine}
+    \label{fig: atwood 1}
+\end{marginfigure}
+
+If we were to try and find the acceleration of the two masses, we would encounter 
+three unknowns, \(a_1, a_2\) and \(T\) and two equations from the second law.
+
+To solve such a system we can consider the vertical positions of the blocks. The idea 
+here is to use the fact that a string has a fixed length(an inextensible one, anyway, but 
+this is quite a forgiving approximation). If the height of the pulley is \(h\), 
+their vertical accelerations \(y_1\), \(y_2\) and the length of string \(l\), then,
+
+\begin{equation*}
+    h - y_1 + h - y_2 = l
+\end{equation*}
+
+Differentiating twice with respect to time, 
+
+\begin{equation*}
+    - a_1 - a_2 = 0 \iff a_1 = -a_2
+\end{equation*}
+
+Hence, now our unknowns reduce from three to two and the system becomes solvable.
+If the pulley itself was accelerating, its height was changing,
+
+\begin{equation*}
+    \nddiv{h} - a_1 + \nddiv{h} - a_2 = 0 \iff \nddiv{h} = \frac{a_1 + a_2}{2}
+\end{equation*}
+
+And generally a pulley's position is the average of the position of the masses attached to it.
+If the system of pulleys consists of a lot of pulleys, it is difficult to use 
+the fact that the length of the string is constant (often called the conservation of 
+the string.). So we use a result from energy, that we will not derive quite yet, that is,
+
+\begin{equation*}
+    \sum Tx = \sum Tv = 0
+\end{equation*}
+
+the velocity sum is just a corollary of the position one. In a lot of scenarios, 
+this can be extended to accelerations as well, but sometimes, especially when 
+changing angles are involved, one needs to be careful. When such angles are not 
+involved, we can easily figure out the relation between accelerations. 
+
+For instance in our previous example,
+
+\begin{equation*}
+    Ta_1 + Ta_2 = 0 \iff a_1 = -a_2
+\end{equation*}
+
+which is the desired result.
