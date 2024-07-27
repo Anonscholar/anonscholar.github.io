@@ -336,15 +336,49 @@ the tension on the body is directed towards the extension of the strings.
     \end{soln}
 \end{example}
 
+\section{Free body Diagrams}
+
+The crux of this discussion will be on how do we solve problems? We're given 
+some initial condition, perhaps a force of some sort is applied. We know it must be 
+related to the acceleration of the particle by Netwon's second Law. But ultimately, how are 
+we meant to solve it?
+
+The first step into solving a problem of dynamics, is to setup a free body diagram.
+Consider for instance, a man moving in an elevator, accelerating upwards with acceleration 
+\(a\). What is the force experienced by man?
+
+Essentially, we're here only concerned with the forces that act on the man. So disregarding
+all complexity, we can draw a simple force diagram, that allows us to readily assess 
+the problem without losing any information.
+
+\begin{marginfigure}
+    \scalebox{0.8}{\incfig{fbd1}}
+    \caption{Free body diagram of the man.}
+\end{marginfigure}
+
+We see that there must be only two forces being applied on the body,
+the normal force and its own weight. \footnote{It is often a source of 
+confusion whether the normal and weight are action-reaction pairs of Newton's third law.
+They aren't, the weight of the body is the gravitational force it experiences 
+due to the Earth, its opposing force is the force experienced by Earth due to the body.
+However, due to the huge mass of the Earth, the acceleration provided by such a force is 
+negligible.}
+
+So, the net force on the object must be, \(N - mg\). Taking great care of the directions, 
+by the second law,
+
+\begin{equation*}
+    N - mg = ma \iff N = m(g + a)
+\end{equation*}
+
+And the man experiences a force greater than his weight --- an easily verifiable situation found 
+to be true.
+
 \section{Constraints}
 
 Sometimes the equation \(F = ma\) doesn't have all the information we need to solve a 
 problem. This is often when there are constraints involved in the problem which give 
 additional information.
-
-\begin{marginfigure}
-    \scalebox{2.3}{\incfig{wedge constraint}}
-\end{marginfigure}
 
 \begin{example}
 Consider a block placed on a wedge. Let the wedge accelerate 
@@ -369,18 +403,22 @@ of the block and the wedge.
 \end{soln}
 \end{example}
 
+\begin{marginfigure}
+    \scalebox{2.5}{\incfig{wedge constraint}}
+\end{marginfigure}
+
 Now we will consider a rather classic system for the use of constraints,
 Atwood's machine. As show in \cref{fig: atwood 1}, it is a system consisting of a pulley 
 and two masses. 
+
+If we were to try and find the acceleration of the two masses, we would encounter 
+three unknowns, \(a_1, a_2\) and \(T\) and two equations from the second law.
 
 \begin{marginfigure}
     \scalebox{2}{\incfig{atwood 1}}
     \caption{Classic Atwood's machine}
     \label{fig: atwood 1}
 \end{marginfigure}
-
-If we were to try and find the acceleration of the two masses, we would encounter 
-three unknowns, \(a_1, a_2\) and \(T\) and two equations from the second law.
 
 To solve such a system we can consider the vertical positions of the blocks. The idea 
 here is to use the fact that a string has a fixed length(an inextensible one, anyway, but 
@@ -425,3 +463,68 @@ For instance in our previous example,
 \end{equation*}
 
 which is the desired result.
+
+\subsection{Rigid Body constraint}
+
+The constraint we will be discussing in this section in particular is the rigid body constraint.
+A rigid body is any body that follows a particular constraint the distance between
+any two points on the body is always equal. This approximately carries over to 
+strings as well --- since we will mostly be dealing with in-extensible ones anyway.
+
+Let the velocity of one end of a rod be \(\vec{v}_1\) making an angle \(\theta_1\) with the rod
+and the velocity of the other end be \(\vec{v}_2\) making an angle \(\theta_2\) with the rod.
+
+Since the two points on the rod must be at a fixed distance, the relative velocities of the
+ component of these velocities along the rod must be equal,
+
+ \begin{equation}
+    \boxed{v_1\cos\theta_1 = v_2\cos\theta_2}
+ \end{equation}
+
+\begin{marginfigure}
+    \scalebox{2}{\incfig{rigidconstraintvel}}
+    \caption{Using the fixed length constraint of a rigid body.}
+\end{marginfigure}
+
+This particularly allows us to sidestep many annoyances we may get if we 
+instead tried to solve problems by considering components of vectors. The cautionary thing 
+about them is that the component of the vector is always, obviously, of lesser magnitude than 
+the original vector.
+
+If we have two vectors, at some angle such that we know one is the component of another, we
+can not be sure which one is the component of the other, at least not unless we 
+know their magnitudes. This isn't normally a problem, but can readily become one.
+
+\begin{marginfigure}
+    \scalebox{2}{\incfig{velocity constraint example 1}}
+    \caption{Velocity constraint in a pulley system.}
+    \label{fig: velconstraintex}
+\end{marginfigure}
+
+\begin{marginfigure}
+    \scalebox{2}{\incfig{velocity constraint example 2}}
+\end{marginfigure}
+
+
+\begin{example}
+    Consider the system shown in \cref{fig: velconstraintex}. Relate \(v\) with
+    \(v_1\) and \(v_2\).
+    
+    \begin{soln}
+        Let the velocity \(v\) make an angle \(\theta\) with the string as shown.
+        Using the rigid body constraint,
+
+        \begin{equation*}
+            v\cos\theta = v_2
+        \end{equation*}
+
+        And,
+
+        \begin{equation*}
+            v\cos(\alpha+\beta-\theta) = v_2
+        \end{equation*}
+
+        And substituting for \(\cos\theta\), we get the desired relation.
+    \end{soln}
+\end{example}
+

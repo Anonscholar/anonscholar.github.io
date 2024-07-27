@@ -187,8 +187,10 @@ only has a trivial solution of \(c_1 = c_2 = \dots = c_n = 0\), when equated to 
 vector, \(c_1\vec{e}_1 + c_2\vec{e}_2 + \dots + c_n\vec{e}_n = \vec{0}\). 
 
 These vectors being linearly independent imply that they can not be written as linear 
-combination of other vectors. Otherwise, we could have simply written the term 
-\(\vec{e}_i\) as the linear combination of other vectors whenever we needed to use it.
+combination of other vectors, so we cannot write them in terms of the other vectors.
+ Otherwise, we could have simply written the term \(\vec{e}_i\) as the linear combination of other vectors whenever we needed to use it.
+
+Basis vectors which are orthogonal --- mutually perpendicular, form an \vocab{orthonormal} basis.
 
 Although it might not be so obvious, all orthogonal sets of vectors are linearly 
 independent. If we represent these as \(\Set{\vec{e}_1, \vec{e}_2, \dots, \vec{e}_n}\), we
@@ -196,11 +198,11 @@ can construct a set of basis vectors that are not orthogonal as,
 \(\Set{\vec{e}_1, \vec{e}_2, \dots, \vec{e}_{n-1}, \vec{e}_1 + \vec{e_2} + \dots + \vec{e}_n}\).
 
 Which means that we don't always need the basis vectors to be orthogonal, but
-in practice we usually adopt orthogonal basis vectors.
+in practice we usually adopt an orthonormal basis.
 
 In particular, we'll use the basis vectors which have magnitude of \(1\), i.e. unit vectors.
 
-In cartesian co-ordinates, we use the unit vectors along the three axes, \(x\), \(y\) and 
+In cartesian co-ordinates, or when using the orthogonal cartesian basis, we use the unit vectors along the three axes, \(x\), \(y\) and 
 \(z\). These are written as \(\unitv{i}\), \(\unitv{j}\) and \(\unitv{k}\) respectively.
 
 But how can we write an arbitrary vector \(\Aa\) in terms of these unit vectors?
