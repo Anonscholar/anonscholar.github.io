@@ -528,3 +528,85 @@ know their magnitudes. This isn't normally a problem, but can readily become one
     \end{soln}
 \end{example}
 
+\subsection{Problems of Friction}
+
+The problems of friction are in particular annoying. This is mostly due to 
+the fact that friction on a body assumes whatever magnitude the force applied
+on it has (the body is at rest in such a case), until a certain threshold, after which its magnitude is constant, essentially 
+when there is relative motion.
+
+When a body is not moving, \(f \le \mu N\) where equality is at the limiting case, 
+just when the body is about to move. We will mostly find this annoying when dealing with 
+problems dealing with stacks of blocks.
+
+\begin{marginfigure}
+    \scalebox{2}{\incfig{block friction1}}
+    \caption{A block of mass \(M_2\) on the top of a block of mass \(M_1\).
+    The coefficient of friction between the two blocks is \(\mu\) and the surface on which
+    the blocks are kept is smooth.}
+    \label{fig: friction with blocks1}
+\end{marginfigure}
+
+Consider the setup shown in \cref{fig: friction with blocks1}. The maximum magnitude the 
+friction between the two blocks can assume is \(\mu N = \mu M_2g\). What if we now apply 
+a force on the block? 
+
+There are two possible cases --- either the friction assumes its maximum values, that is so when
+the upper block moves with respect to the lower block --- and since their initial velocities
+are zero, if the acceleration of the upper block differs from the lower one.
+
+Let's first consider that the blocks move together, i.e. there is no relative motion 
+between the bodies. Then if we consider the two blocks as a whole system,
+friction is an internal force and plays no part in determining the acceleration of the bodies.
+
+\begin{marginfigure}
+    \scalebox{2}{\incfig{block friction2}}
+\end{marginfigure}
+
+Since their acceleration is the same, 
+
+\begin{equation*}
+    F = (M_1 + M_2)a
+\end{equation*}
+
+Gives us the acceleration. Since for the upper block, the friction is the force 
+that provides the acceleration, we can find that as well.
+
+Now let's consider the second case --- that they do not move together. This can only happen 
+if friction assumes its maximum value. Drawing the force diagrams of the two blocks,
+
+\begin{marginfigure}
+    \scalebox{2}{\incfig{block friction3}}
+\end{marginfigure}
+
+We can find the acceleration of the two blocks since we know both \(f\)(\(\mu M_2g\)) 
+and \(F\).
+
+So how do we know which acceleration is right?
+
+Call the acceleration of the upper block in the first case common acceleration, and of the second maximum acceleration.
+If the common acceleration is lower than the maximum one, the upper block will move 
+with the common acceleration. Why is that so?
+
+Well let's assume the block moves with maximum acceleration when the common acceleration is lower.
+Note, however, that the lower block moves with common acceleration, lesser than the maximum one.
+
+So, the upper block moves faster than the lower one, but that cannot be, since the very reason 
+friction was applied in the forward direction (which grants in the maximum acceleration),
+is because the lower block moved faster, and the upper one slid back!
+
+We thus arrive at a contradiction. So the block must move with common acceleration, and 
+the two blocks move together.
+
+In the case when the common acceleration is greater, we see that the friction, which provides 
+acceleration cannot assume any value to provide the common acceleration --- it has a max value 
+and the max acceleration is lower than the common acceleration. So the bodies do not move together 
+and the upper one moves with maximum acceleration.
+
+Our above argument can be summarized as follows,
+
+\begin{mdframed}
+    The body will move with whichever of the common or maximum acceleration is lower.
+\end{mdframed}
+
+\todo{Add spring force and we're done with chapter :)}

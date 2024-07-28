@@ -172,23 +172,33 @@ Place your fingers in the direction of \(\Aa\) and curl them, along the smaller 
 \section{Vectors in Component form}
 
 Although we have worked without co-ordinate systems till now,
-to actually extract any meaning from vector operations, a coordinate system is necessary
-though the concept it describes is actually independent of any coordinate
-system.
-A spatial, three-dimensional coordinate system essentially establishes
-three basis vectors.
+to actually extract any meaning from vector operations, a coordinate system is necessary.
 
-Basis vectors are vectors that are linearly independent. That is,
-their linear combination, 
+A co-ordinate system consists of three things --- an origin, some axes and basis vectors.
+The concept of an origin and axes is already familiar to us, for instance, in the form of the cartesian plane.
+So our talk will be mostly centered around basis vectors. 
+
+Suppose we have a vector \(\vec{C}\) which is the sum of two vectors \(\alpha\vec{A}\) and 
+\(\beta\vec{B}\). We can then write \(\vec{C}\) as,
+
+\begin{equation*}
+    \vec{C} = \alpha\vec{A} + \beta\vec{B}
+\end{equation*}
+
+We call \(\vec{C}\) a linear combination of \(\vec{A}\) and \(\vec{B}\) and in essence, 
+we can represent \(\vec{C}\) in terms of \(\vec{A}\) and \(\vec{B}\). 
+
+The idea of basis vectors is based around this --- we adopt a set of vectors in terms 
+of which we can represent every other vector. Note, of course, that we have 
+a bit of a problem here. We can't really adopt vectors that are linear combinations of 
+others --- otherwise we could simply replace them by their linear combination.
+
+So basis vectors are vectors that are linearly independent. That is,
+their linear combination when equated to the \(n\) dimensional zero vector, 
 \[
-    c_1\vec{e}_1 + c_2\vec{e}_2 + \dots + c_n\vec{e}_n\] 
+    c_1\vec{e}_1 + c_2\vec{e}_2 + \dots + c_n\vec{e}_n = \vec{0}\] 
 
-only has a trivial solution of \(c_1 = c_2 = \dots = c_n = 0\), when equated to the \(n\) dimensional null
-vector, \(c_1\vec{e}_1 + c_2\vec{e}_2 + \dots + c_n\vec{e}_n = \vec{0}\). 
-
-These vectors being linearly independent imply that they can not be written as linear 
-combination of other vectors, so we cannot write them in terms of the other vectors.
- Otherwise, we could have simply written the term \(\vec{e}_i\) as the linear combination of other vectors whenever we needed to use it.
+only has a trivial solution of \(c_1 = c_2 = \dots = c_n = 0\). Otherwise, we could have simply written the term \(\vec{e}_i\) as the linear combination of other vectors whenever we needed to use it.
 
 Basis vectors which are orthogonal --- mutually perpendicular, form an \vocab{orthonormal} basis.
 
@@ -202,10 +212,10 @@ in practice we usually adopt an orthonormal basis.
 
 In particular, we'll use the basis vectors which have magnitude of \(1\), i.e. unit vectors.
 
-In cartesian co-ordinates, or when using the orthogonal cartesian basis, we use the unit vectors along the three axes, \(x\), \(y\) and 
+In cartesian co-ordinates, or when using the orthonormal cartesian basis, we use the unit vectors along the three axes, \(x\), \(y\) and 
 \(z\). These are written as \(\unitv{i}\), \(\unitv{j}\) and \(\unitv{k}\) respectively.
 
-But how can we write an arbitrary vector \(\Aa\) in terms of these unit vectors?
+But how can we write an arbitrary vector \(\vec{A}\) in terms of these unit vectors?
 The answer lies in projecting the vector along the axes. We use the dot product for it.
 
 \begin{align}
