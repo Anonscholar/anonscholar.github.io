@@ -63,7 +63,7 @@ A very nice reference which discusses interaction in detail is \cite{kleppner}
 \end{axioms}
 
 Thus, our claim is that
-\[\sum \Vec{F} = \dv{(m\vv)}{t} = m\vec{a},\]
+\[\sum \Vec{F} = \ndiv{\vec{P}} = m\nddiv{\vec{r}},\]
 
 if the mass is constant. We now see the importance of the first law, it sets up the 
 frame in which the second law works, and unlike what one could 
@@ -207,6 +207,75 @@ in direct contrast with the strong law which requires the equal and opposite
 forces to lie on the same line of action. Most forces such as gravity and the
 normal force in fact obey the strong law of action and reaction.
 
+\section{Trajectory and Spaces}
+
+If you do not know about differential 
+equations, I recommend getting a read on them before continuing this section (or skipping it for now).
+
+The preceding discussion on forces tells us an interesting thing, 
+the force is a real physical interaction --- embedded into our physical model.
+So, a particle does not undergo a force just because it has a specific 
+acceleration. It undergoes some acceleration because it is under the influence of a force.
+
+Generally, forces are actually functions of position, since in essence we care mostly 
+about how particles interact with each other. Such interactions are independent of time, 
+we are interested in how these interactions are affected by the position of the particles in space.
+
+So, if we denote the force as function of position, by the second law, 
+
+\sidenote{A little neat fact to note is that the trajectory is a double 
+differentiable function of time. While this maybe apparent from the existence 
+of forces, we may also write it out as a law, if we wish to, of course.}
+
+\begin{equation*}
+    m\nddiv{\vec{r}} = \vec{F}(\vec{r}).
+\end{equation*}
+
+This is a differential equation, the solution to which is function, \(\vec{r}(t)\). 
+This is called the \vocab{trajectory} of the particle. So when we solve the 
+equation given by the second law, we find for a function \(\vec{r}(t)\), 
+according to which the particle evolved with time (basically which governs 
+what path it follows in space). Of course, we only really 
+get a general solution by this, a class of functions, to be precise.
+
+To get the particular trajectory of a particle, we need some additional information, 
+the initial (boundary) conditions, which in most cases are the initial velocity and position.
+
+To be a little more precise, the trajectory 
+is a solution of an \vocab{equation of motion}, which is a second order differential 
+equation. Newton's second law is one such way to obtain an equation of motion, but 
+as you may have guessed, there are other ways to do so too. So the second law is not 
+the only possible way to obtain the trajectory of the particle, we'll discuss more 
+about this in analytical mechanics.
+
+\subsection{Configuration space}
+
+To describe the motion of a particle, we some \vocab{degrees of freedom}.
+These are the amount of co-ordinates we need to describe the motion of a particle.
+
+For instance in the case of point particles, since they do not have any dimensions themselves, 
+we only need to describe their position and as such, we need three co-ordinates.
+This is different for, for instance a rigid body, whose \emph{orientation}(because 
+we can rotate it) as well as its position matter, so we need six degrees of freedom.
+
+For a system of two point particles --- we need \(6\) degrees of freedom, 
+to describe the positions of both particles. For a system of \(n\) particles, 
+we need \(3n\) degrees of freedom.
+
+An \vocab{instantaneous configuration} of some particles is any possible arrangement of 
+those particles in space. The set of these configurations, \(\mathcal{Q}\) is called the \vocab{configuration space}.
+
+Consider a system of two particles in free space --- we need \(6\) co-ordinates (degrees of 
+freedom) to describe the arrangement, the position(location) of two particles. So, 
+\(\mathcal{Q}\) consists of six co-ordinates, and is the set \(\RR^2\). Similarly, we 
+may extend this to a system of \(n\) particles in free space, where,
+
+\begin{equation*}
+    \mathcal{Q} = \RR^{2n}
+\end{equation*}
+
+If two particles were instead confined to move along a sphere(which is denoted \(\mathbf{S}\)),
+then \(\mathcal{Q} = \mathbf{S}^2\).
 
 \section{Some Phenomenological Forces}
 

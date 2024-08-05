@@ -266,54 +266,9 @@ the equations of importance.
     \end{align}
 \end{theorem}
 
-\para{The derivation of these is quite easy, integrate \(\int a \dd{x}\) for the first, 
+The derivation of these is quite easy, integrate \(\int a \dd{x}\) for the first, 
 \(\int a \dd{t}\) for the second (both with constant acceleration), substitute from the former into the latter for the third,
-and finally for \(n^{th}\) second just do \(s_n - s_{n-1}\).} 
-
-Some particularly elementary examples demonstrating some tricks are now given.
-
-\begin{example}
-    Consider a particle moving with acceleration \(\alpha\) initially. After some time, it starts
-    to `de-accelerate' at \(\beta\) acceleration. After time \(t = T\), the particle comes to a stop.
-    Find the displacement covered by particle in time \(T\).
-\begin{soln}
-        It might be tempting to start calculating after setting up time \(t = t_0\) when acceleration
-        changed from \(\alpha\) to \(\beta\), i.e., the particle moves with acceleration \(\alpha\) till
-        \(t = t_0\).\\
-        However, let us try to do a cleaner solution. Consider the \(v-t\) graph of the particle,
-
-        \begin{figure}
-            [H]
-            \centering
-            \begin{tikzpicture}
-                \begin{axis}[funcgraphbare, xmax=5.8, ymax=10, xlabel={$t$}, ylabel={$v$}]
-                    \addplot[red,domain=0:3]{3*x} node[left,pos=1/2] {$\alpha$};
-                    \addplot[blue,domain=3:4.8]{(-5)*x+24} node[right,pos=1/2] {$\beta$};
-                    \draw [black,dashed] (axis cs:3,0)--(axis cs:3,9) node[left,pos=1/25] {$t_0$};
-                    \draw [black] (axis cs:4.8,-1)--(axis cs:4.8,0.5) node[right,pos=1] {$T$};
-                    \draw [black,dashed] (axis cs:0,9)--(axis cs:4.8,9) node[right,pos=1] {$v_{max}$};
-                \end{axis}
-            \end{tikzpicture}
-        \end{figure}
-        Note that \(\alpha(t_0) = \beta(T-t_0) = v_{max}\). Thus,
-        \begin{align*}
-            \alpha(t_0) &= \beta(T-t_0) \\
-            \alpha(t_0) &= \beta(T) - \beta(t_0) \\
-            \alpha(t_0) + \beta(t_0) &= \beta(T) \\
-            t_0 &= \frac{\beta T}{\alpha + \beta} \\
-            v_{max} &= \alpha t_0 \\
-            v_{max} &= \frac{\alpha\beta T}{\alpha + \beta}
-        \end{align*}
-        Now, note that \(\dfrac{1}{2} \times v_{max} \times T\) is the area under the graph.
-       
-        The thing to note here is that since the physical quantities are 
-        often related in a differential form, they can be converted 
-        into an integral form and thus, we can often consider the 
-        area under the curve for measures. 
-
-        Thus, displacement, \(s = \dfrac{\alpha\beta T^2}{2(\alpha + \beta)}\).
-\end{soln}
-\end{example}
+and finally for \(n^{th}\) second just do \(s_n - s_{n-1}\). 
 
 \begin{example}
     A car is at distance \(d\) from a boy. It starts accelerating at \(a\) \unit{\metre\per\second\squared}. What is the minimum velocity that the boy should
@@ -326,12 +281,14 @@ Some particularly elementary examples demonstrating some tricks are now given.
             s_{c,b} = d + \frac{1}{2}at^2 - vt        
         \end{equation}
     
-        The most important thing to note here is that, 
-        \begin{moral}
-            For two objects to meet, the solution for time must be real.
-        \end{moral}
+        From an inspection of the co-effecients of the \(x, x^2\) terms and the constant, 
+        we see that if a real solution to this exists, it must be positive (if this may not be 
+        apparent, recall vieta's relation and note \(a, v, d\) are all positive).
+
+        So they must always meet if this has a real solution!
+
         Therefore, from the simple equation, \eqref{eq: vel}, we must have, for real solutions,
-        \(b^2 - 4ac\) for the equation \(at^2 + bt + c\). Solving for this by substituting values from
+        \(b^2 - 4ac \ge 0\) for the equation \(at^2 + bt + c\). Solving for this by substituting values from
         \eqref{eq: vel}, we have,
             \begin{equation}
                 v \ge \sqrt{2ad}
@@ -339,12 +296,6 @@ Some particularly elementary examples demonstrating some tricks are now given.
     \end{soln}
 \end{example}
 
-\begin{remark}
-    One thing of note is that the converse of above is true as well,
-    \begin{moral}
-        For two objects to \emph{not} meet, the solution of time must be imaginary or negative.    
-    \end{moral}
-\end{remark}
 
 \para{One more key note to takeaway is that,}
 
@@ -390,30 +341,6 @@ Some particularly elementary examples demonstrating some tricks are now given.
             \end{tikzpicture}
         \end{figure}
     \end{soln}
-\end{example}
-
-\begin{example}
-    Find the total displacement if the \(v-t\) graph is as follows,
-    \begin{figure}
-        [H]
-        \centering
-        \begin{tikzpicture}
-            \begin{scope}[xshift=10cm]
-                % Axes
-                \draw (0,0) node[below left] {$O$}
-                    (0,0) -- (7,0) node[below] {$t$}
-                    (0,-0.5) -- (0,3.5) node[left] {$v$};
-                
-                \draw (6.4,0) arc[start angle=0, end angle=180, radius=3.2];
-            \end{scope}
-        \end{tikzpicture}
-    \end{figure}
-    The idea behind this is simple, the graph here is \textbf{not} a semicircle. It is an
-    ellipse, because of dimensional limitations! The equations of circle, \(v^2 + t^2 = r^2\)
-    doesn't work because we cannot add two dimensionally different quantities.
-
-    Therefore, the graph is an ellipse, and we conclude by computing the area of the ellipse. I haven't
-    given the data, since I wanted to mention the idea.
 \end{example}
 
 \section{Motion in Polar Co-ordinates}
@@ -496,22 +423,6 @@ the ground. Therefore, for these cases \(\vec{a} = -g \unitv{j}\).
 Some important points of note are that ``\(g\)'' does not become positive or negative or whatever,
 this is a common misconception. Instead, we just decide where exactly the positive direction is
 and setup \(g\) according to that.
-\parbreak
-When a ball is thrown with some velocity \(u\) say in the positive directions
-(change it into \(-u\) if in the negative direction), then we have,
-
-\begin{algorithm}
-    The following are special cases of equations of motion.
-    \begin{enumerate}
-        \ii \(v = u - gt\)
-        \ii \(v^2 = u^2 -2gh\)
-        \ii \(h = ut - \dfrac{1}{2}gt^2\)
-    \end{enumerate} 
-\end{algorithm}
-
-The case when a ball is thrown upwards is exactly symmetrical to this one, but there
-the ball goes up, reachs \(v = 0\) and then goes down. Also note that all of these equations are vector
-equations.
 
 \begin{example}
     Two balls are thrown in intervals of \(2\) seconds with velocity \(u\) each. Find the
@@ -530,26 +441,6 @@ equations.
 The thing to note in this example is that you do not need to setup two cases, one in which
 \(g\) is negative and one in which \(g\) is positive since it is in the direction of velocity. 
 Just note that these equations are vectorial and we are done.
-
-Some quick formulas to remember because they help a lot,
-
-\begin{algorithm}
-    For an object dropped from height \(h\),
-    \begin{enumerate}
-        \ii Time to reach ground, \(t = \sqrt{\dfrac{2h}{g}}\).
-        \ii Velocity when it reaches ground \(v = \sqrt{2gh}\).
-    \end{enumerate}
-\end{algorithm}
-
-Deriving them is easy, and they can be generalised as when it travels height \(h\) between
-the point of drop to anywhere, instead of ground. Clearly, both still follow there.
-
-Also, always remember,
-
-\begin{moral}
-    When an object is thrown/dropped from another object traveling with some velocity and
-    acceleration, it inherits its velocity but not its acceleration.
-\end{moral}
 
 \section{Graphs in Motion}
 
@@ -766,21 +657,21 @@ Here, \(H\) is the maximum height of the particle. Clearly,
 when the projectile is at \(H\), \(v_y = 0\). We have, 
 \(v_y^2 = 2gH\),
 \begin{equation}
-    \boxed{H = \frac{u^2\sin^2(\theta)}{2g}}
+    H = \frac{u^2\sin^2(\theta)}{2g}
 \end{equation}
 
 The time period of the projectile can be simply calculated as well,
 since at the final time, \(T\), \(y = v_yt - 1/2gt^2 = 0\) and,
 
 \begin{equation}
-    \boxed{T = \frac{2v\sin(\theta)}{g}}
+    T = \frac{2v\sin(\theta)}{g}
 \end{equation}
 
 \(R\) is the range the particle covers horizontally in time \(T\) and is
 clearly,
 
 \begin{equation}
-    \boxed{R = \frac{v^2\sin(2\theta)}{g}}
+    R = \frac{v^2\sin(2\theta)}{g}
 \end{equation}
 
 Note that if the particle is projected at \(\theta = \pi/4\), 
