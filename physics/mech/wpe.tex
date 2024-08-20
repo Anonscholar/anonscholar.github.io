@@ -1,0 +1,176 @@
+\chapter{Energy and Momenta}
+
+\motiv{While we could very well stop our discussion of 
+mechanics with newton's laws, it is often difficult to 
+describe physical phenomenon with just them. Thus, we develop 
+an equivalent way of describing motion --- using the concept of energy.}
+
+\section{Momentum}
+
+Newton's laws essentially hold for point particles. However, we have, and without 
+justification, often used for instance the second law, on an extended system of particles ---
+a \vocab{body}.
+
+If we were to consider the motion of such a body, the only way seems to be 
+to account for all interactions of each particle of the body. This, however, is a very tedious task.
+Hope is not lost, however, and the problem is much simpler than what we might think!
+
+If we apply some external force on the body, the total force is actually the sum of the external 
+force, plus the internal forces between the particles themselves. Let us denote 
+the force on some particle \(i\) by \(j\) as,
+\[\vec{f}_{ij}\]
+
+\sidenote{This is actually the usual convention when writing forces, \(\vec{F}_{ij}\) is the 
+force on \(i\) due to (interaction between \(i\) and)\(j\).}
+
+The total internal force on \(i\) is thus, 
+
+\[\sum_{j \ne i} \vec{f}_{ij}\]
+
+And the total net force on the system is,
+
+\[\sum_{i}\sum_{j \ne i} \vec{f}_{ij}\]
+
+The neat thing here is that, this sum sums over over all pairs \(\vec{f}_{ij}\), \(\vec{f}_{ji}\), which, by 
+the third law is zero and thus, 
+
+\begin{equation}
+    \sum_{i}\sum_{j \ne i} \vec{f}_{ij} = \sum \vec{f}_{ij} + \vec{f}_{ji} = 0
+\end{equation}
+
+So when considering the force on a system, we only need to care about external force! Cool, 
+but considering the interaction is still a tedious task. 
+
+The force on the system by the second law must be, 
+
+\begin{equation*}
+    \vec{F} = \vec{F}_{ext} = \sum m_i\nddiv{\vec{r}}_i = \sum \ndiv{\vec{p}}_i
+\end{equation*}
+
+Now, we can simplify the equation a little by abbreviating the sum as, 
+
+\begin{equation}
+    \vec{P} = \sum \vec{p}_i
+\end{equation}
+
+So our equation becomes, 
+
+\begin{equation}
+    \vec{F} = \ndiv{\vec{P}}
+\end{equation}
+
+This looks very similar to the case we had for a single particle. Consider the mass to 
+be constant, can we push this analogy to \(F = ma\)? Well, we can try,
+
+\begin{equation*}
+    \vec{F} = \ndiv{\vec{P}} = M\nddiv{\vec{R}}
+\end{equation*}
+
+where \(M = \sum m_i\) is the total mass of the system. Then,
+
+\begin{equation*}
+    M\ddot{\vec{R}} = \sum m_i \nddiv{\vec{r_i}} \iff \vec{R} = \frac{\sum m_i \vec{r}_i}{M}
+\end{equation*}
+
+The vector \(\vec{R}\) locates the center of mass of the system. 
+
+\begin{definition}
+    The \vocab{center of mass} of the system is the position \(\vec{R}\) from origin, where,
+    \begin{equation}
+        \vec{R} \equiv \frac{\sum m_i \vec{r}_i}{\sum m_i}
+    \end{equation}
+\end{definition}
+
+With the help of it, we can treat the dynamics of an extended system as if it were a particle of mass \(M\) located 
+at its center of mass (com).
+
+If the mass distribution is continuous, them,
+
+\begin{equation}
+    \vec{R} = \frac{\int \vec{r} \dd{m}}{\int \dd{m}}
+\end{equation}
+
+Let us calculate the center of mass of a few bodies, 
+
+\begin{example}
+    Calculate the center of mass of a rod of length \(L\) and mass \(M\), with uniform mass density, \(\lambda\).
+
+    \begin{soln}
+        Setup the origin at one end of the rod. Since the mass density is uniform, 
+        \begin{equation*}
+            \lambda = \frac{M}{L}
+        \end{equation*}
+
+        Now, note that \(\dd{m} = \lambda \dd{x}\), if \(x\) is distance from the origin. Thus,
+
+        \begin{equation*}
+            \int_{0}^{L} \vec{r} \dd{m} = \int_{0}^{L} x\unitv{i}\;\lambda \dd{x}
+        \end{equation*}
+
+        Using the value of \(\lambda\), the integral becomes
+
+        \begin{equation*}
+            \frac{M}{L} \unitv{i} \int_{0}^{L} x \dd{x} = \frac{ML}{2} \unitv{i} 
+        \end{equation*}
+
+        Thus, the com is at, 
+
+        \begin{equation}
+            \vec{R} = \frac{L}{2}
+        \end{equation}
+
+    \end{soln}
+\end{example}
+
+A better way to do this is choose a nice origin, about which the body is symmetrical. For instance, 
+the rod is symmetrical about its midpoint. Now for two points equal distance apart from the mid point,
+their masses are equal, but their position vectors are opposite and thus \(\sum m_i\vec{r_1}\) evaluates 
+to \(\vec{0}\), and our center of mass is at origin.
+
+Lets consider another example, this time we will show a neat idea on avoiding double 
+integrals.
+
+\begin{marginfigure}
+    \centering
+    \scalebox{1.5}{\incfig{triangle com}}
+\end{marginfigure}
+
+\begin{example}
+    Consider a right-angled triangular plate of height \(h\), and breadth\(b\). If the mass density 
+    of the disk, \(\sigma\) is uniform, find the center of mass of the disk.
+
+    \begin{soln}
+        Let us divide the plate into thin vertical strips, of breadth \(dx\). If the horizontal and vertical distancea of 
+        the strip from the origin, at one of the non-perpendicular vertices, are \(x\) and \(y\), then
+        \begin{equation*}
+            \frac{x}{y} = \frac{b}{h}
+        \end{equation*} 
+        The center of mass of this strip is located at the midpoint of this disk, at \(y/2\).
+        So, we can reduce each of these strips into their com and then calculate the center of mass of the plate.
+
+        \begin{equation*}
+            \int \vec{r} \dd{m} = \int x \unitv{i} + y/2 \unitv{j} \dd{m}
+        \end{equation*}
+
+        But, \(\dd{m} = \sigma \dd{A}\) and \(\dd{A} = y \dd{x}\). 
+
+        However, we also have, \(x/y = b/h \iff y = xh/b\). Thus, 
+
+        \begin{equation*}
+            \dd{m} = \sigma \frac{xh}{b} \dd{x}
+        \end{equation*}
+
+        And our integral is,
+
+        \begin{equation*}
+            \int_{0}^{b} x \unitv{i} \sigma \frac{xh}{b} \dd{x}+ \int_{0}^b \frac{xh}{2b} \sigma \unitv{j} \frac{xh}{b} \dd{x}
+        \end{equation*}
+
+        Also, \(\sigma = 2M/bh\), substituting and evaluating the integral, we have,
+
+        \begin{equation}
+            \vec{R} = \frac{2b}{3} \unitv{i} + \frac{h}{3} \unitv{j}
+        \end{equation}
+
+    \end{soln}
+\end{example}

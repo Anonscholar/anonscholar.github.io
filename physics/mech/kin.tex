@@ -176,22 +176,7 @@ In such a case we use the concept of \textbf{average velocity}, \[
 \marginnote{The dot over \(r\) in \(\dot{\vec{r}}\) tells us that \(r\) has been differentiated
 with respect to time.}
 
-\begin{algorithm}
-    Let us consider the cases of average velocity,
-    \begin{casework}
-        \ii When there are \(n\) equal time intervals with velocity \(\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n\).
-        Then, \[
-            \bavg{\vec{v}} = \frac{\vec{v}_1 + \vec{v}_2 + \dots + \vec{v}_n}{n} 
-        \]
-        \ii When there are \(n\) equal intervals of distance/displacement with velocity \(\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n\).
-        Then, \[
-            \bavg{\vec{v}} = \frac{n}{\frac{1}{\vec{v}_1} + \frac{1}{\vec{v}_2} + \dots + \frac{1}{\vec{v}_n}} 
-        \]
-    \end{casework}
-\end{algorithm}
-
-
-In general velocity is also referred to as `instantaneous velocity'. This is done to remind of the difference
+Velocity is also referred to as `instantaneous velocity'. This is done to remind of the difference
 with average velocity. We will not refer to it that way since by velocity we shall always mean \(\vec{v}\) as defined in
 \cref{def: velocity}. The same goes for speed. Notably, speed is not defined as \(\dv{\abs{r}}{t}\).
 
@@ -203,23 +188,6 @@ in the limiting case. Therefore, the \emph{magnitude} of velocity is the speed a
 Therefore, 
 
 \[\text{speed} = \abs{\dv{\vec{r}}{t}}\]
-
-
-\begin{algorithm}
-    Let us consider some techniques for solving equations of velocity. Consider the case when velocity and time are given
-    and we have to figure out displacement or when displacement and and velocity are given, but time is not. 
-    \begin{enumerate}
-        \ii \(v = c\) : This is a trivial case. Just use equations of uniformly accelerated motion.
-        \ii \(v = f(x)\) : \(\displaystyle \dv{x}{t} = f(x)\). Then, \(\dfrac{\dd{x}}{f(x)} = \dd{t}\).
-        Now, we simply have, \[
-            \int^{x_2}_{x_1} \frac{\dd{x}}{f(x)} = \int^{t_2}_{t_1} \dd{t}
-        \] to get \(x_1\) and \(x_2\) or \(t_1\) and \(t_2\). We may also set our co-ordinates such that \(x_2 = x\), \(x_1 = 0\) and \(t_2 = t\), \(t_1 = 0\).
-        \ii \(v = f(t)\) : This is also easy, just, \(\displaystyle f(x) = \dv{x}{t}\), then,
-        \[
-            \int^{t_2}_{t_1} f(t) \dd{t} = \int^{x_2}_{x_1} \dd{x}
-        \] We simply get \(x_1\) and \(x_2\) or \(t_1\) and \(t_2\) by solving the integral.
-    \end{enumerate}
-\end{algorithm}
 
 \section{Acceleration}
 
@@ -248,7 +216,7 @@ There is also another way to represent acceleration, as, \[
 \]
 
 Such a representation is particularly useful when the velocity of a particle 
-is a function of its position. In such a case, derivating with time is quite a hassle.
+is a function of its position. In such a case, differentiating with time is quite a hassle.
 
 \section{Uniformly Accelerated Motion}
 
@@ -347,7 +315,7 @@ and finally for \(n^{th}\) second just do \(s_n - s_{n-1}\).
 
 The polar co-ordinate axes are the two-dimesional subset of the 3-d cylindrical co-ordinates. 
 Any point in polar co-ordinates is depicted by a system of two unit vectors, \(\unitv{r}\) and
-\(\unitv{\theta}\). However, each of these are \framebox{dependent on the position of the particle} and
+\(\unitv{\theta}\). However, each of these are {dependent on the position of the particle} and
 maybe written explicitly as \(\unitv{r}(\theta)\) and \(\unitv{\theta}(\theta)\).  
 
 Here, \(\unitv{r}\) points in the direction of increasing radius(along the radial vector)
@@ -401,11 +369,13 @@ the time-derivative of the unit vectors. Using the definitions in \eqref{eq: pol
 
 \noindent The most interesting result are the various terms of acceleration in \eqref{polar: accel}. First let 
 us consider the terms along \(\unitv{r}\). \(\nddiv{r}\) is the \emph{radial} acceleration. It is
-the change is radial speed. The second term \(-r\ndiv{\theta}^2\) is the \emph{centripetal} acceleration.
-It arises from a change in tangential velocity.
+the change in the radial speed(and thus the radius). The second term \(-r\ndiv{\theta}^2\) is the \emph{centripetal} acceleration, this is 
+term responsible for change in the direction of the tangential velocity. In essence, it is 
+the component which accounts for the rotation of the particle. 
 
 Now let us consider the terms along \(\unitv{\theta}\). The \(r\nddiv{\theta}\) term is the tangential
-acceleration resulting from change in tangential speed. The other term \(2\ndiv{r}\ndiv{\theta}\) is the
+acceleration resulting from change in tangential speed, i.e if the radial vector is of 
+constant magnitude, and speed \(v\) is changing, \[a_t = r\ddot{\theta} = \ndiv{v}.\] The other term \(2\ndiv{r}\ndiv{\theta}\) is the
 \emph{coriolis} acceleration. I shall discuss it when discussing rotating frames.
 
 \section{Free Fall}
