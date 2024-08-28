@@ -178,14 +178,40 @@ mdframed={style=mdgreymargin},
 headpunct={ \\[3pt] },
 ]{thmmarginref}
 
+\mdfdefinestyle{mdthmbox}{%
+    roundcorner=4pt,
+    linewidth=1pt,
+    skipabove=12pt,
+    skipbelow=7pt,
+    innertopmargin=9pt,
+    nobreak=true,
+    innerbottommargin=9pt,
+}
 
-\theoremstyle{definition}
-\declaretheorem[style=thmbluebox,name=Theorem,numberwithin=chapter]{theorem}
+\usepackage{ifoddpage}
+
+\newlength{\spaceblength}
+\settowidth{\spaceblength}{\bfseries\ }
+\declaretheoremstyle[
+    headfont=\bfseries,
+    notefont=\scshape,
+    notebraces={}{\\[\parskip]}, % Braces for additional text
+    bodyfont=\normalfont\itshape,
+    mdframed={style=mdthmbox},
+    headpunct={},
+    headformat={%
+        \checkoddpage\ifoddpage\rlap{\hskip\textwidth\hspace*{2ex}\small\sffamily\color{black}\ \ \ \NAME\ \NUMBER}\hskip-\spaceblength{\NOTE}%
+        \else\rlap{\hskip\textwidth\hspace*{2ex}\small\sffamily\color{black}\ \ \ \NAME\ \NUMBER}\hskip-\spaceblength{\NOTE}\fi%
+    },
+]{boxstyle}
 
 
-\declaretheorem[style=thmbluebox,name=Theorem,numbered=no]{theorem*}
-\declaretheorem[style=thmbluebox,name=Lemma,numbered=no]{lemma*}
-\declaretheorem[style=thmbluebox,name=Lemma,sibling=theorem]{lemma}
+\declaretheorem[style=boxstyle,name=Theorem,numberwithin=chapter]{theorem}
+
+
+\declaretheorem[style=boxstyle,name=Theorem,numbered=no]{theorem*}
+\declaretheorem[style=boxstyle,name=Lemma,numbered=no]{lemma*}
+\declaretheorem[style=boxstyle,name=Lemma,sibling=theorem]{lemma}
 
 
 \declaretheorem[style=thmgreenbox,name=Proposition,numbered=no]{proposition*}
@@ -227,8 +253,8 @@ headpunct={ \\[3pt] },
 
 \declaretheorem[style=thmpurplebox,name=Conjecture,sibling=theorem]{conjecture}
 \declaretheorem[style=thmpurplebox,name=Conjecture,numbered=no]{conjecture*}
-\declaretheorem[style=thmpurplebox,name=Definition,sibling=theorem]{definition}
-\declaretheorem[style=thmpurplebox,name=Definition,numbered=no]{definition*}
+\declaretheorem[style=boxstyle,name=Definition,sibling=theorem]{definition}
+\declaretheorem[style=boxstyle,name=Definition,numbered=no]{definition*}
 
 \declaretheorem[style=basehead,name=Fact,sibling=theorem]{fact}
 \declaretheorem[style=basehead,name=Fact,numbered=no]{fact*}
@@ -260,7 +286,7 @@ headpunct={ \\[3pt] },
 \DeclareExerciseEnvironmentTemplate{custom}{%
   \par\vspace{3.25ex plus 1ex minus .2ex}
   \Needspace*{3\baselineskip}%
-  \noindent\sffamily\normalsize
+  \noindent\normalsize
   \textcolor{black}{%
     \textbf{\XSIMmixedcase{\GetExerciseName}\nobreakspace\GetExerciseProperty{counter}}%
   }%
@@ -270,11 +296,11 @@ headpunct={ \\[3pt] },
   \normalsize
   \GetExercisePropertyT{points}{%
     \marginpar{%
-        \printgoal{\PropertyValue}\,\spadesuit%
+        [{\color{TealBlue}\printgoal{\PropertyValue}}]%
         \GetExercisePropertyT{bonus-points}{~[+\printgoal{\PropertyValue}]}%
     }%
   }%
-  \par\vspace{1.5ex plus .2ex}
+  \;
   \@afterindentfalse\@afterheading
 }
 {}
@@ -284,7 +310,7 @@ headpunct={ \\[3pt] },
   exercise/the-counter = \arabic{exercise}. ,
   exercise/template = custom ,
   solution/template = custom ,
-  exercise/name = Q. 
+  exercise/name =  E
 }
 
 \newenvironment{exc}{%

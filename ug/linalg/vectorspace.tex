@@ -41,7 +41,7 @@ The list of length \(0\) is denoted by \(()\).
 \begin{example}
     [Lists vs sets]
     The lists \((3,5)\) and \((5,3)\) are not equal but \(\left\{3,5\right\} = \left\{5,3\right\}\). 
-    The list \((4,4,4) \ne (4,4) \ne (4)\) but \(\left\{4,4,4\right\} = \left\{4,4\right\} = \left\{4,\right\}\).
+    The list \((4,4,4) \ne (4,4) \ne (4)\) but \(\left\{4,4,4\right\} = \left\{4,4\right\} = \left\{4\right\}\).
 \end{example}
 
 \section{Higher Products}
@@ -163,4 +163,83 @@ Now, let us formally define \(V\).
     \end{axioms}
 
 \end{definition}
+
+\begin{example}
+    The set of functions, \(\FF^S\), such that \[ \FF^S = \{ f \given f : S \to \FF\}\]
+    is a vector space over \(\FF\) with addition being defined as, 
+    \begin{equation*}
+    (f + g)(x) = f(x) + g(x)
+    \end{equation*}
+
+    And scalar multiplication as, 
+    \begin{equation*}
+        c \cdot f = c \cdot f(x)
+    \end{equation*}
+
+    The properties are easy to verify. Note that \(f(x), g(x) \in \FF^n\), so their sum is commutative, since 
+    addition is commutative in \(\FF^n\). Similarly, we can use the properties of \(\FF^n\) to 
+    prove that \(\FF^S\) is really a vector space.
+\end{example}
+
+We can also use this general notation for the set of functions, for \(\FF^n\). 
+We can think of \(\FF^n\) as \(\FF^{\{1, 2, \dots\}}\). So, it is the set of functions 
+from \(\{1, 2, \dots\}\). We can think of each co-ordinate, \(x_i\) corresponding to 
+the value of the function at that point, \(f(i)\).
+
+Let us prove some general results regarding vector spaces. 
+
+\begin{proposition}
+    The additive identity is unique.
+\end{proposition}
+
+\begin{proof}
+    This is easy enough to show. Let \(\oo\), \(\vec{0}'\) be two additive identities.
+    Then, 
+    \begin{equation*}
+        \oo = \oo + \oo' = \oo'
+    \end{equation*}
+    And we're done.
+\end{proof}
+
+\begin{proposition}
+    Every \(\vv \in V\) has a unique additive inverse.
+\end{proposition}
+
+\begin{proof}
+    Since the existence is guaranteed by the axioms, we focus on uniqueness.
+    Let \(\ww\) and \(\uu\) be two additive inverses of \(\vv\). Then,
+    \begin{equation*}
+        \ww = \ww + \oo = \ww + (\vv + \uu) = (\ww + \vv) + \uu = \oo + \uu = \uu 
+    \end{equation*}
+\end{proof}
+
+Since additive inverses are unique, we can use particular symbol to denote them. We denote 
+the additive inverse of \(\vv\) by \(-\vv\). 
+
+\begin{proposition}
+    \(0\vv = \oo\)
+\end{proposition}
+
+\begin{proof}
+    Be careful by what we mean by the two zero's. The proposition is that the 
+    product of the scalar zero times the vector \(\vv\) is the vector zero.
+
+    Now,
+
+    \begin{equation*}
+        0\vv = (0 + 0)\vv = 0\vv + 0\vv
+    \end{equation*}
+    Adding the additive inverse, \(-0\vv\) on both sides, we get \(0\vv = \oo\).
+\end{proof}
+
+\begin{exc}
+    \begin{exercise}[points = 1]
+        Show that \(a\oo = \oo\) for all \(a \in \FF\).
+    \end{exercise}
+
+    \begin{exercise}[points = 1]
+        Prove that \(-(-\vv) = \vv\).
+    \end{exercise}
+
+\end{exc}
 
