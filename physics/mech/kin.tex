@@ -91,21 +91,6 @@ In \cref{fig: displacement}, the vector
 The difference between displacement and distance is that of the path they describe. The distance covered is the length
 of the actual path, while the magnitude of the displacement is simply the length of the vector between the final and initial positions.
 
-\begin{example}
-    Consider the case of displacement and distance of a particle in circular motion with radius \(r\) Let it move from \(A\) to \(B\), inscribing
-    an angle \(\theta\) (in radians) Then, we have,
-    \begin{itemize}
-        \item Distance between \(A\), \(B\) = \(r\theta\)
-        \item Displacement between \(A\), \(B\) = \(2r\sin\left(\dfrac{\theta}{2}\right)\)
-    \end{itemize}
-\end{example}
-
-\begin{marginfigure}
-    \centering
-    \scalebox{1.8}{\incfig{distdisp}}
-    \caption{Displacement in a circle}
-\end{marginfigure}
-
 \section{Speed and Velocity}
 
 \index{Speed}
@@ -240,8 +225,10 @@ and finally for \(n^{th}\) second just do \(s_n - s_{n-1}\).
 
 \begin{example}
     A car is at distance \(d\) from a boy. It starts accelerating at \(a\) \unit{\metre\per\second\squared}. What is the minimum velocity that the boy should
-    have to catch up with the car.
-    \begin{soln}
+    have to catch up with the car?
+\end{example}
+
+\begin{soln}
         Consider separation of boy and car, \(s_{c,b}\). Using the equations of motion, 
         we have \(s_{b} = vt\), \(s_{c} = \dfrac{1}{2}at^2\). Thus, 
         \begin{equation}
@@ -261,20 +248,13 @@ and finally for \(n^{th}\) second just do \(s_n - s_{n-1}\).
             \begin{equation}
                 v \ge \sqrt{2ad}
             \end{equation}
-    \end{soln}
-\end{example}
-
-
-\para{One more key note to takeaway is that,}
-
-\begin{moral}
-    At instant of maximum separation, relative velocity of particles is \(0\).
-\end{moral}
+\end{soln}
 
 \begin{example}
     A body is dropped at \(t = 0\), after time \(t = t_0\), another body is thrown downwards with
     velocity \(u\) \unit{\meter\per\second}. Assuming first body reaches ground first, plot graph
     of separation.
+\end{example}
 
     \begin{soln}
         At instant \(t_0\), displacement of first particle = \(\dfrac{1}{2}gt_{0}^2\). Note that here
@@ -309,7 +289,6 @@ and finally for \(n^{th}\) second just do \(s_n - s_{n-1}\).
             \end{tikzpicture}
         \end{figure}
     \end{soln}
-\end{example}
 
 \section{Motion in Polar Co-ordinates}
 
@@ -397,7 +376,7 @@ and setup \(g\) according to that.
 \begin{example}
     Two balls are thrown in intervals of \(2\) seconds with velocity \(u\) each. Find the
     time when they collide.
-
+\end{example}
     \begin{soln}
         Note that when they collide, their displacement from ground must be the same! Setting 
         the origin at ground, and direction of away from ground as positive, we have,
@@ -406,7 +385,6 @@ and setup \(g\) according to that.
         is thrown \(2\) seconds later, \(h_{2} = u(t-2) - \dfrac{1}{2}g(t-2)^2\). Now, we just have
         \(h_{1} = h_{2}\) and the calculation is trivial.
     \end{soln}
-\end{example}
 
 The thing to note in this example is that you do not need to setup two cases, one in which
 \(g\) is negative and one in which \(g\) is positive since it is in the direction of velocity. 
@@ -505,7 +483,7 @@ graph we can figure out the acceleration at any given \(x\) as,
 
 \begin{example}
     Given the velocity time graph in \cref{fig: vt to at example}, sketch out the acceleration time graph.
-
+\end{example}
     \begin{soln}
         We see that \(v = mx + c\) where \(m < 0\). Now, 
 
@@ -528,7 +506,6 @@ graph we can figure out the acceleration at any given \(x\) as,
         \caption{The corresponding acceleration time graph.}
     \end{figure}%
     \end{soln}
-\end{example}
 
 \subsubsection{Velocity squared time}
 
@@ -681,6 +658,7 @@ value, we have,
     \(v_0\) making an angle \(\theta\) with the horizontal. If the
     angles of the vertices are \(\alpha\) and \(\beta\), figure 
     out a relation between \(\tan \theta\), \(\tan\alpha\) and \(\tan\beta\).
+\end{example}
 
     \begin{soln}
         Divide the range of the projectile into two lengths, \(x\) and 
@@ -711,7 +689,6 @@ value, we have,
 
     \end{soln}
 
-\end{example}
 
 Some peculiar things about projectile motion is that, \begin{inparaenum}[a)]
     \ii it is reversible, and
@@ -877,6 +854,7 @@ and the loci method maybe preferred.
 Consider a projectile thrown with a velocity \(v_0\) making an angle \(\alpha\) with 
 a wedge of inclination \(\theta\) as shown in the \cref{fig: projectile wedge example}. Find out the angle \(\alpha\) 
 such that the projectile has maximum range.    
+\end{example}
 
 \begin{soln}
     The locus of the projectile is, 
@@ -923,7 +901,6 @@ such that the projectile has maximum range.
     And we're done.
 \end{soln}
 
-\end{example}
 
 \section{Drag Forces}
 
@@ -951,7 +928,7 @@ cases of linear drag.
     Consider a projectile of mass \(m\) thrown upwards with initial velocity \(v_0\). It undergoes a linear drag 
     force, \(\Vec{F} =  -kv \unitv{v}\). Find the velocity of the particle as 
     a function of time. 
-
+\end{example}
     \begin{soln}
         Using newton's second law, also by noting that 
         it also undergoes gravitation, \(\vec{a} = -g -kv/m \unitv{v}\).
@@ -973,7 +950,6 @@ cases of linear drag.
         \end{equation}
 
     \end{soln}
-\end{example}
 
 The same idea can be extended to projectile --- \(2\)d motion 
 by considering the components of the accelerations,
@@ -1051,7 +1027,15 @@ a thing.
     with velocity \(3v_0\) and the velocity of the stream is \(2v_0\), find out minimum time 
     in which the man can reach a point directly opposite to him. The width of the river is \(L\).
     Look at \cref{fig: fermat example} for clarity.
-    
+\end{example}
+
+\begin{marginfigure}
+    \centering
+    \scalebox{2.2}{\incfig{fermatprincipleex}}
+    \caption{Shortest time to reach opposite point in a stream.}
+    \label{fig: fermat example}
+\end{marginfigure}
+
     \begin{soln}
         The man could walk in any direction on the ground, but since we want to minimize 
         the time, we consider him walking in the same direction as the river current to get 
@@ -1076,11 +1060,3 @@ a thing.
         can find the resultant velocity with water (using components) 
         and subsequently the drift and time required.
     \end{soln}
-\end{example}
-
-\begin{marginfigure}
-    \centering
-    \scalebox{2.2}{\incfig{fermatprincipleex}}
-    \caption{Shortest time to reach opposite point in a stream.}
-    \label{fig: fermat example}
-\end{marginfigure}

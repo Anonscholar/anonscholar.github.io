@@ -35,7 +35,7 @@ The neat thing here is that, this sum sums over over all pairs \(\vec{f}_{ij}\),
 the third law is zero and thus, 
 
 \begin{equation}
-    \sum_{i}\sum_{j \ne i} \vec{f}_{ij} = \sum \vec{f}_{ij} + \vec{f}_{ji} = 0
+    \sum_{i}\sum_{j \ne i} \vec{f}_{ij} = \sum (\vec{f}_{ij} + \vec{f}_{ji}) = \oo
 \end{equation}
 
 So when considering the force on a system, we only need to care about external force! Cool, 
@@ -72,17 +72,18 @@ where \(M = \sum m_i\) is the total mass of the system. Then,
     M\ddot{\vec{R}} = \sum m_i \nddiv{\vec{r_i}} \iff \vec{R} = \frac{\sum m_i \vec{r}_i}{M}
 \end{equation*}
 
-The vector \(\vec{R}\) locates the center of mass of the system. 
+The vector \(\vec{R}\) locates the center of mass of the system, the point about which, 
+the \emph{weighted}\footnote{Weighted using the mass at that point} position vectors 
+of the points of the body sum to zero. This is easy to verify. In essence, we can reduce the 
+whole system to a particle, of the mass of the whole body, located at its center of mass.
 
 \begin{definition}
-    The \vocab{center of mass} of the system is the position \(\vec{R}\) from origin, where,
+    The \vocab{center of mass} of the system is located at the position \(\vec{R}\) from origin, where,
     \begin{equation}
         \vec{R} \equiv \frac{\sum m_i \vec{r}_i}{\sum m_i}
     \end{equation}
 \end{definition}
 
-With the help of it, we can treat the dynamics of an extended system as if it were a particle of mass \(M\) located 
-at its center of mass (com).
 
 If the mass distribution is continuous, them,
 
@@ -94,6 +95,7 @@ Let us calculate the center of mass of a few bodies,
 
 \begin{example}
     Calculate the center of mass of a rod of length \(L\) and mass \(M\), with uniform mass density, \(\lambda\).
+\end{example}
 
     \begin{soln}
         Setup the origin at one end of the rod. Since the mass density is uniform, 
@@ -120,7 +122,6 @@ Let us calculate the center of mass of a few bodies,
         \end{equation}
 
     \end{soln}
-\end{example}
 
 A better way to do this is choose a nice origin, about which the body is symmetrical. For instance, 
 the rod is symmetrical about its midpoint. Now for two points equal distance apart from the mid point,
@@ -130,14 +131,17 @@ to \(\vec{0}\), and our center of mass is at origin.
 Lets consider another example, this time we will show a neat idea on avoiding double 
 integrals.
 
+
+
+\begin{example}
+    Consider a right-angled triangular plate of height \(h\), and breadth \(b\). If the mass density 
+    of the disk, \(\sigma\) is uniform, find the center of mass of the disk.
+\end{example}
+
 \begin{marginfigure}
     \centering
     \scalebox{1.5}{\incfig{triangle com}}
 \end{marginfigure}
-
-\begin{example}
-    Consider a right-angled triangular plate of height \(h\), and breadth\(b\). If the mass density 
-    of the disk, \(\sigma\) is uniform, find the center of mass of the disk.
 
     \begin{soln}
         Let us divide the plate into thin vertical strips, of breadth \(dx\). If the horizontal and vertical distancea of 
@@ -173,4 +177,3 @@ integrals.
         \end{equation}
 
     \end{soln}
-\end{example}

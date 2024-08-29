@@ -267,11 +267,11 @@ those particles in space. The set of these configurations, \(\mathcal{Q}\) is ca
 
 Consider a system of two particles in free space --- we need \(6\) co-ordinates (degrees of 
 freedom) to describe the arrangement, the position(location) of two particles. So, 
-\(\mathcal{Q}\) consists of six co-ordinates, and is the set \(\RR^2\). Similarly, we 
+\(\mathcal{Q}\) consists of six co-ordinates, and is the set \(\RR^6\). Similarly, we 
 may extend this to a system of \(n\) particles in free space, where,
 
 \begin{equation*}
-    \mathcal{Q} = \RR^{2n}
+    \mathcal{Q} = \RR^{3n}
 \end{equation*}
 
 If two particles were instead confined to move along a sphere(which is denoted \(\mathbf{S}\)),
@@ -323,14 +323,12 @@ and related to the normal by \(\abs{f_k} = \mu_kN\), where \(\mu_k\) is the coef
 Generally, \(\mu_k < \mu_s\) and they're both less than \(1\). Though for some exceptionally rough surfaces, they
 may have a value greater than \(1\).
 
-\begin{marginfigure}
-    \scalebox{1}{\incfig{spinning terror}}
-\end{marginfigure}
-
 \begin{example}
+
     Consider a person along the wall standing inside vertical drum, of radius \(r\), in which the floor is slowly falling 
     away. If the coefficient of friction between the wall and person is \(\mu\), find 
     the smallest value of the angular speed, \(\omega\) such that the person does not fall away.
+\end{example}
 
     \begin{soln}
         This is a particularly famous amusement park ride, called the spinning terror. Using
@@ -347,7 +345,6 @@ may have a value greater than \(1\).
         \end{equation*}
         
     \end{soln}
-\end{example}
 
 \subsection{Tension}
 
@@ -366,21 +363,23 @@ they will start repelling each other and tension would oppose the compression.
 
 So tension at any point is really the magnitude of force acting between adjacent sections of a rope.
 
-\begin{marginfigure}
-    \scalebox{2}{\incfig{tension,rigid}}
-    \caption{Tension applied on a body connected rigidly to a pulley.}
-    \label{fig: rigid tension}
-\end{marginfigure}
-
 We will shortly consider pulleys as well. If the pulleys are connected rigidly to 
 a body, and a string is wrapped around it, the tension experienced by the string applies on the 
 pulley as well. And since the pulley is connected through a rigid support to a body, 
 it applies on the body as well. Look at \cref{fig: rigid tension}. In particular note that 
 the tension on the body is directed towards the extension of the strings.
 
+\begin{marginfigure}
+    \scalebox{2}{\incfig{tension,rigid}}
+    \caption{Tension applied on a body connected rigidly to a pulley.}
+    \label{fig: rigid tension}
+\end{marginfigure}
+
 \begin{example}
     Let the rope of uniform mass density, \(\lambda\) and length \(L\) hang from a tree. Write the tension as 
     a function of position from the bottom. 
+\end{example}
+
     \begin{soln}
         Consider an infinitesimal section of the rope, of length \(\dd{x}\). Since 
         the rope isn't accelerating, the net tension on the rope must balance its weight.
@@ -403,7 +402,6 @@ the tension on the body is directed towards the extension of the strings.
             T = \lambda xg
         \end{equation*}
     \end{soln}
-\end{example}
 
 \section{Free body Diagrams}
 
@@ -416,14 +414,15 @@ The first step into solving a problem of dynamics, is to setup a free body diagr
 Consider for instance, a man moving in an elevator, accelerating upwards with acceleration 
 \(a\). What is the force experienced by man?
 
-Essentially, we're here only concerned with the forces that act on the man. So disregarding
-all complexity, we can draw a simple force diagram, that allows us to readily assess 
-the problem without losing any information.
-
 \begin{marginfigure}
     \scalebox{0.8}{\incfig{fbd1}}
     \caption{Free body diagram of the man.}
 \end{marginfigure}
+
+Essentially, we're here only concerned with the forces that act on the man. So disregarding
+all complexity, we can draw a simple force diagram, that allows us to readily assess 
+the problem without losing any information.
+
 
 We see that there must be only two forces being applied on the body,
 the normal force and its own weight. \footnote{It is often a source of 
@@ -453,6 +452,7 @@ additional information.
 Consider a block placed on a wedge. Let the wedge accelerate 
 at some horizontal acceleration. Then find the relation between the accelerations 
 of the block and the wedge.
+\end{example}
 
 \begin{soln}
     If the position of the front end of the block is 
@@ -470,7 +470,6 @@ of the block and the wedge.
 
     where \(\nddiv{X}\) is the horizontal acceleration of the wedge.
 \end{soln}
-\end{example}
 
 \begin{marginfigure}
     \scalebox{2.5}{\incfig{wedge constraint}}
@@ -540,6 +539,11 @@ A rigid body is any body that follows a particular constraint the distance betwe
 any two points on the body is always equal. This approximately carries over to 
 strings as well --- since we will mostly be dealing with in-extensible ones anyway.
 
+\begin{marginfigure}
+    \scalebox{2}{\incfig{rigidconstraintvel}}
+    \caption{Using the fixed length constraint of a rigid body.}
+\end{marginfigure}
+
 Let the velocity of one end of a rod be \(\vec{v}_1\) making an angle \(\theta_1\) with the rod
 and the velocity of the other end be \(\vec{v}_2\) making an angle \(\theta_2\) with the rod.
 
@@ -549,11 +553,6 @@ Since the two points on the rod must be at a fixed distance, the relative veloci
  \begin{equation}
     \boxed{v_1\cos\theta_1 = v_2\cos\theta_2}
  \end{equation}
-
-\begin{marginfigure}
-    \scalebox{2}{\incfig{rigidconstraintvel}}
-    \caption{Using the fixed length constraint of a rigid body.}
-\end{marginfigure}
 
 This particularly allows us to sidestep many annoyances we may get if we 
 instead tried to solve problems by considering components of vectors. The cautionary thing 
@@ -570,16 +569,16 @@ know their magnitudes. This isn't normally a problem, but can readily become one
     \label{fig: velconstraintex}
 \end{marginfigure}
 
+\begin{example}
+    Consider the system shown in \cref{fig: velconstraintex}. Relate \(v\) with
+    \(v_1\) and \(v_2\).
+\end{example}
+
 \begin{marginfigure}
     \scalebox{2}{\incfig{velocity constraint example 2}}
 \end{marginfigure}
 
-
-\begin{example}
-    Consider the system shown in \cref{fig: velconstraintex}. Relate \(v\) with
-    \(v_1\) and \(v_2\).
-    
-    \begin{soln}
+\begin{soln}
         Let the velocity \(v\) make an angle \(\theta\) with the string as shown.
         Using the rigid body constraint,
 
@@ -595,7 +594,6 @@ know their magnitudes. This isn't normally a problem, but can readily become one
 
         And substituting for \(\cos\theta\), we get the desired relation.
     \end{soln}
-\end{example}
 
 \subsection{Problems of Friction}
 
@@ -608,13 +606,6 @@ When a body is not moving, \(f \le \mu N\) where equality is at the limiting cas
 just when the body is about to move. We will mostly find this annoying when dealing with 
 problems dealing with stacks of blocks.
 
-\begin{marginfigure}
-    \scalebox{2}{\incfig{block friction1}}
-    \caption{A block of mass \(M_2\) on the top of a block of mass \(M_1\).
-    The coefficient of friction between the two blocks is \(\mu\) and the surface on which
-    the blocks are kept is smooth.}
-    \label{fig: friction with blocks1}
-\end{marginfigure}
 
 Consider the setup shown in \cref{fig: friction with blocks1}. The maximum magnitude the 
 friction between the two blocks can assume is \(\mu N = \mu M_2g\). What if we now apply 
@@ -624,13 +615,17 @@ There are two possible cases --- either the friction assumes its maximum values,
 the upper block moves with respect to the lower block --- and since their initial velocities
 are zero, if the acceleration of the upper block differs from the lower one.
 
+\begin{marginfigure}
+    \scalebox{2}{\incfig{block friction1}}
+    \caption{A block of mass \(M_2\) on the top of a block of mass \(M_1\).
+    The coefficient of friction between the two blocks is \(\mu\) and the surface on which
+    the blocks are kept is smooth.}
+    \label{fig: friction with blocks1}
+\end{marginfigure}
+
 Let's first consider that the blocks move together, i.e. there is no relative motion 
 between the bodies. Then if we consider the two blocks as a whole system,
 friction is an internal force and plays no part in determining the acceleration of the bodies.
-
-\begin{marginfigure}
-    \scalebox{2}{\incfig{block friction2}}
-\end{marginfigure}
 
 Since their acceleration is the same, 
 
@@ -641,17 +636,21 @@ Since their acceleration is the same,
 Gives us the acceleration. Since for the upper block, the friction is the force 
 that provides the acceleration, we can find that as well.
 
+\begin{marginfigure}
+    \scalebox{2}{\incfig{block friction2}}
+\end{marginfigure}
+
 Now let's consider the second case --- that they do not move together. This can only happen 
 if friction assumes its maximum value. Drawing the force diagrams of the two blocks,
-
-\begin{marginfigure}
-    \scalebox{2}{\incfig{block friction3}}
-\end{marginfigure}
 
 We can find the acceleration of the two blocks since we know both \(f\)(\(\mu M_2g\)) 
 and \(F\).
 
 So how do we know which acceleration is right?
+
+\begin{marginfigure}
+    \scalebox{2}{\incfig{block friction3}}
+\end{marginfigure}
 
 Call the acceleration of the upper block in the first case common acceleration, and of the second maximum acceleration.
 If the common acceleration is lower than the maximum one, the upper block will move 

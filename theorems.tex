@@ -205,6 +205,43 @@ headpunct={ \\[3pt] },
     },
 ]{boxstyle}
 
+\mdfdefinestyle{blackbox}{%
+    frametitlerulewidth=1pt,
+    frametitlerule=true,
+    roundcorner=4pt,
+    linewidth=1pt,
+    skipabove=15pt,
+    skipbelow=2pt,
+    frametitlefont=\bfseries,
+    innertopmargin=12pt,
+    innerbottommargin=8pt,
+    nobreak=true,
+    backgroundcolor=gray!2,
+    linecolor=black,
+}
+
+\mdfdefinestyle{remarkbox}{%
+    frametitlerule=false,
+    roundcorner=4pt,
+    linewidth=1pt,
+    skipabove=15pt,
+    skipbelow=2pt,
+    frametitlefont=\itshape,
+    innertopmargin=12pt,
+    innerbottommargin=8pt,
+    nobreak=true,
+    backgroundcolor=white,
+    linecolor=black,
+}
+
+
+\patchcmd{\endproof}% <cmd>
+  {\endtrivlist}% <search>
+  {\endtrivlist\par\nobreak\vspace*{\dimexpr-\baselineskip-\parskip}\nobreak\noindent\hrulefill}% <replace>
+  {}{}% <succes><failure>
+
+\mdtheorem[style=blackbox]{example}[subsection]{Example}
+\mdtheorem[style=remarkbox]{remark}[subsection]{Remark}
 
 \declaretheorem[style=boxstyle,name=Theorem,numberwithin=chapter]{theorem}
 
@@ -225,13 +262,7 @@ headpunct={ \\[3pt] },
 \declaretheorem[style=thmgreenbox,name=Claim,sibling=theorem]{claim}
 \declaretheorem[style=thmgreenbox,name=Claim,numbered=no]{claim*}
 
-\declaretheorem[style=thmredbox,name=Example,sibling=theorem]{example}
-\declaretheorem[style=thmredbox,name=Example,numbered=no]{example*}
-
-
 % Remark-style theorems
-\declaretheorem[style=thmblackbox,name=Remark,sibling=theorem]{remark}
-\declaretheorem[style=thmblackbox,name=Remark,numbered=no]{remark*}
 \declaretheorem[style=thmblackbox,name=Problem,numbered=no]{problem*}
 \declaretheorem[style=thmblackbox,name=Question,sibling=theorem]{ques}
 
