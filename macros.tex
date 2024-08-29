@@ -425,3 +425,20 @@ tkzSecondPointResult)}
 \newcommand{\marginnote}[1]{\sidenote{#1}}
 \newcommand{\marginref}[1]{\sidenote{#1}}
 
+\captionsetup[figure]{labelfont={bf},name={Fig.},labelsep=period}
+
+\renewcommand{\figurename}{\normalsize\textbf{Fig.}}
+\makeatletter
+\makeatletter
+\renewcommand{\@makecaption}[2]{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{#1. {\normalfont #2}}% Add a period after the figure name
+  \ifdim \wd\@tempboxa >\hsize
+    #1. \RaggedRight #2\par % Apply \RaggedRight here
+  \else
+    \global \@minipagefalse
+    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip
+}
+\makeatother

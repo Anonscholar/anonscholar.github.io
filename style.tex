@@ -75,8 +75,8 @@
 
 \nouppercaseheads
 \makepagestyle{mystyle}
-\makeevenhead{mystyle}{{\emph{\thechapter.\,\leftmark}}}{\hspace*{49em} \sffamily\thepage}{}
-\makeoddhead{mystyle}{\emph{\rightmark}}{\hspace*{49em} \sffamily\thepage}{}
+\makeevenhead{mystyle}{{\emph{\thechapter.\,\leftmark}}}{\hspace*{49.5em} \sffamily\thepage}{}
+\makeoddhead{mystyle}{\emph{\rightmark}}{\hspace*{49.5em} \sffamily\thepage}{}
 
 \makeevenfoot{mystyle}{}{}{}
 \makeoddfoot{mystyle}{}{}{}
@@ -418,8 +418,6 @@ urlcolor=TealBlue!70!black,
 \cftsetindents{section}{2.5em}{2.5em}
 
 % text styling of all side footnotes
-\renewcommand{\footnotesize}{\fontsize{9pt}{10pt}\selectfont}
-\renewcommand{\foottextfont}{\footnotesize\itshape}
 % styling and placement of mark
 \footmarkstyle{{\itshape#1. }}
 \setlength{\footmarkwidth}{0em}
@@ -432,7 +430,7 @@ urlcolor=TealBlue!70!black,
 \sidecapmargin{outer}
 \setsidecappos{t}
 \renewcommand*{\sidecapstyle}{%
-\captionnamefont{\foottextfont\scshape}
+\captionnamefont{\scshape}
 \ifscapmargleft
 \captionstyle{\RaggedLeft\footnotesize\foottextfont}%
 \else
@@ -441,5 +439,6 @@ urlcolor=TealBlue!70!black,
 
  \makeatletter
   \renewcommand{\fnum@figure}{
-  {\small\scshape\figurename~\thefigure}}
+  {\small\bfseries\scshape\figurename~\thefigure}}
 \makeatother
+\renewcommand{\footnotesize}{\fontsize{10pt}{12pt}\selectfont} % Change footnotesize to 10pt
