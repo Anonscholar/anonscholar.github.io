@@ -71,11 +71,11 @@ bodyfont=\itshape,
     leftline=true,
     topline=false,
     bottomline=false,
-    linecolor=RawSienna,
-    backgroundcolor=RawSienna!3,
+    linecolor=black,
+    backgroundcolor=gray!1,
 }
 \declaretheoremstyle[
-headfont=\bfseries\sffamily\color{RawSienna},
+headfont=\bfseries\sffamily,
 mdframed={style=mdredbox},
 ]{thmredbox}
 
@@ -215,7 +215,7 @@ headpunct={ \\[3pt] },
     frametitlefont=\bfseries,
     innertopmargin=12pt,
     innerbottommargin=8pt,
-    nobreak=true,
+    nobreak=false,
     backgroundcolor=gray!2,
     linecolor=black,
 }
@@ -240,9 +240,10 @@ headpunct={ \\[3pt] },
   {\endtrivlist\par\nobreak\vspace*{\dimexpr-\baselineskip-\parskip}\nobreak\noindent\hrulefill}% <replace>
   {}{}% <succes><failure>
 
-\mdtheorem[style=blackbox]{example}[subsection]{Example}
 \mdtheorem[style=remarkbox]{remark}[subsection]{Remark}
 
+
+\declaretheorem[style=thmredbox,name=Example,numberwithin=section]{example}
 \declaretheorem[style=boxstyle,name=Theorem,numberwithin=chapter]{theorem}
 
 
