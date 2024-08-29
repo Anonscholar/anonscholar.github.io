@@ -226,7 +226,6 @@ and finally for \(n^{th}\) second just do \(s_n - s_{n-1}\).
 \begin{example}
     A car is at distance \(d\) from a boy. It starts accelerating at \(a\) \unit{\metre\per\second\squared}. What is the minimum velocity that the boy should
     have to catch up with the car?
-\end{example}
 
 \begin{soln}
         Consider separation of boy and car, \(s_{c,b}\). Using the equations of motion, 
@@ -249,12 +248,12 @@ and finally for \(n^{th}\) second just do \(s_n - s_{n-1}\).
                 v \ge \sqrt{2ad}
             \end{equation}
 \end{soln}
+\end{example}
 
 \begin{example}
     A body is dropped at \(t = 0\), after time \(t = t_0\), another body is thrown downwards with
     velocity \(u\) \unit{\meter\per\second}. Assuming first body reaches ground first, plot graph
     of separation.
-\end{example}
 
     \begin{soln}
         At instant \(t_0\), displacement of first particle = \(\dfrac{1}{2}gt_{0}^2\). Note that here
@@ -289,6 +288,7 @@ and finally for \(n^{th}\) second just do \(s_n - s_{n-1}\).
             \end{tikzpicture}
         \end{figure}
     \end{soln}
+\end{example}
 
 \section{Motion in Polar Co-ordinates}
 
@@ -301,15 +301,13 @@ Here, \(\unitv{r}\) points in the direction of increasing radius(along the radia
 \(\unitv{\theta}\) points in the direction of increasing \(\theta\) (tangent to the radial vector).
 These two unit vectors are \emph{orthogonal} at any point. 
 
-\begin{figure}
-    [H]
-    \centering
-    \incfig{polarunit}
+\begin{marginfigure}
+    \scalebox{1.5}{\incfig{polarunit}}
     \caption{Unit vectors in polar co-ordinates}
     \label{fig: polarunit}
-\end{figure}
+\end{marginfigure}
 
-\noindent In \cref{fig: polarunit} if \(\vec{r}\) makes
+In \cref{fig: polarunit} if \(\vec{r}\) makes
 an angle \(\theta\) with the horizontal, then,
 
 \begin{align}
@@ -376,7 +374,6 @@ and setup \(g\) according to that.
 \begin{example}
     Two balls are thrown in intervals of \(2\) seconds with velocity \(u\) each. Find the
     time when they collide.
-\end{example}
     \begin{soln}
         Note that when they collide, their displacement from ground must be the same! Setting 
         the origin at ground, and direction of away from ground as positive, we have,
@@ -385,6 +382,7 @@ and setup \(g\) according to that.
         is thrown \(2\) seconds later, \(h_{2} = u(t-2) - \dfrac{1}{2}g(t-2)^2\). Now, we just have
         \(h_{1} = h_{2}\) and the calculation is trivial.
     \end{soln}
+\end{example}
 
 The thing to note in this example is that you do not need to setup two cases, one in which
 \(g\) is negative and one in which \(g\) is positive since it is in the direction of velocity. 
@@ -483,7 +481,6 @@ graph we can figure out the acceleration at any given \(x\) as,
 
 \begin{example}
     Given the velocity time graph in \cref{fig: vt to at example}, sketch out the acceleration time graph.
-\end{example}
     \begin{soln}
         We see that \(v = mx + c\) where \(m < 0\). Now, 
 
@@ -506,6 +503,7 @@ graph we can figure out the acceleration at any given \(x\) as,
         \caption{The corresponding acceleration time graph.}
     \end{figure}%
     \end{soln}
+\end{example}
 
 \subsubsection{Velocity squared time}
 
@@ -647,7 +645,7 @@ value, we have,
 \end{equation}
 
 \begin{marginfigure}
-    \centering
+    \hspace{-2em}
     \scalebox{2.5}{\incfig{projectilewedge}}
     \caption{Projectile grazing a wedge.}
 \end{marginfigure}
@@ -658,7 +656,6 @@ value, we have,
     \(v_0\) making an angle \(\theta\) with the horizontal. If the
     angles of the vertices are \(\alpha\) and \(\beta\), figure 
     out a relation between \(\tan \theta\), \(\tan\alpha\) and \(\tan\beta\).
-\end{example}
 
     \begin{soln}
         Divide the range of the projectile into two lengths, \(x\) and 
@@ -688,6 +685,7 @@ value, we have,
         Pretty nice and useful result.
 
     \end{soln}
+\end{example}
 
 
 Some peculiar things about projectile motion is that, \begin{inparaenum}[a)]
@@ -854,7 +852,6 @@ and the loci method maybe preferred.
 Consider a projectile thrown with a velocity \(v_0\) making an angle \(\alpha\) with 
 a wedge of inclination \(\theta\) as shown in the \cref{fig: projectile wedge example}. Find out the angle \(\alpha\) 
 such that the projectile has maximum range.    
-\end{example}
 
 \begin{soln}
     The locus of the projectile is, 
@@ -900,6 +897,7 @@ such that the projectile has maximum range.
 
     And we're done.
 \end{soln}
+\end{example}
 
 
 \section{Drag Forces}
@@ -928,7 +926,6 @@ cases of linear drag.
     Consider a projectile of mass \(m\) thrown upwards with initial velocity \(v_0\). It undergoes a linear drag 
     force, \(\Vec{F} =  -kv \unitv{v}\). Find the velocity of the particle as 
     a function of time. 
-\end{example}
     \begin{soln}
         Using newton's second law, also by noting that 
         it also undergoes gravitation, \(\vec{a} = -g -kv/m \unitv{v}\).
@@ -950,6 +947,7 @@ cases of linear drag.
         \end{equation}
 
     \end{soln}
+\end{example}
 
 The same idea can be extended to projectile --- \(2\)d motion 
 by considering the components of the accelerations,
@@ -1021,20 +1019,11 @@ here that both the velocities, \(v_1\) and \(v_2\) are relative to any common in
 frame. We can use some frame moving at some velocity to observe this and it wouldn't change 
 a thing. 
 
-
 \begin{example}
     If a man can swim relative to water with a velocity \(v_0\), and can walk on the ground 
     with velocity \(3v_0\) and the velocity of the stream is \(2v_0\), find out minimum time 
     in which the man can reach a point directly opposite to him. The width of the river is \(L\).
-    Look at \cref{fig: fermat example} for clarity.
-\end{example}
-
-\begin{marginfigure}
-    \centering
-    \scalebox{2.2}{\incfig{fermatprincipleex}}
-    \caption{Shortest time to reach opposite point in a stream.}
-    \label{fig: fermat example}
-\end{marginfigure}
+    Look at \cref{fig: fermat example} for clarity
 
     \begin{soln}
         The man could walk in any direction on the ground, but since we want to minimize 
@@ -1060,3 +1049,11 @@ a thing.
         can find the resultant velocity with water (using components) 
         and subsequently the drift and time required.
     \end{soln}
+\end{example}
+
+\begin{marginfigure}
+    \centering
+    \scalebox{2.2}{\incfig{fermatprincipleex}}
+    \caption{Shortest time to reach opposite point in a stream.}
+    \label{fig: fermat example}
+\end{marginfigure}
