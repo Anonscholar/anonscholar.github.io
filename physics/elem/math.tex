@@ -97,9 +97,22 @@ The magnitude of the first can be calculated as,
 First consider \cref{fig: timedev}.
 
 Now, let us first work out a geometric argument for \(A\dd{\unitv{A}}\)
-which is perpendicular to \(\vec{A}\). In the limiting case, \(A\dd{\unitv{A}}\),
-the change in magnitude is negligible, we only observe a change in direction. For now,
-let us consider \(\increment \Aa\) perpendicular to \(\Aa\) as an approximation.
+which is perpendicular to \(\vec{A}\), we can show its perpendicular because 
+the other term, \(\dd{A} \unitv{A}\) is parallel to \(A\), and causes no change in direction. 
+
+The second term, thus must account for change in direction. We can also see that \(A\dd{\unitv{A}}\)
+causes no reasonable change in the magnitude of \(\Aa\). Therefore, it must be perpendicular to \(\vec{A}\)\footnote{This is because we are basically stating that \(\dd{\vec{A}}\) can be broken into two parts,
+one parallel to \(\vec{A}\) and one perpendicular to it. The perpendicular one causes 
+no change in magnitude.}.
+
+For now, let us consider \(\increment \Aa\) perpendicular to \(\Aa\) as an approximation. We see that 
+
+\begin{equation*}
+    A(t_2) = \sqrt{A^2(t_1) + (\increment A)^2}
+\end{equation*}
+
+Therefore, for small \(\increment A\), the change is very small (it vanishes, essentially 
+in the limiting case, \((dx)^2 = 0\) since it is a second order differential).
 
 This allows us to consider a simple geometric argument which gives \(\norm{\increment \vec{A}} = 2A\sin(\theta/2)\)
 where \(\theta\) is the angle between \(\vec{A}(t_1)\) and \(\vec{A}(t_2)\).
@@ -125,14 +138,10 @@ Which is equivalent to \(A \increment \theta\). In the limit \(\increment \theta
     \dd{A_{\perp}} = A \dd{\theta}
 \end{equation}
 
-Which finally gives us,
-\begin{equation}
-    \norm{\dv{\vec{A}_{\perp}}{t}} = A\dv{\theta}{t}
-\end{equation}
+Since \(\dd{A}_{\perp} = A\norm*{\dd{\unitv{A}}}\),
 
-which is the magnitude of \(A\dd{\unitv{A}}\). Thus,
 \begin{equation}
-    \norm*{\dd{\unitv{A}}} = \dv{\theta}{t}
+    \norm*{\dd{\unitv{A}}} = \dd{\theta}
 \end{equation}
 
 \section{Dot Product}
@@ -213,15 +222,15 @@ in practice we usually adopt an orthonormal basis.
 In particular, we'll use the basis vectors which have magnitude of \(1\), i.e. unit vectors.
 
 In cartesian co-ordinates, or when using the orthonormal cartesian basis, we use the unit vectors along the three axes, \(x\), \(y\) and 
-\(z\). These are written as \(\unitv{i}\), \(\unitv{j}\) and \(\unitv{k}\) respectively.
+\(z\). These are written as \(\unitv{x}\), \(\unitv{y}\) and \(\unitv{z}\) respectively.
 
 But how can we write an arbitrary vector \(\vec{A}\) in terms of these unit vectors?
 The answer lies in projecting the vector along the axes. We use the dot product for it.
 
 \begin{align}
-    A_x &= \Aa \dtp \unitv{i} = A \cos \alpha \\
-    A_x &= \Aa \dtp \unitv{j} = A \cos \beta \\
-    A_x &= \Aa \dtp \unitv{k} = A \cos \gamma 
+    A_x &= \Aa \dtp \unitv{x} = A \cos \alpha \\
+    A_y &= \Aa \dtp \unitv{y} = A \cos \beta \\
+    A_z &= \Aa \dtp \unitv{z} = A \cos \gamma 
 \end{align}
 
 Where \(\alpha\), \(\beta\), and \(\gamma\) are the angles 
@@ -265,12 +274,12 @@ And vector addition is,
 For the dot product, representing \(\Aa\) and \(\BB\) in terms of the basis vectors,
 
 \begin{align*}
-    \Aa \dtp \BB &= (A_x \unitv{i} + A_y \unitv{j} + A_z \unitv{k}) \dtp (B_x \unitv{i} + B_y \unitv{j} + B_z \unitv{k}) \\
+    \Aa \dtp \BB &= (A_x \unitv{x} + A_y \unitv{y} + A_z \unitv{z}) \dtp (B_x \unitv{x} + B_y \unitv{y} + B_z \unitv{z}) \\
     \Aa \dtp \BB &= A_xB_x + A_yB_y + A_zB_z
 \end{align*}
 
 Where we use the distributive property of dot product and the fact 
-that \(\unitv{i} \dtp \unitv{j} = \unitv{j} \dtp \unitv{k} = \unitv{k} \dtp \unitv{i} = 0\).
+that \(\unitv{x} \dtp \unitv{y} = \unitv{y} \dtp \unitv{z} = \unitv{z} \dtp \unitv{x} = 0\).
 
 We can find the angle between two vectors, \(\theta\), as,
 
@@ -371,7 +380,7 @@ It can be computed either as the determinant,
 
 \[\Aa \cp \BB =
 \begin{vmatrix}
-    \unitv{i} & \unitv{j} & \unitv{k} \\
+    \unitv{x} & \unitv{y} & \unitv{z} \\
     A_x & A_y & A_z \\
     B_x & B_y & B_z
 \end{vmatrix}\]
@@ -525,15 +534,15 @@ whose diagonal, the resultant of these vectors lies along the angle bisector! Co
 and shifting parallelly the external angle bisector, we find it lies along the other diagonal,
 the difference of the two unit vectors.
 
+Note that \(\unitv{A} + \unitv{B}\) is not a unit vector, we will need to find the 
+unit vector along that direction. 
+
 \begin{marginfigure}
     \centering
     \scalebox{1.7}{\incfig{anglebisect2}}
     \caption{The internal angle bisector lies along \(\unitv{A} + \unitv{B}\) and
     the external lies along \(\unitv{A} - \unitv{B}\).}
 \end{marginfigure}
-
-Note that \(\unitv{A} + \unitv{B}\) is not a unit vector, we will need to find the 
-unit vector along that direction. 
 
 \subsection{Loci}
 
@@ -627,12 +636,6 @@ if the curve is the graph of some differentiable function, \(f\), then,
     \tan \theta = f'(x)
 \end{equation*}
 
-We can differentiate this again with respect to \(x\) to get,
-
-\begin{equation*}
-    \sec^2\theta \dv{\theta}{x} = f''(x)
-\end{equation*}
-
 \begin{marginfigure}
     \scalebox{3}{\incfig{roc}}
     \caption{Circles formed by the radius of curvature for several points. The circles
@@ -640,6 +643,13 @@ We can differentiate this again with respect to \(x\) to get,
     The blue circle has an infinite radius.}
     \label{fig: roc}
 \end{marginfigure}
+
+We can differentiate this again with respect to \(x\) to get,
+
+\begin{equation*}
+    \sec^2\theta \dv{\theta}{x} = f''(x)
+\end{equation*}
+
 
 Using the identity \(1 + \tan^2\theta = \sec^2 \theta\) and \(\tan^2 \theta = f'(x)\),
 

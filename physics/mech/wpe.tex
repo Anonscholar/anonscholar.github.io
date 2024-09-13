@@ -105,13 +105,13 @@ Let us calculate the center of mass of a few bodies,
         Now, note that \(\dd{m} = \lambda \dd{x}\), if \(x\) is distance from the origin. Thus,
 
         \begin{equation*}
-            \int_{0}^{L} \vec{r} \dd{m} = \int_{0}^{L} x\unitv{i}\;\lambda \dd{x}
+            \int_{0}^{L} \vec{r} \dd{m} = \int_{0}^{L} x\unitv{x}\;\lambda \dd{x}
         \end{equation*}
 
         Using the value of \(\lambda\), the integral becomes
 
         \begin{equation*}
-            \frac{M}{L} \unitv{i} \int_{0}^{L} x \dd{x} = \frac{ML}{2} \unitv{i} 
+            \frac{M}{L} \unitv{x} \int_{0}^{L} x \dd{x} = \frac{ML}{2} \unitv{x} 
         \end{equation*}
 
         Thus, the com is at, 
@@ -152,7 +152,7 @@ integrals.
         So, we can reduce each of these strips into their com and then calculate the center of mass of the plate.
 
         \begin{equation*}
-            \int \vec{r} \dd{m} = \int x \unitv{i} + y/2 \unitv{j} \dd{m}
+            \int \vec{r} \dd{m} = \int x \unitv{x} + y/2 \unitv{y} \dd{m}
         \end{equation*}
 
         But, \(\dd{m} = \sigma \dd{A}\) and \(\dd{A} = y \dd{x}\). 
@@ -166,13 +166,13 @@ integrals.
         And our integral is,
 
         \begin{equation*}
-            \int_{0}^{b} x \unitv{i} \sigma \frac{xh}{b} \dd{x}+ \int_{0}^b \frac{xh}{2b} \sigma \unitv{j} \frac{xh}{b} \dd{x}
+            \int_{0}^{b} x \unitv{x} \sigma \frac{xh}{b} \dd{x}+ \int_{0}^b \frac{xh}{2b} \sigma \unitv{y} \frac{xh}{b} \dd{x}
         \end{equation*}
 
         Also, \(\sigma = 2M/bh\), substituting and evaluating the integral, we have,
 
         \begin{equation}
-            \vec{R} = \frac{2b}{3} \unitv{i} + \frac{h}{3} \unitv{j}
+            \vec{R} = \frac{2b}{3} \unitv{x} + \frac{h}{3} \unitv{y}
         \end{equation}
 
     \end{soln}

@@ -54,7 +54,7 @@ vector \(\vec{r}\) from \(O\) to \(A\). It describes the position of \(A\) relat
 co-ordinate frame. Let \(A = (x,y,z)\). Then we denoted \(\vec{r}\) as \(\vec{r}(x,y,z)\).
 
 The position to any point is written as, \[
-    \vec{r} = (x,y,z) = x\unitv{i} + y\unitv{j} + z\unitv{k}
+    \vec{r} = (x,y,z) = x\unitv{x} + y\unitv{y} + z\unitv{z}
 \]
 
 \begin{marginfigure}
@@ -312,8 +312,8 @@ an angle \(\theta\) with the horizontal, then,
 
 \begin{align}
     \label{eq: polardef}
-    \unitv{r} &= \cos \theta \unitv{i} + \sin \theta \unitv{j}\\
-    \unitv{\theta} &= -\sin \theta \unitv{i} + \cos \theta \unitv{j}
+    \unitv{r} &= \cos \theta \unitv{x} + \sin \theta \unitv{y}\\
+    \unitv{\theta} &= -\sin \theta \unitv{x} + \cos \theta \unitv{y}
 \end{align}
 
 \section{Kinematics in Polar Co-ordinates}
@@ -365,7 +365,7 @@ is entirely dependent on us.
 
 In general, it is a good idea to setup our axes such that the direction above ground is positive
 and towards the ground is negative. The acceleration during free fall is always towards
-the ground. Therefore, for these cases \(\vec{a} = -g \unitv{j}\). 
+the ground. Therefore, for these cases \(\vec{a} = -g \unitv{y}\). 
 
 Some important points of note are that ``\(g\)'' does not become positive or negative or whatever,
 this is a common misconception. Instead, we just decide where exactly the positive direction is
@@ -548,8 +548,8 @@ This allows for a very neat simplification of problems.
 
 We can mostly safely extend our results from one dimension to higher dimensions.
 So for instances, velocity of a particle whose trajectory is defined as 
-\(x\unitv{i} + y\unitv{j} + z\unitv{k}\) can simply be computed as,
-\[v = \ndiv{x}\unitv{i} + \ndiv{y}\unitv{j} + \ndiv{z}\unitv{k}\] Such a thing
+\(x\unitv{x} + y\unitv{y} + z\unitv{z}\) can simply be computed as,
+\[v = \ndiv{x}\unitv{x} + \ndiv{y}\unitv{y} + \ndiv{z}\unitv{z}\] Such a thing
 is not true for non-cartesian co-ordinates, as we say in the case of polar forms.
 Due to the orthogonality of the cartesian unit vectors, and using dot products
 we simply have, 
@@ -567,11 +567,11 @@ only care about the motion of a body projected from ground under the influence
 of gravity. 
 
 Let a body be projected at an angle \(\theta\) from the ground at velocity \(\vec{v}\)
-along \(\theta\). Then, by resolving \(\vv\) into \(v_x \unitv{i} + v_y\unitv{j}\),
+along \(\theta\). Then, by resolving \(\vv\) into \(v_x \unitv{x} + v_y\unitv{y}\),
 we have, 
 \begin{align*}
-    x &= v_xt \unitv{i} \\
-    y &= v_yt - \frac{1}{2}gt^2 \unitv{j}
+    x &= v_xt \unitv{x} \\
+    y &= v_yt - \frac{1}{2}gt^2 \unitv{y}
 \end{align*}
 
 Doing some manipulations, we may note that \(v_x = v\sin(\theta)\), \(v_y = v\cos(\theta)\).
@@ -953,7 +953,7 @@ The same idea can be extended to projectile --- \(2\)d motion
 by considering the components of the accelerations,
 
 \[
-    \vec{a} = -kv_x \unitv{i} - (g + kv_y) \unitv{j},
+    \vec{a} = -kv_x \unitv{x} - (g + kv_y) \unitv{y},
 \]
 
 and now considering the equations \(\dot{\vec{v}} = -kv_x\)
