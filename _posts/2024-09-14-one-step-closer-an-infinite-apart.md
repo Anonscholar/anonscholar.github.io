@@ -1,6 +1,8 @@
 ---
 title: One step closer, an infinite apart
-date: 2024-09-14 HH:MM:SS +0530
+description: documenting a journey into olympiads
+pin: true
+date: 2024-09-14 21:45:00 +0530
 categories: [Olympiads, Life]
 tags: [olympiad, journey]     # TAG names should always be lowercase
 ---
