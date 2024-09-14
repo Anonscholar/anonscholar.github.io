@@ -4,7 +4,7 @@ description: documenting a journey into olympiads
 pin: true
 author: adyansh
 date: 2024-09-14 21:45:00 +0530
-categories: [Olympiads, Life]
+categories: [Life, Olympiads]
 tags: [olympiad, journey]     # TAG names should always be lowercase
 ---
 This is the first post I am making on this website, and a quite heavy one --- atleast for me.
