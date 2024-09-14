@@ -2,6 +2,7 @@
 title: One step closer, an infinite apart
 description: documenting a journey into olympiads
 pin: true
+author: adyansh
 date: 2024-09-14 21:45:00 +0530
 categories: [Olympiads, Life]
 tags: [olympiad, journey]     # TAG names should always be lowercase
