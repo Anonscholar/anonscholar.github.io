@@ -9,7 +9,7 @@ tags: [olympiad, journey]     # TAG names should always be lowercase
 ---
 This is the first post I am making on this website, and a quite heavy one --- atleast for me.
 I have been interested in olympiads for somewhat more than a year, though the time I have dedicated to 
-serious prep is somewhat close to that. 
+serious prep is somewhat less than that. 
 
 I really like studying for both physics and math olympiads. A little bit of a rare sight, perhaps.
 I am not really a "main" in either. I enjoy both almost equally, there are of course some periods in 
@@ -24,3 +24,5 @@ It is a hefty goal, and I need to work quite hard for it, hopefully this series 
 accountable to some extent, and perhaps they'll be of some use to others too. This is the first step to documenting this 
 energy, and a lot more of the academic stuff I will do. That's well, it for this post, hopefully I'll have more to say 
 in the next one. 
+
+[^1]: Hopefully the posts will come bi-weekly, at least. 
