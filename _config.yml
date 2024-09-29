@@ -160,7 +160,6 @@ kramdown:
     block:
       line_numbers: true
       start_line: 1
-    Rouge::Themes::Colorful
 
 collections:
   tabs:
