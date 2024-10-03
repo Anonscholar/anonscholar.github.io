@@ -27,4 +27,4 @@ accountable to some extent, and perhaps they'll be of some use to others too. Th
 energy, and a lot more of the academic stuff I will do. That's well, it for this post, hopefully I'll have more to say 
 in the next one. 
 
-[^1]: Hopefully the posts will come bi-weekly, at least. 
+[^1]: _Hopefully_ the posts will come bi-weekly, at least.
