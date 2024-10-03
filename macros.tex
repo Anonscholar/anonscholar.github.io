@@ -37,11 +37,12 @@
 \usepackage{centernot}
 \usepackage{mathtools}
 \usepackage{tikz-cd}
+\usepackage{bm}
 
 \renewcommand{\mathbb}[1]{\mathds{#1}}
 
 \newcommand{\increment}{\Delta}
-\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+\renewcommand{\vec}[1]{\mbf{\bm{#1}}}
 \renewcommand{\Vec}[1]{\mathbf{#1}}
 \newcommand{\unitv}[1]{\vec{\hat{#1}}}
 \let\conjugate\overline
@@ -49,8 +50,7 @@
 \newcommand{\seq}[2]{\left\langle#1_1, #1_2, \dots, #1_{#2}\right\rangle}
 \newcommand{\seqq}[1]{\left\langle#1\right\rangle}
 
-\usepackage{braket}
-\renewcommand*{\Set}[1]{\left\{#1\right\}}
+\newcommand*{\Set}[1]{\left\{#1\right\}}
 \newcommand{\given}{\mid}
 \newcommand{\cgiven}{:}
 
@@ -71,7 +71,7 @@
 \newcommand{\wt}{\widetilde}
 \newcommand{\wh}{\widehat}
 \newcommand{\eps}{\varepsilon}
-\newcommand{\vocab}[1]{\sffamily #1}
+\newcommand{\vocab}[1]{\bfseries #1}
 \providecommand{\alert}{\vocab}
 \providecommand{\half}{\frac{1}{2}}
 \newcommand{\catname}{\mathsf}
@@ -127,7 +127,6 @@
 \newcommand{\ray}[1]{\overrightarrow{#1}}
 \newcommand{\seg}[1]{\overline{#1}}
 
-\newcommand{\comp}[1]{\widebar{#1}}
 \newcommand{\ndiv}[1]{\dot{#1}}
 \newcommand{\nddiv}[1]{\ddot{#1}}
 
@@ -404,7 +403,7 @@ tkzSecondPointResult)}
 
 \newcommand{\spart}[1]{\newgeometry{left=2cm,right=2cm} \part{#1} \restoregeometry} 
 
-\renewcommand*{\vocab}[1]{{\sffamily#1}\index{#1}}
+\renewcommand*{\vocab}[1]{{\em #1}\index{#1}}
 \newcommand{\chvocab}[2]{{\sffamily#2}\index{#1!#2}}
 \newcommand{\vv}{\vec{v}}
 \newcommand{\oo}{\vec{0}}

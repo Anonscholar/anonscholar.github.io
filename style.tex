@@ -1,4 +1,10 @@
+
+\usepackage[no-math]{fontspec}
+\defaultfontfeatures[\rmfamily,\sffamily]{Ligatures=TeX}\setmainfont{baskervillef}
+
+\usepackage[lite]{mtpro2}
 \usepackage{amsmath, amssymb}
+
 
 \nonzeroparskip
 \usepackage[right=8.5cm,left=2.5cm,bottom=1cm,top=1cm,marginparwidth=6cm,marginparsep=1cm,includeheadfoot,asymmetric]{geometry}
@@ -356,10 +362,7 @@ urlcolor=TealBlue!70!black,
  {\endMakeFramed}
 
 % redefinition of the name of the ToC
-
 \makeatletter
-
-
 % redefinitions for chapter entries
 \renewcommand\chapternumberline[1]{\mbox{\small\itshape\rmfamily\@chapapp~#1}\par\noindent\large}
 \renewcommand\cftchapterfont{\sffamily}
@@ -417,6 +420,7 @@ urlcolor=TealBlue!70!black,
 \renewcommand\cftsectionpagefont{\rmfamily\itshape\color{myred}}
 
 \cftsetindents{section}{2.5em}{2.5em}
+
 
 % text styling of all side footnotes
 % styling and placement of mark
