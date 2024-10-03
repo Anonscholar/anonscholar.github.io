@@ -33,6 +33,8 @@
 \lowercase{\gdef~{\ifnum\the\mathgroup=\m@ne \ell \else \lsb@l \fi}}%
 \endgroup
 
+
+\usepackage{stmaryrd}
 \usepackage{xargs}
 \usepackage{centernot}
 \usepackage{mathtools}
@@ -404,7 +406,7 @@ tkzSecondPointResult)}
 \newcommand{\spart}[1]{\newgeometry{left=2cm,right=2cm} \part{#1} \restoregeometry} 
 
 \renewcommand*{\vocab}[1]{{\em #1}\index{#1}}
-\newcommand{\chvocab}[2]{{\sffamily#2}\index{#1!#2}}
+\newcommand{\chvocab}[2]{{\em #2}\index{#1!#2}}
 \newcommand{\vv}{\vec{v}}
 \newcommand{\oo}{\vec{0}}
 \newcommand{\Aa}{\vec{A}}

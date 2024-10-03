@@ -17,10 +17,20 @@ The axioms of real numbers can be divided broadly into three different types,
 
 \subsection{Field Axioms}
 
-The field axioms are something like this. We consider the set of reals, \(\RR\) along with the operations \((+, \cdot)\). Broadly,
-the \vocab{field} is \((\RR, +, \cdot)\). I'll define what a field is after calculus. These operations are such that for every
-\(x\), \(y \in \RR\), we will have \(x + y, xy \in \RR\). These sum and product are unique, which means we always have one 
-and only have one \(x+y, xy\) for \(x, y \in \RR\). Then,
+The field axioms are something like this. We consider the set of reals, \(\RR\)
+along with the operations \((+, \cdot)\). This particular structure is called a 
+\vocab{field}. These axioms permit us to perform our regular operations on 
+the reals, namely addition, subtraction, multiplication and division by non-zero
+reals.
+
+Although we label the operations as multiplication and addition, these can in effect be 
+any two operations, provided they follow the axioms. A field is a general structure, 
+and we'll talk much more about it in algebra.
+
+These operations are such that for every \(x\), \(y \in \RR\), we will have \(x + y, xy \in \RR\). 
+These sums and products are unique, which means we always have one and only have one 
+\(x+y, xy\) for \(x, y \in \RR\). The notion can be generalized, and we will understand what we mean by 
+the operations more rigorously in the next chapter, just hold on till then.
 
 \begin{axioms}
     \ii \chvocab{Real Numbers}{Commutativity}, \(x+y = y+x\) and \(xy = yx\).
@@ -32,10 +42,62 @@ and only have one \(x+y, xy\) for \(x, y \in \RR\). Then,
     and negative of \(x\) and are denoted as \(1/x\)  (\(x^{-1}\)) and \(-x\).
 \end{axioms}
  
-It is possible to formulate subtraction and division from these axioms, if \(x + a = b\), then it is denoted as \(b - a\). 
-And if \(xa = b\), it is denoted as \(ba^{-1}\). 
+First of all, we will show that the identity elements are unique, that is, if,
 
-These are also unique. It is not difficult to show that, by the uniqueness of inverses.
+\begin{equation*}
+    (\forall x),\; x + 0 = x \text{ and } (\forall x),\; x + 0' = x, \text{ then } 0 = 0'
+\end{equation*}
+
+and a similar statement for \(1\) over multiplication.
+
+\begin{proposition}
+    The identity elements are unique.
+\end{proposition}
+
+\begin{proof}
+    Let us assume they aren't and \(0\), \(0'\) are two distinct identities.
+
+    Then, 
+
+    \begin{equation*}
+        0 = 0 + 0' = 0'
+    \end{equation*}
+
+    But this leads to a contradiction! \lightning
+\end{proof}
+
+\sidenote{We use the symbol \lightning to show contradiction.}
+
+A similar argument for the multiplicative identity, \(1\) is left to the reader. Its 
+not really difficult to do it, once you understand what we did in this proof, which is 
+use first use that \(0'\) is an identity for the first equality (so that \(0 + 0' = 0\)) 
+and then \(0\) as the identity for the second equality. 
+
+It is possible to formulate subtraction and division from these axioms, if for some real \(a\) and \(b\) we have a real
+\(x\) such that \(xa = b\) \(x + a = b\), then it is denoted as \(b - a\). 
+And if for some real \(a\) and \(b\) we have a real \(x\) such that \(xa = b\), then it is denoted as \(ba^{-1}\). 
+
+Such \(x\)'s are also unique. We can show their uniqueness by showing that the inverses are unique.
+
+\begin{proposition}
+    The inverses are unique.
+\end{proposition}
+
+\begin{proof}
+    The idea is this the identity elements are unique, and the multiplication or addition
+    by an inverse results in an identity. Let the multiplicative inverse of \(x\) be 
+    distinct reals, \(y\) and \(z\), then  
+
+    \begin{equation*}
+        y \cdot 1 = y \cdot (x \cdot z) = (y \cdot x) \cdot z = 1 \cdot z = 1
+    \end{equation*}
+
+    What did we do here? the first equality follows from the definition 
+    of inverse, the second follows from Associativity and the third uses the 
+    definition of identity. This shows that \(y = z\), but \(y\) and \(z\) 
+    were, infact, distinct! \lightning
+
+\end{proof}
 
 It is also possible to treat subtraction as a shorthand for addition, \(a + (-b) = a - b\) using 
 inverses. Division can be treated similarly.
@@ -57,8 +119,8 @@ from distributivity,
 \begin{align*}
     (-a)b + ab &= b[(-a) + a] \\
     (-a)b + ab &= 0 \\
-    (-a)b + ab - ab &= -ab\\
-    (-a)b &= -ab
+    (-a)b + ab &- ab = -ab\\
+    (-a)b = &-ab
 \end{align*}
 
 A similar proof can be used to show that \((-a)(-b) = ab\), as 
@@ -71,11 +133,13 @@ A similar proof can be used to show that \((-a)(-b) = ab\), as
 
 Here we use our previous result to prove this one. Now it is obvious that the product of 
 any two negatives will be positive --- however, let us first discuss what exactly ``positive''
-and negative mean.
+and ``negative'' mean.
 
 \subsection{Order Axioms}
 
-The real numbers are ordered, we now present some axioms to look at what we mean by order.
+We now again give some axioms which allow us to \emph{order} our field. 
+In this case, the field being the real numbers. This allows us to formulate notions 
+of positive and negative. 
 
 \begin{axioms}
     \ii There exists a subset of real numbers, \(\RR^+\) such that \(\forall x \in \RR \setminus \Set{0}\),
@@ -87,8 +151,14 @@ The real numbers are ordered, we now present some axioms to look at what we mean
 We say that a number \(x\) is positive if it is in \(\RR^+\). We also know define some symbols, 
 \begin{align*}
     x > y \text{ means that } x - y \text{ is in } \RR^+ \\
-    x < y \text{ means that } y - x \text{ is in } \RR^+
+    x < y \text{ means that } y - x \text{ is in } \RR^+ 
 \end{align*}
+
+The second definition is unnecessary to be precise, \(x < y\) may as well be 
+interpreted as \(y > x\), which is something we have already defined. In any case, 
+a field which is imbued with an \emph{ordering relation} such as \(>\) is called 
+an \vocab{ordered field}. We will again, talk about relations and what this exactly 
+means later.
 
 The symbols \(\ge\) and \(\le\) just imply that ``\dots'' is either greater/lesser or equal to ``\dots''.
 Note that weird as it may appear, statements like \(6 \ge 6\) are completely valid. 
@@ -114,10 +184,10 @@ This also forms the basis of the idea of the absolute value, which is,
 
 \begin{equation}
     \abs{a} = 
-    \begin{cases}
-    a & a \ge 0 \\
-    -a & a \le 0    
-    \end{cases}
+    \begin{dcases}
+        a, & a \ge 0 \\
+        -a, & a \le 0
+    \end{dcases}
 \end{equation}
 
 We see that this clearly a positive number. It is also referred to as the euclidean length of 
