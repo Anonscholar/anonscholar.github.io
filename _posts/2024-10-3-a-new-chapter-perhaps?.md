@@ -31,9 +31,11 @@ chem very soon(which basically translates to in the next two weeks), so
 one thing to be happy about. I have a plan, and hey it's better than having no 
 plan at least. 
 
-So, there you go, thats a little underwhelming for a post that arrived later than the 
+So, there you go, that's a little underwhelming for a post that arrived later than the 
 pretty comfortable time I had given myself, but these two weeks, especially 
-the last one just has not been kind to me. 
+the last one just has not been kind to me. Also yeah, thinking of adding some sort
+of comments service. Tried disqus, did not work, though they did say to wait 
+for 48 hours for the service to be completely up and running, well let's see. 
 
 See you after some, hopefully, way better 14 days.
 
