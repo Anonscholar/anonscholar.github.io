@@ -5,7 +5,9 @@ pin: true
 author: adyansh
 date: 2024-09-14 21:45:00 +0530
 categories: [Life, Olympiads]
-tags: [olympiad, journey]     # TAG names should always be lowercase
+tags: [olympiad, journey]    
+comments: true
+ # TAG names should always be lowercase
 ---
 This is the first post I am making on this website, and a quite heavy one --- atleast for me.
 I have been interested in olympiads for somewhat more than a year, though the time I have dedicated to 
