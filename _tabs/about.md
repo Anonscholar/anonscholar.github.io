@@ -4,9 +4,9 @@ icon: fas fa-info-circle
 order: 1
 ---
 
-Welcome to my internet home. This is a place I am hoping will grow with me for quite
-a long time. Congrats, you have found my cozy little place on the internet. 
-I hope you have a good stay here. :3
+Welcome to my website. This is a place I am hoping will grow with me for quite
+a long time. Congrats, you have found my little place on the internet. 
+I hope you have a good stay here. 
 
 # A little bit of me
 
