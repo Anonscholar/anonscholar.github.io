@@ -1,7 +1,6 @@
 ---
 title: A new chapter, perhaps?
 description: a realization and some harsh truths
-pin: true
 author: adyansh
 date: 2024-10-03 18:54:00 +0530
 categories: [Life, Olympiads]
