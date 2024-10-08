@@ -759,17 +759,17 @@ scale both of the vectors to find the resultant. These allow for some very slick
 projectile motion and are a nicer way to solve some of the problems regarding 
 the evolution of say the velocity vector.
 
+In \cref{fig: rangewithvectors}, we can see that since \(\vec{v}_0\) is tangent 
+to the curve at the initial point, so is \(\vec{v}_0t\). Now, we can calculate 
+the time taken to reach the following point since the displacement at that instant, 
+\(R\), is going to be the resultant of the two vectors as shown in \cref{fig: rangewithvectors}.
+
 \begin{marginfigure}
     \centering
     \scalebox{2}{\incfig{projectilevector1}}
     \caption{Scaled up \(\vec{v}_0\) and \(\vec{g}\) vectors in projectile motion.}
     \label{fig: rangewithvectors}
 \end{marginfigure}
-
-In \cref{fig: rangewithvectors}, we can clearly note that since \(\vec{v}_0\) is tangent 
-to the curve at the initial point, so is \(\vec{v}_0t\). Now, we can calculate 
-the time taken to reach the following point since the displacement at that instant, 
-\(R\), is going to be the resultant of the two vectors as shown in \(\cref{fig: rangewithvectors}\).
 
 Thus,
 
@@ -822,12 +822,6 @@ by the angle of the wedge, \(\theta\). Consider \cref{fig: projectilerotatedaxes
 We can resolve \(\vec{v}_0\) vector into two components, along and perpendicular to the wedge,
 and thus along the \(x\) and \(y\) axis respectively. 
 
-\begin{marginfigure}
-    \centering
-    \scalebox{2.2}{\incfig{projectilevector3}}
-    \caption{The cartesian axes rotated by \(\theta\).}
-    \label{fig: projectilerotatedaxes}
-\end{marginfigure}
 
 The acceleration along the \(y\) axis is simply \(g\cos\theta\) and along the \(x\) axis 
 is \(g\sin\theta\). Thus, our equations in each direction are,
@@ -837,11 +831,19 @@ is \(g\sin\theta\). Thus, our equations in each direction are,
     v_y(t) = v_0\sin\alpha - g\cos\theta t 
 \end{align*}
 
+\begin{marginfigure}
+    \centering
+    \scalebox{2.2}{\incfig{projectilevector3}}
+    \caption{The cartesian axes rotated by \(\theta\).}
+    \label{fig: projectilerotatedaxes}
+\end{marginfigure}
+
 and we may solve each of these to get any desired result. Due to the dependence 
 on both \(\theta\) and \(\alpha\), it is a bit difficult to things like maximum range
 and the loci method maybe preferred.  
 
 \begin{marginfigure}
+    \vspace{2em}
     \centering
     \scalebox{2}{\incfig{projectilealongwedgeex}}
     \caption{Projectile thrown from a wedge.}
@@ -1019,6 +1021,14 @@ here that both the velocities, \(v_1\) and \(v_2\) are relative to any common in
 frame. We can use some frame moving at some velocity to observe this and it wouldn't change 
 a thing. 
 
+\begin{marginfigure}
+    \vspace{5em}
+    \centering
+    \scalebox{2.2}{\incfig{fermatprincipleex}}
+    \caption{Shortest time to reach opposite point in a stream.}
+    \label{fig: fermat example}
+\end{marginfigure}
+
 \begin{example}
     If a man can swim relative to water with a velocity \(v_0\), and can walk on the ground 
     with velocity \(3v_0\) and the velocity of the stream is \(2v_0\), find out minimum time 
@@ -1051,9 +1061,3 @@ a thing.
     \end{soln}
 \end{example}
 
-\begin{marginfigure}
-    \centering
-    \scalebox{2.2}{\incfig{fermatprincipleex}}
-    \caption{Shortest time to reach opposite point in a stream.}
-    \label{fig: fermat example}
-\end{marginfigure}

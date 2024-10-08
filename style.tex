@@ -163,7 +163,7 @@
 \hypersetup{
 colorlinks=true,
 linkcolor=TealBlue!70!black,
-citecolor=TealBlue,
+citecolor=TealBlue!70!black,
 urlcolor=TealBlue!70!black,
 }
 \usepackage[nameinlink]{cleveref}
@@ -258,7 +258,7 @@ urlcolor=TealBlue!70!black,
 \renewcommand{\hangsecnum}{%
   \def\@seccntformat##1{%
     \makebox[0pt][r]{%
-      \color{purple} \S
+      \color{black} 
       {%
       \csname the##1\endcsname
       }
@@ -364,31 +364,6 @@ urlcolor=TealBlue!70!black,
 % redefinition of the name of the ToC
 \makeatletter
 % redefinitions for chapter entries
-\renewcommand\chapternumberline[1]{\mbox{\small\itshape\rmfamily\@chapapp~#1}\par\noindent\large}
-\renewcommand\cftchapterfont{\sffamily}
-\cftsetindents{chapter}{0pt}{0em}
-\renewcommand\cftchapterpagefont{\LARGE\bfseries\color{red}}
-
-\newcommand*{\l@mychap}[3]{%
-  \def\@chapapp{#3}
-  \vskip1ex%
-  \par\noindent\begin{minipage}{\textwidth}%
-  \parbox{1em}{%
-    \hfill{\cftchapterpagefont#2}%
-  }\hspace*{1.5em}%
-  \parbox{\dimexpr\textwidth-4.5em-15pt\relax}{%
-    \leftbar\cftchapterfont#1\hspace{1sp}\endleftbar%
-  }%
-  \end{minipage}\par%
-}
-
-\renewcommand*{\l@chapter}[2]{%
-  \l@mychap{#1}{#2}{\chaptername}%
-}
-
-\renewcommand*{\l@appendix}[2]{%
-  \l@mychap{#1}{#2}{\appendixname}%
-}
 
 % redefinitions for part entries
 \renewcommand{\partnumberline}[1]{\mbox{\centering\normalfont\itshape\rmfamily Part\thepart~#1}\par\noindent\Large}
