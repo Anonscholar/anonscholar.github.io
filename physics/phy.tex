@@ -22,13 +22,14 @@
     \tableofcontents
     \clearpage
 
-    \listoffigures
+    \listoffigures \mtcaddchapter
     \input{intro.tex}
+
+    \mtcaddchapter
 
     \mainmatter
     \pagestyle{mystyle}
     \spart{Prerequisites}
-    \setcounter{chapter}{0}
     \input{elem/math.tex}
     \input{elem/ud.tex}
         
@@ -43,6 +44,8 @@
 
     \spart{Appendices}
     \appendix
+    \chapter{Solutions}
+    \printsolutionstype{exercise}
     
     \backmatter
     \printindex

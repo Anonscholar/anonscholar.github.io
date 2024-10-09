@@ -1,5 +1,5 @@
 \chapter{Kinematics}
-
+\margintoc
 Kinematics is the study of motion without concerning its cause. It allows
 us to calculate and find out the evolution of a body. Everything in our world undergoes
 motion, one way or the other. To begin our study of motion, let us first
@@ -91,12 +91,12 @@ In \cref{fig: displacement}, the vector
 The difference between displacement and distance is that of the path they describe. The distance covered is the length
 of the actual path, while the magnitude of the displacement is simply the length of the vector between the final and initial positions.
 
-\section{Speed and Velocity}
+\section{Velocity and Acceleration}
 
 \index{Speed}
 
-We are already familiar with the notion of speed. In elementary terms, speed is \({distance}/{time}\).
-Speed itself is an elementary concept. It tells us nothing about the direction of the object whose speed we are
+We are already familiar with the notion of speed. In elementary terms, speed is {distance}/{time}.
+It tells us nothing about the direction of the object whose speed we are
 talking into consideration. Thus, it is a \emph{scalar} quantity.
 
 \parbreak
@@ -290,72 +290,23 @@ and finally for \(n^{th}\) second just do \(s_n - s_{n-1}\).
     \end{soln}
 \end{example}
 
-\section{Motion in Polar Co-ordinates}
+\subsection{Motion in higher dimensions}
+\label{sec: kin3d}
 
-The polar co-ordinate axes are the two-dimesional subset of the 3-d cylindrical co-ordinates. 
-Any point in polar co-ordinates is depicted by a system of two unit vectors, \(\unitv{r}\) and
-\(\unitv{\theta}\). However, each of these are {dependent on the position of the particle} and
-maybe written explicitly as \(\unitv{r}(\theta)\) and \(\unitv{\theta}(\theta)\).  
+We can mostly safely extend our results from one dimension to higher dimensions.
+So for instances, velocity of a particle whose trajectory is defined as 
+\(x\unitv{x} + y\unitv{y} + z\unitv{z}\) can simply be computed as,
+\[v = \ndiv{x}\unitv{x} + \ndiv{y}\unitv{y} + \ndiv{z}\unitv{z}\] Such a thing
+is not true for non-cartesian co-ordinates, as we say in the case of polar forms.
+Due to the orthogonality of the cartesian unit vectors, and using dot products
+we simply have, 
+\[v_x = \ndiv{x}, v_y = \ndiv{y}, v_z = \ndiv{z}\]
 
-Here, \(\unitv{r}\) points in the direction of increasing radius(along the radial vector)
-\(\unitv{\theta}\) points in the direction of increasing \(\theta\) (tangent to the radial vector).
-These two unit vectors are \emph{orthogonal} at any point. 
+And the same is true for all other vectors. This gives us the power to
+resolve our vector components into components alongside unit vectors
+and consider independent one dimensional motion for each of them.
 
-\begin{marginfigure}
-    \scalebox{1.5}{\incfig{polarunit}}
-    \caption{Unit vectors in polar co-ordinates}
-    \label{fig: polarunit}
-\end{marginfigure}
-
-In \cref{fig: polarunit} if \(\vec{r}\) makes
-an angle \(\theta\) with the horizontal, then,
-
-\begin{align}
-    \label{eq: polardef}
-    \unitv{r} &= \cos \theta \unitv{x} + \sin \theta \unitv{y}\\
-    \unitv{\theta} &= -\sin \theta \unitv{x} + \cos \theta \unitv{y}
-\end{align}
-
-\section{Kinematics in Polar Co-ordinates}
-
-Now let us formulate kinematics in polar co-ordinates. The position \(\vec{r}\) can be written as
-
-\begin{equation}
-    \vec{r} = r \unitv{r}
-\end{equation}
-
-\noindent Velocity follows normally, 
-\begin{equation}
-    \vec{v} = \ndiv{\vec{r}} = \ndiv{r} \unitv{r} + r\dv{\unitv{r}}{t} 
-\end{equation}
-or does it? What even is \(\displaystyle\dv{\unitv{r}}{t}\) ? Well the answer lies in 
-the time-derivative of the unit vectors. Using the definitions in \eqref{eq: polardef}, we get,
-
-\begin{align}
-    \dv{\unitv{r}}{t} &= \ndiv{\theta} \unitv{\theta}\\
-    \dv{\unitv{\theta}}{t} &= -\ndiv{\theta} \unitv{r}
-\end{align}
-
-\noindent Using these results, we get that
-
-\begin{empheq}[box=\widefbox]{align}    
-    \vec{v} & = \ndiv{r} \unitv{r} + r\ndiv{\theta} \unitv{\theta}\\
-    \label{polar: accel}
-    \vec{a} & = (\nddiv{r} - r\ndiv{\theta}^2) \unitv{r} + (r\nddiv{\theta} + 2\ndiv{r}\ndiv{\theta}) \unitv{\theta}
-\end{empheq}
-
-\noindent The most interesting result are the various terms of acceleration in \eqref{polar: accel}. First let 
-us consider the terms along \(\unitv{r}\). \(\nddiv{r}\) is the \emph{radial} acceleration. It is
-the change in the radial speed(and thus the radius). The second term \(-r\ndiv{\theta}^2\) is the \emph{centripetal} acceleration, this is 
-term responsible for change in the direction of the tangential velocity. In essence, it is 
-the component which accounts for the rotation of the particle. 
-
-Now let us consider the terms along \(\unitv{\theta}\). The \(r\nddiv{\theta}\) term is the tangential
-acceleration resulting from change in tangential speed, i.e if the radial vector is of 
-constant magnitude, and speed \(v\) is changing, \[a_t = r\ddot{\theta} = \ndiv{v}.\] The other term \(2\ndiv{r}\ndiv{\theta}\) is the
-\emph{coriolis} acceleration. I shall discuss it when discussing rotating frames.
-
-\section{Free Fall}
+\subsection{Free Fall}
 
 When an object is dropped downwards freely, it undergoes \emph{free fall}. We ignore
 air resistance, until we're told not to and in general also talk about cases of the
@@ -388,178 +339,8 @@ The thing to note in this example is that you do not need to setup two cases, on
 \(g\) is negative and one in which \(g\) is positive since it is in the direction of velocity. 
 Just note that these equations are vectorial and we are done.
 
-\section{Graphs in Motion}
 
-In the graphs we are going to discuss, acceleration will either be \(0\) or constant.
-These graphs help to quickly solve problems, especially related to total distance and 
-displacement. 
-
-Let us consider the direction away from origin positive, and towards origin negative.
-Then, consider constant acceleration, \(a = c\). We have the following displacement time
-graphs,
-
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}{0.5\textwidth}
-        \centering
-        \begin{tikzpicture}
-            \begin{axis}
-            [funcgraphbare, xlabel=$t$, ylabel=$s$]
-            \addplot[red, domain=0:16]{x^2};
-            \end{axis}
-        \end{tikzpicture}
-        \caption{For \(c > 0\). }
-    \end{subfigure}%
-    \begin{subfigure}{0.5\textwidth}
-        \centering
-        \begin{tikzpicture}
-            \begin{axis}
-            [funcgraphbare, xlabel=$t$, ylabel=$s$]
-            \addplot[red, domain=0:16]{-x^2 + 256};
-            \end{axis}
-        \end{tikzpicture}
-        \caption{For \(c < 0\)}
-    \end{subfigure}%
-\end{figure}
-
-I use these in particular to demonstrate concavity and convexity. 
-For a twice differentiable function \(f\), it is concave if \(f''(x) > 0\) and convex 
-otherwise. 
-
-\subsubsection{Displacement Time}
-
-Displacement time graphs can be generally interpreted also as position 
-time graphs since the two differ only by a constant initial value.
-
-Their area under the curve, \(\int x \dd{t}\) is not of much use but their 
-slope, \(\ndiv{x}\) represents the velocity. We can also analyze the graphs 
-to figure out whether their roc circle lies above or below the graph to figure out 
-the sign of acceleration at any given moment.
-
-\subsubsection{Velocity Time}
-
-Their slope is simply \(\ndiv{v}\) or the acceleration. Their area is 
-\(\int v \dd{t}\) which is the displacement. We need to remember that 
-we need to setup definite integrals since these actually give the value 
-we need and not a family of solutions. 
-
-\subsubsection{Acceleration Time}
-
-Acceleration time graphs are useful for their area which represents the difference 
-in velocities in an interval,
-
-\begin{equation*}
-    \int_{0}^{t} a \dd{t} = v(t) - v_0
-\end{equation*}
-
-\subsubsection{Velocity Displacement}
-
-These are the more esoteric and interesting graphs. The slope is simply,
-
-\begin{equation*}
-    \dv{v}{x} = \frac{a}{v}
-\end{equation*}
-
-where we use the fact that \(a = v \dv*{v}{x}\). Thus given a velocity time 
-graph we can figure out the acceleration at any given \(x\) as, 
-
-\begin{equation*}
-    a = v_{x_0} \eval{\dv{v}{x}}_{x_0} = v_{x_0} \tan\theta
-\end{equation*}
-
-\begin{marginfigure}
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}
-        [funcgraphbare, xlabel=$t$, ylabel=$\vec{v}$]
-        \addplot[red, domain=0:4]{-3*x + 12};
-        \end{axis}
-    \end{tikzpicture}
-    \caption{A linear velocity time graph.}
-    \label{fig: vt to at example}
-\end{marginfigure}
-
-\begin{example}
-    Given the velocity time graph in \cref{fig: vt to at example}, sketch out the acceleration time graph.
-    \begin{soln}
-        We see that \(v = mx + c\) where \(m < 0\). Now, 
-
-        \begin{equation*}
-            a = v \dv{v}{x} = m(mx + c) = m^2x + mc
-        \end{equation*}
-
-        Thus, it is of form \(ax + b\) where \(a > 0\), \(b < 0\).
-
-        There-fore its graph is,
-        
-    \begin{figure}[H]
-    \centering
-        \begin{tikzpicture}
-            \begin{axis}
-            [funcgraphbare, xlabel=$t$, ylabel=$\vec{a}$]
-            \addplot[red, domain=0:4]{9*x - 36};
-            \end{axis}
-        \end{tikzpicture}
-        \caption{The corresponding acceleration time graph.}
-    \end{figure}%
-    \end{soln}
-\end{example}
-
-\subsubsection{Velocity squared time}
-
-This is the last family of graphs we'll look at.
-The integral is largely useless but we note that 
-
-\begin{equation*}
-    \dv{v^2}{x} = 2v \dv{v}{x} = 2a
-\end{equation*}
-
-Thus, its slope, \(\tan\theta = 2a\) and we can easily figure out its acceleration 
-if we figure out its slope. yay.
-
-\section{Relative Motion}
-
-There is a very neat technique to solve questions of kinematics, it is to switch our 
-reference frames. Let the base reference frame be that of earth, then,
-
-\begin{figure}
-    [H]
-    \centering
-    \incfig{reference}
-\end{figure}
-
-If \(\vec{r}_1\) evolves with time, \(r_1(t)\). And so does \(r_2(t)\). Then,
-
-\begin{align*}
-    \vec{r}_1 &= \vec{r}_{1,2} + \vec{r}_2 \\
-    \ndiv{\vec{r}}_1 &= \ndiv{\vec{r}}_{1,2} + \ndiv{\vec{r}}_2 \\
-    \vec{v}_1 &= \vec{v}_{1,2} + \vec{v}_{2}\\
-    \vec{v}_{1,2} &= \vec{v}_1 - \vec{v}_{2}
-\end{align*}
-
-Obviously if the vectors face the same direction in the same plane, then, the components subtract. If they face
-opposite direction, then the components add. 
-
-\(\vec{v}_{1,2}\) is called the velocity of \(\mathit{1}\) w.r.t \(\mathit{2}\). When doing
-problems, try to setup a reference frame such that velocity of any single object vanishes.
-This allows for a very neat simplification of problems. 
-
-\section{Motion in higher dimensions}
-
-We can mostly safely extend our results from one dimension to higher dimensions.
-So for instances, velocity of a particle whose trajectory is defined as 
-\(x\unitv{x} + y\unitv{y} + z\unitv{z}\) can simply be computed as,
-\[v = \ndiv{x}\unitv{x} + \ndiv{y}\unitv{y} + \ndiv{z}\unitv{z}\] Such a thing
-is not true for non-cartesian co-ordinates, as we say in the case of polar forms.
-Due to the orthogonality of the cartesian unit vectors, and using dot products
-we simply have, 
-\[v_x = \ndiv{x}, v_y = \ndiv{y}, v_z = \ndiv{z}\]
-
-And the same is true for all other vectors. This gives us the power to
-resolve our vector components into components alongside unit vectors
-and consider independent one dimensional motion for each of them.
-
-\section{Projectile Motion}
+\subsection{Projectile Motion}
 
 Projectile motion is one of the most important motion to consider in 
 2 dimensions. It is the motion of a projected body. Generally, we
@@ -591,12 +372,13 @@ after substituting with \(R\)\footnote{calculated just a bit later.}.
 
 The path of the projectile is parabolic as shown in \cref{fig: projectile}.
 
-\begin{figure}[H]
+\begin{marginfigure}
+    \vspace{2em}
     \centering
-    \incfig{projectile}
+    \scalebox{2}{\incfig{projectile}}
     \caption{Trajectory of a projectile}
     \label{fig: projectile}
-\end{figure}
+\end{marginfigure}
 
 Here, \(H\) is the maximum height of the particle. Clearly,
 when the projectile is at \(H\), \(v_y = 0\). We have, 
@@ -687,7 +469,6 @@ value, we have,
     \end{soln}
 \end{example}
 
-
 Some peculiar things about projectile motion is that, \begin{inparaenum}[a)]
     \ii it is reversible, and
     \ii the time to attain some vertical displacement can be found in terms of 
@@ -735,103 +516,116 @@ Somewhat qualitatively, projectile motion is independent of its horizontal range
 If some projectiles have same maximum height, their time of flight \emph{will be the 
 same}.
 
-\subsection{Projectile Motion and Vectors}
-
-If we write the equations of projectile motion as a vector equation, it 
-corresponds to, 
-
-\begin{equation*}
-    \vec{v}(t) = \vec{v}_0 + \vec{g}t
-\end{equation*}
-
-and for the displacement,
-
-\begin{equation*}
-    \vec{s}(t) = \vec{v}_0t + \frac{1}{2}\vec{g}t^2
-\end{equation*}
-
-We see that the velocity at any further moment is just the resultant of a scaled 
-gravitational acceleration vector and the initial velocity vector and the displacement is the resultant of 
-the scaled velocity and gravitational acceleration vectors. 
-
-Since both of them are multiplied by a positive scalar the time \(t\) or that squared, we simply
-scale both of the vectors to find the resultant. These allow for some very slick derivations regarding
-projectile motion and are a nicer way to solve some of the problems regarding 
-the evolution of say the velocity vector.
-
-In \cref{fig: rangewithvectors}, we can see that since \(\vec{v}_0\) is tangent 
-to the curve at the initial point, so is \(\vec{v}_0t\). Now, we can calculate 
-the time taken to reach the following point since the displacement at that instant, 
-\(R\), is going to be the resultant of the two vectors as shown in \cref{fig: rangewithvectors}.
-
 \begin{marginfigure}
+    \vspace{15em}
     \centering
     \scalebox{2}{\incfig{projectilevector1}}
     \caption{Scaled up \(\vec{v}_0\) and \(\vec{g}\) vectors in projectile motion.}
     \label{fig: rangewithvectors}
 \end{marginfigure}
 
-Thus,
+\begin{exc}
+    \begin{exercise}[points = 3]
+        We can integrate the kinematic equations 
+        vectorially, to get 
+        \begin{equation*}
+            \vec{v}(t) = \vec{v}_0 + \vec{g}t,
+        \end{equation*}
+        
+        and for the displacement,
+        
+        \begin{equation*}
+            \vec{s}(t) = \vec{v}_0t + \frac{1}{2}\vec{g}t^2.
+        \end{equation*}
 
-\begin{equation*}
-    \sin\theta = \frac{gt^2}{2v_0t} \implies t = \frac{2v_0\sin\theta}{g}
-\end{equation*}
+        \begin{enumerate}
+            \item Show that these two equations are, in fact true. Hint: How can we integrate a vector? Try to use its projections. Refer to \Cref{sec: kin3d} \nameref{sec: kin3d} if needed.
+            \item Note that the vectors \(\vec{v_0}t\), \(\vec{g}t^2/2\) are parallel to vector \(\vec{v_0}\) and \(\vec{g}\) respectively. Use this to find the range and time of flight. Hint: You will find \cref{fig: rangewithvectors} useful. 
+        \end{enumerate}
+    \end{exercise}
 
-which is the desired flight time. We can also use,
+    \begin{solution}
+        We see that the velocity at any further moment is just the resultant of a scaled 
+        gravitational acceleration vector and the initial velocity vector and the displacement is the resultant of 
+        the scaled velocity and gravitational acceleration vectors. 
+        
+        Since both of them are multiplied by a positive scalar the time \(t\) or that squared, we simply
+        scale both of the vectors to find the resultant.
+        
+        In \cref{fig: rangewithvectors}, we can see that since \(\vec{v}_0\) is tangent 
+        to the curve at the initial point, so is \(\vec{v}_0t\). Now, we can calculate 
+        the time taken to reach the following point since the displacement at that instant, 
+        \(R\), is going to be the resultant of the two vectors as shown in \cref{fig: rangewithvectors}.
+        
+        Thus,
 
-\begin{equation*}
-    \cos\theta = \frac{2R}{v_0t} \implies 2R = v_0t\cos\theta
-\end{equation*}
+        \begin{equation*}
+            \sin\theta = \frac{gt^2}{2v_0t} \implies t = \frac{2v_0\sin\theta}{g}
+        \end{equation*}
 
-by plugging in the expression for time we just got, we also get the range of the projectile. 
+        which is the desired flight time. We can also use,
 
-This is an example of a really slick derivation. We can use such an idea to often solve from 
-problems where the final velocity or displacement vector has a known direction. 
+        \begin{equation*}
+            \cos\theta = \frac{2R}{v_0t} \implies 2R = v_0t\cos\theta
+        \end{equation*}
 
-I would not recommend using it completely by itself, it is more slick than its often useful
-and while useful can also sometimes hold you back.
+        by plugging in the expression for time we just got, we also get the range of the projectile. 
+    \end{solution}
+    
+    \begin{exercise}[points = 3]
+        Consider the case of a projectile launched along a wedge, as in,
+        \cref{fig: projectilealongwedge}. If we were to figure out \(d\), we could 
+        use a number of ways. The equation of the projectile is,
 
-\subsection{Projectile Motion with rotated axes}
+        \begin{equation*}
+            y = x\tan(\theta+\alpha) - \frac{gx^2}{2v_0^2\cos^2(\theta+\alpha)}
+        \end{equation*}
 
-In this particular section we'll particularly look at projectile motion along a wedge. Consider 
-\cref{fig: projectilealongwedge}. If we were to figure out \(d\), we could 
-use a number of ways. The locus of the projectile is,
+        and of the wedge is,
 
-\begin{equation*}
-    y = x\tan(\theta+\alpha) - \frac{gx^2}{2v_0^2\cos^2(\theta+\alpha)}
-\end{equation*}
+        \begin{equation*}
+            y = x\tan\theta 
+        \end{equation*}
+
+        We could simply equate them to figure out the distance \(d\), which is the range of the projectile.
+        However, let us look at alternate way of doing this.
+
+        \begin{enumerate}
+            \item Consider \cref{fig: projectilerotatedaxes}, we have rotated the axes by the angle of inclination of the wedge, \(\theta\). Now, find the kinematic equations along the two axes.
+            \item Solve these to find the time at which the projectile hits the wedge, and the distance it travels. 
+        \end{enumerate}
+
+    \end{exercise}
+
+    \begin{solution}
+        The acceleration along the \(y\) axis is simply \(g\cos\theta\) and along the \(x\) axis 
+        is \(g\sin\theta\). Thus, our equations in each direction are,
+            \begin{align*}
+                v_x(t) = v_0\cos\alpha - g\sin\theta t\\
+                v_y(t) = v_0\sin\alpha - g\cos\theta t 
+            \end{align*}
+
+        We can solve this by noting that the displacement in \(y\) direction must be \(0\) at the time 
+        it hits the wedge. So we integrate and the velocity to get, 
+            \begin{equation*}
+                y(t) = v_0\sin\alpha t - \frac{1}{2}g\cos\theta t = 0 \implies t = \frac{2v_0\sin\alpha}{g\cos\theta} 
+            \end{equation*}
+        
+        Plug this in the equation obtained by integrating the velocity in the \(x\) direction to get the range.
+    \end{solution}
+\end{exc}
 
 \begin{marginfigure}
+    \vspace{-45em}
     \centering
     \scalebox{2.2}{\incfig{projectilevector2}}
     \caption{Projectile along a wedge}
     \label{fig: projectilealongwedge}
 \end{marginfigure}
 
-and of the wedge is,
-
-\begin{equation*}
-    y = x\tan\theta 
-\end{equation*}
-
-We could simply equate them to figure out the distance \(d\), which is the range of the projectile.
-
-However, more generally, we have some other information than simply this which means that we 
-can use a different way to look at things. Instead of the standard axes, consider them rotated 
-by the angle of the wedge, \(\theta\). Consider \cref{fig: projectilerotatedaxes}.
-We can resolve \(\vec{v}_0\) vector into two components, along and perpendicular to the wedge,
-and thus along the \(x\) and \(y\) axis respectively. 
-
-
-The acceleration along the \(y\) axis is simply \(g\cos\theta\) and along the \(x\) axis 
-is \(g\sin\theta\). Thus, our equations in each direction are,
-
-\begin{align*}
-    v_x(t) = v_0\cos\alpha - g\sin\theta t\\
-    v_y(t) = v_0\sin\alpha - g\cos\theta t 
-\end{align*}
 
 \begin{marginfigure}
+    \vspace{-15em}
     \centering
     \scalebox{2.2}{\incfig{projectilevector3}}
     \caption{The cartesian axes rotated by \(\theta\).}
@@ -902,6 +696,97 @@ such that the projectile has maximum range.
 \end{example}
 
 
+
+\section{Motion in Polar Co-ordinates}
+
+The polar co-ordinate axes are the two-dimesional subset of the 3-d cylindrical co-ordinates. 
+Any point in polar co-ordinates is depicted by a system of two unit vectors, \(\unitv{r}\) and
+\(\unitv{\theta}\). However, each of these are {dependent on the position of the particle} and
+maybe written explicitly as \(\unitv{r}(\theta)\) and \(\unitv{\theta}(\theta)\).  
+
+Here, \(\unitv{r}\) points in the direction of increasing radius(along the radial vector)
+\(\unitv{\theta}\) points in the direction of increasing \(\theta\) (tangent to the radial vector).
+These two unit vectors are \emph{orthogonal} at any point. 
+
+\begin{marginfigure}
+    \scalebox{1.5}{\incfig{polarunit}}
+    \caption{Unit vectors in polar co-ordinates}
+    \label{fig: polarunit}
+\end{marginfigure}
+
+In \cref{fig: polarunit} if \(\vec{r}\) makes
+an angle \(\theta\) with the horizontal, then,
+
+\begin{align}
+    \label{eq: polardef}
+    \unitv{r} &= \cos \theta \unitv{x} + \sin \theta \unitv{y}\\
+    \unitv{\theta} &= -\sin \theta \unitv{x} + \cos \theta \unitv{y}
+\end{align}
+
+Now let us formulate kinematics in polar co-ordinates. The position \(\vec{r}\) can be written as
+
+\begin{equation}
+    \vec{r} = r \unitv{r}
+\end{equation}
+
+\noindent Velocity follows normally, 
+\begin{equation}
+    \vec{v} = \ndiv{\vec{r}} = \ndiv{r} \unitv{r} + r\dv{\unitv{r}}{t} 
+\end{equation}
+or does it? What even is \(\displaystyle\dv{\unitv{r}}{t}\)? Well the answer lies in 
+the time-derivative of the unit vectors. Using the definitions in \eqref{eq: polardef}, we get,
+
+\begin{align}
+    \dv{\unitv{r}}{t} &= \ndiv{\theta} \unitv{\theta}\\
+    \dv{\unitv{\theta}}{t} &= -\ndiv{\theta} \unitv{r}
+\end{align}
+
+\noindent Using these results, we get that
+
+\begin{empheq}[box=\widefbox]{align}    
+    \vec{v} & = \ndiv{r} \unitv{r} + r\ndiv{\theta} \unitv{\theta}\\
+    \label{polar: accel}
+    \vec{a} & = (\nddiv{r} - r\ndiv{\theta}^2) \unitv{r} + (r\nddiv{\theta} + 2\ndiv{r}\ndiv{\theta}) \unitv{\theta}
+\end{empheq}
+
+\noindent The most interesting result are the various terms of acceleration in \eqref{polar: accel}. First let 
+us consider the terms along \(\unitv{r}\). \(\nddiv{r}\) is the \emph{radial} acceleration. It is
+the change in the radial speed(and thus the radius). The second term \(-r\ndiv{\theta}^2\) is the \emph{centripetal} acceleration, this is 
+term responsible for change in the direction of the tangential velocity. In essence, it is 
+the component which accounts for the rotation of the particle. 
+
+Now let us consider the terms along \(\unitv{\theta}\). The \(r\nddiv{\theta}\) term is the tangential
+acceleration resulting from change in tangential speed, i.e if the radial vector is of 
+constant magnitude, and speed \(v\) is changing, \[a_t = r\ddot{\theta} = \ndiv{v}.\] The other term \(2\ndiv{r}\ndiv{\theta}\) is the
+\emph{coriolis} acceleration. I shall discuss it when discussing rotating frames.
+
+\section{Reference Frames}
+
+There is a very neat technique to solve questions of kinematics, it is to switch our 
+reference frames. Let the base reference frame be that of earth, then,
+
+\begin{figure}
+    [H]
+    \centering
+    \incfig{reference}
+\end{figure}
+
+If \(\vec{r}_1\) evolves with time, \(r_1(t)\). And so does \(r_2(t)\). Then,
+
+\begin{align*}
+    \vec{r}_1 &= \vec{r}_{1,2} + \vec{r}_2 \\
+    \ndiv{\vec{r}}_1 &= \ndiv{\vec{r}}_{1,2} + \ndiv{\vec{r}}_2 \\
+    \vec{v}_1 &= \vec{v}_{1,2} + \vec{v}_{2}\\
+    \vec{v}_{1,2} &= \vec{v}_1 - \vec{v}_{2}
+\end{align*}
+
+Obviously if the vectors face the same direction in the same plane, then, the components subtract. If they face
+opposite direction, then the components add. 
+
+\(\vec{v}_{1,2}\) is called the velocity of \(\mathit{1}\) w.r.t \(\mathit{2}\). When doing
+problems, try to setup a reference frame such that velocity of any single object vanishes.
+This allows for a very neat simplification of problems. 
+
 \section{Drag Forces}
 
 In a more realistic scenario, a particle undergoing motion in any 
@@ -968,7 +853,7 @@ Ulitmately, this leads to the equations,
     v_y &= \qty(u_y + \frac{g}{k})e^{-kt} - \frac{g}{k}
 \end{align}
 
-\subsection{A bag of techniques}
+\section{A bag of techniques}
 
 Although almost everything can be found with a bash-y mathematical solution, sometimes 
 it is just nicer to use a particularly slick idea to solve problems. Some of these are discussed 

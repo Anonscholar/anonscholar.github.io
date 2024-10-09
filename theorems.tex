@@ -173,6 +173,7 @@ headpunct={ \\[3pt] },
 }
 \declaretheoremstyle[
 headfont=\bfseries\rmfamily\color{purple},
+bodyfont=\normalfont,
 postheadspace={0pt},
 mdframed={style=mdgreymargin},
 headpunct={ \\[3pt] },
@@ -328,7 +329,7 @@ headpunct={ \\[3pt] },
   \normalsize
   \GetExercisePropertyT{points}{%
     \marginpar{%
-        [{\color{TealBlue}\printgoal{\PropertyValue}}]%
+        [{\color{TealBlue!70!black}\printgoal{\PropertyValue}}]%
         \GetExercisePropertyT{bonus-points}{~[+\printgoal{\PropertyValue}]}%
     }%
   }%
@@ -342,7 +343,7 @@ headpunct={ \\[3pt] },
   exercise/the-counter = \arabic{exercise}. ,
   exercise/template = custom ,
   solution/template = custom ,
-  exercise/name =  \triangleright
+  exercise/name =  E\!
 }
 
 \newenvironment{exc}{%

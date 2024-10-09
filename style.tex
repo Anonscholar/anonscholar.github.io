@@ -24,60 +24,39 @@
 
 %Chapter Style
 \usepackage{calc}
-\newif\ifNoChapNumber
-\newcommand\Vlines{%
-\def\VL{\rule[-1cm]{1pt}{2.5cm}\hspace{1mm}\relax}
-\VL\VL\VL\VL\VL\VL\VL}
+%chapter style
+
 \makeatletter
-\setlength\midchapskip{0pt}
-\makechapterstyle{VZ43}{
-\renewcommand\chapternamenum{}
-\renewcommand\printchaptername{}
-\renewcommand\printchapternum{}
-\renewcommand\chapnumfont{\Huge\em\centering}
-\renewcommand\chaptitlefont{\Huge\bfseries\raggedright}
-\renewcommand\printchaptertitle[1]{%
-\Vlines\hspace*{-2em}%
-\begin{tabular}{@{}p{1cm} p{\textwidth-3cm}}%
-\ifNoChapNumber\relax\else%
-\colorbox{black}{\color{white}%
-\makebox[.8cm]{\chapnumfont\strut \thechapter}}
-\fi
-
-& \chaptitlefont ##1
-\end{tabular}
-\NoChapNumberfalse
-}
-\renewcommand\printchapternonum{\NoChapNumbertrue}
-}
-\makeatother
-\chapterstyle{ger}
-% ===== FRONT MATTER CHAPTER STYLE
-\makechapterstyle{frontmatter}{% Front matter chapter style
-  \chapterstyle{ger}% Or whatever you consider to be default
-}
-% ===== MAIN MATTER CHAPTER STYLE
-\makechapterstyle{mainmatter}{% Main matter chapter style
-  \chapterstyle{VZ43}% Or whatever you consider to be default
-}
-% ===== BACK MATTER CHAPTER STYLE
-\makechapterstyle{backmatter}{% Back matter chapter style
-  \chapterstyle{frontmatter}% Backmatter chapterstyle is similar to frontmatter
-}
-
-\let\oldfrontmatter\frontmatter
-\renewcommand{\frontmatter}{\chapterstyle{frontmatter}\oldfrontmatter}
-\let\oldmainmatter\mainmatter
-\renewcommand{\mainmatter}{\chapterstyle{mainmatter}\oldmainmatter}
-\let\oldbackmatter\backmatter
-\renewcommand{\backmatter}{\chapterstyle{backmatter}\oldbackmatter}
-
-
+\def\@makechapterhead#1{%
+  \vspace*{2\p@}%
+  {\parindent \z@ \raggedleft \reset@font
+            \scshape \@chapapp{} \thechapter
+        \par\nobreak
+        \interlinepenalty\@M
+    \Huge \bfseries #1\par\nobreak
+    %\vspace*{1\p@}%
+    \hrulefill
+    \par\nobreak
+    \vskip 10\p@
+  }}
+\def\@makeschapterhead#1{%
+  \vspace*{2\p@}%
+  {\parindent \z@ \raggedleft \reset@font
+            \scshape \vphantom{\@chapapp{} \thechapter}
+        \par\nobreak
+        \interlinepenalty\@M
+    \Huge \bfseries #1\par\nobreak
+    %\vspace*{1\p@}%
+    \par\nobreak
+    \vskip 10\p@
+  }}
 
 \usepackage{xparse}
 \usepackage{lipsum}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%page style
 
 \nouppercaseheads
 \makepagestyle{mystyle}
@@ -123,8 +102,8 @@
         ylabel={\(y\)},
     },
 }
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%packages
 \usepackage{physics}
 \usepackage{tkz-euclide}
 
@@ -150,7 +129,7 @@
 \usepackage{tzplot}
 \usepackage{enumitem}
 \newlist{axioms}{enumerate}{10}
-\setlist[axioms]{label=\textbf{Axiom\,\arabic*.},ref=Axiom\arabic*,leftmargin=*}
+\setlist[axioms]{label=\textbf{A\arabic*.},ref=Axiom\arabic*,leftmargin=*}
 
 \newlist{casework}{enumerate}{10}
 \setlist[casework]{label=\textbf{Case\,\Roman*},ref=Axiom\arabic*,leftmargin=*}
@@ -241,15 +220,20 @@ urlcolor=TealBlue!70!black,
 
 \usepackage{cleveref}
 
+
 \crefformat{section}{\S#2#1#3} % see manual of cleveref, section 8.2.1
 \crefformat{subsection}{\S#2#1#3}
 \crefformat{subsubsection}{\S#2#1#3}
 
 
-\renewcommand*{\thepart}{\color{purple}\Alph{part}}
-\renewcommand*{\parttitlefont}{\color{black}\sffamily\HUGE}
-\renewcommand*{\partnamefont}{\normalfont\Huge\scshape\MakeLowercase}
-\renewcommand*{\partnumfont}{\color{black}\normalfont\scshape\MakeLowercase}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%section, part formatting
+
+\renewcommand*{\thepart}{\color{black}\Alph{part}}
+\renewcommand*{\parttitlefont}{\color{black}\normalfont\HUGE}
+\renewcommand*{\partnamefont}{\normalfont\LARGE\itshape}
+\renewcommand*{\partnumfont}{\color{black}\normalfont\itshape}
 
 \setsechook{\hangsecnum}
 
@@ -298,6 +282,9 @@ urlcolor=TealBlue!70!black,
 
 \affil{\email{adyanshmishra@proton.me}}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%title page
 
 \newcommand*{\titleSW}{\begin{titlingpage}
 \newgeometry{left=10cm}
@@ -318,35 +305,6 @@ urlcolor=TealBlue!70!black,
 \usetikzlibrary{patterns,decorations.pathmorphing}
 \usetikzlibrary{arrows.meta}
 \tikzset{>=latex}
-
-\colorlet{mydarkblue}{blue!50!black}
-\colorlet{myblue}{blue!30}
-\colorlet{mydarkred}{red!60!black}
-\colorlet{myred}{red!30}
-\colorlet{mydarkgreen}{green!60!black}
-\colorlet{mygreen}{green!30}
-\colorlet{mydarkorange}{yellow!40!red}
-\colorlet{myorange}{yellow!80!red}
-\colorlet{myyellow}{yellow!80}
-\colorlet{mygrey}{black!15}
-\colorlet{mydarkgrey}{black!50}
-
-\tikzstyle{piston}=[blue!40!black,top color=blue!40!black!30,bottom color=blue!40!black!30,
-                    middle color=blue!50!black!15,shading angle=0]
-\tikzstyle{walldark}=[blue!25!black,top color=blue!20!black!12,bottom color=blue!20!black!20,shading angle=-30]
-\tikzstyle{wall}=[blue!20!black,top color=blue!35!black!6,bottom color=blue!25!black!12,shading angle=30]
-
-% GAS MOLECULE with vector
-\tikzset{
-  gasparticle/.pic={
-    \tikzset{/gasparticle/.cd,#1}
-    \draw[-{Latex[length=4,width=3]},green!60!black,thick] (0,0) -- (\vec);
-    \node[circle,fill,inner sep=1.5,ball color=black!80!blue] at (0,0) {};
-  }
-  /gasparticle/.search also={/tikz},
-  /gasparticle/.cd,
-  vec/.store in=\vec, vec={90:0.5},
-}
 
 \usepackage{framed}
 % colors to be used
@@ -388,13 +346,13 @@ urlcolor=TealBlue!70!black,
     \endgroup
   \fi}
 \makeatother
-\renewcommand{\cftpartfont}{\sffamily}
+\renewcommand{\cftpartfont}{\bfseries}
 
 % redefinitions for section entries
 \renewcommand\cftsectionfont{\rmfamily}
 \renewcommand\cftsectionpagefont{\rmfamily\itshape\color{myred}}
 
-\cftsetindents{section}{2.5em}{2.5em}
+\cftsetindents{section}{1em}{2em}
 
 
 % text styling of all side footnotes
@@ -422,3 +380,23 @@ urlcolor=TealBlue!70!black,
   {\small\bfseries\scshape\figurename~\thefigure}}
 \makeatother
 \renewcommand{\footnotesize}{\fontsize{10pt}{12pt}\selectfont} % Change footnotesize to 10pt
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{minitoc}     % For generating chapter-local TOCs
+
+% Initialize the minitoc package
+\dominitoc[n]
+\setcounter{minitocdepth}{1}   % Show until sections in minitoc
+\nomtcrule    % removes rules = horizontal lines  Define the command to create a local TOC in the margin without subsections
+
+\undottedmtctrue
+
+\newcommand{\margintoc}{
+  \marginnote{
+    \vspace{-10em}
+    \begin{minipage}[t]{\marginparwidth}
+      \minitoc % This will use the depth set previously in \dominitoc
+    \end{minipage}
+  }
+}
