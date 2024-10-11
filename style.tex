@@ -60,18 +60,15 @@ Ligatures=TeX,
 
 \nouppercaseheads
 \makepagestyle{mystyle}
-\makeevenhead{mystyle}{{\emph{\thechapter.\,\leftmark}}}{\hspace*{49.5em} \sffamily\thepage}{}
-\makeoddhead{mystyle}{\emph{\rightmark}}{\hspace*{49.5em} \sffamily\thepage}{}
+\makeevenhead{mystyle}{\textbf{\thepage}\;\;\;{\emph{\leftmark}}}{}{}
+\makeoddhead{mystyle}{}{}{\emph{\rightmark}\;\;\;\textbf{\thepage}}
 
 \makeevenfoot{mystyle}{}{}{}
 \makeoddfoot{mystyle}{}{}{}
 \makepsmarks{mystyle}{%
-  \createmark{chapter}{left}{nonumber}{}{}}
-  \setlength{\headwidth}{\textwidth}
-  \makeheadrule{mystyle}{\headwidth}{\normalrulethickness}
-\addtolength{\headwidth}{\marginparwidth}
-\addtolength{\headwidth}{\marginparsep}
- \nouppercaseheads 
+  \createmark{chapter}{left}{nonumber}{}{}
+  \createmark{part}{right}{nonumber}{}{}}
+  
 
 \pagestyle{mystyle}
 
