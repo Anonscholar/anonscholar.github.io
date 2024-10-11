@@ -25,7 +25,7 @@
 %DEALINGS IN THE SOFTWARE.
 
 
-
+\let\openbox\undefined
 \usepackage{amsthm}
 \usepackage{thmtools}
 
@@ -253,10 +253,10 @@ headpunct={ \\[3pt] },
 \declaretheorem[style=boxstyle,name=Lemma,sibling=theorem]{lemma}
 
 
-\declaretheorem[style=basehead,name=Proposition,numbered=no]{proposition*}
+\declaretheorem[style=plain,name=Proposition,numbered=no]{proposition*}
 \declaretheorem[style=thmgreenbox,name=Corollary,numbered=no]{corollary*}
 \declaretheorem[style=thmgreenbox,name=Assumption,numbered=no]{assume*}
-\declaretheorem[style=basehead,name=Proposition,sibling=theorem]{proposition}
+\declaretheorem[style=plain,name=Proposition,sibling=theorem]{proposition}
 \declaretheorem[style=thmgreenbox,name=Corollary,sibling=theorem]{corollary}
 \declaretheorem[style=thmgreenbox,name=Assumption,sibling=theorem]{assume}
 \declaretheorem[style=thmgreenbox,name=Algorithm,sibling=theorem]{algorithm}
@@ -268,20 +268,16 @@ headpunct={ \\[3pt] },
 \declaretheorem[style=thmblackbox,name=Problem,numbered=no]{problem*}
 \declaretheorem[style=thmblackbox,name=Question,sibling=theorem]{ques}
 
+\declaretheoremstyle[spaceabove=6pt,spacebelow=6pt, bodyfont=\em,]{plain}
 
-\declaretheorem[style=thmmarginbox,name=\begingroup\color{RoyalBlue}\blacktriangleright\endgroup,numbered=no]{marginnotebox}
-\declaretheorem[style=thmmarginref,name=\begingroup\color{JungleGreen}\blacksquare\endgroup,numbered=no]{marginrefbox}
-
-\declaretheoremstyle[spaceabove=6pt,spacebelow=6pt, bodyfont=\em,]{basehead}
-
-\declaretheorem[style=basehead,name=Answer,sibling=theorem]{answer}
-\declaretheorem[style=basehead,name=Answer,numbered=no]{answer*}
-\declaretheorem[style=basehead,name=Proposition,sibling=theorem]{plainprop}
-\declaretheorem[style=basehead,name=Proposition,numbered=no]{plainprop*}
-\declaretheorem[style=basehead,name=Theorem,sibling=theorem]{plaintheo}
-\declaretheorem[style=basehead,name=Theorem,numbered=no]{plaintheo*}
-\declaretheorem[style=basehead,name=Lemma,sibling=theorem]{plainlem}
-\declaretheorem[style=basehead,name=Lemma,numbered=no]{plainlem*}
+\declaretheorem[style=plain,name=Answer,sibling=theorem]{answer}
+\declaretheorem[style=plain,name=Answer,numbered=no]{answer*}
+\declaretheorem[style=plain,name=Proposition,sibling=theorem]{plainprop}
+\declaretheorem[style=plain,name=Proposition,numbered=no]{plainprop*}
+\declaretheorem[style=plain,name=Theorem,sibling=theorem]{plaintheo}
+\declaretheorem[style=plain,name=Theorem,numbered=no]{plaintheo*}
+\declaretheorem[style=plain,name=Lemma,sibling=theorem]{plainlem}
+\declaretheorem[style=plain,name=Lemma,numbered=no]{plainlem*}
 
 
 \declaretheorem[style=thmpurplebox,name=Conjecture,sibling=theorem]{conjecture}
@@ -289,10 +285,10 @@ headpunct={ \\[3pt] },
 \declaretheorem[style=boxstyle,name=Definition,sibling=theorem]{definition}
 \declaretheorem[style=boxstyle,name=Definition,numbered=no]{definition*}
 
-\declaretheorem[style=basehead,name=Fact,sibling=theorem]{fact}
-\declaretheorem[style=basehead,name=Fact,numbered=no]{fact*}
-\declaretheorem[style=basehead,name=Problem,sibling=theorem]{problem}
-\declaretheorem[style=basehead,name=Question,numbered=no]{ques*}
+\declaretheorem[style=plain,name=Fact,sibling=theorem]{fact}
+\declaretheorem[style=plain,name=Fact,numbered=no]{fact*}
+\declaretheorem[style=plain,name=Problem,sibling=theorem]{problem}
+\declaretheorem[style=plain,name=Question,numbered=no]{ques*}
 
 \Crefname{answer}{Answer}{Answers}
 \Crefname{assume}{Assumption}{Assumptions}

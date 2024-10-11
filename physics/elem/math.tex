@@ -42,9 +42,11 @@ Multiplying a vector \(\vec{A}\) by a scalar \(c\) results
 in another vector, \(c\vec{A}\) parallel or antiparallel(pointing in the opposite 
 direction) to \(\vec{A}\) scaled by a factor of \(\abs*{c}\).
 
+\newpage
+
 \begin{marginfigure}
     \hspace{-5em}
-    \vspace{-3em}
+    \vspace{-2em}
     \centering
     \scalebox{2.5}{\incfig{scalarmultiplication}}
     \caption{Scalar Multiplication. The vector, \(\vec{A}\) multiplied 
@@ -57,41 +59,40 @@ If we multiply a vector by \(-1\), then the result is the simple
 reversal in direction of vectors. If \(c\) is negative, then the 
 vector is reversed and scaled by \(\abs*{c}\). 
 
-
 \subsection{Vector Addition}
 
 We define an operation called addition of vectors which produces another vector.
-To add two vectors, \(\Aa\) and \(\BB\), we stick the tail
+To add two vectors, \(\vec{A}\) and \(\vec{B}\), we stick the tail
 of one vector with the head of another. 
 
-We can calculate the magnitude of their resultant vector, \(\norm*{\Aa + \BB}\)
+We can calculate the magnitude of their resultant vector, \(\norm*{\vec{A} + \vec{B}}\)
 by using the cosine rule. In \cref{fig: vectoradd} \(\theta\) is the angle between 
-\(\Aa\) and \(\BB\).
+\(\vec{A}\) and \(\vec{B}\).
 
 \begin{align*}
-    &\norm*{\Aa + \BB}^2 = A^2 + B^2 - 2AB\cos(\pi - \theta) \\
-    &\norm*{\Aa + \BB}^2 = A^2 + B^2 + 2AB\cos\theta \\
-    &\norm*{\Aa + \BB} = \sqrt{A^2 + B^2 + 2AB\cos\theta}
+    &\norm*{\vec{A} + \vec{B}}^2 = A^2 + B^2 - 2AB\cos(\pi - \theta) \\
+    &\norm*{\vec{A} + \vec{B}}^2 = A^2 + B^2 + 2AB\cos\theta \\
+    &\norm*{\vec{A} + \vec{B}} = \sqrt{A^2 + B^2 + 2AB\cos\theta}
 \end{align*}
- 
+
+To subtract two vectors, we simply reverse the vector and then add the resulting vector.
+
 \begin{marginfigure}
     \scalebox{2}{\incfig{vectoradd}}
     \caption{Vector Addition}
     \label{fig: vectoradd}
 \end{marginfigure}
 
-To subtract two vectors, we simply reverse the vector and then add the resulting vector.
-
 \begin{example}
-    Consider the infinitesimal change vector, \(\dd{\Aa} = \Aa(t + \dd{t}) - \Aa(t)\).
+    Consider the infinitesimal change vector, \(\dd{\vec{A}} = \vec{A}(t + \dd{t}) - \vec{A}(t)\).
     
     We have, 
     \begin{align*}
-        \dd{\Aa} &= A(t + \dd{t})\unitv{A}(t + \dd{t}) - A(t)\unitv{A}(t) \\
-        \dd{\Aa} &= A(t + \dd{t})\unitv{A}(t + \dd{t}) - A(t + \dd{t})\unitv{A}(t) \\ 
+        \dd{\vec{A}} &= A(t + \dd{t})\unitv{A}(t + \dd{t}) - A(t)\unitv{A}(t) \\
+        \dd{\vec{A}} &= A(t + \dd{t})\unitv{A}(t + \dd{t}) - A(t + \dd{t})\unitv{A}(t) \\ 
         & + A(t + \dd{t})\unitv{A}(t) - A(t)\unitv{A}(t) \\
-        \dd{\Aa} &= A(t + \dd{t})(\unitv{A}(t + \dd{t}) - \unitv{A}(t)) + \unitv{A}(t)(A(t + \dd{t}) - A(t)) \\
-        \dd{\Aa} &= A\dd{\unitv{A}} + \dd{A}\unitv{A} 
+        \dd{\vec{A}} &= A(t + \dd{t})(\unitv{A}(t + \dd{t}) - \unitv{A}(t)) + \unitv{A}(t)(A(t + \dd{t}) - A(t)) \\
+        \dd{\vec{A}} &= A\dd{\unitv{A}} + \dd{A}\unitv{A} 
     \end{align*}
 The first term represents a change in direction and the second represents a change in 
 magnitude.
@@ -106,11 +107,11 @@ which is perpendicular to \(\vec{A}\), we can show its perpendicular because
 the other term, \(\dd{A} \unitv{A}\) is parallel to \(A\), and causes no change in direction. 
 
 The second term, thus must account for change in direction. We can also see that \(A\dd{\unitv{A}}\)
-causes no reasonable change in the magnitude of \(\Aa\). Therefore, it must be perpendicular to \(\vec{A}\)\footnote{This is because we are basically stating that \(\dd{\vec{A}}\) can be broken into two parts,
+causes no reasonable change in the magnitude of \(\vec{A}\). Therefore, it must be perpendicular to \(\vec{A}\)\footnote{This is because we are basically stating that \(\dd{\vec{A}}\) can be broken into two parts,
 one parallel to \(\vec{A}\) and one perpendicular to it. The perpendicular one causes 
 no change in magnitude.}.
 
-For now, let us consider \(\increment \Aa\) perpendicular to \(\Aa\) as an approximation. We see that 
+For now, let us consider \(\increment \vec{A}\) perpendicular to \(\vec{A}\) as an approximation. We see that 
 
 \begin{equation*}
     A(t_2) = \sqrt{A^2(t_1) + (\increment A)^2}
@@ -152,36 +153,36 @@ Since \(\dd{A}_{\perp} = A\norm*{\dd{\unitv{A}}}\),
 \section{Dot Product}
 
 The \vocab{dot product} of two vectors results in a scalar and is defined as,
-\[\Aa \dtp \BB = AB \cos\theta\]
-where \(\theta\) is the angle between \(\Aa\) and \(\BB\). 
+\[\vec{A} \dotproduct \vec{B} = AB \cos\theta\]
+where \(\theta\) is the angle between \(\vec{A}\) and \(\vec{B}\). 
 
-Note that the quantity \(\Aa \dtp \BB\) is just \(A\) times 
-the magnitude of the projection of \(\BB\) on \(\Aa\). Similarly, \(\BB \dtp \Aa\) is
-magnitude of the projection of \(\Aa\) on \(\BB\) times \(B\).
+Note that the quantity \(\vec{A} \dtp \vec{B}\) is just \(A\) times 
+the magnitude of the projection of \(\vec{B}\) on \(\vec{A}\). Similarly, \(\vec{B} \dtp \vec{A}\) is
+magnitude of the projection of \(\vec{A}\) on \(\vec{B}\) times \(B\).
 
 We may note that,
 
-\[\Aa \dtp \Aa = A^2\] Or,
-\[A = \sqrt{\Aa \dtp \Aa}\]
+\[\vec{A} \dtp \vec{A} = A^2\] Or,
+\[A = \sqrt{\vec{A} \dtp \vec{A}}\]
 
 It can be easily shown that the scalar product distributes over vector addition. 
 Another thing of importance is the identity(which is also easy to derive),
 
-\[\dv{\Aa \dtp \BB}{t} = \dv{\Aa}{t} \dtp \BB + \dv{\BB}{t} \dtp \Aa\]
+\[\dv{\vec{A} \dtp \vec{B}}{t} = \dv{\vec{A}}{t} \dtp \vec{B} + \dv{\vec{B}}{t} \dtp \vec{A}\]
 
 \section{Cross Product}
 
 The \vocab{cross product} is another product operation on vectors, this product produces a vector.
 
 It is defined as, 
-\[\Aa \cp \BB = AB\sin\theta \unitv{n}\] 
+\[\vec{A} \cp \vec{B} = AB\sin\theta \unitv{n}\] 
 
-Where \(\unitv{n}\) is the vector perpendicular to the plane containing \(\Aa\) and \(\BB\).
+Where \(\unitv{n}\) is the vector perpendicular to the plane containing \(\vec{A}\) and \(\vec{B}\).
 Since there are two directions that \(\unitv{n}\) can have, we define the two vectors 
 and their cross product to form a right-hand triple.
 
-Place your fingers in the direction of \(\Aa\) and curl them, along the smaller angle, towards 
-\(\BB\). Then the direction in which your thumb is pointing is the direction of \(\Aa \cp \BB\). 
+Place your fingers in the direction of \(\vec{A}\) and curl them, along the smaller angle, towards 
+\(\vec{B}\). Then the direction in which your thumb is pointing is the direction of \(\vec{A} \cp \vec{B}\). 
 
 \section{Vectors in Component form}
 
@@ -233,19 +234,19 @@ But how can we write an arbitrary vector \(\vec{A}\) in terms of these unit vect
 The answer lies in projecting the vector along the axes. We use the dot product for it.
 
 \begin{align}
-    A_x &= \Aa \dtp \unitv{x} = A \cos \alpha \\
-    A_y &= \Aa \dtp \unitv{y} = A \cos \beta \\
-    A_z &= \Aa \dtp \unitv{z} = A \cos \gamma 
+    A_x &= \vec{A} \dtp \unitv{x} = A \cos \alpha \\
+    A_y &= \vec{A} \dtp \unitv{y} = A \cos \beta \\
+    A_z &= \vec{A} \dtp \unitv{z} = A \cos \gamma 
 \end{align}
 
 Where \(\alpha\), \(\beta\), and \(\gamma\) are the angles 
 the vector makes with the \(x\), \(y\) and \(z\) axes respectively.
 The cosine of these angles are called \vocab{directional cosines}. 
 
-Thus, we write \(\Aa\) in terms of it elements, in matrix form, as, 
+Thus, we write \(\vec{A}\) in terms of it elements, in matrix form, as, 
 
 \begin{equation}
-    \Aa = 
+    \vec{A} = 
     \begin{pmatrix}
         A_x \\
         A_y \\
@@ -257,7 +258,7 @@ Thus, we write \(\Aa\) in terms of it elements, in matrix form, as,
 Now scalar multiplication is simply, 
 
 \[
-    c\Aa = 
+    c\vec{A} = 
     \begin{pmatrix}
         cA_x \\
         cA_y \\
@@ -268,7 +269,7 @@ Now scalar multiplication is simply,
 And vector addition is,
 
 \[
-    \Aa + \BB = 
+    \vec{A} + \vec{B} = 
     \begin{pmatrix}
         A_x + B_x\\
         A_y + B_y\\
@@ -276,11 +277,11 @@ And vector addition is,
     \end{pmatrix}
 \]
 
-For the dot product, representing \(\Aa\) and \(\BB\) in terms of the basis vectors,
+For the dot product, representing \(\vec{A}\) and \(\vec{B}\) in terms of the basis vectors,
 
 \begin{align*}
-    \Aa \dtp \BB &= (A_x \unitv{x} + A_y \unitv{y} + A_z \unitv{z}) \dtp (B_x \unitv{x} + B_y \unitv{y} + B_z \unitv{z}) \\
-    \Aa \dtp \BB &= A_xB_x + A_yB_y + A_zB_z
+    \vec{A} \dtp \vec{B} &= (A_x \unitv{x} + A_y \unitv{y} + A_z \unitv{z}) \dtp (B_x \unitv{x} + B_y \unitv{y} + B_z \unitv{z}) \\
+    \vec{A} \dtp \vec{B} &= A_xB_x + A_yB_y + A_zB_z
 \end{align*}
 
 Where we use the distributive property of dot product and the fact 
@@ -383,7 +384,7 @@ The two directions can be seen in \cref{fig: vectproject}.
 Finally, the cross product is a little difficult to compute.
 It can be computed either as the determinant,
 
-\[\Aa \cp \BB =
+\[\vec{A} \cp \vec{B} =
 \begin{vmatrix}
     \unitv{x} & \unitv{y} & \unitv{z} \\
     A_x & A_y & A_z \\
@@ -414,10 +415,10 @@ Or using the matrix notation,
 \]
 
 To compute a particular component, cover up that particular row. Then, multiply the component 
-of \(\Aa\) in the row below (loop to the top if necessary) 
-with the diagonal component of \(\BB\) and
-subtract it by the product of the component of \(\Aa\) two rows below, and the
-diagonal component of \(\BB\). For example, for the y-component,
+of \(\vec{A}\) in the row below (loop to the top if necessary) 
+with the diagonal component of \(\vec{B}\) and
+subtract it by the product of the component of \(\vec{A}\) two rows below, and the
+diagonal component of \(\vec{B}\). For example, for the y-component,
 
 \[
 \begin{pmatrix}

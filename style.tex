@@ -1,13 +1,7 @@
-
-\usepackage[no-math]{fontspec}
-\defaultfontfeatures[\rmfamily,\sffamily]{Ligatures=TeX}\setmainfont{baskervillef}
-
-\usepackage[lite]{mtpro2}
 \usepackage{amsmath, amssymb}
 
-
 \nonzeroparskip
-\usepackage[right=8.5cm,left=2.5cm,bottom=1cm,top=1cm,marginparwidth=6cm,marginparsep=1cm,includeheadfoot,asymmetric]{geometry}
+\usepackage[right=8.5cm,left=2.5cm,bottom=1cm,top=1cm,marginparwidth=6cm,marginparsep=0.7cm,includeheadfoot,asymmetric]{geometry}
 
 \usepackage[texindy]{imakeidx}
 \makeindex[intoc]
@@ -231,7 +225,7 @@ urlcolor=TealBlue!70!black,
 %section, part formatting
 
 \renewcommand*{\thepart}{\color{black}\Alph{part}}
-\renewcommand*{\parttitlefont}{\color{black}\normalfont\HUGE}
+\renewcommand*{\parttitlefont}{\color{black}\normalfont\bfseries\HUGE}
 \renewcommand*{\partnamefont}{\normalfont\LARGE\itshape}
 \renewcommand*{\partnumfont}{\color{black}\normalfont\itshape}
 
@@ -357,7 +351,7 @@ urlcolor=TealBlue!70!black,
 
 % text styling of all side footnotes
 % styling and placement of mark
-\footmarkstyle{{\itshape#1. }}
+\footmarkstyle{{\itshape\large#1. }}
 \setlength{\footmarkwidth}{0em}
 \setlength{\footmarksep}{-\footmarkwidth}
 % memoir command - do all footnotes in margin
@@ -377,7 +371,7 @@ urlcolor=TealBlue!70!black,
 
  \makeatletter
   \renewcommand{\fnum@figure}{
-  {\small\bfseries\scshape\figurename~\thefigure}}
+  {\large\scshape\figurename~\thefigure}}
 \makeatother
 \renewcommand{\footnotesize}{\fontsize{10pt}{12pt}\selectfont} % Change footnotesize to 10pt
 
@@ -395,8 +389,8 @@ urlcolor=TealBlue!70!black,
 \newcommand{\margintoc}{
   \marginnote{
     \vspace{-10em}
-    \begin{minipage}[t]{7cm}
-      \minitoc % This will use the depth set previously in \dominitoc
+    \begin{minipage}[t]{7.5cm}
+      {\minitoc} % This will use the depth set previously in \dominitoc
     \end{minipage}
   }
 }
