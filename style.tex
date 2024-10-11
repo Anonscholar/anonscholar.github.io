@@ -1,5 +1,11 @@
 \usepackage{amsmath, amssymb}
 
+\usepackage{fontspec}
+\setmainfont{CormorantGaramond}[
+FakeBold=0.8,
+Ligatures=TeX,
+]
+
 \nonzeroparskip
 \usepackage[right=8.5cm,left=2.5cm,bottom=1cm,top=1cm,marginparwidth=6cm,marginparsep=0.7cm,includeheadfoot,asymmetric]{geometry}
 
@@ -193,13 +199,10 @@ urlcolor=TealBlue!70!black,
     \scalebox{.5}{\import{../figures/}{#1.pdf_tex}}
 }
 
-\usepackage{epigraph}
 
-\setlength\epigraphwidth{8cm}
-
-\makeatletter
-\patchcmd{\epigraph}{\@epitext{#1}}{\itshape\@epitext{#1}}{}{}
-\makeatother
+\epigraphfontsize{\small\itshape}
+\setlength\epigraphwidth{6cm}
+\setlength\epigraphrule{0pt}
 
 \usepackage{collectbox}
 
@@ -267,7 +270,7 @@ urlcolor=TealBlue!70!black,
 \usepackage{authblk}
 
 \author{
-    \github{https://github.com/Anonscholar} Adyansh Mishra
+    \github{https://github.com/Anonscholar} Ascholar
 }
 
 \newcommand*{\email}[1]{%
