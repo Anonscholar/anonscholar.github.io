@@ -3,8 +3,11 @@
 \usepackage{fontspec}
 \setmainfont{CormorantGaramond}[
 FakeBold=0.8,
-Ligatures=TeX,
+Ligatures=Common,
+Numbers=Lining,
 ]
+
+
 
 \nonzeroparskip
 \usepackage[right=8.5cm,left=2.5cm,bottom=1cm,top=1cm,marginparwidth=6cm,marginparsep=0.7cm,includeheadfoot,asymmetric]{geometry}
@@ -139,9 +142,9 @@ Ligatures=TeX,
 \usepackage[linktoc=page,hyperfootnotes=false]{hyperref}
 \hypersetup{
 colorlinks=true,
-linkcolor=TealBlue!70!black,
-citecolor=TealBlue!70!black,
-urlcolor=TealBlue!70!black,
+linkcolor=TealBlue!60!black,
+citecolor=TealBlue!60!black,
+urlcolor=TealBlue!60!black,
 }
 \usepackage[nameinlink]{cleveref}
 \usepackage{float}
@@ -352,7 +355,7 @@ urlcolor=TealBlue!70!black,
 
 % text styling of all side footnotes
 % styling and placement of mark
-\footmarkstyle{{\itshape\large#1. }}
+\footmarkstyle{{\itshape\footnotesize#1. }}
 \setlength{\footmarkwidth}{0em}
 \setlength{\footmarksep}{-\footmarkwidth}
 % memoir command - do all footnotes in margin
