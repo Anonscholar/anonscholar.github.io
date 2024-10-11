@@ -109,7 +109,8 @@ Ligatures=TeX,
 
 \usepackage{babel}
 \usepackage{mhchem}
-\usepackage[cleanlook,british]{isodate}% day-first date
+\usepackage[ddmmyyyy]{datetime}
+\renewcommand{\dateseparator}{.}
 \usepackage{caption}
 \usepackage{paralist}
 \usepackage{graphicx}
@@ -290,7 +291,7 @@ urlcolor=TealBlue!70!black,
 \vspace*{\baselineskip}
 {\HUGE\itshape \thetitle}\\[\baselineskip]
 \vspace{3em}
-{\printauthor}
+{\printauthor ~ \\ Version: 0.1\today}
 \vfill
 \vspace*{\baselineskip}
 \endgroup
