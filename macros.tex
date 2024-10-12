@@ -34,6 +34,7 @@
 \endgroup
 
 
+
 \usepackage{stmaryrd}
 \usepackage{xargs}
 \usepackage{centernot}
@@ -53,7 +54,7 @@
 
 \newcommand*{\Set}[1]{\left\{#1\right\}}
 \newcommand{\given}{\mid}
-\newcommand{\cgiven}{:}
+\newcommand{\cgiven}{\colon}
 
 \newcommand{\avg}[1]{\langle#1\rangle}
 \newcommand{\bavg}[1]{\overline{#1}}
@@ -423,11 +424,11 @@ tkzSecondPointResult)}
 \newcommand{\marginnote}[1]{\sidenote{#1}}
 \newcommand{\marginref}[1]{\sidenote{\normalfont#1}}
 
-\captionsetup[figure]{labelfont={sc},name={\small F\,I\,G\,U\,R\,E},labelsep=period}
+\captionsetup[figure]{labelfont={sc},name={\footnotesize F\,I\,G\,U\,R\,E},labelsep=period}
 \captionsetup[table]{labelfont={bf},name={\small\bfseries Table},labelsep=period}
 
 
-\renewcommand{\figurename}{\small\normalfont\scshape{\small F\,I\,G\,U\,R\,E}}
+\renewcommand{\figurename}{\small\normalfont\scshape{\footnotesize F\,I\,G\,U\,R\,E}}
 \makeatletter
 \makeatletter
 \renewcommand{\@makecaption}[2]{%
@@ -442,3 +443,4 @@ tkzSecondPointResult)}
   \vskip\belowcaptionskip
 }
 \makeatother
+
