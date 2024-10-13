@@ -71,7 +71,7 @@ procrastination. Revise some mechanics and thermodynamics too, and just nail tha
 finally with Kevin Zhou's handouts. I'll also start working on my fitness a little,
 and now that I have finally been getting time and fixing some schedule, maybe some thoughts
 about the things I have been reading (both in fiction and academics). Also registered for
-Pcup, so a few months of getting wrecked in problems, but also learning a lot, so yes (:
+Pcup, so a few months of getting wrecked in problems, but also learning a lot, so yes (:.
 
 For today I'll be kind of relaxing a little, fix some stuff for better organization of the things I am doing (which are quite a bit), maybe read up on some stuff for bl4s, or a little pure mathematics, and watch a movie. I had to travel quite a bit yesterday for a family gathering, and the traffic yesterday was incredibly tedious.
 I was stuck there for a better part of about 2.5 hours. So I am pretty tired today, and yeah the schedule for today reflects that.
