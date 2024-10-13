@@ -36,7 +36,8 @@ but I still have done better than the previous two weeks. Although not upto the 
 I have started Griffiths EM, just about done with chapters 1 and 2 — did them in parallel. I have not 
 exactly been loving its problems, they're mathematically intense, but I didn't enjoy solving them too
 much. For example, after introducing the electric field, Griffiths marks problem 2.7 as important, 
-which involves solving for the electric field of a spherical shell, of radius $R$ with area density, $\sigma$, at a point a height $z$. The sphere is centered at the origin. 
+which involves solving for the electric field of a spherical shell, of radius $R$ with area density, 
+$\sigma$, at a point a height $z$. The sphere is centered at the origin. 
 
 Notably, this problem was before he introduced Gauss's law, which just about trivializes it. The 
 intended solution was just to use the cosine rule to find the distance between the infinitesimal area element as, 
@@ -71,18 +72,11 @@ and now that I have finally been getting time and fixing some schedule, maybe so
 about the things I have been reading (both in fiction and academics). Also registered for 
 Pcup, so a few months of getting wrecked in problems, but also learning a lot, so yes (:.
 
-For today I'll be kind of relaxing a little, fix some stuff for better organization 
-of the things I am doing (which are quite a bit), maybe read up on some stuff for 
-bl4s, or a little pure mathematics, and watch a movie. I had to travel quite a bit 
-yesterday for a family gathering, and the traffic yesterday was incredibly tedious.
-I was stuck there for a better part of about 2.5 hours. So I am pretty tired today,
-and yeah the schedule for today reflects that.
+For today I'll be kind of relaxing a little, fix some stuff for better organization of the things I am doing (which are quite a bit), maybe read up on some stuff for bl4s, or a little pure mathematics, and watch a movie. I had to travel quite a bit yesterday for a family gathering, and the traffic yesterday was incredibly tedious.
+I was stuck there for a better part of about 2.5 hours. So I am pretty tired today,and yeah the schedule for today reflects that.
 
-Hopefully this post was better than the last ones. Please do criticize me on any
-lacking portion of my posts, that will help me immensely in getting better. Goodbye, and
-here's to a good week! 
+Hopefully this post was better than the last ones. Please do criticize me on any lacking portion of my posts, that will help me immensely in getting better. Goodbye, and here's to a good week!
 
 [^1]: it really is not, I just messed up the schedule for the second post.
-[^2]: This is partly because of my background in pure mathematics, I believe for just about 
-anyone wanting to learn vector calculus for physics, they are quite sufficient.
+[^2]: This is partly because of my background in pure mathematics, I believe for just about anyone wanting to learn vector calculus for physics, they are quite sufficient.
 
