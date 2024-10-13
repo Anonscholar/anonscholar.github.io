@@ -9,7 +9,7 @@ comments: true
 math: true
   # TAG names should always be lowercase
 ---
-
+<p align="justify">
 Welcome to a new post. This is a little off-schedule[^1], but anyways things will be a lot
 more scheduled from now. The posts will also be hopefully longer, and there are other changes. Lets talk
 about them first.
@@ -80,3 +80,4 @@ Hopefully this post was better than the last ones. Please do criticize me on any
 
 [^1]: it really is not, I just messed up the schedule for the second post.
 [^2]: This is partly because of my background in pure mathematics, I believe for just about anyone wanting to learn vector calculus for physics, they are quite sufficient.
+</p>
