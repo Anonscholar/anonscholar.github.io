@@ -346,25 +346,25 @@ Projectile motion is one of the most important motion to consider in
 only care about the motion of a body projected from ground under the influence
 of gravity. 
 
-Let a body be projected at an angle \(\theta\) from the ground at velocity \(\vec{v}\)
-along \(\theta\). Then, by resolving \(\vv\) into \(v_x \unitv{x} + v_y\unitv{y}\),
+Let a body be projected at an angle \(\vartheta\) from the ground at velocity \(\vec{v}\)
+along \(\vartheta\). Then, by resolving \(\vv\) into \(v_x \unitv{x} + v_y\unitv{y}\),
 we have, 
 \begin{align*}
     x &= v_xt \unitv{x} \\
     y &= v_yt - \frac{1}{2}gt^2 \unitv{y}
 \end{align*}
 
-Doing some manipulations, we may note that \(v_x = v\sin(\theta)\), \(v_y = v\cos(\theta)\).
-Also, substituting \(t = x/v\sin(\theta)\), we have,
+Doing some manipulations, we may note that \(v_x = v\sin(\vartheta)\), \(v_y = v\cos(\vartheta)\).
+Also, substituting \(t = x/v\sin(\vartheta)\), we have,
 \begin{equation}
-    \boxed{y = x\tan(\theta) - \frac{gx^2}{2v^2\cos^2(\theta)}}
+    \boxed{y = x\tan(\vartheta) - \frac{gx^2}{2v^2\cos^2(\vartheta)}}
 \end{equation}
 
-We can also use the identity \(1/\cos^2\theta = \tan^2\theta + 1\) and get another and 
+We can also use the identity \(1/\cos^2\vartheta = \tan^2\vartheta + 1\) and get another and 
 perhaps nicer form of the equations,
 
 \begin{equation}
-    \boxed{y = x\tan\theta\left(1 - \frac{x}{R}\right)}
+    \boxed{y = x\tan\vartheta\left(1 - \frac{x}{R}\right)}
 \end{equation}
 
 after substituting with \(R\)\footnote{calculated just a bit later.}.
@@ -383,42 +383,42 @@ Here, \(H\) is the maximum height of the particle. Clearly,
 when the projectile is at \(H\), \(v_y = 0\). We have, 
 \(v_y^2 = 2gH\),
 \begin{equation}
-    H = \frac{u^2\sin^2(\theta)}{2g}
+    H = \frac{u^2\sin^2(\vartheta)}{2g}
 \end{equation}
 
 The time period of the projectile can be simply calculated as well,
 since at the final time, \(T\), \(y = v_yt - 1/2gt^2 = 0\) and,
 
 \begin{equation}
-    T = \frac{2v\sin(\theta)}{g}
+    T = \frac{2v\sin(\vartheta)}{g}
 \end{equation}
 
 \(R\) is the range the particle covers horizontally in time \(T\) and is
 clearly,
 
 \begin{equation}
-    R = \frac{v^2\sin(2\theta)}{g}
+    R = \frac{v^2\sin(2\vartheta)}{g}
 \end{equation}
 
-Note that if the particle is projected at \(\theta = \pi/4\), 
+Note that if the particle is projected at \(\vartheta = \pi/4\), 
 the range is maximum and is \(u^2/2g\). Otherwise,
-for \(0 < \theta < \pi/2\), \(\sin(2\theta)\) attains the same 
-value for two \(\theta_1, \theta_2\). These \(\theta_1\), \(\theta_2\) are complementary
+for \(0 < \vartheta < \pi/2\), \(\sin(2\vartheta)\) attains the same 
+value for two \(\vartheta_1, \vartheta_2\). These \(\vartheta_1\), \(\vartheta_2\) are complementary
 by trigonometry.
 
 More generally, if we consider the projectile to have an initial position of 
 \(\qty(x_0, y_0)\), then, by substituting for time, we find that the 
-vertex of the parabola is \(\qty(y_0 + \frac{u^2\sin^2\theta}{2g}, x_0 + \frac{u^2\sin2\theta}{g})\).
+vertex of the parabola is \(\qty(y_0 + \frac{u^2\sin^2\vartheta}{2g}, x_0 + \frac{u^2\sin2\vartheta}{g})\).
 
 The range is a little more difficult to computer here, as the particle will transverse to 
 the ground which is lower than \(y_0\). Freely setting up our co-ordinates 
 as \(\qty(h, 0)\), we get by the equation of trajectory,
 
 \[
-    0 = h + R\tan(\theta) - \frac{gx^2}{2v^2\cos^2(\theta)}
+    0 = h + R\tan(\vartheta) - \frac{gx^2}{2v^2\cos^2(\vartheta)}
 \]
 
-Derivating this with respect to theta to find the maxima, and then using the attained
+Derivating this with respect to vartheta to find the maxima, and then using the attained
 value, we have, 
 
 \begin{equation}
@@ -434,9 +434,9 @@ value, we have,
 \begin{example}
     A projectile starting from one vertex of a wedge, grazes the other 
     vertex and ends upon the other vertex, with an initial velocity 
-    \(v_0\) making an angle \(\theta\) with the horizontal. If the
+    \(v_0\) making an angle \(\vartheta\) with the horizontal. If the
     angles of the vertices are \(\alpha\) and \(\beta\), figure 
-    out a relation between \(\tan \theta\), \(\tan\alpha\) and \(\tan\beta\).
+    out a relation between \(\tan \vartheta\), \(\tan\alpha\) and \(\tan\beta\).
 
     \begin{soln}
         Divide the range of the projectile into two lengths, \(x\) and 
@@ -448,19 +448,19 @@ value, we have,
         Also, by the alternate equation of trajectory,
 
         \begin{equation*}
-            y_0 = x\tan\theta\left(1 - \frac{x}{R}\right) = x\tan\theta\left(1 - \frac{x}{x + x'}\right) 
+            y_0 = x\tan\vartheta\left(1 - \frac{x}{R}\right) = x\tan\vartheta\left(1 - \frac{x}{x + x'}\right) 
         \end{equation*}
 
         Which gives us, 
 
         \begin{equation*}
-            \tan\theta = y_0 \left(\frac{x + x'}{xx'}\right) = \frac{y_0}{x} + \frac{y_0}{x'}
+            \tan\vartheta = y_0 \left(\frac{x + x'}{xx'}\right) = \frac{y_0}{x} + \frac{y_0}{x'}
         \end{equation*}
 
         Finally substituting the values, we get, 
 
         \begin{equation}
-            \tan\theta = \tan\alpha + \tan\beta
+            \tan\vartheta = \tan\alpha + \tan\beta
         \end{equation}
         
         Pretty nice and useful result.
@@ -559,13 +559,13 @@ same}.
         Thus,
 
         \begin{equation*}
-            \sin\theta = \frac{gt^2}{2v_0t} \implies t = \frac{2v_0\sin\theta}{g}
+            \sin\vartheta = \frac{gt^2}{2v_0t} \implies t = \frac{2v_0\sin\vartheta}{g}
         \end{equation*}
 
         which is the desired flight time. We can also use,
 
         \begin{equation*}
-            \cos\theta = \frac{R}{v_0t} \implies R = v_0t\cos\theta
+            \cos\vartheta = \frac{R}{v_0t} \implies R = v_0t\cos\vartheta
         \end{equation*}
 
         by plugging in the expression for time we just got, we also get the range of the projectile. 
@@ -577,37 +577,37 @@ same}.
         use a number of ways. The equation of the projectile is,
 
         \begin{equation*}
-            y = x\tan(\theta+\alpha) - \frac{gx^2}{2v_0^2\cos^2(\theta+\alpha)}
+            y = x\tan(\vartheta+\alpha) - \frac{gx^2}{2v_0^2\cos^2(\vartheta+\alpha)}
         \end{equation*}
 
         and of the wedge is,
 
         \begin{equation*}
-            y = x\tan\theta 
+            y = x\tan\vartheta 
         \end{equation*}
 
         We could simply equate them to figure out the distance \(d\), which is the range of the projectile.
         However, let us look at alternate way of doing this.
 
         \begin{enumerate}[label=(\alph*)]
-            \item Consider \cref{fig: projectilerotatedaxes}, we have rotated the axes by the angle of inclination of the wedge, \(\theta\). Now, find the kinematic equations along the two axes.
+            \item Consider \cref{fig: projectilerotatedaxes}, we have rotated the axes by the angle of inclination of the wedge, \(\vartheta\). Now, find the kinematic equations along the two axes.
             \item Solve these to find the time at which the projectile hits the wedge, and the distance it travels. 
         \end{enumerate}
 
     \end{exercise}
 
     \begin{solution}
-        The acceleration along the \(y\) axis is simply \(g\cos\theta\) and along the \(x\) axis 
-        is \(g\sin\theta\). Thus, our equations in each direction are,
+        The acceleration along the \(y\) axis is simply \(g\cos\vartheta\) and along the \(x\) axis 
+        is \(g\sin\vartheta\). Thus, our equations in each direction are,
             \begin{align*}
-                v_x(t) = v_0\cos\alpha - g\sin\theta t\\
-                v_y(t) = v_0\sin\alpha - g\cos\theta t 
+                v_x(t) = v_0\cos\alpha - g\sin\vartheta t\\
+                v_y(t) = v_0\sin\alpha - g\cos\vartheta t 
             \end{align*}
 
         We can solve this by noting that the displacement in \(y\) direction must be \(0\) at the time 
         it hits the wedge. So we integrate and the velocity to get, 
             \begin{equation*}
-                y(t) = v_0\sin\alpha t - \frac{1}{2}g\cos\theta t = 0 \implies t = \frac{2v_0\sin\alpha}{g\cos\theta} 
+                y(t) = v_0\sin\alpha t - \frac{1}{2}g\cos\vartheta t = 0 \implies t = \frac{2v_0\sin\alpha}{g\cos\vartheta} 
             \end{equation*}
         
         Plug this in the equation obtained by integrating the velocity in the \(x\) direction to get the range.
@@ -627,12 +627,12 @@ same}.
     \vspace{-15em}
     \centering
     \scalebox{2.2}{\incfig{projectilevector3}}
-    \caption{The cartesian axes rotated by \(\theta\).}
+    \caption{The cartesian axes rotated by \(\vartheta\).}
     \label{fig: projectilerotatedaxes}
 \end{marginfigure}
 
 and we may solve each of these to get any desired result. Due to the dependence 
-on both \(\theta\) and \(\alpha\), it is a bit difficult to things like maximum range
+on both \(\vartheta\) and \(\alpha\), it is a bit difficult to things like maximum range
 and the loci method maybe preferred.  
 
 \begin{marginfigure}
@@ -645,7 +645,7 @@ and the loci method maybe preferred.
 
 \begin{example}
 Consider a projectile thrown with a velocity \(v_0\) making an angle \(\alpha\) with 
-a wedge of inclination \(\theta\) as shown in the \cref{fig: projectile wedge example}. Find out the angle \(\alpha\) 
+a wedge of inclination \(\vartheta\) as shown in the \cref{fig: projectile wedge example}. Find out the angle \(\alpha\) 
 such that the projectile has maximum range.    
 
 \begin{soln}
@@ -657,20 +657,20 @@ such that the projectile has maximum range.
     and of the wedge is, 
 
     \begin{equation*}
-        y = -x\tan\theta
+        y = -x\tan\vartheta
     \end{equation*}
 
     At the range, they will be equal,
 
     \begin{equation*}
-        x\tan\alpha - \frac{gx^2}{2v_0^2\cos^2\alpha} = -x\tan\theta \implies 
-        \tan\alpha + \tan\theta = \frac{gx}{2v_0^2\cos^2\alpha}
+        x\tan\alpha - \frac{gx^2}{2v_0^2\cos^2\alpha} = -x\tan\vartheta \implies 
+        \tan\alpha + \tan\vartheta = \frac{gx}{2v_0^2\cos^2\alpha}
     \end{equation*}
 
     which gives us the desired range, 
 
     \begin{equation*}
-        x = \frac{2v_0^2(\tan\alpha + \tan\theta)\cos^2\alpha}{g}
+        x = \frac{2v_0^2(\tan\alpha + \tan\vartheta)\cos^2\alpha}{g}
     \end{equation*}
 
     So the condition for maximum range is simply, \(\dv*{x}{\alpha} = 0\). This is also 
@@ -682,12 +682,12 @@ such that the projectile has maximum range.
     We get that, 
 
     \begin{align*}
-        &\dv{(\tan\alpha + \tan\theta)\cos^2\alpha}{\alpha} = 0 \\
-        &\dv{\sin 2\alpha/2 + \tan\theta\cos^2\alpha}{\alpha} = 0 \\
-        &\cos 2\alpha - \tan\theta\sin 2\alpha = 0 \\
-        &\tan 2\alpha = \cot\theta \\
-        &\tan 2\alpha = \tan (\pi/2 - \theta) \\
-        &\alpha = \frac{\pi}{4} - \frac{\theta}{2}
+        &\dv{(\tan\alpha + \tan\vartheta)\cos^2\alpha}{\alpha} = 0 \\
+        &\dv{\sin 2\alpha/2 + \tan\vartheta\cos^2\alpha}{\alpha} = 0 \\
+        &\cos 2\alpha - \tan\vartheta\sin 2\alpha = 0 \\
+        &\tan 2\alpha = \cot\vartheta \\
+        &\tan 2\alpha = \tan (\pi/2 - \vartheta) \\
+        &\alpha = \frac{\pi}{4} - \frac{\vartheta}{2}
     \end{align*}
 
     And we're done.
@@ -700,11 +700,11 @@ such that the projectile has maximum range.
 
 The polar co-ordinate axes are the two-dimesional subset of the 3-d cylindrical co-ordinates. 
 Any point in polar co-ordinates is depicted by a system of two unit vectors, \(\unitv{r}\) and
-\(\unitv{\theta}\). However, each of these are {dependent on the position of the particle} and
-maybe written explicitly as \(\unitv{r}(\theta)\) and \(\unitv{\theta}(\theta)\).  
+\(\unitv{\vartheta}\). However, each of these are {dependent on the position of the particle} and
+maybe written explicitly as \(\unitv{r}(\vartheta)\) and \(\unitv{\vartheta}(\vartheta)\).  
 
 Here, \(\unitv{r}\) points in the direction of increasing radius(along the radial vector)
-\(\unitv{\theta}\) points in the direction of increasing \(\theta\) (tangent to the radial vector).
+\(\unitv{\vartheta}\) points in the direction of increasing \(\vartheta\) (tangent to the radial vector).
 These two unit vectors are \emph{orthogonal} at any point. 
 
 \begin{marginfigure}
@@ -714,12 +714,12 @@ These two unit vectors are \emph{orthogonal} at any point.
 \end{marginfigure}
 
 In \cref{fig: polarunit} if \(\vec{r}\) makes
-an angle \(\theta\) with the horizontal, then,
+an angle \(\vartheta\) with the horizontal, then,
 
 \begin{align}
     \label{eq: polardef}
-    \unitv{r} &= \cos \theta \unitv{x} + \sin \theta \unitv{y}\\
-    \unitv{\theta} &= -\sin \theta \unitv{x} + \cos \theta \unitv{y}
+    \unitv{r} &= \cos \vartheta \unitv{x} + \sin \vartheta \unitv{y}\\
+    \unitv{\vartheta} &= -\sin \vartheta \unitv{x} + \cos \vartheta \unitv{y}
 \end{align}
 
 Now let us formulate kinematics in polar co-ordinates. The position \(\vec{r}\) can be written as
@@ -736,27 +736,27 @@ or does it? What even is \(\displaystyle\dv{\unitv{r}}{t}\)? Well the answer lie
 the time-derivative of the unit vectors. Using the definitions in \eqref{eq: polardef}, we get,
 
 \begin{align}
-    \dv{\unitv{r}}{t} &= \ndiv{\theta} \unitv{\theta}\\
-    \dv{\unitv{\theta}}{t} &= -\ndiv{\theta} \unitv{r}
+    \dv{\unitv{r}}{t} &= \ndiv{\vartheta} \unitv{\vartheta}\\
+    \dv{\unitv{\vartheta}}{t} &= -\ndiv{\vartheta} \unitv{r}
 \end{align}
 
 \noindent Using these results, we get that
 
 \begin{empheq}[box=\widefbox]{align}    
-    \vec{v} & = \ndiv{r} \unitv{r} + r\ndiv{\theta} \unitv{\theta}\\
+    \vec{v} & = \ndiv{r} \unitv{r} + r\ndiv{\vartheta} \unitv{\vartheta}\\
     \label{polar: accel}
-    \vec{a} & = (\nddiv{r} - r\ndiv{\theta}^2) \unitv{r} + (r\nddiv{\theta} + 2\ndiv{r}\ndiv{\theta}) \unitv{\theta}
+    \vec{a} & = (\nddiv{r} - r\ndiv{\vartheta}^2) \unitv{r} + (r\nddiv{\vartheta} + 2\ndiv{r}\ndiv{\vartheta}) \unitv{\vartheta}
 \end{empheq}
 
 \noindent The most interesting result are the various terms of acceleration in \eqref{polar: accel}. First let 
 us consider the terms along \(\unitv{r}\). \(\nddiv{r}\) is the \emph{radial} acceleration. It is
-the change in the radial speed(and thus the radius). The second term \(-r\ndiv{\theta}^2\) is the \emph{centripetal} acceleration, this is 
+the change in the radial speed(and thus the radius). The second term \(-r\ndiv{\vartheta}^2\) is the \emph{centripetal} acceleration, this is 
 term responsible for change in the direction of the tangential velocity. In essence, it is 
 the component which accounts for the rotation of the particle. 
 
-Now let us consider the terms along \(\unitv{\theta}\). The \(r\nddiv{\theta}\) term is the tangential
+Now let us consider the terms along \(\unitv{\vartheta}\). The \(r\nddiv{\vartheta}\) term is the tangential
 acceleration resulting from change in tangential speed, i.e if the radial vector is of 
-constant magnitude, and speed \(v\) is changing, \[a_t = r\ddot{\theta} = \ndiv{v}.\] The other term \(2\ndiv{r}\ndiv{\theta}\) is the
+constant magnitude, and speed \(v\) is changing, \[a_t = r\ddot{\vartheta} = \ndiv{v}.\] The other term \(2\ndiv{r}\ndiv{\vartheta}\) is the
 \emph{coriolis} acceleration. I shall discuss it when discussing rotating frames.
 
 \section{Reference Frames}
@@ -891,13 +891,13 @@ Now, differentiating the whole equation, we will get the final result,
 Note however, that, 
 
 \begin{equation*}
-    \sin\theta_1 = \frac{x}{\sqrt{(x^2+y^2)}} \quad \sin\theta_2 = \frac{(d-x)}{\sqrt{(L-y)^2 + (d-x)^2}}
+    \sin\vartheta_1 = \frac{x}{\sqrt{(x^2+y^2)}} \quad \sin\vartheta_2 = \frac{(d-x)}{\sqrt{(L-y)^2 + (d-x)^2}}
 \end{equation*}
 
 Replacing both of these and factoring out \(-2\), we get that, 
 
 \begin{equation}
-    \boxed{\frac{\sin\theta_1}{v_1} = \frac{\sin\theta_2}{v_2}}
+    \boxed{\frac{\sin\vartheta_1}{v_1} = \frac{\sin\vartheta_2}{v_2}}
 \end{equation}
 
 This is a very neat result and allows us to greatly simplify everything. Note 
@@ -927,17 +927,17 @@ a thing.
         From fermat's principle, the most optimal trajectory obeys 
         
         \begin{equation*}
-            \frac{\sin\theta_1}{v_1} = \frac{\sin\theta_2}{v_2}
+            \frac{\sin\vartheta_1}{v_1} = \frac{\sin\vartheta_2}{v_2}
         \end{equation*}
         where the angles are taken relative to the normal. 
         
-        Since \(\theta_2 = \dfrac{\pi}{2}\), \(v_1 = v_0\), and \(v_2 = 5v_0\),
+        Since \(\vartheta_2 = \dfrac{\pi}{2}\), \(v_1 = v_0\), and \(v_2 = 5v_0\),
 
         \begin{equation*}
-            sin\theta_1 = \frac{1}{5}
+            sin\vartheta_1 = \frac{1}{5}
         \end{equation*}
 
-        After which we can easily find the time as by a simple angle chase, \(\theta_1\) is 
+        After which we can easily find the time as by a simple angle chase, \(\vartheta_1\) is 
         the angle between the velocity of man and the vertical. From it we 
         can find the resultant velocity with water (using components) 
         and subsequently the drift and time required.

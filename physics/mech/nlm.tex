@@ -410,14 +410,14 @@ some initial condition, perhaps a force of some sort is applied. We know it must
 related to the acceleration of the particle by Netwon's second Law. But ultimately, how are 
 we meant to solve it?
 
-The first step into solving a problem of dynamics, is to setup a free body diagram.
-Consider for instance, a man moving in an elevator, accelerating upwards with acceleration 
-\(a\). What is the force experienced by man?
-
 \begin{marginfigure}
     \scalebox{0.6}{\incfig{fbd1}}
     \caption{Free body diagram of the man.}
 \end{marginfigure}
+
+The first step into solving a problem of dynamics, is to setup a free body diagram.
+Consider for instance, a man moving in an elevator, accelerating upwards with acceleration 
+\(a\). What is the force experienced by man?
 
 Essentially, we're here only concerned with the forces that act on the man. So disregarding
 all complexity, we can draw a simple force diagram, that allows us to readily assess 
@@ -448,8 +448,6 @@ Sometimes the equation \(F = ma\) doesn't have all the information we need to so
 problem. This is often when there are constraints involved in the problem which give 
 additional information.
 
-\newpage
-
 \begin{marginfigure}
     \scalebox{2.5}{\incfig{wedge constraint}}
 \end{marginfigure}
@@ -464,13 +462,13 @@ of the block and the wedge.
     \((x,y)\) and that of the wedge is \((X, Y)\), 
 
     \begin{equation*}
-        \tan\theta = \frac{Y-y}{x - X} \iff (X - x)\tan\theta = Y - y
+        \tan\vartheta = \frac{Y-y}{x - X} \iff (X - x)\tan\vartheta = Y - y
     \end{equation*}
 
     Differentiating this twice with respect to time, 
 
     \begin{equation}
-        \nddiv{y} = (\nddiv{X} - \nddiv{x}) \tan\theta
+        \nddiv{y} = (\nddiv{X} - \nddiv{x}) \tan\vartheta
     \end{equation}
 
     where \(\nddiv{X}\) is the horizontal acceleration of the wedge.
@@ -486,7 +484,7 @@ If we were to try and find the acceleration of the two masses, we would encounte
 three unknowns, \(a_1, a_2\) and \(T\) and two equations from the second law.
 
 \begin{marginfigure}
-    \scalebox{2}{\incfig{atwood 1}}
+    \scalebox{1.7}{\incfig{atwood 1}}
     \caption{Classic Atwood's machine}
     \label{fig: atwood 1}
 \end{marginfigure}
@@ -547,14 +545,14 @@ strings as well --- since we will mostly be dealing with in-extensible ones anyw
     \caption{Using the fixed length constraint of a rigid body.}
 \end{marginfigure}
 
-Let the velocity of one end of a rod be \(\vec{v}_1\) making an angle \(\theta_1\) with the rod
-and the velocity of the other end be \(\vec{v}_2\) making an angle \(\theta_2\) with the rod.
+Let the velocity of one end of a rod be \(\vec{v}_1\) making an angle \(\vartheta_1\) with the rod
+and the velocity of the other end be \(\vec{v}_2\) making an angle \(\vartheta_2\) with the rod.
 
 Since the two points on the rod must be at a fixed distance, the relative velocities of the
  component of these velocities along the rod must be equal,
 
  \begin{equation}
-    \boxed{v_1\cos\theta_1 = v_2\cos\theta_2}
+    \boxed{v_1\cos\vartheta_1 = v_2\cos\vartheta_2}
  \end{equation}
 
 This particularly allows us to sidestep many annoyances we may get if we 
@@ -565,8 +563,6 @@ the original vector.
 If we have two vectors, at some angle such that we know one is the component of another, we
 can not be sure which one is the component of the other, at least not unless we 
 know their magnitudes. This isn't normally a problem, but can readily become one.
-
-\newpage
 
 \begin{marginfigure}
     \scalebox{2}{\incfig{velocity constraint example 1}}
@@ -579,20 +575,20 @@ know their magnitudes. This isn't normally a problem, but can readily become one
     \(v_1\) and \(v_2\).
 
 \begin{soln}
-        Let the velocity \(v\) make an angle \(\theta\) with the string as shown.
+        Let the velocity \(v\) make an angle \(\vartheta\) with the string as shown.
         Using the rigid body constraint,
 
         \begin{equation*}
-            v\cos\theta = v_2
+            v\cos\vartheta = v_2
         \end{equation*}
 
         And,
 
         \begin{equation*}
-            v\cos(\alpha+\beta-\theta) = v_1
+            v\cos(\alpha+\beta-\vartheta) = v_1
         \end{equation*}
 
-        And substituting for \(\cos\theta\), we get the desired relation.
+        And substituting for \(\cos\vartheta\), we get the desired relation.
     \end{soln}
 \end{example}
 
@@ -622,6 +618,7 @@ the upper block moves with respect to the lower block --- and since their initia
 are zero, if the acceleration of the upper block differs from the lower one.
 
 \begin{marginfigure}
+    \vspace{-3.5em}
     \scalebox{2}{\incfig{block friction1}}
     \caption{A block of mass \(M_2\) on the top of a block of mass \(M_1\).
     The coefficient of friction between the two blocks is \(\mu\) and the surface on which

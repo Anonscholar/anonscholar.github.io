@@ -1,4 +1,4 @@
-%% Creator: Inkscape 1.3.2 (091e20ef0f, 2023-11-25, custom), www.inkscape.org
+%% Creator: Inkscape 1.4 (e7c3feb100, 2024-10-09), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'scalarmultiplication.pdf' (pdf, eps, ps)
 %%
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{302.11801123bp}%
+    \setlength{\unitlength}{184.07620888bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,9 +50,13 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.76997789)%
+  \begin{picture}(1,1.0177971)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{scalarmultiplication.pdf}}%
+    \put(0.45094661,0.40879802){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{A}\end{tabular}}}}%
+    \put(0.77433201,0.40879802){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{A}\end{tabular}}}}%
+    \put(0.71991914,0.41115447){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{c}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{scalarmultiplication.pdf}}%
   \end{picture}%
 \endgroup%

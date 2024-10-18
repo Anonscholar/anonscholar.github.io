@@ -15,7 +15,7 @@ matters and we're not concerned with their end points. This means that a vector
 can be freely translated. 
 
 \begin{marginfigure}
-    \scalebox{2}{\incfig{transvectors}}
+    \scalebox{1.6}{\incfig{transvectors}}
     \caption{Identical Vectors}
 \end{marginfigure}
 
@@ -44,10 +44,8 @@ direction) to \(\vec{A}\) scaled by a factor of \(\abs*{c}\).
 \newpage
 
 \begin{marginfigure}
-    \hspace{-5em}
-    \vspace{-2em}
     \centering
-    \scalebox{2.5}{\incfig{scalarmultiplication}}
+    \scalebox{1.6}{\incfig{scalarmultiplication}}
     \caption{Scalar Multiplication. The vector, \(\vec{A}\) multiplied 
     by a scalar, \(c\) where \(c > 1\).}
 \end{marginfigure}
@@ -65,18 +63,19 @@ To add two vectors, \(\vec{A}\) and \(\vec{B}\), we stick the tail
 of one vector with the head of another. 
 
 We can calculate the magnitude of their resultant vector, \(\norm*{\vec{A} + \vec{B}}\)
-by using the cosine rule. In \cref{fig: vectoradd} \(\theta\) is the angle between 
+by using the cosine rule. In \cref{fig: vectoradd} \(\vartheta\) is the angle between 
 \(\vec{A}\) and \(\vec{B}\).
 
 \begin{align*}
-    &\norm*{\vec{A} + \vec{B}}^2 = A^2 + B^2 - 2AB\cos(\pi - \theta) \\
-    &\norm*{\vec{A} + \vec{B}}^2 = A^2 + B^2 + 2AB\cos\theta \\
-    &\norm*{\vec{A} + \vec{B}} = \sqrt{A^2 + B^2 + 2AB\cos\theta}
+    &\norm*{\vec{A} + \vec{B}}^2 = A^2 + B^2 - 2AB\cos(\pi - \vartheta) \\
+    &\norm*{\vec{A} + \vec{B}}^2 = A^2 + B^2 + 2AB\cos\vartheta \\
+    &\norm*{\vec{A} + \vec{B}} = \sqrt{A^2 + B^2 + 2AB\cos\vartheta}
 \end{align*}
 
 To subtract two vectors, we simply reverse the vector and then add the resulting vector.
 
 \begin{marginfigure}
+    \vspace{2em}
     \scalebox{2}{\incfig{vectoradd}}
     \caption{Vector Addition}
     \label{fig: vectoradd}
@@ -119,41 +118,41 @@ For now, let us consider \(\increment \vec{A}\) perpendicular to \(\vec{A}\) as 
 Therefore, for small \(\increment A\), the change is very small (it vanishes, essentially 
 in the limiting case, \((dx)^2 = 0\) since it is a second order differential).
 
-This allows us to consider a simple geometric argument which gives \(\norm{\increment \vec{A}} = 2A\sin(\theta/2)\)
-where \(\theta\) is the angle between \(\vec{A}(t_1)\) and \(\vec{A}(t_2)\).
+This allows us to consider a simple geometric argument which gives \(\norm{\increment \vec{A}} = 2A\sin(\vartheta/2)\)
+where \(\vartheta\) is the angle between \(\vec{A}(t_1)\) and \(\vec{A}(t_2)\).
 
-Since we're considering values of small \(\theta\), we may use the small angle approximation,
-\(\sin(\theta) \approx \theta\). Therefore,
+Since we're considering values of small \(\vartheta\), we may use the small angle approximation,
+\(\sin(\vartheta) \approx \vartheta\). Therefore,
 
 \begin{marginfigure}
     \centering
-    \scalebox{2}{\incfig{timedev}}
+    \scalebox{2.02}{\incfig{timedev}}
     \caption{\(\increment\vec{A} \perp \vec{A}\)}
     \label{fig: timedev}
 \end{marginfigure}
 
 \begin{align}
-    \norm{\vec{\increment A}} &\approx 2A \times \frac{\theta}{2}\\ 
-    &\approx A \times \theta
+    \norm{\vec{\increment A}} &\approx 2A \times \frac{\vartheta}{2}\\ 
+    &\approx A \times \vartheta
 \end{align}
 
-Which is equivalent to \(A \increment \theta\). In the limit \(\increment \theta \to 0\),
+Which is equivalent to \(A \increment \vartheta\). In the limit \(\increment \vartheta \to 0\),
 
 \begin{equation}
-    \dd{A_{\perp}} = A \dd{\theta}
+    \dd{A_{\perp}} = A \dd{\vartheta}
 \end{equation}
 
 Since \(\dd{A}_{\perp} = A\norm*{\dd{\unitv{A}}}\),
 
 \begin{equation}
-    \norm*{\dd{\unitv{A}}} = \dd{\theta}
+    \norm*{\dd{\unitv{A}}} = \dd{\vartheta}
 \end{equation}
 
 \section{Dot Product}
 
 The \vocab{dot product} of two vectors results in a scalar and is defined as,
-\[\vec{A} \dotproduct \vec{B} = AB \cos\theta\]
-where \(\theta\) is the angle between \(\vec{A}\) and \(\vec{B}\). 
+\[\vec{A} \dotproduct \vec{B} = AB \cos\vartheta\]
+where \(\vartheta\) is the angle between \(\vec{A}\) and \(\vec{B}\). 
 
 Note that the quantity \(\vec{A} \dtp \vec{B}\) is just \(A\) times 
 the magnitude of the projection of \(\vec{B}\) on \(\vec{A}\). Similarly, \(\vec{B} \dtp \vec{A}\) is
@@ -174,7 +173,7 @@ Another thing of importance is the identity(which is also easy to derive),
 The \vocab{cross product} is another product operation on vectors, this product produces a vector.
 
 It is defined as, 
-\[\vec{A} \cp \vec{B} = AB\sin\theta \unitv{n}\] 
+\[\vec{A} \cp \vec{B} = AB\sin\vartheta \unitv{n}\] 
 
 Where \(\unitv{n}\) is the vector perpendicular to the plane containing \(\vec{A}\) and \(\vec{B}\).
 Since there are two directions that \(\unitv{n}\) can have, we define the two vectors 
@@ -286,7 +285,7 @@ For the dot product, representing \(\vec{A}\) and \(\vec{B}\) in terms of the ba
 Where we use the distributive property of dot product and the fact 
 that \(\unitv{x} \dtp \unitv{y} = \unitv{y} \dtp \unitv{z} = \unitv{z} \dtp \unitv{x} = 0\).
 
-We can find the angle between two vectors, \(\theta\), as,
+We can find the angle between two vectors, \(\vartheta\), as,
 
 \begin{marginfigure}
     \centering
@@ -295,7 +294,7 @@ We can find the angle between two vectors, \(\theta\), as,
 \end{marginfigure}
 
 \begin{equation*}
-    \cos\theta = \frac{\vec{A} \dtp \vec{B}}{AB}
+    \cos\vartheta = \frac{\vec{A} \dtp \vec{B}}{AB}
 \end{equation*}
 
 Note that now we can calculate the magnitude of \(\vec{A}\) as, 
@@ -311,10 +310,10 @@ Also, a very neat observation from the dot product is that,
     \vec{A} \dtp \vec{B} \le AB
 \end{equation*}
 
-This is a rather simple idea since \(\cos\theta \in [-1, 1]\). 
+This is a rather simple idea since \(\cos\vartheta \in [-1, 1]\). 
 
 Now if generalize this to \(n\) dimensions, we will find the inner product,
-\(\vec{A} \dtp {B} = AB \cos\theta\) with each 
+\(\vec{A} \dtp {B} = AB \cos\vartheta\) with each 
 vector lying in an \(n\) dimensional space with \(n\) axis components. This has similar properties to that of the dot 
 product and has the same but extended computation for 
 the component form. Let \((a_1, a_2, \dots, a_n)\) be the components of \(\vec{A}\) and 
@@ -329,7 +328,7 @@ computation(sum of the product of same axis components),
     a_1b_1 + a_2b_2 + \dots + a_nb_n \le \sqrt{a_1^2 + a_2^2 + \dots + a_n^2}\sqrt{b_1^2 + b_2^2 + \dots b_n^2}
 \end{equation}
 
-which is the \emph{Cauchy-Shwartz} inequality. Note that the equality is when \(\cos\theta=0\).
+which is the \emph{Cauchy-Shwartz} inequality. Note that the equality is when \(\cos\vartheta=0\).
 Thus, when \(\vec{A}\) lies parallel to \(\vec{B}\). This can also be interpreted as \(\vec{A}\) being 
 being a scaling of \(\vec{B}\) by some real number \(\lambda = B/A\). 
 
@@ -455,13 +454,13 @@ Solving for them leads to,
 \subsection{Lami's Theorem}
 
 Consider three vectors, \(\vec{A}_1, \vec{A}_2, \vec{A}_3\) such that 
-\(\vec{A}_1 + \vec{A}_2 + \vec{A}_3 = 0\). If the angles \(\theta_1\), \(\theta_2\)
-and \(\theta_3\) are chosen according to \cref{fig: lami}, then,
+\(\vec{A}_1 + \vec{A}_2 + \vec{A}_3 = 0\). If the angles \(\vartheta_1\), \(\vartheta_2\)
+and \(\vartheta_3\) are chosen according to \cref{fig: lami}, then,
 
 \begin{theorem}
     [Lami's Theorem]
     \begin{equation*}
-        \frac{A_1}{\theta_1} = \frac{A_2}{\theta_2} = \frac{A_3}{\theta_3}
+        \frac{A_1}{\vartheta_1} = \frac{A_2}{\vartheta_2} = \frac{A_3}{\vartheta_3}
     \end{equation*}
 \end{theorem}
 
@@ -473,8 +472,8 @@ and \(\theta_3\) are chosen according to \cref{fig: lami}, then,
 \end{marginfigure}
 
 The proof follows from arranging the vectors as sides of a triangle and then applying the 
-sine law. Note that the angles between the sides would be \(\pi - \theta_i\). Since 
-\(\sin(\pi-\theta) = \sin\theta\), we can simply replace them. 
+sine law. Note that the angles between the sides would be \(\pi - \vartheta_i\). Since 
+\(\sin(\pi-\vartheta) = \sin\vartheta\), we can simply replace them. 
 
 \subsection{Internal and External Segments}
 
@@ -523,7 +522,7 @@ vector of the centroid of the triangle is,
 \begin{marginfigure}
     \centering
     \scalebox{1.6}{\incfig{anglebisect1}}
-    \caption{Angle bisector of \(2\theta\).}
+    \caption{Angle bisector of \(2\vartheta\).}
 \end{marginfigure}
 
 \subsection{Angle Bisectors}
@@ -629,16 +628,16 @@ We can create a formula of the radius of curvature by first noting that the
 radius at the point, \(R_c\) will be, 
 
 \begin{equation*}
-    R_c = \dv{l}{\theta}
+    R_c = \dv{l}{\vartheta}
 \end{equation*}
 
 Where \(\dd{l} = \sqrt{\dd{x}^2 + \dd{y}^2} = \sqrt{1 + (f'(x))^2} \dd{x}\) is uniquely described by that point. 
 
-Now we just need to figure out \(\dd{\theta}\). We can do so by first noting that 
+Now we just need to figure out \(\dd{\vartheta}\). We can do so by first noting that 
 if the curve is the graph of some differentiable function, \(f\), then,
 
 \begin{equation*}
-    \tan \theta = f'(x)
+    \tan \vartheta = f'(x)
 \end{equation*}
 
 \begin{marginfigure}
@@ -652,20 +651,20 @@ if the curve is the graph of some differentiable function, \(f\), then,
 We can differentiate this again with respect to \(x\) to get,
 
 \begin{equation*}
-    \sec^2\theta \dv{\theta}{x} = f''(x)
+    \sec^2\vartheta \dv{\vartheta}{x} = f''(x)
 \end{equation*}
 
 
-Using the identity \(1 + \tan^2\theta = \sec^2 \theta\) and \(\tan^2 \theta = f'(x)\),
+Using the identity \(1 + \tan^2\vartheta = \sec^2 \vartheta\) and \(\tan^2 \vartheta = f'(x)\),
 
 \begin{equation*}
-    (1 + (f'(x))^2) \dv{\theta}{x} = f''(x)
+    (1 + (f'(x))^2) \dv{\vartheta}{x} = f''(x)
 \end{equation*}
 
 And, 
 
 \begin{equation*}
-    \dd{\theta} = \frac{f''(x)}{1 + (f'(x)^2)} \dd{x}
+    \dd{\vartheta} = \frac{f''(x)}{1 + (f'(x)^2)} \dd{x}
 \end{equation*}
 
 Substituting both of these, we get, 
