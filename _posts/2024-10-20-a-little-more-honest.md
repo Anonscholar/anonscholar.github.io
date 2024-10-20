@@ -97,7 +97,7 @@ Murakami too, so I have picked up his novel _Kafka at the Shore_ too. Its a real
 adding plainly weird and unneeded explicit scenes, read it yourself, you'll get what I am talking about it. Could just be 
 normal in Japan, I don't particularly know. 
 
-I haven't read any decent manga this week, also going to stick to reading less of them so there's that. I did not get 
+I haven't read any decent manga this week, also going to stick to reading less of them, so there's that. I did not get 
 the time to watch any anime this week, so I'll talk about that in the next week, I suppose.
 
 That's all I had to say this week. I improved a little, and I hope in the next week I improve much more, and become 
