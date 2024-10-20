@@ -14,7 +14,7 @@ Unlike last time there haven't been huge changes this week, but it's not like ev
 I am getting better, and I am thankful for that. The main concern for this week was really regarding RMO, which is approaching in now what is exactly 
 2 weeks. (Good luck to everyone who is giving it!). So let's get into a little bit of what I have been doing over the week.
 
-# An overview of the week
+## An overview of the week
 
 Overall, I improved a fair bit this week. I have studied a fair bit more, and have been a little more consistent. I am not particularly 
 happy with how the latter is going, so I'll try to make some decent changes here and there. Perhaps the thing that hinders it the most 
@@ -50,7 +50,7 @@ its always fun to do it. And I suppose not much else in academics. Well, I reall
 
 Now, with RMO this close, lets talk about my plans for RMO and beyond.
 
-# Plans for (R)MO
+## Plans for (R)MO
 
 A fair reminder, in the first blog post I mentioned I like math as much as like physics. That's true, but there is more to it than
 that. I like _pure mathematics_ as much as I like physics. But I do _not_ like to work on _olympiad mathematics_ as much as
@@ -76,7 +76,7 @@ Also, as promised, here are the things I have done in mo, past week -- grinded g
 here really aside from this really. But okay, I think I'll be half-decent (~able to solve RMO problems, at least) in a week or so. Which is pretty nice.
 So yes, I grinded geo. A lot of geo, to be fair.
 
-# Some reflections and a little bit about life
+## Some reflections and a little bit about life
 
 Being able to quit coaching to work on the things I love sounds like a very good outcome. And it truly is. But there is always more to things
 than the obvious part. When I talk to someone about having quit coaching --- my parents, relatives, friends, I feel a knot in my chest. It
