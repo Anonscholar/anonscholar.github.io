@@ -73,7 +73,7 @@ a fair bit of more time, because well RMO is approaching. I don't plan to be arr
 and you can always have a bad day, so I do not want to make fake promises, but I will do my best to do good in RMO, at the very least.
 
 Also, as promised, here are the things I have done in mo, past week -- grinded geometry. Yes, that's it. I don't know what else am I supposed to say 
-here really aside from this really. But okay, I think I'll be half-decent (~able to solve RMO problems, at least) in a week or so. Which is pretty nice.
+here really aside from this really. But okay, I think I'll be half-decent (able to solve RMO problems, at least) in a week or so. Which is pretty nice.
 So yes, I grinded geo. A lot of geo, to be fair.
 
 ## Some reflections and a little bit about life
