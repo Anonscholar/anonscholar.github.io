@@ -4,11 +4,9 @@ description: getting better, one step at a time
 author: adyansh
 date: 2024-10-20 17:57:00 +0530
 categories: [Life, Olympiads]
-tags: [olympiad, journey]
+tags: [olympiad, journey, life]
 comments: true
 math: true
-toc: true
-  # TAG names should always be lowercase
 ---
 Welcome to the 4th blog in this series of posts (~~and also the first one where I did keep my promise about the schedule~~). 
 
