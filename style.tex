@@ -1,10 +1,12 @@
 
-\usepackage{fontspec}
+\usepackage[no-math]{fontspec}
 \setmainfont{Baskerville}[
   BoldFont={* Semibold},
 ]
 
-\usepackage{amsmath, amssymb}
+\usepackage{amsmath}
+\usepackage{amssymb} % math italic letters from Baskervaldx
+
 
 
 \nonzeroparskip
@@ -83,9 +85,11 @@
 %some graph stuff
 \usepackage{todonotes}
 \usepackage{tikz}
+\usepackage{tikz-3dplot}
 \usetikzlibrary{mindmap}
   \usetikzlibrary{arrows.meta,backgrounds}
   \usetikzlibrary{decorations.pathmorphing,patterns}
+  \usetikzlibrary{angles, quotes, intersections}
 \usepackage{pgfplots}
 \pgfplotsset{width=7cm,compat=1.18}
 \pgfplotsset{
@@ -115,7 +119,7 @@
 \usepackage{wrapfig}
 \usepackage{import}
 \usepackage{xifthen}
-
+\usepackage{appendix}
 
 \usepackage[per-mode=symbol]{siunitx}
 \usepackage{bohr}
@@ -193,7 +197,7 @@ urlcolor=TealBlue!60!black,
 
 \raggedbottom
 \newcommand{\incfig}[1]{%
-    \def\svgwidth{\columnwidth}
+    \def\svgwidth{2.4in}
     \scalebox{.5}{\import{../figures/}{#1.pdf_tex}}
 }
 
@@ -395,3 +399,21 @@ urlcolor=TealBlue!60!black,
     \end{minipage}
   }
 }
+
+% Start of subappendices environment
+\AtBeginEnvironment{subappendices}{%
+\chapter*{Appendices}
+\addcontentsline{toc}{chapter}{Appendices}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+}
+
+% End of subappendices environment
+\AtEndEnvironment{subappendices}{%
+\counterwithout{figure}{section}
+\counterwithout{table}{section}
+}
+
+\tikzset{axis/.style={thick,-latex}}
+\tikzset{vec/.style={thick,blue}}
+\tikzset{univec/.style={thick,black,-latex}}

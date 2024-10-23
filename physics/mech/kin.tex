@@ -9,29 +9,28 @@ concern ourselves with some definitions.
 Motion of any object is considered to relative to an observer. The observer defines
 a particular co-ordinate system called the reference frame
 
-\begin{figure}[ht]
+\begin{marginfigure}
         \centering
-        \incfig{3daxes}    
+        \vspace{-9em}
+        \scalebox{1.8}{\incfig{3daxes}}    
     \caption{A Reference Frame}\label{fig: 3daxes}
-\end{figure}
+\end{marginfigure}
 
-We use a reference frame according to our convenience. In general, we use the 3-dimensional cartesian system like the one
-in \cref{fig: 3daxes}.
-
-\index{Reference Frame}
+We use a reference frame according to our convenience. Most of the times we will work in a right 
+handed cartesian co-ordinate system, the one in \cref{fig: 3daxes} (or a rotation of it).
 
 \begin{definition}
     [Reference Frame]
-    A reference frame is a co-ordinate frame relative to which motion of a particle is considered.
+    A \vocab{reference frame} is a co-ordinate frame relative to which motion of a particle is considered.
 \end{definition}
 
 We shall, until we encounter rigid body systems consider the motion of a point particle. 
-Well, why? It is done so to simplify the calculation of our system. The motion of a (rigid)body is discussed later.
+Well, why? It is done so to simplify the calculation of our system. The motion of a (rigid) body is discussed later.
 
 \index{Particle}
 \begin{definition}
     [Point Particle]
-    A particle whose size is negligible in the study of its motion is called a point particle.
+    A particle whose size is negligible in the study of its motion is called a \vocab{point particle}.
 \end{definition}
 
 To discuss the motion, state of our body, it is also necessary to setup some time co-ordinate.
@@ -39,7 +38,7 @@ It is the reading of the clock in the observer's frame. In general, we setup our
 at \(0\) at the start of an event.
 
 \marginnote{One thing of importance is that a position vector of a particle is a function
-of time. We generally denote this as \(r(t)\) to show that is a function.}
+of time. We may denote this as \(r(t)\) to show that is a function.}
 
 \section{Position Vector and Displacement}
 
@@ -49,16 +48,16 @@ of time. We generally denote this as \(r(t)\) to show that is a function.}
 We define the position of a particle relative to a reference frame using a \emph{position 
 vector}. One end of the position vector is the origin of our reference frame. The other is 
 the particle itself. Consider \cref{fig: position}, the 
-vector \(\vec{r}\) from \(O\) to \(A\). It describes the position of \(A\) relative to the
-co-ordinate frame. Let \(A = (x,y,z)\). Then we denoted \(\vec{r}\) as \(\vec{r}(x,y,z)\).
+vector \(\vec{r}_A\) from \(\mathcal{O}\) to \(A\). It describes the position of \(A\) relative to the
+co-ordinate frame. Let \(A = (x,y,z)\). Then we denote \(\vec{r}_A\) as \(\vec{r}(x,y,z)\).
 
 The position to any point is written as, \[
-    \vec{r} = (x,y,z) = x\unitv{x} + y\unitv{y} + z\unitv{z}
+    \vec{r} = (x,y,z) = x\ihat + y\jhat + z\khat
 \]
 
 \begin{marginfigure}
     \centering
-    \scalebox{2.2}{\incfig{position}}
+    \scalebox{2}{\incfig{position}}
     \caption{A position vector, \(\mathbf{r}\).}
     \label{fig: position}
 \end{marginfigure}
@@ -73,19 +72,19 @@ Consider the movement of a particle from \(A = (x_1,y_1,z_1)\) to \(B = (x_2,y_2
 The \emph{displacement} is the change in the position vector,
 and defines a true vector \(\vec{s} = (x_2-x_1,y_2-y_1,z_2-z_1)\).
 \(\vec{s}\) is called the displacement vector. 
+
 Note that it contains no information about the
 individual positions, but only about the relative position of each. Thus, our choice
 of reference frame, and thus position vector does not matter when we're concerned with displacement. 
 In \cref{fig: displacement}, the vector
 \(\vec{S}_{AB}\) defines a displacement from \(A\) to \(B\).
 
-\begin{figure}
-    [H]
+\begin{marginfigure}
     \centering
-    \scalebox{1.4}{\incfig{displacement}}
-    \caption{Displacement from \(A\) to \(B\)}
+    \scalebox{2}{\incfig{displacement}}
+    \caption{}
     \label{fig: displacement}
-\end{figure}
+\end{marginfigure}
 
 The difference between displacement and distance is that of the path they describe. The distance covered is the length
 of the actual path, while the magnitude of the displacement is simply the length of the vector between the final and initial positions.
@@ -98,13 +97,11 @@ We are already familiar with the notion of speed. In elementary terms, speed is 
 It tells us nothing about the direction of the object whose speed we are
 talking into consideration. Thus, it is a \emph{scalar} quantity.
 
-\parbreak
-\marginnote{The symbol \(\equiv\) stands for `defined as'.}
-
 \index{Velocity}
 
 The Velocity of a particle, contrastingly, contains information about both the speed and direction of the
 object in consideration. 
+
 It is a vector. Similar to position, it is also a function of time \(v(t)\), though it
 may also be dependent on the position \(v(x)\). Even when that is the case,
 it can still be written as function of time.
@@ -118,15 +115,20 @@ it can still be written as function of time.
     \end{equation}
 \end{definition}
 
-In particular, velocity is a function that maps three values --- the velocity components 
-of the particle to a particle time instant, 
+\marginnote{The symbol \(\equiv\) stands for `defined as'.}
+
+In particular, velocity is a function that is parametrized by time, 
+it is a map,
 
 \[
-    \vv : \RR \to \RR^3.
+    \vv : \RR \to \RR^3,
 \] 
 
-This is actually independent of the co-ordinate system we adopt. For any 
-particle, we require merely three co-ordinates to describe its velocity. 
+which acts on the parameter \(t\) as, 
+
+\begin{equation*}
+    t \mapsto (v_x(t), v_y(t), v_z(t)) = \vv(t).
+\end{equation*}
 
 The same holds for position as well,
 
@@ -134,21 +136,17 @@ The same holds for position as well,
     \vec{x} : \RR \to \RR^3.
 \]
 
-\sidenote{Infact to describe the motion of any body, we merely require its initial position and velocity functions.
-Well, not quite, we also need the equations of motion, of how the system evolves. These 
-end up being second order differential equations in Lagrangian Mechanics with which we'll deal
-later.}
 One thing of note is that velocity can also be expressed as the derivative of 
 displacement, which is just \(\vec{r} - \vec{r}_0\). Since the latter 
 term is constant, we simply get that \(\ndiv{\vec{s}} = \ndiv{\vec{r}}\).
 
 From this definition, we may gather that,
 
-\[\int_{r_0}^{r} \dd{\vec{r}} = \int_{0}^{t} \vv \dd{t}\]
+\[\int_{r_0}^{r} \dd{\vec{r}} = \int_{0}^{t} \vv \dd{t},\]
 
 Or, 
 \begin{equation}
-    \vec{r} = \vec{r}_0 + \int_{0}^{t} \vv \dd{t}
+    \vec{r} = \vec{r}_0 + \int_{0}^{t} \vv \dd{t}.
 \end{equation}
 
 Sometimes, we do not need to compute the derivative of the position vector, and simply need an average
@@ -162,7 +160,7 @@ with respect to time.}
 
 Velocity is also referred to as `instantaneous velocity'. This is done to remind of the difference
 with average velocity. We will not refer to it that way since by velocity we shall always mean \(\vec{v}\) as defined in
-\cref{def: velocity}. The same goes for speed. Notably, speed is not defined as \(\dv{\abs{r}}{t}\).
+\cref{def: velocity}. The same goes for speed. Notably, speed is not defined as \(\dv*{\abs{r}}{t}\).
 
 While the average speed is very well that, speed is actually the magnitude of the velocity of that point. 
 Consider the distance between \(a\) and \(b\) as 
@@ -294,12 +292,13 @@ and finally for \(n^{th}\) second just do \(s_n - s_{n-1}\).
 
 We can mostly safely extend our results from one dimension to higher dimensions.
 So for instances, velocity of a particle whose trajectory is defined as 
-\(x\unitv{x} + y\unitv{y} + z\unitv{z}\) can simply be computed as,
-\[v = \ndiv{x}\unitv{x} + \ndiv{y}\unitv{y} + \ndiv{z}\unitv{z}\] Such a thing
+\(x\ihat + y\jhat + z\khat\) can simply be computed as,
+\[v = \ndiv{x}\ihat + \ndiv{y}\jhat + \ndiv{z}\khat\] Such a thing
 is not true for non-cartesian co-ordinates, as we say in the case of polar forms.
 Due to the orthogonality of the cartesian unit vectors, and using dot products
 we simply have, 
 \[v_x = \ndiv{x}, v_y = \ndiv{y}, v_z = \ndiv{z}\]
+
 
 And the same is true for all other vectors. This gives us the power to
 resolve our vector components into components alongside unit vectors
@@ -315,7 +314,7 @@ is entirely dependent on us.
 
 In general, it is a good idea to setup our axes such that the direction above ground is positive
 and towards the ground is negative. The acceleration during free fall is always towards
-the ground. Therefore, for these cases \(\vec{a} = -g \unitv{y}\). 
+the ground. Therefore, for these cases \(\vec{a} = -g \jhat\). 
 
 Some important points of note are that ``\(g\)'' does not become positive or negative or whatever,
 this is a common misconception. Instead, we just decide where exactly the positive direction is
@@ -346,12 +345,19 @@ Projectile motion is one of the most important motion to consider in
 only care about the motion of a body projected from ground under the influence
 of gravity. 
 
+\begin{marginfigure}
+    \centering
+    \scalebox{2}{\incfig{projectile}}
+    \caption{Trajectory of a projectile}
+    \label{fig: projectile}
+\end{marginfigure}
+
 Let a body be projected at an angle \(\vartheta\) from the ground at velocity \(\vec{v}\)
-along \(\vartheta\). Then, by resolving \(\vv\) into \(v_x \unitv{x} + v_y\unitv{y}\),
+along \(\vartheta\). Then, by resolving \(\vv\) into \(v_x \ihat + v_y\jhat\),
 we have, 
 \begin{align*}
-    x &= v_xt \unitv{x} \\
-    y &= v_yt - \frac{1}{2}gt^2 \unitv{y}
+    x &= v_xt \ihat \\
+    y &= v_yt - \frac{1}{2}gt^2 \jhat
 \end{align*}
 
 Doing some manipulations, we may note that \(v_x = v\sin(\vartheta)\), \(v_y = v\cos(\vartheta)\).
@@ -370,14 +376,6 @@ perhaps nicer form of the equations,
 after substituting with \(R\)\footnote{calculated just a bit later.}.
 
 The path of the projectile is parabolic as shown in \cref{fig: projectile}.
-
-\begin{marginfigure}
-    \vspace{2em}
-    \centering
-    \scalebox{2}{\incfig{projectile}}
-    \caption{Trajectory of a projectile}
-    \label{fig: projectile}
-\end{marginfigure}
 
 Here, \(H\) is the maximum height of the particle. Clearly,
 when the projectile is at \(H\), \(v_y = 0\). We have, 
@@ -426,8 +424,7 @@ value, we have,
 \end{equation}
 
 \begin{marginfigure}
-    \hspace{-2em}
-    \scalebox{2.5}{\incfig{projectilewedge}}
+    \scalebox{2}{\incfig{projectilewedge}}
     \caption{Projectile grazing a wedge.}
 \end{marginfigure}
 
@@ -524,7 +521,7 @@ same}.
 \end{marginfigure}
 
 \begin{exc}
-    \begin{exercise}[points = 3]
+    \begin{exercise}[subtitle={Projectile with vectors.}, points = 3]
         We can integrate the kinematic equations 
         vectorially, to get 
         \begin{equation*}
@@ -571,7 +568,7 @@ same}.
         by plugging in the expression for time we just got, we also get the range of the projectile. 
     \end{solution}
     
-    \begin{exercise}[points = 3]
+    \begin{exercise}[subtitle={Projectile Motion in tilted axes.}, points = 3]
         Consider the case of a projectile launched along a wedge, as in,
         \cref{fig: projectilealongwedge}. If we were to figure out \(d\), we could 
         use a number of ways. The equation of the projectile is,
@@ -615,18 +612,17 @@ same}.
 \end{exc}
 
 \begin{marginfigure}
-    \vspace{-45em}
+    \vspace{-8em}
     \centering
-    \scalebox{2.2}{\incfig{projectilevector2}}
+    \scalebox{2}{\incfig{projectilevector2}}
     \caption{Projectile along a wedge}
     \label{fig: projectilealongwedge}
 \end{marginfigure}
 
 
 \begin{marginfigure}
-    \vspace{-15em}
     \centering
-    \scalebox{2.2}{\incfig{projectilevector3}}
+    \scalebox{2}{\incfig{projectilevector3}}
     \caption{The cartesian axes rotated by \(\vartheta\).}
     \label{fig: projectilerotatedaxes}
 \end{marginfigure}
@@ -718,8 +714,8 @@ an angle \(\vartheta\) with the horizontal, then,
 
 \begin{align}
     \label{eq: polardef}
-    \unitv{r} &= \cos \vartheta \unitv{x} + \sin \vartheta \unitv{y}\\
-    \unitv{\vartheta} &= -\sin \vartheta \unitv{x} + \cos \vartheta \unitv{y}
+    \unitv{r} &= \cos \vartheta \ihat + \sin \vartheta \jhat\\
+    \unitv{\vartheta} &= -\sin \vartheta \ihat + \cos \vartheta \jhat
 \end{align}
 
 Now let us formulate kinematics in polar co-ordinates. The position \(\vec{r}\) can be written as
@@ -839,7 +835,7 @@ The same idea can be extended to projectile --- \(2\)d motion
 by considering the components of the accelerations,
 
 \[
-    \vec{a} = -kv_x \unitv{x} - (g + kv_y) \unitv{y},
+    \vec{a} = -kv_x \ihat - (g + kv_y) \jhat,
 \]
 
 and now considering the equations \(\dot{\vec{v}} = -kv_x\)

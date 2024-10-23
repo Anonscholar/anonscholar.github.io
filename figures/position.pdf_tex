@@ -1,4 +1,4 @@
-%% Creator: Inkscape 1.3.2 (091e20ef0f, 2023-11-25, custom), www.inkscape.org
+%% Creator: Inkscape 1.4 (e7c3feb100, 2024-10-09), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'position.pdf' (pdf, eps, ps)
 %%
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{373.14509835bp}%
+    \setlength{\unitlength}{186.96115809bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,9 +50,18 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.00669921)%
+  \begin{picture}(1,1.07622519)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{position.pdf}}%
+    \put(0.78510636,0.69325878){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{A}\end{tabular}}}}%
+    \put(0.49994077,0.59893459){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{r}\textit{\textsubscript{A}}\end{tabular}}}}%
+    \put(0.36032465,1.05631648){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{z}\end{tabular}}}}%
+    \put(0.9805144,0.40560626){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{x}\end{tabular}}}}%
+    \put(0.01043626,0.01172895){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{y}\end{tabular}}}}%
+    \put(0.84465938,0.34097038){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{r}\textit{\textsubscript{A,y}}\end{tabular}}}}%
+    \put(0.52649344,0.25047895){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{r}\textit{\textsubscript{A,x}}\end{tabular}}}}%
+    \put(0.79363712,0.51306968){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{r}\textit{\textsubscript{A,z}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{position.pdf}}%
   \end{picture}%
 \endgroup%
