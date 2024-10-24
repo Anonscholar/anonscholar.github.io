@@ -22,20 +22,20 @@ The axioms of real numbers can be divided broadly into three different types,
 
 \subsection{Field Axioms}
 
-The field axioms are something like this. We consider the set of reals, \(\RR\)
-along with the operations \((+, \cdot)\). This particular structure is called a 
-\vocab{field}. These axioms permit us to perform our regular operations on 
-the reals, namely addition, subtraction, multiplication and division by non-zero
-reals.
+Consider the set \(\mathbb{F}\) along with two operations, \(+, \cdot\).
+This structure, \((\FF, +, \cdot)\) is called a \vocab{field} if it follows the following
+set of axioms.
 
-Although we label the operations as multiplication and addition, these can in effect be 
+Although we label the operations as symbols multiplication and addition, these can in effect be 
 any two operations, provided they follow the axioms. A field is a general structure, 
 and we'll talk much more about it in algebra.
 
-These operations are such that for every \(x\), \(y \in \RR\), we will have \(x + y, xy \in \RR\). 
+These operations are such that for every \(x\), \(y \in \FF\), we will have \(x + y, xy \in \FF\),
+which is what we call \(\emph{closure}\).
+
 These sums and products are unique, which means we always have one and only have one 
-\(x+y, xy\) for \(x, y \in \RR\). The notion can be generalized, and we will understand what we mean by 
-the operations more rigorously in the next chapter, just hold on till then.
+\(x+y, xy\) for \(x, y \in \FF\). We will talk about what these operations precisely are in 
+a moment.
 
 \begin{axioms}
     \ii \chvocab{Real Numbers}{Commutativity}, \(x+y = y+x\) and \(xy = yx\).
@@ -78,9 +78,9 @@ not really difficult to do it, once you understand what we did in this proof, wh
 use first use that \(0'\) is an identity for the first equality (so that \(0 + 0' = 0\)) 
 and then \(0\) as the identity for the second equality. 
 
-It is possible to formulate subtraction and division from these axioms, if for some real \(a\) and \(b\) we have a real
+It is possible to formulate subtraction and division from these axioms, if for some \(a\) and \(b\) we have a
 \(x\) such that \(x + a = b\), then it is denoted as \(b - a\). 
-And if for some real \(a\) and \(b\) we have a real \(x\) such that \(xa = b\), then it is denoted as \(ba^{-1}\). 
+And if for some \(a\) and \(b\) we have a \(x\) such that \(xa = b\), then it is denoted as \(ba^{-1}\). 
 
 Such \(x\)'s are also unique. We can show their uniqueness by showing that the inverses are unique.
 
@@ -100,7 +100,7 @@ Such \(x\)'s are also unique. We can show their uniqueness by showing that the i
     What did we do here? the first equality follows from the definition 
     of inverse, the second follows from Associativity and the third uses the 
     definition of identity. This shows that \(y = z\), but \(y\) and \(z\) 
-    were, infact, distinct! \lightning
+    were, in fact, distinct! \lightning
 
 \end{proof}
 
@@ -136,14 +136,21 @@ A similar proof can be used to show that \((-a)(-b) = ab\), as
     (-a)(-b) &= ab
 \end{align*}
 
-Here we use our previous result to prove this one. Now it is obvious that the product of 
-any two negatives will be positive --- however, let us first discuss what exactly ``positive''
+Note that none of our proofs are reliant on the fact that these numbers are 
+real numbers. These properties hold for \emph{any} field. In particular, 
+they also hold for the real numbers, with the operations of addition and multiplication.
+
+As such, real numbers form a \emph{field}. These axioms permit us to perform our regular operations on 
+the reals, namely addition, subtraction, multiplication and division by non-zero
+reals.
+
+In the last proof, we use our previous result to prove this one. Now it is obvious that for 
+the reals, the product of any two negatives will be positive --- however, let us first discuss what exactly ``positive''
 and ``negative'' mean.
 
 \subsection{Order Axioms}
 
-We now again give some axioms which allow us to \emph{order} our field. 
-In this case, the field being the real numbers. This allows us to formulate notions 
+We now again give some axioms which allow us to \emph{order} our field. This allows us to formulate notions 
 of positive and negative. 
 
 \begin{axioms}
@@ -173,7 +180,7 @@ statements.
 Consider the following proposition, 
 
 \begin{plainprop}[Trichotomy]
-    If we have \(x, y \in \RR\), the one of the following must hold, 
+    If we have \(x, y \in \RR\), then one of the following must hold, 
     \begin{enumerate}
         \item \(x < y\)
         \item \(x > y\)
@@ -214,3 +221,54 @@ Consider the following two properties regarding the absolute value,
     \(\abs{x} = x \le a\). If \(x < 0\), \(\abs{x} = -x \le a\) since \(x \ge -a \implies -x \le a\).
     In both cases, \(\abs{x} \le a\). 
 \end{proof}
+
+We will not look at the least upper bound axiom as of now. Note we still haven't 
+shown the existence of radicals, which you must take for granted for now.
+
+\section{Functions}
+
+The idea of a function is very simple. You have an input, and you want to get 
+an output. For instance, consider the standard operations we defined on the reals,
+\(+, \cdot\). These take two inputs, and produce the appropriate output, the sum 
+and the product, respectively.
+
+More precisely, functions are maps. They map an element of a set, to another 
+element of a different set. The basis of such a mapping is the definition of a 
+function.
+
+For instance, we could consider a mapping from \(\RR\) to \(\RR\), \(f\) 
+\begin{equation*}
+    x \overset{f}{\mapsto} x + 1,
+\end{equation*}
+which maps an element from the set of real numbers, to its successor.
+
+We also denote this mapping by writing \((x, x + 1) \in f\). The first element 
+is our input, which we map to second element. 
+
+There are certain restriction, however, that we must impose, for such an object 
+to be useful. In the case of functions we impose the restriction 
+that the mappings are \emph{unique}. 
+
+That is, if 
+\begin{equation*}
+    (a, b) \in f \text{ and } (a, c) \in f, 
+\end{equation*}
+then, \(b = c\).
+
+Now, we are finally ready to give the formal definition.
+
+\begin{definition}
+    A \vocab{function} from \(A \to B\) is a set such that,
+    \begin{equation}
+        f \subseteq \Set{A \times B} \given (a, b), (a, c) \in f \iff b = c.
+    \end{equation}
+\end{definition}
+
+Now we can define the operations of multiplication and addition rigorously, 
+
+\begin{align*}
+    + \colon &\RR^2 \to \RR \given (x, y) \to x + y, \\
+    \boldsymbol{\cdot} \colon &\RR^2 \to \RR \given (x, y) \to x \boldsymbol{\cdot} y.
+\end{align*}
+
+We usually write \(xy\) instead of \(x \cdot y\).
