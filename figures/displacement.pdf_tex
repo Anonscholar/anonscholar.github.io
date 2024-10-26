@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{186.96115809bp}%
+    \setlength{\unitlength}{191.08511857bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,19 +50,19 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.07622519)%
+  \begin{picture}(1,1.05639727)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{displacement.pdf}}%
-    \put(0.66845237,0.84274616){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{A}\end{tabular}}}}%
-    \put(0.48964112,0.71071186){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{r}\textit{\textsubscript{A}}\end{tabular}}}}%
-    \put(0.36032465,1.05631648){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{z}\end{tabular}}}}%
-    \put(0.9805144,0.40560626){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{x}\end{tabular}}}}%
-    \put(0.01043626,0.01172895){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{y}\end{tabular}}}}%
+    \put(0.36009752,1.02176792){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{z}\end{tabular}}}}%
+    \put(-0.00036796,0.00114486){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{x}\end{tabular}}}}%
+    \put(0.97158503,0.37953103){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{y}\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{displacement.pdf}}%
-    \put(0.87383514,0.58136469){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{B}\end{tabular}}}}%
-    \put(0.62054047,0.56505065){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{r}\textit{\textsubscript{B}}\end{tabular}}}}%
+    \put(0.47356565,0.62096877){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{r}\textit{\textsubscript{A}}\end{tabular}}}}%
+    \put(0.764177,0.66408504){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{B}\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{displacement.pdf}}%
-    \put(0.78231166,0.74986292){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{S}\textit{\textsubscript{AB}}\end{tabular}}}}%
+    \put(0.5068616,0.89219601){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{A}\end{tabular}}}}%
+    \put(0.59619627,0.50342268){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{r}\textit{\textsubscript{B}}\end{tabular}}}}%
+    \put(0.62384655,0.80980241){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{S}\textit{\textsubscript{AB}}\end{tabular}}}}%
   \end{picture}%
 \endgroup%
