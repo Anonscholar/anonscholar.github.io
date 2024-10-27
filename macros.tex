@@ -33,22 +33,19 @@
 \lowercase{\gdef~{\ifnum\the\mathgroup=\m@ne \ell \else \lsb@l \fi}}%
 \endgroup
 
-\makeatletter
-\let\if@single\undefined
-\let\rel@kern\undefined
-\makeatother
-
+\renewcommand{\partial}{\uppartial}
 \usepackage{stmaryrd}
 \usepackage{xargs}
 \usepackage{centernot}
 \usepackage{dotlessi}
-\usepackage{yhmath}
 \usepackage{mathtools}
+\usepackage{bm}
 
 \renewcommand{\mathbb}[1]{\mathds{#1}}
 
 \newcommand{\increment}{\Delta}
 \renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+\renewcommand{\Vec}[3]{\left\langle#1, #2, #3\right\rangle}
 \newcommand{\unitv}[1]{\vec{\hat{#1}}}
 \let\conjugate\overline
 \newcommand{\conj}[1]{\overline{#1}}
