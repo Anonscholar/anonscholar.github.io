@@ -33,20 +33,24 @@
 \lowercase{\gdef~{\ifnum\the\mathgroup=\m@ne \ell \else \lsb@l \fi}}%
 \endgroup
 
-\renewcommand{\partial}{\uppartial}
 \usepackage{stmaryrd}
 \usepackage{xargs}
 \usepackage{centernot}
 \usepackage{dotlessi}
-\usepackage{mathtools}
 \usepackage{bm}
 
-\renewcommand{\mathbb}[1]{\mathds{#1}}
+\newcommand{\mathbb}[1]{\mathds{#1}}
+\renewcommand{\dotproduct}{\bm{\cdot}}
+\let\oldcdot\cdot
+\renewcommand{\cdot}{\mathbin{\oldcdot}}
+\renewcommand{\vnabla}{\nabla}
 
 \newcommand{\increment}{\Delta}
-\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\gvec}[1]{\bm{#1}}
 \renewcommand{\Vec}[3]{\left\langle#1, #2, #3\right\rangle}
 \newcommand{\unitv}[1]{\vec{\hat{#1}}}
+\newcommand{\gunitv}[1]{\gvec{\hat{#1}}}
 \let\conjugate\overline
 \newcommand{\conj}[1]{\overline{#1}}
 \newcommand{\seq}[2]{\left\langle#1_1, #1_2, \dots, #1_{#2}\right\rangle}
@@ -190,8 +194,8 @@
 
 
 %aliases
-\renewcommand{\ge}{\geqslant}
-\renewcommand{\le}{\leqslant}
+%\renewcommand{\ge}{\geqslant}
+%\renewcommand{\le}{\leqslant}
 \renewcommand{\subset}{\subsetneq}
 \newcommand{\auth}[1]{\emph{#1}}
 \newcommand{\para}[1]{#1 \par}
@@ -345,15 +349,15 @@ tkzSecondPointResult)}
 \newcommand{\oo}{\vec{0}}
 \newcommand{\uu}{\vec{u}}
 \newcommand{\ww}{\vec{w}}
-\newcommand{\ihat}{\unitv{\dotlessi}}
-\newcommand{\jhat}{\unitv{\dotlessj}}
-\newcommand{\khat}{\unitv{k}}
+\newcommand{\ihat}{\vec{i}}
+\newcommand{\jhat}{\vec{j}}
+\newcommand{\khat}{\vec{k}}
 
 \newcommand{\dtp}{\dotproduct}
 
 \newcommand{\uch}{\,{\text{u}}}
-\renewcommand{\dd}{\mathop{}{d}}
-\renewcommand{\diffd}{\mathop{}{d}}
+\renewcommand{\dd}{\!\mathop{}{d}\!}
+\renewcommand{\diffd}{\!\mathop{}{d}\!\hspace{.01em}}
 
 \newcommand{\sidenote}[1]{%
     \marginpar{\RaggedRight \itshape #1 }}
