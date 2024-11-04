@@ -15,7 +15,7 @@ const handouts = [
     <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2">
       {handouts.map((handout) => (
         <li>
-          <a href={handout.href} class="block p-4 rounded-lg border transition-shadow hover:shadow-lg hover:bg-secondary/50">
+          <a href={handout.href} target="_blank" rel="noopener noreferrer" class="block p-4 rounded-lg border transition-shadow hover:shadow-lg hover:bg-secondary/50">
             <h2 class="text-lg font-semibold">{handout.title}</h2>
             <p class="text-sm text-muted-foreground">{handout.description}</p>
           </a>
