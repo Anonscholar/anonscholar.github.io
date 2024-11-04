@@ -39,15 +39,15 @@
 \usepackage{dotlessi}
 \usepackage{bm}
 
-\newcommand{\mathbb}[1]{\mathds{#1}}
+\renewcommand{\mathbb}[1]{\mathds{#1}}
 \renewcommand{\dotproduct}{\bm{\cdot}}
 \let\oldcdot\cdot
 \renewcommand{\cdot}{\mathbin{\oldcdot}}
 \renewcommand{\vnabla}{\nabla}
 
 \newcommand{\increment}{\Delta}
-\renewcommand{\vec}[1]{\mathbf{#1}}
-\newcommand{\gvec}[1]{\bm{#1}}
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand{\gvec}[1]{\vec{#1}}
 \renewcommand{\Vec}[3]{\left\langle#1, #2, #3\right\rangle}
 \newcommand{\unitv}[1]{\vec{\hat{#1}}}
 \newcommand{\gunitv}[1]{\gvec{\hat{#1}}}
@@ -194,8 +194,8 @@
 
 
 %aliases
-%\renewcommand{\ge}{\geqslant}
-%\renewcommand{\le}{\leqslant}
+\renewcommand{\ge}{\geqslant}
+\renewcommand{\le}{\leqslant}
 \renewcommand{\subset}{\subsetneq}
 \newcommand{\auth}[1]{\emph{#1}}
 \newcommand{\para}[1]{#1 \par}
@@ -356,8 +356,8 @@ tkzSecondPointResult)}
 \newcommand{\dtp}{\dotproduct}
 
 \newcommand{\uch}{\,{\text{u}}}
-\renewcommand{\dd}{\!\mathop{}{d}\!}
-\renewcommand{\diffd}{\!\mathop{}{d}\!\hspace{.01em}}
+\renewcommand{\dd}{\mathop{}{d}}
+\renewcommand{\diffd}{\mathop{}{d}}
 
 \newcommand{\sidenote}[1]{%
     \marginpar{\RaggedRight \itshape #1 }}
