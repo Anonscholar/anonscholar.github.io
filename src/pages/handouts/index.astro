@@ -1,15 +1,26 @@
 ---
-import AuthorCard from '@/components/AuthorCard.astro'
 import Breadcrumbs from '@/components/Breadcrumbs.astro'
 import Container from '@/components/Container.astro'
 import Layout from '@/layouts/Layout.astro'
-import { getCollection } from 'astro:content'
+
+const handouts = [
+  { title: "Undergrad Math", description: "Notes on undergrad math", href: "../../../files/ug.pdf" },
+  { title: "Undergrad Physics", description: "Undergrad physics notes, focused towards a more problem solving outlook", href: "../../../files/ug.pdf" },
+]
 ---
 
-<Layout title="Handouts" description="Some handouts I made.">
-    Notes for undergrad math and physics,
-     <ul style="list-style-type:disc;">
-        <li> <a href="../../files/ug.pdf">Undergrad Math</a> </li>
-        <li> <a href="../../files/handouts/phy.pdf">Undergrad Physics</a> </li>
-     </ul>
+<Layout title="Handouts" description="My handouts">
+  <Container class="flex flex-col gap-y-6">
+    <Breadcrumbs items={[{ label: 'Handouts', icon: 'lucide:book-open' }]} />
+    <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      {handouts.map((handout) => (
+        <li>
+          <a href={handout.href} class="block p-4 rounded-lg border transition-shadow hover:shadow-lg hover:bg-secondary/50">
+            <h2 class="text-lg font-semibold">{handout.title}</h2>
+            <p class="text-sm text-muted-foreground">{handout.description}</p>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </Container>
 </Layout>
