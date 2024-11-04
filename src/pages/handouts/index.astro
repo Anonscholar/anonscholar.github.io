@@ -1,0 +1,20 @@
+---
+import AuthorCard from '@/components/AuthorCard.astro'
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import Container from '@/components/Container.astro'
+import Layout from '@/layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+
+const authors = await getCollection('authors')
+---
+
+<Layout title="Handouts" description="Some handouts I made.">
+    <p>
+    Notes for undergrad math and physics,
+
+     <ul style="list-style-type:disc;">
+        <li> <a href="/files/ug.pdf">Undergrad Math</a> </li>
+        <li> <a href="/files/phy.pdf">Undergrad Physics</a> </li>
+     </ul>
+    </p>
+</Layout>
