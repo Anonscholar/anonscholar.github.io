@@ -154,21 +154,23 @@ We now again give some axioms which allow us to \emph{order} our field. This all
 of positive and negative. 
 
 \begin{axioms}
-    \ii There exists a subset of real numbers, \(\RR^+\) such that \(\forall x \in \RR \setminus \Set{0}\),
-     either \(x \in \RR^+\) or \(-x \in \RR^+\).
-    \ii If \(x, y \in \RR^+\), both \(xy\) and \(x + y\) are also in \(\RR^+\).
-    \ii \(0\) is not in \(\RR^+\).
+    \ii There exists a subset of our field, \(\FF^+\) such that \(\forall x \in \FF \setminus \Set{0}\),
+     either \(x \in \FF^+\) or \(-x \in \FF^+\).
+    \ii If \(x, y \in \FF^+\), both \(xy\) and \(x + y\) are also in \(\FF^+\).
+    \ii \(0\) is not in \(\FF^+\).
 \end{axioms}
+
+A field in which these axioms is true is called a \vocab{ordered field}.
 
 We say that a number \(x\) is positive if it is in \(\RR^+\). We also know define some symbols, 
 \begin{align*}
-    x > y \text{ means that } x - y \text{ is in } \RR^+ \\
-    x < y \text{ means that } y - x \text{ is in } \RR^+ 
+    x > y \text{ means that } x - y \text{ is in } \FF^+ \\
+    x < y \text{ means that } y - x \text{ is in } \FF^+ 
 \end{align*}
 
 The second definition is unnecessary to be precise, \(x < y\) may as well be 
 interpreted as \(y > x\), which is something we have already defined. In any case, 
-a field which is imbued with an \emph{ordering relation} such as \(>\) is called 
+we could equivalently say a field which is imbued with an \emph{ordering relation} such as \(>\) is called 
 an \vocab{ordered field}. We will again, talk about relations and what this exactly 
 means later.
 
@@ -180,7 +182,7 @@ statements.
 Consider the following proposition, 
 
 \begin{plainprop}[Trichotomy]
-    If we have \(x, y \in \RR\), then one of the following must hold, 
+    If we have \(x, y \in \FF\), then one of the following must hold, 
     \begin{enumerate}
         \item \(x < y\)
         \item \(x > y\)
@@ -191,6 +193,35 @@ Consider the following proposition,
 This can be inferred rather directly from the order axioms. Clearly, by the order 
 axioms we have that either \(a = 0\), \(a \in \RR^+\) or \(-a \in \RR^+\).
 Replace \(a\) by \(x - y\) and we're done.
+
+\begin{proposition}
+    In an ordered field, we have,
+
+    \begin{enumerate}
+        \item \(a > b \iff a + c > b + c\), for some \(c \in \FF\).
+        \item \(a > b \iff ac > bc\), for \(c > 0\).
+        \item For all \(a \ne 0\), \(a^2 > 0\).
+        \item \(1 > 0\).
+    \end{enumerate}
+\end{proposition}
+
+
+
+Let us actually discuss some examples of fields and ordered fields now.
+
+\begin{example}
+    The sets \(\QQ, \RR\) along with multiplication and addition satisfy the field axioms. 
+    In fact, they also satisfy the order axioms. Thus, they're ordered fields. 
+\end{example}
+
+\begin{example}
+    Consider the set \(\FF = \Set{0, 1}\). We define \(0 + 0 = 0, 0 + 1 = 1 + 0 = 1, 1 + 1 = 0, 0 \cdot 0 = 0 \cdot 1 = 1 \cdot 0 = 0, 1 \cdot 1 = 1\).
+    Then it follows the field axioms. However, we cannot have some ordering relation.
+    
+    This follows because (as we will show), \(1 > 0\) in an ordered field, but \(1 + 1 = 0 > 0 + 1 = 1\) \lightning.
+\end{example}
+
+\sidenote{We are just adding \(1\) to both sides, as permitted by the axioms.}
 
 This also forms the basis of the idea of the absolute value, which is, 
 
@@ -272,3 +303,4 @@ Now we can define the operations of multiplication and addition rigorously,
 \end{align*}
 
 We usually write \(xy\) or \(x \cdot y\) instead of \(x \times y\).
+
