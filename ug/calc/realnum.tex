@@ -48,11 +48,9 @@ a moment.
 \end{axioms}
  
 First of all, we will show that the identity elements are unique, that is, if,
-
 \begin{equation*}
     (\forall x),\; x + 0 = x \text{ and } (\forall x),\; x + 0' = x, \text{ then } 0 = 0'
 \end{equation*}
-
 and a similar statement for \(1\) over multiplication.
 
 \begin{proposition}
@@ -65,7 +63,7 @@ and a similar statement for \(1\) over multiplication.
     Then, 
 
     \begin{equation*}
-        0 = 0 + 0' = 0'
+        0 = 0 + 0' = 0'.
     \end{equation*}
 
     But this leads to a contradiction! \lightning
@@ -77,10 +75,6 @@ A similar argument for the multiplicative identity, \(1\) is left to the reader.
 not really difficult to do it, once you understand what we did in this proof, which is 
 use first use that \(0'\) is an identity for the first equality (so that \(0 + 0' = 0\)) 
 and then \(0\) as the identity for the second equality. 
-
-It is possible to formulate subtraction and division from these axioms, if for some \(a\) and \(b\) we have a
-\(x\) such that \(x + a = b\), then it is denoted as \(b - a\). 
-And if for some \(a\) and \(b\) we have a \(x\) such that \(xa = b\), then it is denoted as \(ba^{-1}\). 
 
 Such \(x\)'s are also unique. We can show their uniqueness by showing that the inverses are unique.
 
@@ -94,7 +88,7 @@ Such \(x\)'s are also unique. We can show their uniqueness by showing that the i
     distinct reals, \(y\) and \(z\), then  
 
     \begin{equation*}
-        y \cdot 1 = y \cdot (x \cdot z) = (y \cdot x) \cdot z = 1 \cdot z = 1
+        y \cdot 1 = y \cdot (x \cdot z) = (y \cdot x) \cdot z = 1 \cdot z = 1.
     \end{equation*}
 
     What did we do here? the first equality follows from the definition 
@@ -104,8 +98,8 @@ Such \(x\)'s are also unique. We can show their uniqueness by showing that the i
 
 \end{proof}
 
-It is also possible to treat subtraction as a shorthand for addition, \(a + (-b) = a - b\) using 
-inverses. Division can be treated similarly.
+Subtraction is treated as a shorthand for addition, \(a + (-b) = a - b\) using 
+inverses. Similarly, one writes \(a \cdot b\inv = a/b\).
 
 These properties allow us to form laws of addition and multiplication --- such as 
 cancellation. We can form an outline of a proof of cancellation as, 
@@ -114,6 +108,39 @@ cancellation. We can form an outline of a proof of cancellation as,
     We need to show that \(a + b = a + c \iff b = c\). 
     This can be done simply by adding \(-a\) on both sides. Since addition is unique, 
     and both numbers are equal, so must be their addition with another number. 
+    
+    By a formal manipulation,
+    \begin{align*}
+        b &= b + (a - a) \\
+        b &= (b + a) - a \\
+        b &= (c + a) - a \\
+        b &= c + (a - a)\\
+        b &= c.
+    \end{align*}
+\end{proof}
+
+Let us prove a fundamental property of the additive inverse.
+
+\begin{proposition}
+    We have for all \(a \in \FF\), 
+    \begin{equation*}
+        a \cdot 0 = 0.
+    \end{equation*}
+\end{proposition}
+
+\begin{proof}
+    How do we go about proving this? We use the fundamental property of \(0\), as 
+    the additive inverse, \(0 + 0 = 0\).
+    \begin{equation*}
+        a \cdot 0 = a \cdot (0 + 0) = a \cdot 0 + a \cdot 0.
+    \end{equation*}
+
+    The left-hand side is the same as \(0 + a \cdot 0\). Now, we have already justified 
+    cancellation for addition, so that cancelling \(a \cdot 0\) from both sides, we have, 
+
+    \begin{equation*}
+        0 = a\cdot 0.
+    \end{equation*}
 \end{proof}
 
 A similar procedure can be done for multiplication.
@@ -122,17 +149,17 @@ We see that this can also be used to prove that the product of any two negative 
 positive. Let us first prove that \((-a)b = -ab\). This is rather easy as well, and follows 
 from distributivity,
 \begin{align*}
-    (-a)b + ab &= b[(-a) + a] \\
-    (-a)b + ab &= 0 \\
-    (-a)b + ab &- ab = -ab\\
-    (-a)b = &-ab
+    (-a)b &= (-a)b + ab - ab \\
+    (-a)b &= b[(-a) + a] - ab \\
+    (-a)b & = 0 \cdot b - ab\\
+    (-a)b &= -ab
 \end{align*}
 
 A similar proof can be used to show that \((-a)(-b) = ab\), as 
 \begin{align*}
-    (-a)(-b) + (-a)b &= -a[(-b) + b] \\
-    (-a)(-b) - ab &= 0\\
-    (-a)(-b) - ab + ab &= ab\\
+    (-a)(-b) &= (-a)(-b) + (-a)b - (-a)b \\
+    (-a)(-b) &= -a[(-b) + b] - (-ab) \\
+    (-a)(-b) &= -a \cdot 0 + ab\\
     (-a)(-b) &= ab
 \end{align*}
 
@@ -144,9 +171,68 @@ As such, real numbers form a \emph{field}. These axioms permit us to perform our
 the reals, namely addition, subtraction, multiplication and division by non-zero
 reals.
 
-In the last proof, we use our previous result to prove this one. Now it is obvious that for 
+In the last proof, we use our previous result\footnote{In the second line, \(-(-a)b = -(-ab) = ab\). A proof for \(-(-a) = a\) is left as 
+an exercise to the reader.} to prove this one. Now it is obvious that for 
 the reals, the product of any two negatives will be positive --- however, let us first discuss what exactly ``positive''
 and ``negative'' mean.
+
+\begin{exc}
+\begin{exercise}[points=1]
+    Complete the other half of the proofs for uniqueness of identity and inverses.
+\end{exercise}
+
+\begin{exercise}
+    Show that \(-(-a) = a\) and for \(a \ne 0\), \((a\inv)\inv = a\).
+\end{exercise}
+
+\begin{solution}
+    The idea behind this is the definition of inverse. \(x = -(-a)\) iff, 
+    \begin{equation*}
+        x + (-a) = 0,
+    \end{equation*}
+    but we already know that \(x = a\) satisfies this equation! From the uniqueness of 
+    inverses, \(x = a\). A similar proof follows for \((a\inv)\inv\).
+\end{solution}
+
+\begin{exercise}
+    Consider the equation \(xy = 0\), show that it is only satisfied when \(x = 0\) or 
+    \(y = 0\). Hint: Consider the case when \(x\) and \(y\) are both not zero.
+\end{exercise}
+
+\begin{solution}
+    If \(x\) and \(y\) are both not zero, then we know \(x\inv\) and \(y\inv\) exist, so that,
+    \begin{equation*}
+        xy \cdot (x\inv \cdot y\inv) = (x\cdot x\inv)(y \cdot y\inv) = 1 \cdot 1 = 1 
+    \end{equation*}
+
+    But we know that \(0 \cdot a\) for any \(a \in \FF\) is \(0\) \lightning.
+\end{solution}
+
+\begin{exercise}
+    Formulate a law for cancellation over multiplication. That is, given non-zero \(c \in \FF\) and, 
+    \begin{equation*}
+        ac = bc,
+    \end{equation*}
+    Show that \(a = b\).
+\end{exercise}
+
+\begin{exercise}
+    We now consider the natural properties of division, or quotients. A quotient, \(a/b\) 
+    is a shorthand for \(a \cdot b\inv\). Prove the following familiar properties of 
+    quotients. Assume accordingly that the numbers having inverses are non-zero. (for instance 
+    both \(a\) and \(b\) are non-zero in 1).
+    
+    \begin{enumerate}
+        \item \((ab)\inv = a\inv b\inv\). Hint: How is \((ab)\inv\) defined?
+        \item \(\displaystyle \frac{a}{b} = \frac{ac}{bc}\).
+        \item \(\displaystyle \frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd}\).
+        \item \(\displaystyle \frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd}\).
+        \item \(\displaystyle \frac{a}{b} {\bigg/} \frac{c}{d} = \frac{ad}{bc}\). 
+        \item Show that \(\displaystyle\frac{a}{b} = \frac{c}{d} \iff ad = bc\).  
+    \end{enumerate}
+\end{exercise}
+
+\end{exc}
 
 \subsection{Order Axioms}
 
@@ -196,7 +282,6 @@ Replace \(a\) by \(x - y\) and we're done.
 
 \begin{proposition}
     In an ordered field, we have,
-
     \begin{enumerate}
         \item \(a > b \iff a + c > b + c\), for some \(c \in \FF\).
         \item \(a > b \iff ac > bc\), for \(c > 0\).
@@ -205,7 +290,22 @@ Replace \(a\) by \(x - y\) and we're done.
     \end{enumerate}
 \end{proposition}
 
+\begin{proof}
+    1. By definition, \(x > y \iff x - y \in \FF^+\). Now, note that,
+    \begin{equation*}
+        x - y = x - y + c - c = (x + c) - (y + c) \in \FF^+,
+    \end{equation*}
+    so we are done.
 
+    2. Similar to the previous proof, use the fact that \(c \in \FF^+\) and 
+    \(x - y \in \FF^+\) imply that \(c(x - y) \in \FF^+\) by the axioms.
+
+    3. If \(a > 0\), then \(a \cdot a = a^2> 0\) (since \(x, y > 0 \implies xy > 0\)). 
+    If \(a > 0\), then by the axioms \(-a > 0\). Thus, \(-a \cdot -a = a^2 > 0\).
+    Since \((-a)(-b) = ab\).
+
+    4. Trivially follows from \(1 = 1^2\).
+\end{proof}
 
 Let us actually discuss some examples of fields and ordered fields now.
 
