@@ -38,15 +38,15 @@ $\sigma$, at a point a height $z$. The sphere is centered at the origin.
 Notably, this problem was before he introduced Gauss's law, which just about trivializes it. The
 intended solution was just to use the cosine rule to find the distance between the infinitesimal area element as,
 
-$$r = \sqrt{R^2 + z^2 - 2Rz\cos\theta},$$
+$$\displaystyle r = \sqrt{R^2 + z^2 - 2Rz\cos\theta},$$
 
 where $\theta \in [0, \pi]$ in spherical co-ordinates. And of course, the horizontal components of the electric field cancel out, so you have a factor of,
 
-$$\cos \varphi = \frac{z - R\cos\theta}{\sqrt{R^2 + z^2 - 2Rz\cos\theta}}$$
+$$\displaystyle \cos \varphi = \frac{z - R\cos\theta}{\sqrt{R^2 + z^2 - 2Rz\cos\theta}}$$
 
 You then integrate over the surface area and get the integral,
 
-$$E_z = \frac{1}{4\pi\epsilon_0} \int_0^{\pi}\int_0^{2\pi}\frac{\sigma R^2\sin\theta(z - R\cos\theta)}{(R^2 + z^2 - 2Rz\cos\theta)^{3/2}}d\theta d\phi.$$
+$$\displaystyle E_z = \frac{1}{4\pi\epsilon_0} \int_0^{\pi}\int_0^{2\pi}\frac{\sigma R^2\sin\theta(z - R\cos\theta)}{(R^2 + z^2 - 2Rz\cos\theta)^{3/2}}d\theta d\phi.$$
 
 The solution of this integral involves some absolute values, so you need to write down the answer for
 two cases, $R < z$ and $z < R$. How annoyingly tedious!
