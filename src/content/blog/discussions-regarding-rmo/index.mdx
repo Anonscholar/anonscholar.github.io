@@ -17,13 +17,13 @@ Lets discuss problems 1, 2, and 4. I’ll add as I said P6 later. I will try to 
 ### P1
 The problem statement goes as this,
 
->Let $n>1$ be a positive integer. Call a rearrangement $a_1,a_2, \dots , a_n$ of $1,2, \dots , n$ _nice_ if for every $k = 2,3, \dots , n$, we have that$a_1 + a_2 + \cdots + a_k$ is not divisible by $k$.  
+>Let $n>1$ be a positive integer. Call a rearrangement $a_1,a_2, \dots , a_n$ of $1,2, \dots , n$ _nice_ if for every $k = 2,3, \dots , n$, we have that $a_1 + a_2 + \cdots + a_k$ is not divisible by $k$.  
 (a) If $n>1$ is odd, prove that there is no nice arrangement of $1,2, \dots , n$. 
 (b) If $n$ is even, find a _nice_ arrangement of $1,2, \dots , n$.
 
 Hmm. How do we go about this? Well, the first thing to notice is that since $(a_1, a_2, \ldots, a_n)$ is a permutation of $(1, 2, \ldots, n)$, so their *total* sum is the same. Let’s use that, 
 
-$$ a_1 + a_{2} + \cdots + a_{n} = 1 + 2 + \cdots + n = \frac{n(n+1)}{2}. $$
+$$\displaystyle a_1 + a_{2} + \cdots + a_{n} = 1 + 2 + \cdots + n = \frac{n(n+1)}{2}. $$
 
 We know that this should not be divisible by $n$ for the arrangement to be nice. Oh! But this is divisible by $n$ for odd $n$! Since $n$ is odd, $n + 1$ is even, and $n+1/2$ is an integer. So, the total sum is divisible by $n$. Welp, that finishes the first part. Quite easy.
 
@@ -124,7 +124,10 @@ Alright, nice, so now we can conclude,
 
 $$\displaystyle a_1 - a_{2} > \frac{1}{\sqrt{ 5 }}, \quad a_{2} - a_{3} > \frac{1}{\sqrt{ 5 }}, \quad a_{3} - a_{4} > \frac{1}{\sqrt{ 5 }}.$$
 
-Putting together these inequalities, $a_1 > {3} /{\sqrt{ 5 }} + a_{4}$, $a_2 > 2/\sqrt{ 5 } + a_{4}$ and $a_3 > 1/\sqrt{ 5 } + a_{4}$. Alright nice. But now what do we do? It would be nice if we could get some inequality in $a_i^2 + a_j^2$ and $(a_i - a_j)^2$. How do we do that tho? AM-GM would have been nice, but it doesn’t work. Or does it not? We can use the inequality that $a^2 \ge 0$, for all $a \in \mathbb{R}$. So, $$(a+b)^2 \ge 0 \implies a^2 + b^2 \ge -2ab.$$
+Putting together these inequalities, $a_1 > {3} /{\sqrt{ 5 }} + a_{4}$, $a_2 > 2/\sqrt{ 5 } + a_{4}$ and $a_3 > 1/\sqrt{ 5 } + a_{4}$. Alright nice. But now what do we do? It would be nice if we could get some inequality in $a_i^2 + a_j^2$ and $(a_i - a_j)^2$. How do we do that tho? AM-GM would have been nice, but it doesn’t work. Or does it not? We can use the inequality that $a^2 \ge 0$, for all $a \in \mathbb{R}$. So, 
+
+$$(a+b)^2 \ge 0 \implies a^2 + b^2 \ge -2ab.$$
+
 We used $(a+b)^2$ to ensure that we get a negative sign with $2ab$, this is because now we can add $a^2 + b^2$ to both sides, to get, 
 
 $$\displaystyle a^2 + b^2 \ge \frac{(a-b)^2}{2}.$$
