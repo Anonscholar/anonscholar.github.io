@@ -18,19 +18,27 @@ Lets discuss problems 1, 2, and 4. I’ll add as I said P6 later. I will try to 
 The problem statement goes as this,
 
 >Let $n>1$ be a positive integer. Call a rearrangement $a_1,a_2, \dots , a_n$ of $1,2, \dots , n$ _nice_ if for every $k = 2,3, \dots , n$, we have that$a_1 + a_2 + \cdots + a_k$ is not divisible by $k$.  
-(a) If $n>1$ is odd, prove that there is no nice arrangement of $1,2, \dots , n$.
+>
+(a) If $n>1$ is odd, prove that there is no nice arrangement of $1,2, \dots , n$. 
 (b) If $n$ is even, find a _nice_ arrangement of $1,2, \dots , n$.
 
-Hmm. How do we go about this? Well, the first thing to notice is that since $(a_1, a_2, \ldots, a_n)$ is a permutation of $(1, 2, \ldots, n)$, so their *total* sum is the same. Let’s use that, $$ a_1 + a_{2} + \cdots + a_{n} = 1 + 2 + \cdots + n = \frac{n(n+1)}{2}. $$We know that this should not be divisible by $n$ for the arrangement to be nice. Oh! But this is divisible by $n$ for odd $n$! Since $n$ is odd,
+Hmm. How do we go about this? Well, the first thing to notice is that since $(a_1, a_2, \ldots, a_n)$ is a permutation of $(1, 2, \ldots, n)$, so their *total* sum is the same. Let’s use that, 
+
+$$ a_1 + a_{2} + \cdots + a_{n} = 1 + 2 + \cdots + n = \frac{n(n+1)}{2}. $$We know that this should not be divisible by $n$ for the arrangement to be nice. Oh! But this is divisible by $n$ for odd $n$! Since $n$ is odd,
 $n + 1$ is even, and $n+1/2$ is an integer. So, the total sum is divisible by $n$. Welp, that finishes the first part. Quite easy.
 
 What about (b)? That’s atleast a little more interesting. Let’s see. 
 
 Its a nice idea often, to consider what’s the most basic re-arrangement we can make?
 
-Well, we could let the permutation be one that does not change the order at all. So, the arrangement $(1, 2, \dots, n)$. But this doesn’t work, for odd $n$, this divides the sum similar to what we had in part (a). It would be nice if the sum for even terms did not change (since the sum of even terms is not divisible by $k$), but we could change it for odd terms. Hmm. Well, what if we reverse the terms every two terms?$$2, 1, 4, 3, \dots, n-1, n.$$Well, now the sum for even terms is still unchanged! We merely switched the numbers in interval of $2$’s after all. But the sum for odd number changes. Now, the sum for odd terms is (till $k$ where $k$ is odd), 
+Well, we could let the permutation be one that does not change the order at all. So, the arrangement $(1, 2, \dots, n)$. But this doesn’t work, for odd $n$, this divides the sum similar to what we had in part (a). It would be nice if the sum for even terms did not change (since the sum of even terms is not divisible by $k$), but we could change it for odd terms. Hmm. Well, what if we reverse the terms every two terms?
+
+$$2, 1, 4, 3, \dots, n-1, n.$$Well, now the sum for even terms is still unchanged! We merely switched the numbers in interval of $2$’s after all. But the sum for odd number changes. Now, the sum for odd terms is (till $k$ where $k$ is odd), 
+
+
 $$\text{ Sum till } k-1 \text{ terms} + (k + 1),$$
 since $k-1$ is even, so the sum is the same as $1 + \cdots + k-1$, and our sum till $k$ terms for odd $k$ becomes,
+
 $$\frac{k(k-1)}{2} + k + 1 = \frac{k(k+1)}{2} + 1.$$
 But since $k$ is odd, $k(k+1)/2$ is divisible by $k$, and thus $k(k+1)/2 + 1$ is not! We are done here.
 
@@ -41,30 +49,58 @@ To be fair, maybe I am stretching it a bit with how natural the construction is.
 Alright. Let’s maybe try to work $R(n)$ out for some numbers first, to see if we get any ideas. Note that the remainder when $n$ divides $n$ is of course $0$, so we just calculate till $n-1$ (and I have to type less).
 
 $$R(1) = 0$$
+
 $$R(2)  = 0$$
+
 $$R(3)  = 0 + 1 = 1$$
+
 $$R(4)  = 0 + 0 + 1 = 1$$
+
 $$R(5)  = 0 + 1 + 2 + 1 = 4$$
+
 $$R(6)  = 0 + 0 + 0 + 2 + 1 =3$$
+
 $$R(7)  = 0 + 1 + 1 + 3 + 2 + 1 = 8$$
+
 $$R(8)  = 0 + 0 + 2 + 0 + 3 + 2 + 1 = 8$$
+
 $$R(9)  = 0 + 1 + 0 + 1 + 4 + 3 + 2 + 1 = 12$$
+
 $$R(10)  = 0 + 0 + 1 + 2 + 0 + 4 + 3 + 2 + 1 = 13 $$
+
 $$R(11)  = 0 + 1 + 2 + 3 + 1 + 5 + 4 + 3 + 2 + 1 = 22.$$
 
 Seems like the answer should not be greater than $8$, as the $R(n)$ seems to bigger than $n - 1$ there. And also, we can kind of see some pattern, at the end of our sum. The last terms seem to be in a sum of first $k$ natural numbers. $2 + 1, 3 + 2 + 1, 4 + 3 + 2 + 1,$ etc. How do we rigourise either ideas?
 
 If you consider the sums carefully, the “turning point”, from where it becomes a sum of first $k$ natural numbers, starts near $n/2$ (or to be 
-precise, $\lceil {n/2}\rceil$). Hmm, what is the interesting point about that number? It seems that after $\left\lfloor  \frac{n}{2}  \right\rfloor$, the remainder when $n$ is divided by $i$ is
-$n-i$. Considering them mod $i$,  $$ n - i \equiv n \pmod{i},$$
-which is true in general. So what makes it a remainder after $\left\lfloor  \frac{n}{2}  \right\rfloor$? Well, if we have some $n \equiv r \pmod i$, it is the remainder of $n$ when divided by $i$, iff $0 \le r < i$. This is apparent in Euclid’s division lemma. Note that, $$n> i > \frac{n}{2} \implies i > n - i > 0,$$ so that $n-i$ is the remainder when $i > n/2$. Pretty nice.
+precise, $\lceil {n/2}\rceil$). Hmm, what is the interesting point about that number? It seems that after $\left\lfloor  \frac{n}{2}  \right\rfloor$, the remainder when $n$ is divided by $i$ is $n-i$. 
 
-So for even numbers. The sum of remainders from $n/2 \to n - 1$ is just, $$\sum_{i ={n}/{2} + 1}^{n-1} n-i = \sum_{i =1}^{n/2 - 1} i = 1 + \cdots + \frac{n - 2}{2} = \frac{n(n-2)}{8}.$$
-For odd numbers, the sum begins from $1$ and goes till $(n-1)/2$. So that the sum is $(n-1)(n+1)/8$. Note that,$$ \forall n \in \mathbb{N}, (n-1)(n+1) > (n)(n-2).$$ Which you can verify by expanding the terms. Anyways, so the sum of first $k$ terms we had at the end of series is $\ge n(n-2)/8$. What can we do with this? It’s clear that $R(n)$ is greater than this (we didn’t consider the first few terms), so it would nice if we can show $n(n-2)/8 > n -1$ for some interval. Let’s try,
+Considering them mod $i$,  
 
-$$\frac{n(n-2)}{8} > n -1 \implies n \in (-\infty, 5 - \sqrt{17}) \cup (5 + \sqrt{ 17 }, \infty).$$
-The first interval is useless as we are dealing with naturals. But the second isn’t. Since $10 > 5 + \sqrt{ 17 }$, it follows that for all $n \ge 10$,
-$n(n-2)/8 > n -1$. Since $R(n)$ is greater than this, we have, $$\forall n \ge 10, R(n) > n -1.$$
+$$n - i \equiv n \pmod{i},$$
+
+which is true in general. So what makes it a remainder after $\left\lfloor  \frac{n}{2}  \right\rfloor$? Well, if we have some $n \equiv r \pmod i$, it is the remainder of $n$ when divided by $i$, iff $0 \le r < i$. This is apparent in Euclid’s division lemma. Note that, 
+
+$$\displaystyle n> i > \frac{n}{2} \implies i > n - i > 0,$$
+
+so that $n-i$ is the remainder when $i > n/2$. Pretty nice.
+
+So for even numbers. The sum of remainders from $n/2 \to n - 1$ is just, 
+
+$$\displaystyle\sum_{i ={n}/{2} + 1}^{n-1} n-i = \sum_{i =1}^{n/2 - 1} i = 1 + \cdots + \frac{n - 2}{2} = \frac{n(n-2)}{8}. $$
+
+For odd numbers, the sum begins from $1$ and goes till $(n-1)/2$. So that the sum is $(n-1)(n+1)/8$. Note that,
+
+$$ \forall n \in \mathbb{N}, (n-1)(n+1) > (n)(n-2).$$ 
+
+Which you can verify by expanding the terms. Anyways, so the sum of first $k$ terms we had at the end of series is $\ge n(n-2)/8$. What can we do with this? It’s clear that $R(n)$ is greater than this (we didn’t consider the first few terms), so it would nice if we can show $n(n-2)/8 > n -1$ for some interval. Let’s try,
+
+$$\displaystyle\frac{n(n-2)}{8} > n -1 \implies n \in (-\infty, 5 - \sqrt{17}) \cup (5 + \sqrt{ 17 }, \infty).$$
+
+The first interval is useless as we are dealing with naturals. But the second isn’t. Since $10 > 5 + \sqrt{ 17 }$, it follows that for all $n \ge 10$, $n(n-2)/8 > n -1$. Since $R(n)$ is greater than this, we have, 
+
+$$\forall n \ge 10, R(n) > n -1.$$
+
 So all our solutions are from $1$ to $9$. Checking our earlier list, $1, 5$ are the only solutions. 
 
 We could have actually made a bound for $>8$, if we wanted, but I feel like this is much more “natural”. That’s the kind of solutions I am trying to get at here.
@@ -74,13 +110,25 @@ We could have actually made a bound for $>8$, if we wanted, but I feel like this
 
 Alright, there are a couple of issues now. Most importantly, $a_i$ are real numbers, *not* positive or negative reals. Any AM-GM type thing fails. But also, this feels like less of an inequality question and more of a pigeonhole one. What if there do not exist such $i, j$? 
 
-Let’s assume that. We assume that for all $1 \le i < j \le 4$, $$(a_{i} - a_{j})^2 > \frac{1}{5}.$$  Alright. Now if $a_i - a_j$ was positive, we could directly conclude $a_i - a_j > 1/\sqrt{ 5 }$. How do we make this true? The thing is that the indices don’t really matter. We can assume without loss of generality, $a_1 \ge a_2 \ge a_3 \ge a_4$. Because if we have some numbers that satisfy the condition, we can simply label the largest $a_1$ and so on.
+Let’s assume that. We assume that for all $1 \le i < j \le 4$, 
 
-Alright, nice, so now we can conclude, $$a_1 - a_{2} > \frac{1}{\sqrt{ 5 }}, \quad a_{2} - a_{3} > \frac{1}{\sqrt{ 5 }}, \quad a_{3} - a_{4} > \frac{1}{\sqrt{ 5 }}.$$
+$$\displaystyle (a_{i} - a_{j})^2 > \frac{1}{5}.$$  
+
+Alright. Now if $a_i - a_j$ was positive, we could directly conclude $a_i - a_j > 1/\sqrt{ 5 }$. How do we make this true? The thing is that the indices don’t really matter. We can assume without loss of generality, $a_1 \ge a_2 \ge a_3 \ge a_4$. Because if we have some numbers that satisfy the condition, we can simply label the largest $a_1$ and so on.
+
+Alright, nice, so now we can conclude, 
+
+$$\displaystyle a_1 - a_{2} > \frac{1}{\sqrt{ 5 }}, \quad a_{2} - a_{3} > \frac{1}{\sqrt{ 5 }}, \quad a_{3} - a_{4} > \frac{1}{\sqrt{ 5 }}.$$
+
 Putting together these inequalities, $a_1 > {3} /{\sqrt{ 5 }} + a_{4}$, $a_2 > 2/\sqrt{ 5 } + a_{4}$ and $a_3 > 1/\sqrt{ 5 } + a_{4}$. Alright nice. But now what do we do? It would be nice if we could get some inequality in $a_i^2 + a_j^2$ and $(a_i - a_j)^2$. How do we do that tho? AM-GM would have been nice, but it doesn’t work. Or does it not? We can use the inequality that $a^2 \ge 0$, for all $a \in \mathbb{R}$. So, $$(a+b)^2 \ge 0 \implies a^2 + b^2 \ge -2ab.$$
-We used $(a+b)^2$ to ensure that we get a negative sign with $2ab$, this is because now we can add $a^2 + b^2$ to both sides, to get, $$a^2 + b^2 \ge \frac{(a-b)^2}{2}.$$
-We are almost done now. Consider two inequalities formed using the above relation, once substituting $a, b$ with $a_1, a_4$ and second
-time with $a_2, a_3$. So, adding them, $$\sum a_{i}^2 \ge \frac{(a_1 - a_{4})^2}{2} + \frac{(a_2 - a_{3})^2}{2} > \frac{1}{2}\left( \frac{9}{5} + \frac{1}{5}\right) = 1.$$
+We used $(a+b)^2$ to ensure that we get a negative sign with $2ab$, this is because now we can add $a^2 + b^2$ to both sides, to get, 
+
+$$\displaystyle a^2 + b^2 \ge \frac{(a-b)^2}{2}.$$
+
+We are almost done now. Consider two inequalities formed using the above relation, once substituting $a, b$ with $a_1, a_4$ and second time with $a_2, a_3$. So, adding them, 
+
+$$\displaystyle\sum a_{i}^2 \ge \frac{(a_1 - a_{4})^2}{2} + \frac{(a_2 - a_{3})^2}{2} > \frac{1}{2}\left( \frac{9}{5} + \frac{1}{5}\right) = 1.$$
+
 Where the second inequality follows from what we have derived earlier ($a_1 > a_3 + 3/\sqrt{ 5 }$, etc.). So this gives us that $a_1^2 + a_2^2 + a_3^2 + a_4^2 > 1$. But we have from the problem statement, $a_1^2 + a_2^2 + a_3^2 + a_4^2 = 1$. A contradiction! Hence we are done.
 
 I made this much more longer than I thought I would, and the solutions I think are pretty motivating. Hopefully they do actually help because this took way too much time. Now I won’t give too much time talking about other stuff, so let’s quickly get an overview of it.
