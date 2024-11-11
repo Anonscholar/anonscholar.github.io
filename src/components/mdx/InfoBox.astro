@@ -2,15 +2,17 @@
 import { Icon } from 'astro-icon/components'
 
 interface Props {
-  type?: 'default' | 'info' | 'warning' | 'flag' | 'destructive'
+  type?: 'problem' | 'info' | 'warning' | 'flag' | 'destructive'
 }
 
 const { type = 'default' } = Astro.props
 
 const typeMapping = {
-  default: {
-    icon: 'lucide:lightbulb',
-    classes: 'bg-primary/20',
+  problem: {
+    icon: 'ph:question-thin',
+    classes: 
+      'border-red-200/50 bg-red-100/50 dark:border-red-800/50 dark:bg-red-900/50',
+
   },
   info: {
     icon: 'lucide:info',
@@ -42,3 +44,4 @@ const { icon, classes } = typeMapping[type]
     <slot />
   </div>
 </div>
+
