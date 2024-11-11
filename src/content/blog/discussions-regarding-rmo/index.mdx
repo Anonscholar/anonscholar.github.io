@@ -18,11 +18,14 @@ Lets discuss problems 1, 2, and 4. I’ll add as I said P6 later. I will try to 
 
 ### P1, An easy construction.
 The problem statement goes as this,
+<InfoBox type="problem">
+    Let $n>1$ be a positive integer. Call a rearrangement $a_1,a_2, \dots , a_n$ of $1,2, \dots , n$ _nice_ if for every ${} k = 2,3, \dots , n {}$, we have that $a_1 + a_2 + \cdots + a_k$ is not divisible by $k$.  
 
->Let $n>1$ be a positive integer. Call a rearrangement $a_1,a_2, \dots , a_n$ of $1,2, \dots , n$ _nice_ if for every ${} k = 2,3, \dots , n {}$, we have that $a_1 + a_2 + \cdots + a_k$ is not divisible by $k$.  
->
->1. If $n>1$ is odd, prove that there is no nice arrangement of $1,2, \dots , n$. 
->2. If $n$ is even, find a _nice_ arrangement of $1,2, \dots , n$.
+    1. If $n>1$ is odd, prove that there is no nice arrangement of $1,2, \dots , n$. 
+    2. If $n$ is even, find a _nice_ arrangement of $1,2, \dots , n$.
+</InfoBox>
+
+
 
 Hmm. How do we go about this? Well, the first thing to notice is that since $(a_1, a_2, \ldots, a_n)$ is a permutation of $(1, 2, \ldots, n)$, so their *total* sum is the same. Let’s use that, 
 
@@ -130,8 +133,11 @@ So all our solutions are from $1$ to $9$. Checking our earlier list, $1, 5$ are 
 We could have actually made a bound for $>8$, if we wanted, but I feel like this is much more “natural”. That’s the kind of solutions I am trying to get at here.
 
 ### P4, Trap inequality.
->Let $a_1,a_2,a_3,a_4$ be real numbers such that $a_1^2 + a_2^2 + a_3^2 + a_4^2 = 1$. 
->Show that there exist $i,j$ with $1 \leq i < j \leq 4$, such that ${} (a_i - a_j)^2 \le \frac{1}{5}$. 
+
+<InfoBox type="problem">
+    Let $a_1,a_2,a_3,a_4$ be real numbers such that $a_1^2 + a_2^2 + a_3^2 + a_4^2 = 1$. 
+    Show that there exist $i,j$ with $1 \leq i < j \leq 4$, such that ${} (a_i - a_j)^2 \le \frac{1}{5}$. 
+</InfoBox>
 
 Alright, there are a couple of issues now. Most importantly, $a_i$ are real numbers, *not* positive or negative reals. Any AM-GM type thing fails. But also, this feels like less of an inequality question and more of a pigeonhole one. What if there do not exist such $i, j$? 
 
