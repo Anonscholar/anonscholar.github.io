@@ -21,18 +21,16 @@
 @font-face {
   font-family: 'JetBrains';
   src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2-variations');
-  font-weight: 400;
+  font-weight: 100 800;
   font-style: normal;
-  font-size: 10px;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'JetBrains';
   src: url('/fonts/JetBrainsMono-Italic.woff2') format('woff2-variations');
-  font-weight: 400;
+  font-weight: 100 800;
   font-style: italic;
-  font-size: 10px;
   font-display: swap;
 }
 
