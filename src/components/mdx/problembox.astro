@@ -1,0 +1,43 @@
+---
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+  type?: 'problem' | 'remark' | 'example' | 'solution' | 'note'
+}
+
+const { type = 'problem' } = Astro.props
+
+const typeMapping = {
+  problem: {
+    icon: 'lucide:edit-3',
+    classes: 'bg-red-100/50 border-red-200 dark:bg-red-900/50 dark:border-red-800',
+  },
+  remark: {
+    icon: 'lucide:message-square',
+    classes: 'bg-blue-100/50 border-blue-200 dark:bg-blue-900/50 dark:border-blue-800',
+  },
+  example: {
+    icon: 'lucide:book-open',
+    classes: 'bg-green-100/50 border-green-200 dark:bg-green-900/50 dark:border-green-800',
+  },
+  solution: {
+    icon: 'lucide:check-circle',
+    classes: 'bg-teal-100/50 border-teal-200 dark:bg-teal-900/50 dark:border-teal-800',
+  },
+  note: {
+    icon: 'lucide:sticky-note',
+    classes: 'bg-yellow-100/50 border-yellow-200 dark:bg-yellow-900/50 dark:border-yellow-800',
+  },
+}
+
+const { icon, classes } = typeMapping[type]
+---
+
+<div class={`relative my-6 flex gap-4 rounded-xl border p-4 ${classes}`}>
+  <span class="text-md pointer-events-none select-none">
+    <Icon name={icon} size={20} class="translate-y-0.5" />
+  </span>
+  <div class="-my-4 prose-code:break-all">
+    <slot />
+  </div>
+</div>
