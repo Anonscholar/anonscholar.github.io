@@ -89,6 +89,11 @@
       @apply overflow-x-auto overflow-y-hidden py-4;
     }
 
+     /* Fixing Katex fractions */
+     .frac-line {
+      @apply border-foreground;
+    }
+    
     /* Removes background from <mark> elements */
     mark {
       @apply bg-transparent;
