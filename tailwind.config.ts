@@ -7,7 +7,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Iosevka', ...defaultTheme.fontFamily.sans],
+        sans: ['JetBrains', ...defaultTheme.fontFamily.sans],
         mono: ['Iosevka', ...defaultTheme.fontFamily.mono],
       },
       colors: {
