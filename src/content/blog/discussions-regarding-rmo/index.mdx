@@ -61,17 +61,19 @@ To be fair, maybe I am stretching it a bit with how natural the construction is.
 Alright. Let’s maybe try to work $R(n)$ out for some numbers first, to see if we get any ideas. Note that the remainder when $n$ divides $n$ is of course $0$, so we just calculate till $n-1$ (and I have to type less).
 
 $$
-R(1) &= 0 \\\\
-R(2)  &= 0 \\\\
-R(3)  &= 0 + 1 = 1 \\\\
-R(4)  &= 0 + 0 + 1 = 1 \\\\
-R(5)  &= 0 + 1 + 2 + 1 = 4 \\\\
-R(6)  &= 0 + 0 + 0 + 2 + 1 =3 \\\\
-R(7)  &= 0 + 1 + 1 + 3 + 2 + 1 = 8 \\\\
-R(8)  &= 0 + 0 + 2 + 0 + 3 + 2 + 1 = 8 \\\\
-R(9)  &= 0 + 1 + 0 + 1 + 4 + 3 + 2 + 1 = 12 \\\\
-R(10)  &= 0 + 0 + 1 + 2 + 0 + 4 + 3 + 2 + 1 = 13 \\\\
+\begin{align}
+R(1) &= 0 \\
+R(2)  &= 0 \\
+R(3)  &= 0 + 1 = 1 \\
+R(4)  &= 0 + 0 + 1 = 1 \\
+R(5)  &= 0 + 1 + 2 + 1 = 4 \\
+R(6)  &= 0 + 0 + 0 + 2 + 1 =3 \\
+R(7)  &= 0 + 1 + 1 + 3 + 2 + 1 = 8 \\
+R(8)  &= 0 + 0 + 2 + 0 + 3 + 2 + 1 = 8 \\
+R(9)  &= 0 + 1 + 0 + 1 + 4 + 3 + 2 + 1 = 12 \\
+R(10)  &= 0 + 0 + 1 + 2 + 0 + 4 + 3 + 2 + 1 = 13 \\
 R(11)  &= 0 + 1 + 2 + 3 + 1 + 5 + 4 + 3 + 2 + 1 = 22.
+\end{align}
 $$
 
 Seems like the answer should not be greater than $8$, as the $R(n)$ seems to bigger than $n - 1$ there. And also, we can kind of see some pattern, at the end of our sum. The last terms seem to be in a sum of first $k$ natural numbers. $2 + 1, 3 + 2 + 1, 4 + 3 + 2 + 1,$ etc. How do we rigourise either ideas?
