@@ -92,8 +92,8 @@
     ::-webkit-scrollbar-corner {
       @apply bg-transparent;
     }
-    
-    font-size: 16px; 
+
+    font-size: 24px; 
   }
 
   .disable-transitions,
