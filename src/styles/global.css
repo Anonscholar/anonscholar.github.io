@@ -5,16 +5,33 @@
 @font-face {
   font-family: 'Iosevka';
   src: url('/fonts/IosevkaSlab-Regular.woff2') format('woff2');
-  font-weight: 100;
+  font-weight: 100 800;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Iosevka';
+  src: url('/fonts/IosevkaSlab-Italic.woff2') format('woff2');
+  font-weight: 100;
+  font-style: italic;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'JetBrains';
   src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2-variations');
-  font-weight: 100;
+  font-weight: 100 800;
   font-style: normal;
+  font-size: small;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains';
+  src: url('/fonts/JetBrainsMono-Italic.woff2') format('woff2-variations');
+  font-weight: 100;
+  font-style: italic;
   font-size: small;
   font-display: swap;
 }
