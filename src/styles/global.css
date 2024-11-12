@@ -13,7 +13,7 @@
 @font-face {
   font-family: 'Audrey';
   src: url('/fonts/Audrey-NormalOblique.woff') format('woff');
-  font-weight: 100 800;
+  font-weight: 1000;
   font-style: italic;
   font-display: swap;
 }
@@ -21,7 +21,7 @@
 @font-face {
   font-family: 'Audrey';
   src: url('/fonts/Audrey-Normal.woff') format('woff');
-  font-weight: 100 800;
+  font-weight: 1000;
   font-style: normal;
   font-display: swap;
 }
@@ -108,7 +108,7 @@
       @apply bg-transparent;
     }
 
-    font-size: 18px; 
+    font-size: 20px; 
   }
 
   .disable-transitions,
