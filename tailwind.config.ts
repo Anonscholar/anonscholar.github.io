@@ -7,7 +7,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Baskerville', ...defaultTheme.fontFamily.sans],
+        sans: ['COM4t', ...defaultTheme.fontFamily.sans],
         mono: ['JetBrains', ...defaultTheme.fontFamily.mono],
       },
       colors: {
