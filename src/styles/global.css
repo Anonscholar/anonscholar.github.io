@@ -48,7 +48,7 @@
   font-family: 'Emberly';
   src: url('/fonts/Emberly-RegularItalic.woff2') format('woff2'), /* Modern Browsers */
        url('/fonts/Emberly-RegularItalic.otf') format('opentype'); /* Safari, Android, iOS */
-           font-style: normal;
+           font-style: italic;
   font-weight: normal;
   text-rendering: optimizeLegibility;
 }
