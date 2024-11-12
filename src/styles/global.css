@@ -36,6 +36,25 @@
 }
 
 @font-face {
+  font-family: 'Emberly';
+  src: url('Emberly-Regular.woff2') format('woff2'), /* Modern Browsers */
+       url('Emberly-Regular.otf') format('opentype'); /* Safari, Android, iOS */
+           font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: 'Emberly';
+  src: url('Emberly-RegularItalic.woff2') format('woff2'), /* Modern Browsers */
+       url('Emberly-RegularItalic.otf') format('opentype'); /* Safari, Android, iOS */
+           font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+
+@font-face {
   font-family: 'JetBrains';
   src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2-variations');
   font-weight: 100 800;
