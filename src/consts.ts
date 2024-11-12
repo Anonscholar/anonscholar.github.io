@@ -13,9 +13,9 @@ export type Link = {
 }
 
 export const SITE: Site = {
-  TITLE: 'Poetic Ramblings',
+  TITLE: 'Thoughts.',
   DESCRIPTION:
-    'thoughts of a guy who wants to live.',
+    'a journey into marvels of science and arts.',
   EMAIL: 'adyanshmishra@proton.me',
   NUM_POSTS_ON_HOMEPAGE: 2,
   POSTS_PER_PAGE: 3,
