@@ -11,6 +11,23 @@
 }
 
 @font-face {
+  font-family: 'Audrey';
+  src: url('/fonts/Audrey-NormalOblique.woff') format('woff');
+  font-weight: 100 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Audrey';
+  src: url('/fonts/Audrey-Normal.woff') format('woff');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
   font-family: 'Iosevka';
   src: url('/fonts/IosevkaSlab-Italic.woff2') format('woff2');
   font-weight: 100;
