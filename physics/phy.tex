@@ -13,9 +13,62 @@
 
 \begin{document}
 %https://tex.stackexchange.com/questions/249475/index-hyperlink-not-pointing-to-correct-page
-\pagenumbering{roman}
+\pagestyle{empty}
 
-    \titleSW
+\NewCoffin \result
+\NewCoffin \aaa
+\NewCoffin \bbb
+\NewCoffin \ccc
+\NewCoffin \ddd
+\NewCoffin \eee
+\NewCoffin \fff
+\NewCoffin \rulei
+\NewCoffin \ruleii
+\NewCoffin \ruleiii
+
+\SetHorizontalCoffin \result {}
+\SetHorizontalCoffin \aaa {\fontsize{52}{50}\sffamily\bfseries Physics}
+\SetHorizontalCoffin \bbb {\fontsize{52}{50}\sffamily\bfseries Undergraduate}
+\SetHorizontalCoffin \ccc {\fontsize{12}{10}\sffamily
+                    \quad Licensed under MIT. v.0.1.\today
+                   \textbullet{} November, 2024}
+\SetHorizontalCoffin \ddd {\fontsize{28}{20}\sffamily v.0.1.\today}
+\SetVerticalCoffin \eee {180pt}
+               {\raggedleft\fontsize{31}{36}\sffamily\bfseries
+               Ascholar}
+\SetVerticalCoffin \fff {140pt}
+               {\raggedright \fontsize{13}{14}\sffamily\bfseries
+                     A foray into \\
+                     undergrad physics \\
+                     with a problem solving \\
+                      approach, \\
+                      without pulling any\\
+                     mathematical wool\\
+                     for an aspiring\\
+                     physicist. \\
+                     \href{https://github.com/Anonscholar}{Source Code}.\\}
+
+\RotateCoffin \bbb {90}
+\RotateCoffin \ccc {270}
+
+\SetHorizontalCoffin \rulei  {\color{red}\rule{6.5in}{1pc}}
+\SetHorizontalCoffin \ruleii {\color{red}\rule{1pc}{23.5cm}}
+\SetHorizontalCoffin \ruleiii{\color{black}\rule{10pt}{152pt}}
+
+
+\JoinCoffins \result                \aaa
+\JoinCoffins \result[\aaa-t,\aaa-r] \rulei   [b,r](0pt,2mm)
+\JoinCoffins \result[\aaa-b,\aaa-l] \bbb     [B,r](-90pt,5pt)
+\JoinCoffins \result[\bbb-t,\bbb-r] \ruleii  [t,r](-2mm,0pt)
+\JoinCoffins \result[\aaa-B,\aaa-r] \ccc     [B,l](66pt,14pc)
+\JoinCoffins \result[\bbb-l,\ccc-B] \fff     [t,r](-2mm,0pt)
+\JoinCoffins \result[\fff-b,\fff-r] \ruleiii [b,l](2mm,0pt)
+\JoinCoffins \result[\ccc-r,\fff-l] \eee     [B,r] (0pt, -10em)
+\JoinCoffins \result[\eee-T,\eee-r] \ddd     [B,r](4pt,4pc)
+
+\TypesetCoffin \result
+
+\newpage
 
     \frontmatter
     \pagestyle{empty}

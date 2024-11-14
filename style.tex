@@ -1,10 +1,12 @@
 
+\usepackage{amsmath, amssymb}
+
 \usepackage[no-math]{fontspec}
 \setmainfont{Baskerville}[
   BoldFont={* Semibold},
 ]
 
-\usepackage{amsmath, amssymb}
+\setsansfont{Emberly}
 
 \nonzeroparskip
 \usepackage[right=7.5cm,left=2.5cm,bottom=1cm,top=1cm,marginparwidth=5.5cm,marginparsep=1cm,includeheadfoot,asymmetric]{geometry}
@@ -111,7 +113,7 @@
 \renewcommand{\dateseparator}{.}
 \usepackage{caption}
 \usepackage{paralist}
-\usepackage{graphicx}
+\usepackage{graphicx, multicol, xcoffins}
 \usepackage[factor=100,stretch=10,shrink=10]{microtype} % better spacing
 \usepackage{wrapfig}
 \usepackage{import}
@@ -282,21 +284,6 @@ urlcolor=blueaf!80!black,
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%title page
-
-\newcommand*{\titleSW}{\begin{titlingpage}
-\newgeometry{left=10cm}
-\begingroup% Story of Writing
-\raggedleft
-\vspace*{\baselineskip}
-{\HUGE\itshape \thetitle}\\[\baselineskip]
-\vspace{3em}
-{\printauthor ~ \\ Version: 0.1\today}
-\vfill
-\vspace*{\baselineskip}
-\endgroup
-\restoregeometry
-\end{titlingpage}}
 
 \usepackage{ellipsis}
 
