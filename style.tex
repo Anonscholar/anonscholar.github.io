@@ -1,14 +1,24 @@
 
 \usepackage{amsmath, amssymb}
 
+%for using baskerville
+
 \usepackage[no-math]{fontspec}
 \setmainfont{Baskerville}[
   BoldFont={* Semibold},
 ]
 
-\setsansfont{Emberly}
+%for headings
+
+\setsansfont{Aboreto}
+
+%setting up paras without indentation.
 
 \nonzeroparskip
+\setlength{\parindent}{0em}
+
+%margin setup
+
 \usepackage[right=7.5cm,left=2.5cm,bottom=1cm,top=1cm,marginparwidth=5.5cm,marginparsep=1cm,includeheadfoot,asymmetric]{geometry}
 
 \usepackage[texindy]{imakeidx}
@@ -16,11 +26,9 @@
 
 
 \usepackage[dvipsnames]{xcolor}
-
 \usepackage{etoolbox}
 
 \usepackage{booktabs, tabularx}
-\setlength{\parindent}{0em}
 
 \usepackage{dsfont}
 
@@ -236,6 +244,8 @@ urlcolor=blueaf!80!black,
 \renewcommand*{\partnumfont}{\color{black}\normalfont\itshape}
 
 \setsechook{\hangsecnum}
+\setsecheadstyle{\sffamily}% Set \section style
+\setsubsecheadstyle{\sffamily\normalsize}% Set \subsection style
 
 \makeatletter
 
@@ -364,41 +374,10 @@ urlcolor=blueaf!80!black,
   \renewcommand{\fnum@figure}{
   {\large\scshape\figurename~\thefigure}}
 \makeatother
-\renewcommand{\footnotesize}{\fontsize{10pt}{12pt}\selectfont} % Change footnotesize to 10pt
+\renewcommand{\footnotesize}{\fontsize{11pt}{12pt}\selectfont} % Change footnotesize to 10pt
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{minitoc}     % For generating chapter-local TOCs
-
-% Initialize the minitoc package
-\dominitoc[n]
-\setcounter{minitocdepth}{1}   % Show until sections in minitoc
-\nomtcrule    % removes rules = horizontal lines  Define the command to create a local TOC in the margin without subsections
-
-\undottedmtctrue
-
-\newcommand{\margintoc}{
-  \marginnote{
-    \vspace{-10em}
-    \begin{minipage}[t]{7.5cm}
-      {\minitoc} % This will use the depth set previously in \dominitoc
-    \end{minipage}
-  }
-}
-
-% Start of subappendices environment
-\AtBeginEnvironment{subappendices}{%
-\chapter*{Appendices}
-\addcontentsline{toc}{chapter}{Appendices}
-\counterwithin{figure}{section}
-\counterwithin{table}{section}
-}
-
-% End of subappendices environment
-\AtEndEnvironment{subappendices}{%
-\counterwithout{figure}{section}
-\counterwithout{table}{section}
-}
 
 \tikzset{axis/.style={thick,-latex}}
 \tikzset{vec/.style={thick,blue}}

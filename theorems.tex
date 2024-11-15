@@ -38,28 +38,6 @@
 {\endmdf@trivlist\color@endgroup\@doendpe}
 {}{}
 
-\mdfdefinestyle{mdbluebox}{%
-    roundcorner=1pt,
-    linewidth=1pt,
-    skipabove=12pt,
-    skipbelow=7pt,
-    innertopmargin=12pt,
-    innerbottommargin=9pt,
-    linecolor=RoyalBlue!35,
-    nobreak=true,
-    backgroundcolor=RoyalBlue!4,
-    shadow=true,
-    shadowsize=4.7pt,
-    shadowcolor=black!30,
-}
-\declaretheoremstyle[
-headfont=\sffamily\bfseries\color{RoyalBlue},
-mdframed={style=mdbluebox},
-headpunct={\\[2pt]},
-postheadspace={0pt},
-postheadhook={\textcolor{RoyalBlue!60}{\rule[.6ex]{\textwidth}{0.4pt}} \\ }, % \\ removed
-bodyfont=\itshape,
-]{thmbluebox}
 
 \mdfdefinestyle{mdredbox}{%
     skipbelow=2pt,
@@ -119,65 +97,6 @@ spaceabove=2pt,
 spacebelow=0pt,
 mdframed={style=mdblackbox}
 ]{thmblackbox}
-
-\mdfdefinestyle{mdpurplebox}{%
-    roundcorner=1pt,
-    linewidth=1pt,
-    skipabove=12pt,
-    skipbelow=7pt,
-    innertopmargin=12pt,
-    innerbottommargin=9pt,
-    linecolor=Orchid!35,
-    nobreak=true,
-    backgroundcolor=Orchid!10,
-    shadow=true,
-    shadowsize=4pt,
-    shadowcolor=black!30,
-}
-\declaretheoremstyle[
-headfont=\sffamily\bfseries\color{Orchid},
-mdframed={style=mdpurplebox},
-headpunct={\\[2pt]},
-postheadspace={0pt},
-postheadhook={\textcolor{Orchid!80}{\rule[.6ex]{\textwidth}{0.4pt}} \\ }, % \\ removed
-]{thmpurplebox}
-\newcommand{\listhack}{$\empty$\vspace{-2em}}
-
-
-\mdfdefinestyle{mdsiennamargin}{%
-    skipabove=8pt,
-    linewidth=2pt,
-    leftline=true,
-    rightline=false,
-    bottomline=false,
-    topline=false,
-    linecolor=RoyalBlue,
-    backgroundcolor=RoyalBlue!2,
-}
-\declaretheoremstyle[
-headfont=\bfseries\rmfamily\color{purple},
-postheadspace={0pt},
-mdframed={style=mdsiennamargin},
-headpunct={ \\[3pt] },
-]{thmmarginbox}
-
-\mdfdefinestyle{mdgreymargin}{%
-    skipabove=20pt,
-    linewidth=2pt,
-    leftline=true,
-    rightline=false,
-    bottomline=false,
-    topline=false,
-    linecolor=JungleGreen,
-    backgroundcolor=JungleGreen!4,
-}
-\declaretheoremstyle[
-headfont=\bfseries\rmfamily\color{purple},
-bodyfont=\normalfont,
-postheadspace={0pt},
-mdframed={style=mdgreymargin},
-headpunct={ \\[3pt] },
-]{thmmarginref}
 
 \mdfdefinestyle{mdthmbox}{%
     roundcorner=4pt,
@@ -345,3 +264,8 @@ headpunct={ \\[3pt] },
 \newenvironment{exc}{%
     ~\\ \rule[0cm]{\textwidth-4cm}{0.01cm}\rule[-0.11cm]{4cm}{0.12cm} \vskip2pt {\hspace*{\textwidth-3.8cm}\Large\textbf{Exercises}}}%
     {~\\ \hrule ~\\}
+
+\newcommand{\sidenote}[1]{%
+    \marginpar{\RaggedRight\footnotesize #1 }}
+
+\newcommand{\sideref}[1]{\sidenote{\normalfont#1}}
