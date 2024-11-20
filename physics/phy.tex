@@ -11,40 +11,41 @@
 
 \begin{document}
 %https://tex.stackexchange.com/questions/249475/index-hyperlink-not-pointing-to-correct-page
-\pagestyle{empty}
 \newgeometry{right=1cm,left=4cm}
-\NewCoffin \result
-\NewCoffin \aaa
-\NewCoffin \bbb
-\NewCoffin \ccc
-\NewCoffin \ddd
-\NewCoffin \eee
-\NewCoffin \fff
-\NewCoffin \rulei
-\NewCoffin \ruleii
-\NewCoffin \ruleiii
+\pagestyle{empty}
+\setsansfont{Emberly}
+  \NewCoffin \result
+  \NewCoffin \aaa
+  \NewCoffin \bbb
+  \NewCoffin \ccc
+  \NewCoffin \ddd
+  \NewCoffin \eee
+  \NewCoffin \fff
+  \NewCoffin \rulei
+  \NewCoffin \ruleii
+  \NewCoffin \ruleiii
 
 \SetHorizontalCoffin \result {}
-\SetHorizontalCoffin \aaa {\fontsize{52}{50}\sffamily\bfseries Physics}
+\SetHorizontalCoffin \aaa {\fontsize{52}{50}\sffamily\bfseries Mathematics}
 \SetHorizontalCoffin \bbb {\fontsize{52}{50}\sffamily\bfseries Undergraduate}
 \SetHorizontalCoffin \ccc {\fontsize{12}{10}\sffamily
-                    \quad Licensed under MIT. v.0.1.\today
-                   \textbullet{} November, 2024}
+                      \quad Licensed under MIT. v.0.1.\today
+                     \textbullet{} November, 2024}
 \SetHorizontalCoffin \ddd {\fontsize{28}{20}\sffamily v.0.1.\today}
 \SetVerticalCoffin \eee {180pt}
-               {\raggedleft\fontsize{31}{36}\sffamily\bfseries
-               Ascholar}
+                 {\raggedleft\fontsize{31}{36}\sffamily\bfseries
+                 Ascholar}
 \SetVerticalCoffin \fff {140pt}
-               {\raggedright \fontsize{13}{14}\sffamily\bfseries
-                     A foray into \\
-                     undergrad physics \\
-                     with a problem solving \\
-                      approach, \\
-                      without pulling any\\
-                     mathematical wool\\
-                     for an aspiring\\
-                     physicist. \\
-                     \href{https://github.com/Anonscholar}{Source Code}.\\}
+                 {\raggedright \fontsize{13}{14}\sffamily\bfseries
+                       A foray into \\
+                       undergrad mathematics \\
+                       with the philosophy \\
+                        of a more careful\\
+                       intuitive, and rigorous \\
+                       introduction\\
+                       for the curious \\
+                       student. \\
+                       \href{https://github.com/Anonscholar}{Source Code}.\\}
 
 \RotateCoffin \bbb {90}
 \RotateCoffin \ccc {270}
@@ -56,7 +57,7 @@
 
 \JoinCoffins \result                \aaa
 \JoinCoffins \result[\aaa-t,\aaa-r] \rulei   [b,r](0pt,2mm)
-\JoinCoffins \result[\aaa-b,\aaa-l] \bbb     [B,r](-90pt,5pt)
+\JoinCoffins \result[\aaa-b,\aaa-l] \bbb     [B,r](-20pt,5pt)
 \JoinCoffins \result[\bbb-t,\bbb-r] \ruleii  [t,r](-2mm,0pt)
 \JoinCoffins \result[\aaa-B,\aaa-r] \ccc     [B,l](66pt,14pc)
 \JoinCoffins \result[\bbb-l,\ccc-B] \fff     [t,r](-2mm,0pt)
@@ -67,6 +68,16 @@
 \TypesetCoffin \result
 \restoregeometry
 \newpage
+
+\setsansfont{Libre Caslon Display}    
+  \frontmatter
+    \pagestyle{empty}
+    \tableofcontents
+    \clearpage
+
+    \listoffigures
+
+
 
     \frontmatter
     \pagestyle{empty}
