@@ -1,6 +1,4 @@
-\documentclass[twoside, 11pt]{memoir}
-\setstocksize{26.3cm}{23.7cm}
-\settrimmedsize{26cm}{23.5cm}{*}
+\documentclass[twoside, 11pt, a4paper]{memoir}
 
 \input{../style.tex}
 \input{../theorems.tex}
@@ -14,7 +12,7 @@
 \begin{document}
 %https://tex.stackexchange.com/questions/249475/index-hyperlink-not-pointing-to-correct-page
 \pagestyle{empty}
-
+\newgeometry{right=1cm,left=4cm}
 \NewCoffin \result
 \NewCoffin \aaa
 \NewCoffin \bbb
@@ -67,7 +65,7 @@
 \JoinCoffins \result[\eee-T,\eee-r] \ddd     [B,r](4pt,4pc)
 
 \TypesetCoffin \result
-
+\restoregeometry
 \newpage
 
     \frontmatter

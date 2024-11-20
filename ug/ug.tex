@@ -1,11 +1,9 @@
-\documentclass[twoside, 12pt, letterpaper]{memoir}
+\documentclass[twoside, 11pt, a4paper]{memoir}
 
 \input{../style.tex}
 \input{../theorems.tex}
 \input{../macros.tex}
 
-\newgeometry{right=4cm,left=1.5cm,bottom=1cm,top=1cm,marginparsep=1cm,includeheadfoot,asymmetric}
-\usepackage{layouts}
 
 \date{\today}
 \title{A Math Notebook}
@@ -16,6 +14,7 @@
 %https://tex.stackexchange.com/questions/249475/index-hyperlink-not-pointing-to-correct-page
 %\scrollmode
 
+\newgeometry{right=1cm,left=4cm}
 \pagestyle{empty}
 \setsansfont{Emberly}
   \NewCoffin \result
@@ -70,7 +69,7 @@
 \JoinCoffins \result[\eee-T,\eee-r] \ddd     [B,r](4pt,4pc)
 
 \TypesetCoffin \result
-
+\restoregeometry
 \newpage
 
 \setsansfont{Libre Caslon Display}    
@@ -85,15 +84,6 @@
     \pagestyle{mystyle}
     \setcounter{chapter}{0}
     \input{preq/proofs.tex}
-
-
-    \begin{figure}
-      \centering
-      \currentpage
-      \oddpagelayouttrue
-      \pagedesign
-      \caption{Odd page layout for this document}
-    \end{figure}
 
     \spart{Calculus}
     \input{calc/realnum.tex}
