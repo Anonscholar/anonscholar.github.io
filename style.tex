@@ -4,20 +4,14 @@
 %for using baskerville
 
 \usepackage[no-math]{fontspec}
-%\setmainfont{Baskerville}[
-%  BoldFont={* Semibold},
-%]
-
-\setmainfont{Cormorant Garamond}
+\setmainfont[Numbers=Lining]{Fanwood}
 [
-  UprightFont={* Medium},
-  BoldFont={* Bold},
-  ItalicFont={* Italic},
+  BoldFont = {Baskerville Semibold},
 ]
 
 %for headings
 
-\setsansfont{Libre Caslon Display}
+\setsansfont{Inter}
 
 %setting up paras without indentation.
 
@@ -47,7 +41,7 @@
 \def\@makechapterhead#1{%
   \vspace*{2\p@}%
   {\parindent \z@ \raggedleft \reset@font
-            \scshape \@chapapp{} \thechapter
+            \bfseries \@chapapp{} \thechapter
         \par\nobreak
         \interlinepenalty\@M
     \Huge \bfseries #1\par\nobreak
