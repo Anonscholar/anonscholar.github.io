@@ -1,10 +1,11 @@
-\documentclass[twoside, 12pt]{memoir}
-\setstocksize{26.3cm}{23.7cm}
-\settrimmedsize{26cm}{23.5cm}{*}
+\documentclass[twoside, 12pt, letterpaper]{memoir}
 
 \input{../style.tex}
 \input{../theorems.tex}
 \input{../macros.tex}
+
+\newgeometry{right=4cm,left=1.5cm,bottom=1cm,top=1cm,marginparsep=1cm,includeheadfoot,asymmetric}
+\usepackage{layouts}
 
 \date{\today}
 \title{A Math Notebook}
@@ -84,6 +85,15 @@
     \pagestyle{mystyle}
     \setcounter{chapter}{0}
     \input{preq/proofs.tex}
+
+
+    \begin{figure}
+      \centering
+      \currentpage
+      \oddpagelayouttrue
+      \pagedesign
+      \caption{Odd page layout for this document}
+    \end{figure}
 
     \spart{Calculus}
     \input{calc/realnum.tex}
